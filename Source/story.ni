@@ -8,8 +8,8 @@ use full-length room descriptions.
 
 The Story Genre is "unterschiedliches".  The release number is 0. The Story Headline is "the sun carries it to the daylight.". The Story description is "A story of someone going for his search."
 
-[release along with a "OneColumn" website, source text, library card and an interpreter.]
-release along with a website, source text, library card and an interpreter.
+[release along with a "OneColumn" website and an interpreter.]
+[release along with a website, source text, library card and an interpreter.]
 
 Include Quip-Based Conversation by Michael Martin.
 Include Basic Screen Effects by Emily Short.
@@ -102,10 +102,11 @@ instead of going south in boring beach, say "[one of]You go a few steps into the
 
 instead of going east in boring beach, say "You can see right there the shortest connection to the river mouth and the small market. But caused by the coast line you have to go to the northeast and then southeast afterwards.".
 
-[high fence is scenery in boring beach. the description is "haha, wennde d adurchschlunzt, siehste folgendes: ".]
+[high fence is scenery in boring beach. the description is "haha, wennde da durchschlunzt, siehste folgendes: ".]
 
 bush is a backdrop in smiley island. the description is "barely penetrable jungle.".
 horizon is a backdrop in boring beach. the description is "You press your lids together to see as much as you can. Your eyes follow the fine line of the quiet sea on the horizon. You notice a black ship with eight sails. It moves slowly from the right to the left.".
+understand "jungle" as the bush.
 
 fresh water is a backdrop in river mouth, in jungle path, in crossing and in lake. the description is "[if dave is off-stage]You see still stired up water as dave was swimming around and pretending to be a manatee.[otherwise][one of]You look deep into the streaming water. There seems to be life in there. But from manatees, no trail, nothing. Maybe the nearly extict can be deleted and now they are. At least in this little creek here.[or]Again you focus to see anything in the water. movements of something living and big. but nothing.[or]You don't want to search again. There was no sign of manatee life and it will now be the same. No sign of mammals here.[stopping]".
 understand "river" and "creek" as the fresh water.
@@ -116,7 +117,7 @@ understand "fence" as the gate.
 resort is scenery in boring beach. the description is "It's closed for you.".
 understand "holiday resort" as the resort.
 
-the lounger is a enterable supporter in boring beach. the description is "Made out of bambus and looks comfy. It has a built in sunshade."
+the lounger is a enterable supporter in boring beach. the initial appearance is "There is an inviting lounger in front of you, ready for you to get on it.". the description is "Made out of bambus and looks comfy. It has a built in sunshade."
 
 sewing machine is scenery in boring beach. the description is "It's an original singer. One of these foot-driven ones.".
 wooden infoboard is scenery in boring beach. the description is "There is mostly manatee related stuff on this wall".
@@ -179,10 +180,10 @@ instead of taking the fake manatee:
 
 
 
-tim is wearing a molton sheet. he is in boring beach. the description is "He is sitting behind a sewing machine, stitching some [cloth].".
+Tim is wearing a molton sheet. he is in boring beach. the description is "This beardy man with curly hair is sitting behind a sewing machine, stitching some [cloth].".
 
-understand "old man", "man" as tim.
-The litany of tim is the Table of tims Talk. the greeting of tim is slog-hello. tim is a man.
+understand "old man", "man", "guy" as tim. the initial appearance of tim is "There is a guy sitting around here.".
+The litany of tim is the Table of tims Talk. the greeting of tim is slog-hello. tim is a man. 
 
 cloth is scenery in boring beach. the description is "Its an unnameable patchwork at the moment, but you guess it will become a manatee.".
 understand "manatee" as the cloth.
@@ -213,7 +214,7 @@ instead of going west in shashrick during getting-marooned, say "No. You clearly
 
 the description of ipecac is "[Flowers]. Yellow flowers all around. They look familiar. Not that you've seen them in real life. Something special is about this flower. In a way there seems to be a relationship with your first kind-of-beard. There is are two passages one to the southwest and one to the east."
 
-flowers are scenery in ipecac. the description is "Yellow."
+flowers are scenery in ipecac. the description is "Yellow.". understand "flower" as the flowers.
 
 the scent of flowers is "strong, uncomfortable, like wanting to vomit" 
 
@@ -276,25 +277,29 @@ instead of digging in the trail, say "big whoop!."
 instead of digging the ground when the player does not carry the shovel: 
 	say "with your bare fingers? no. simply. no.".
 
-instead of digging the ground the first time:
+check digging:
+	if the player does not carry the shovel, stop the action.
+
+after digging the ground the first time:
 	if the player does carry the shovel:
 		say "You dig your first hole in the ground.";
 		now the first hole is in the location of the player;
 	otherwise:
-		say "with your bare fingers? no. simply. no."
+		say "with your bare fingers? no. simply. no.";
+		stop the action.
 
-instead of digging the ground the second time:
+after digging the ground the second time:
 	if the player does carry the shovel:
 		say "You dig your second hole in the ground.";
 		now the second hole is in the location of the player;
 	otherwise:
 		say "nope. Not without a proper tool for that."
 
-instead of digging the ground the third time:
+after digging the ground the third time:
 	say "You dig your third hole in the ground.";
 	now the third hole is in the location of the player.
 
-instead of digging the ground more than three times:
+after digging the ground more than three times:
 	say "Thats enough. You don't feel like digging anymore.";
 
 [merke, das war die falsche Zeitform
@@ -439,7 +444,7 @@ instead of going down in jungle path, try going southeast.
 instead of going northwest in jungle path:
 	say "the fact that a creek is flowing doesnt mean you want to get in the water and swim against the stream. Don't forget you are here to get total boredomnes.".
 
-dave is a person in jungle path. the litany of dave is the table of daves talk.
+Dave is a person in jungle path. the description is "awesome. not.". the litany of dave is the table of daves talk.
 
 instead of giving the durian to someone, say "There will be a better use for tasty fruit."
 
@@ -471,7 +476,7 @@ instead of going west in river mouth:
 	continue the action.
 
 the fruit table is a supporter in river mouth.
-ron is a man. the description is "TODO vielleicht is initial appeareance die loesung".
+Ron is a man. the description is "TODO vielleicht is initial appeareance die loesung".
 ron is in river mouth.  the litany of ron is the table of rons talk. fruit table is privately-named. understand "table" and "fruit table" as fruit table.
 understand "man" as ron.
 
@@ -557,8 +562,15 @@ the chocolate coins are in treasure.
 they are edible.
 
 the windbeutel is in treasure. it is edible.
+the scent of windbeutel is "artificial rum aroma".
+after eating the windbeutel, say "That was nice and sweet with a fine note of rum. Your first caribean windbeutel."
 
-instead of dropping the treasure, say "nope! not here, it has to be very save to hide a treasure."
+instead of dropping the treasure:
+	if the player is in boring beach:
+		say "You throw the treasure as far as you could into the salty sea. You look at the horizon to see how far you were able to throw it. But before you discovered it a strong current placed the treasure exactly in front of your feet.";
+		continue the action;
+	otherwise:
+		say "nope! not here, it has to be very save to hide a treasure."
 
 
 
@@ -845,7 +857,7 @@ instead of entering the comfy seat:
 zzz
 [play+1round]The play begins. The first actors in pirate costumes are beginning to sing. it hurts your brain. But hey, its your holidays. There is a woman as the main act singing pirate jenny. singing of the ship the black freighter and with eight sails coming to kill the whole village. It remembers you of the ship you watched yourself during your journey over this very island.[if fact is known]. 
 [play+2round]
-Suddenly you here a explotion from behind. immediatly you turn your head to the sea. And the black ships with eight sails is arrived[erschienen] a [rauchsaeule steigt] over a cannon. In that second, a next canon is fired and you are able to follow the canon ball with your eyes. You have to turn your head and half believing what you see. the canonball goes down in the middle of the stage and breaks the wodden planks. 
+Suddenly you hear a explotion from behind. immediatly you turn your head to the sea. And the black ships with eight sails is arrived[erschienen] a [rauchsaeule steigt] over a cannon. In that second, a next canon is fired and you are able to follow the canon ball with your own eyes. You have to turn your head and half believing what you see. the canonball goes down in the middle of the stage and breaks the wodden planks. 
 
 panik
 
