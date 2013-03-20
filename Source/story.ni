@@ -105,8 +105,9 @@ instead of going east in boring beach, say "You can see right there the shortest
 [high fence is scenery in boring beach. the description is "haha, wennde da durchschlunzt, siehste folgendes: ".]
 
 bush is a backdrop in smiley island. the description is "barely penetrable jungle.".
-horizon is a backdrop in boring beach. the description is "You press your lids together to see as much as you can. Your eyes follow the fine line of the quiet sea on the horizon. You notice a black ship with eight sails. It moves slowly from the right to the left.".
 understand "jungle" as the bush.
+horizon is a backdrop in boring beach, in river mouth, in view around, in steep coast, in rocky cliffs. the description is "[one of]You press your lids together to see as much as you can. Your eyes follow the fine line of the quiet sea on the horizon. You notice a black ship with eight sails. It moves slowly from the right to the left.[or]Again you notice this very old ship far away at the horizon.[or] You notice a slowly growing bad feeling caused by the very old ship.[or]You tried to ignore it, but your eyes were catched again and you had to take a look into the FERNE[stopping]". [TODO ferne]
+understand "sea" as the horizon.
 
 fresh water is a backdrop in river mouth, in jungle path, in crossing and in lake. the description is "[if dave is off-stage]You see still stired up water as dave was swimming around and pretending to be a manatee.[otherwise][one of]You look deep into the streaming water. There seems to be life in there. But from manatees, no trail, nothing. Maybe the nearly extict can be deleted and now they are. At least in this little creek here.[or]Again you focus to see anything in the water. movements of something living and big. but nothing.[or]You don't want to search again. There was no sign of manatee life and it will now be the same. No sign of mammals here.[stopping]".
 understand "river" and "creek" as the fresh water.
@@ -132,6 +133,7 @@ after examining the wooden infoboard:
 
 sunshade is part of lounger. the description is "Striped."
 
+[warum zum.. TODO]
 instead of dropping the towel in river mouth:
 	enable the ron-gives-rod quip for ron.
 
@@ -182,7 +184,7 @@ instead of taking the fake manatee:
 
 Tim is wearing a molton sheet. he is in boring beach. the description is "This beardy man with curly hair is sitting behind a sewing machine, stitching some [cloth].".
 
-understand "old man", "man", "guy" as tim. the initial appearance of tim is "There is a guy sitting around here.".
+understand "old man", "man", "guy" as tim. the initial appearance of tim is "[if name plate is familiar]Tim is sitting here.[otherwise]There is a guy sitting around here.".
 The litany of tim is the Table of tims Talk. the greeting of tim is slog-hello. tim is a man. 
 
 cloth is scenery in boring beach. the description is "Its an unnameable patchwork at the moment, but you guess it will become a manatee.".
@@ -272,7 +274,7 @@ shovel is a thing. the description is "Sturdy and made in germany.".
 	say "You prefer to dig in the ground";
 	try digging the ground.]
 
-instead of digging in the trail, say "big whoop!."
+instead of digging in the trail, say "big whoop!." [TODO damit isses da ja gesperrt]
 
 instead of digging the ground when the player does not carry the shovel: 
 	say "with your bare fingers? no. simply. no.".
@@ -556,6 +558,7 @@ chapter treasure hunt
 
 the treasure is a closed and openable container. the description is "Its made out of plastic and has a really cheap look and feel."
 
+
 chocolate coins are edible.
 
 the chocolate coins are in treasure.
@@ -565,10 +568,9 @@ the windbeutel is in treasure. it is edible.
 the scent of windbeutel is "artificial rum aroma".
 after eating the windbeutel, say "That was nice and sweet with a fine note of rum. Your first caribean windbeutel."
 
-instead of dropping the treasure:
+after dropping the treasure:
 	if the player is in boring beach:
 		say "You throw the treasure as far as you could into the salty sea. You look at the horizon to see how far you were able to throw it. But before you discovered it a strong current placed the treasure exactly in front of your feet.";
-		continue the action;
 	otherwise:
 		say "nope! not here, it has to be very save to hide a treasure."
 
@@ -622,7 +624,7 @@ slog-hello	"Ahoj, what do ya want here?"
 	slog-pirate-action	"The pirate actions are prepared by us, you have to take one and afterwards come back and I will give you the appropriate ribbon for achieving the actions goal. So you have to choose, which pirate-action do you want. This week we have 'Being marroned.', 'treasure hunt' or 'barbacue.''"
 slog-start-treasurehunt	"[if treasure-hunt has ended]Its enough, yours was my last treasure of its kind. [otherwise]Arrrgh. classic. So let me tell you. Treasures were often not as in the known stories on big islands and with a map somewhere. Real treasures are verbuddelt/burrowed in a hurry, because some spaniards or other pyrates were coming to get all they can. Thats the reason that your task is to hide this treasure I will give you. Its just about the chest, the content is yours if you want."
 slog-start-marooned	"Are you sure that you want to be put alone on another island right now?"
-slog-ask-marooned	"Well played junior adventurer."
+slog-ask-marooned	"[if getting-marooned has ended]No please. Not again. Just stay here and get bored like you wanted earlier.[otherwise]Well played junior adventurer."
 slog-marooned-no	"okay. so stay here, but you aren't getting a ribbon."
 slog-start-barbecue	"[if barbacueing has ended]Thanks for taking aktion, but please don't do that again. ever.[otherwise]Listen. It's all about manatees in this task. You will get the manatee-ribbon, if you catch one with a fishing rod and appropriate bait. You can get your tools in the small market as you see to the east at the river mouth."
 slog-real-adventurer	"Arrgh. Show me the three ribbons."
@@ -786,11 +788,11 @@ when pyrate-opera begins:
 	[end the story.]
 
 when all-new begins:
-	the meanwhile-1 appears in 20 turns from now;
-	the meanwhile-2 appears in 20 turns from now;
-	the meanwhile-3 appears in 20 turns from now;
-	the meanwhile-4 appears in 20 turns from now;
-	the meanwhile-5 appears in 20 turns from now.
+	the meanwhile-1 appears in 3 turns from now;
+	the meanwhile-2 appears in 7 turns from now;
+	the meanwhile-3 appears in 12 turns from now;
+	the meanwhile-4 appears in 17 turns from now;
+	the meanwhile-5 appears in 23 turns from now.
 
 
 at the time when the meanwhile-1 appears:
