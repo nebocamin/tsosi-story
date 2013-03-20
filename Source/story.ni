@@ -94,7 +94,7 @@ the description of the towel is "This is, what every adventurer needs. [if the p
 
 chapter tims approach
 
-the description of boring beach is "[one of]You arrived at a nice beach, sandy, sunny. Overwhelming, but even better to the west behind a fence with a [gate] seems to be a holiday resort. [The fence] is against the poor natives maybe. But no offence you are just imagening yourself there, at the bar, in the pool, on the beach. you even feel the taste of cocktails on your tongue. Mouthwatering it is. So you tend to go west. A narrow trail follows the fence to the northwest. To the north and to the northeast are small paths into the jungle. Looks dark and full of ugly insects. Thats the reason you booked your kind of active-holidays to stay in your save resorts. Not too much contact to natives or  even nature. [if tim is in boring beach]there is an old man behind a [sewing machine]. He seems to be focused at his work.[end if] Behind him is a [wooden infoboard].[or]This sandy spot is hot, really hot. Besides that there is only the [bush] around the beach and it opens to the sea and a far away [horizon]. It makes you  feel undrunken, thirsty, wanting to go west into the holiday resort.  [if tim is in boring beach]There is an old man behind a sewing machine. he seems to be focused at his work.[end if] behind the desk is an [wooden infoboard]. A path leads north to a jungle spot and northeast to a jungle path. A narrow trail follows the fence to northwest.[stopping]".
+the description of boring beach is "[one of]You arrived at a nice beach, sandy, sunny. Overwhelming, but even better to the west behind a fence with a [gate] seems to be a holiday resort. [The fence] is against the poor natives maybe. But no offence you are just imagening yourself there, at the bar, in the pool, on the beach. you even feel the taste of cocktails on your tongue. Mouthwatering it is. So you tend to go west. A narrow trail follows the fence to the northwest. To the north and to the northeast are small paths into the jungle. Looks dark and full of ugly insects. Thats the reason you booked your kind of active-holidays to stay in your save resorts. Not too much contact to natives or  even nature. [if tim is in boring beach]there is a guy behind a [sewing machine]. He seems to be focused at his work.[end if] Behind him is a [wooden infoboard].[or]This sandy spot is hot, really hot. Besides that there is only the [bush] around the beach and it opens to the sea and a far away [horizon]. It makes you  feel undrunken, thirsty, wanting to go west into the holiday resort.  [if tim is in boring beach]There is an guy behind a sewing machine. he seems to be focused at his work.[end if] behind the desk is an [wooden infoboard]. A path leads north to a jungle spot and northeast to a jungle path. A narrow trail follows the fence to northwest.[stopping] To the south it opens right into the sea inviting to take a bath.".
 
 instead of going inside in boring beach, try going west.
 
@@ -112,7 +112,7 @@ understand "sea" as the horizon.
 fresh water is a backdrop in river mouth, in jungle path, in crossing and in lake. the description is "[if dave is off-stage]You see still stired up water as dave was swimming around and pretending to be a manatee.[otherwise][one of]You look deep into the streaming water. There seems to be life in there. But from manatees, no trail, nothing. Maybe the nearly extict can be deleted and now they are. At least in this little creek here.[or]Again you focus to see anything in the water. movements of something living and big. but nothing.[or]You don't want to search again. There was no sign of manatee life and it will now be the same. No sign of mammals here.[stopping]".
 understand "river" and "creek" as the fresh water.
 
-gate is scenery in boring beach. the description is "For three-ribboned only".
+gate is scenery in boring beach. the description is "The gate is right within a strong fence. At the very closed gate is a spidery writing 'For the three-ribboned only'.".
 understand "fence" as the gate.
 
 resort is scenery in boring beach. the description is "It's closed for you.".
@@ -144,7 +144,7 @@ instead of entering the lounger:
 		say "Without your towel on it?".
 
 instead of going west in boring beach the first time during all-new:
-	say "On this gate is written 'For three ribboned only' It seems to be opened only by this old guy here watching the gate. Now he approaches you.";
+	say "On this gate is written 'For three ribboned only' It seems to be opened only by this old guy here watching the gate. Now he approaches you. So you stay here and await what he wants to tell you.";
 	try talking to tim.
 
 instead of going west in boring beach during all-new:
@@ -182,9 +182,9 @@ instead of taking the fake manatee:
 
 
 
-Tim is wearing a molton sheet. he is in boring beach. the description is "This beardy man with curly hair is sitting behind a sewing machine, stitching some [cloth].".
+Tim is wearing a molton sheet. he is in boring beach. the description is "This beardy man with curly hair is sitting behind a sewing machine, stitching some [cloth]. He wears a name plate.".
 
-understand "old man", "man", "guy" as tim. the initial appearance of tim is "[if name plate is familiar]Tim is sitting here.[otherwise]There is a guy sitting around here.".
+understand "man", "guy" as tim. the initial appearance of tim is "[if name plate is familiar]Tim is sitting here.[otherwise]There is a guy sitting around here.".
 The litany of tim is the Table of tims Talk. the greeting of tim is slog-hello. tim is a man. 
 
 cloth is scenery in boring beach. the description is "Its an unnameable patchwork at the moment, but you guess it will become a manatee.".
@@ -208,7 +208,7 @@ chapter marooned
 
 marooned ribbon is wearable. the description is "A pistol is stitched into it. Its one of your [ribbon-count] ribbons.".
 
-the description of shashrick is "Jungle. You're in it. deeper than you expected. suddenly green plants all around you and really near. leaves tickeling your neck. It rememberes you to tv documentaries about these little poisenous green snakes. You freeze your steps, so you are really able to turn around rather quickly and step back. its the path back southwest to the sea that you kow and you could walk there fast. now. There is also a passage to northeast.".
+the description of shashrick is "Jungle. You're in it. deeper than you expected. suddenly green plants all around you and really near. leaves tickeling your neck. It rememberes you to tv documentaries about these little poisenous green snakes. You freeze your steps, so you are really able to turn around rather quickly and step back. its the path back southwest to the sea[if jungle path is visited] that you kow[end if] and you could walk there fast. now. There is also a passage to northeast.".
 instead of going north in shashrick during all-new, say "No.".
 instead of going north in shashrick during getting-marooned, say "No. You clearly feel that it would'nt be the right direction either.".
 instead of going west in shashrick during all-new, say "No.".
@@ -220,7 +220,7 @@ flowers are scenery in ipecac. the description is "Yellow.". understand "flower"
 
 the scent of flowers is "strong, uncomfortable, like wanting to vomit" 
 
-the description of bambus fields is "[one of]You find yourself trapped in a well made bambus field labyrinth. Green bambus all around. But contrary to your imagination of marooning, it seems quite un-dangerous. You hear the strong currents breaking against the shore far down the hill[stopping]. [if ipecac is visited][one of]You remember you can leave trying to go west.[or] You know the path to the west right into the ipecac flower bed.[stopping][otherwise] You haven't any clue in which direction to escape from here.[end if][if view around is visited] You know a path to the north, to have a nice view around.".
+the description of bambus fields is "[one of]You find yourself trapped in a well made bambus field labyrinth. Green bambus all around. [if getting-marooned is happening]But contrary to your imagination of marooning, it seems quite un-dangerous and you don't even received a gun.[end if] You hear the strong currents breaking against the shore far down the hill[stopping]. [if ipecac is visited][one of]You remember you can leave trying to go west.[or] You know the path to the west right into the ipecac flower bed.[stopping][otherwise] You haven't any clue in which direction to escape from here.[end if][if view around is visited] You know a path to the north, to have a nice view around.".
 
 before going somewhere in bambus fields for the first time, say "...Hours of labyrinth-running later...".
 
@@ -360,7 +360,10 @@ trail is northwest of boring. "[The fence] vanishes into the [bush]. The trail e
 
 instead of going inside in trail, say "You can't go in. the fence seems to be bold and you dont want to anlegen yourself with tim and maybe some other spare time pirates.".
 
-the bold fence is scenery in trail. the description is " Its made out of strong bold wooden planks, like the ones used to build ships with."[ Examining it reveales a [small hole]."
+the bold fence is scenery in trail. the description is " Its made out of strong bold wooden planks, like the ones used to build ships with.".
+understand "planks", "plank" as the bold fence.
+
+[ Examining it reveales a [small hole]."
 
 instead of look through the small hole, say "haha, doch geklappt."
 
@@ -372,6 +375,7 @@ instead of searching the small hole, say "You could kneel down and peek through 
 the vbar is scenery in trail. the description is "you are spotting kalua and fresh milk. You just imagine yourself in a bath robe at this bar, supping a white russian. yes, that would be real holidays. And nobody pissed on your carpet.".
 the vpool is scenery in trail. the description is "A big enough pool to swim, but as you watch nobody is swimming just hanging at the edge, drinking cocktails.".
 the  vswimming spot is scenery in trail. the description is "This is a beach after your liking. Fresh, cleaned sand. Loungers with towels on it.".
+understand "towels", "loungers" as the vswimming spot.
 the vstage is scenery in trail. the description is "A stage, are the giving a performance tonight? You want to hurry up to get in on time.".
 
 part scenes
@@ -381,7 +385,7 @@ chapter scenes first act
 all-new is a scene. all-new begins when play begins.
 
 instead of going north in boring beach the first time during all-new:
-	say "No, you can't imagine any reason to put even a baby step into the jungle. The old man with the tim [name plate] watches interested as you hesitate to go north.".
+	say "No, you can't imagine any reason to put even a baby step into the jungle. The guy with the Tim [name plate] watches interested as you hesitate to go north.".
 
 name plate is worn by tim. the description is "'tim' is written on it.".
 
@@ -436,7 +440,9 @@ volcano is a room. "herman lies here.".
 
 chapter jungle path
 
-the description of jungle path is "There is a creek flowing from northwest down to southeast, where it ends in a river mouth. a path along the creek's bank follows the same direction. a [wooden bridge] leads northeast deeper into the jungle and exits also to southwest back to the boring beach.".
+the description of jungle path is "There is a creek flowing from northwest down to southeast, where it ends in a river mouth. a [path along] the creek's bank follows the same direction. a [wooden bridge] leads northeast deeper into the jungle and exits also to southwest back to the boring beach.".
+
+the path along is scenery in jungle path. the description is "Instead of the other trails this one is well-trodden.".
 
 wooden bridge is scenery in jungle path. the description is "Its stable as a rock and it is made out of, you guessed it already.. [rocks].".
 rocks are part of wooden bridge. the description is "really simple masonry, but solid.". 
@@ -788,11 +794,11 @@ when pyrate-opera begins:
 	[end the story.]
 
 when all-new begins:
-	the meanwhile-1 appears in 3 turns from now;
-	the meanwhile-2 appears in 7 turns from now;
-	the meanwhile-3 appears in 12 turns from now;
-	the meanwhile-4 appears in 17 turns from now;
-	the meanwhile-5 appears in 23 turns from now.
+	the meanwhile-1 appears in 7 turns from now;
+	the meanwhile-2 appears in 15 turns from now;
+	the meanwhile-3 appears in 23 turns from now;
+	the meanwhile-4 appears in 31 turns from now;
+	the meanwhile-5 appears in 40 turns from now.
 
 
 at the time when the meanwhile-1 appears:
