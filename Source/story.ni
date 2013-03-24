@@ -2,13 +2,16 @@
 
 [Include GNU General Public License V3 by Free Software Foundation.]
 
-[a scrum is in boring beach. "A scrum lies here". the description is "its awful and loves meetings."]
+a scrum is in boring beach. "A scrum lies here.". the description is "its awful and loves meetings.". it is edible.
 
 use full-length room descriptions.
+use no scoring.
+
+
 
 The Story Genre is "unterschiedliches".  The release number is 0. The Story Headline is "the sun carries it to the daylight.". The Story description is "A story of someone going for his search."
 
-[release along with a "OneColumn" website and an interpreter.]
+release along with a "OneColumn" website and an interpreter.
 [release along with a website, source text, library card and an interpreter.]
 
 Include Quip-Based Conversation by Michael Martin.
@@ -30,6 +33,8 @@ Index map with shashrick mapped northeast of jungle path.
 part losgehts
 
 chapter preparation
+
+the description of the yourself is "Shiny."
 
 ribbon-count is a number that varies. ribbon-count is zero.
 
@@ -67,6 +72,7 @@ the description of the ubuntu cd is "This one is left from your famous ordering 
 
 [rucksack fuer 5 runden nass sein lassen. bzw. ersten akt dafuer verwenden.]
 
+Rule for printing the banner text while turn count is 1: say "[paragraph break] The Secret of Smiley Island  [paragraph break]  [paragraph break] ".
 
 when play begins:
 	say "Deep in the west indies. The island of boredom. Just coming from the boat without puking, but still in a bad feeling. Your holidays starting for you to reach the state of total boredomness. Great, lets begin.".
@@ -144,7 +150,7 @@ instead of entering the lounger:
 		say "Without your towel on it?".
 
 instead of going west in boring beach the first time during all-new:
-	say "On this gate is written 'For three ribboned only' It seems to be opened only by this old guy here watching the gate. Now he approaches you. So you stay here and await what he wants to tell you.";
+	say "On this gate is written 'For three ribboned only' It seems to be opened only by [if the name plate is familiar]Tim[otherwise] this guy[end if] here watching the gate. Now he approaches you. So you stay here and await what he wants to tell you.";
 	try talking to tim.
 
 instead of going west in boring beach during all-new:
@@ -175,6 +181,7 @@ instead of fishing the fake manatee:
 	say "After putting the fishhook into the water it was all daves show. He grabbed the hook. rons big eyes were able to see this giant, wet and shiny meat-man manatee getting out of the water. Not shivering but with a nod that meant respect he came over to you and put the manatee ribbon around your wrist.";
 	now the player wears the manatee ribbon;
 	increment ribbon-count;
+	now the fake manatee is off-stage;
 	now the player carries the manatee suit.
 
 instead of taking the fake manatee:
@@ -244,7 +251,7 @@ instead of going up in ipecac:
 	try going east.
 
 after going to boring beach during getting-marooned:
-	say "tim waves at you and presents you the achieved ribbon for surviving the marooning pirate action. He puts around your wrist. Proudly and in hope to get into the ressort soon, you're awaiting your total boredomness.";
+	say "Tim waves at you and presents you the achieved ribbon for surviving the marooning pirate action. He puts around your wrist. Proudly and in hope to get into the ressort soon, you're awaiting your total boredomness.";
 	now the player wears the marooned ribbon;
 	increment ribbon-count;
 	continue the action.
@@ -268,7 +275,7 @@ Understand "dig" or "dig hole/here" or "dig in ground/dirt/earth" as digging.
 digging is an action applying to one thing and requiring light.
 [Understand "dig [something]" or "dig in [something]" as digging. ]
 
-shovel is a thing. the description is "Sturdy and made in germany.".
+[shovel is a thing. the description is "Sturdy and made in germany.".]
 
 [instead of digging something:
 	say "You prefer to dig in the ground";
@@ -276,26 +283,19 @@ shovel is a thing. the description is "Sturdy and made in germany.".
 
 instead of digging in the trail, say "big whoop!." [TODO damit isses da ja gesperrt]
 
-instead of digging the ground when the player does not carry the shovel: 
-	say "with your bare fingers? no. simply. no.".
+[instead of digging the ground when the player does not carry the shovel: 
+	say "with your bare fingers? no. simply. no.".]
 
-check digging:
-	if the player does not carry the shovel, stop the action.
+[check digging:
+	if the player does not carry the shovel, stop the action.]
 
 after digging the ground the first time:
-	if the player does carry the shovel:
-		say "You dig your first hole in the ground.";
-		now the first hole is in the location of the player;
-	otherwise:
-		say "with your bare fingers? no. simply. no.";
-		stop the action.
+	say "You dig your first hole in the ground.";
+	now the first hole is in the location of the player;
 
 after digging the ground the second time:
-	if the player does carry the shovel:
-		say "You dig your second hole in the ground.";
-		now the second hole is in the location of the player;
-	otherwise:
-		say "nope. Not without a proper tool for that."
+	say "You dig your second hole in the ground.";
+	now the second hole is in the location of the player;
 
 after digging the ground the third time:
 	say "You dig your third hole in the ground.";
@@ -344,7 +344,7 @@ before filling up a treasure-hideaway, try closing the noun instead.
 
 before going to boring beach during treasure-hunt:
 	if treasure-hidden is true:
-		say "'I see, you're treasure is well hidden somewhere you can't even find yourself.' and tim puts the ribbon for the treasure hunt over your wrist.";
+		say "'I see, you're treasure is well hidden somewhere you can't even find yourself.' and Tim puts the ribbon for the treasure hunt over your wrist.";
 		now the player wears the treasure-ribbon;
 		increment ribbon-count;
 		continue the action;
@@ -387,10 +387,10 @@ all-new is a scene. all-new begins when play begins.
 instead of going north in boring beach the first time during all-new:
 	say "No, you can't imagine any reason to put even a baby step into the jungle. The guy with the Tim [name plate] watches interested as you hesitate to go north.".
 
-name plate is worn by tim. the description is "'tim' is written on it.".
+name plate is worn by tim. the description is "'Tim' is written on it.".
 
 instead of going north in boring beach the second time during all-new:
-	say "As you were evaluating to go or not to go into the bush, the old guy with the tim [name plate] approaches you and begins to speak.";
+	say "As you were evaluating to go or not to go into the bush, the guy with the tim [name plate] approaches you and begins to speak.";
 	try talking to tim.
 
 instead of going north in boring beach during all-new, say "no."
@@ -628,7 +628,7 @@ Table of Quip Texts (continued)
 quip	quiptext
 slog-hello	"Ahoj, what do ya want here?" 
 	slog-pirate-action	"The pirate actions are prepared by us, you have to take one and afterwards come back and I will give you the appropriate ribbon for achieving the actions goal. So you have to choose, which pirate-action do you want. This week we have 'Being marroned.', 'treasure hunt' or 'barbacue.''"
-slog-start-treasurehunt	"[if treasure-hunt has ended]Its enough, yours was my last treasure of its kind. [otherwise]Arrrgh. classic. So let me tell you. Treasures were often not as in the known stories on big islands and with a map somewhere. Real treasures are verbuddelt/burrowed in a hurry, because some spaniards or other pyrates were coming to get all they can. Thats the reason that your task is to hide this treasure I will give you. Its just about the chest, the content is yours if you want."
+slog-start-treasurehunt	"[if treasure-hunt has ended]Its enough, yours was my last treasure of its kind. [otherwise]Arrrgh. classic. So let me tell you. Treasures were often not as in the known stories on big islands and with a map somewhere. Real treasures are verbuddelt/burrowed in a hurry, because some spaniards or other pyrates were coming to get all they can. Thats the reason that your task is to hide this treasure I will give you. Its just about the chest, the content is yours if you want." [TODO]
 slog-start-marooned	"Are you sure that you want to be put alone on another island right now?"
 slog-ask-marooned	"[if getting-marooned has ended]No please. Not again. Just stay here and get bored like you wanted earlier.[otherwise]Well played junior adventurer."
 slog-marooned-no	"okay. so stay here, but you aren't getting a ribbon."
@@ -691,8 +691,8 @@ after quipping when the current quip is tim-manatee:
 before quipping when the current quip is slog-ask-marooned:
 	terminate the conversation.
 after quipping when the current quip is slog-start-treasurehunt the first time:
-	say "He hands over a treasure and a shovel. [paragraph break]";
-	now the player carries the shovel;
+	say "He hands over a treasure. [paragraph break]";
+	[now the player carries the shovel;]
 	now the player carries the treasure.
 after quipping when the current quip is slog-ask-meat:
 	say "He gives you the manatee suit.";
