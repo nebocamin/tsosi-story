@@ -2,12 +2,10 @@
 
 [Include GNU General Public License V3 by Free Software Foundation.]
 
-a scrum is in boring beach. "A scrum lies here.". the description is "its awful and loves meetings.". it is edible.
+[a scrum is in boring beach. "A scrum lies here.". the description is "its awful and loves meetings.". it is edible.]
 
 use full-length room descriptions.
 use no scoring.
-
-
 
 The Story Genre is "unterschiedliches".  The release number is 0. The Story Headline is "the sun carries it to the daylight.". The Story description is "A story of someone going for his search."
 
@@ -18,17 +16,24 @@ Include Quip-Based Conversation by Michael Martin.
 Include Basic Screen Effects by Emily Short.
 Include epistemology by eric eve.
 Include Secret Doors by Andrew Owen.
-
-
-
+Include Far Away by Jon Ingold.
 
 Include Smiley island by stereo.
-
 Index map with EPS file.
-
-
 Index map with trail mapped east of small gap.
 Index map with shashrick mapped northeast of jungle path.
+
+part testing
+
+test th with "talk / 3  / 1 / 1 / 3 / 1 / ne / dig / put treasure into hole / close hole / sw "
+
+test gm with "talk / 3 / 2 / 1 / w / sw / sw / sw"
+
+test b with "talk / 3 / 3 /4 / ne / se / talk / 2 / 2 / 2 / get meat/ talk / 2 / 3 / open sack / give food to ron / get meat / nw / sw / talk / 2 /4 / ne / talk / 3 / 1 / se / fish manatee "
+
+test thgm with "look / test th / look / i / test gm ".
+
+test thgmb with "test th / test gm / test b"
 
 part losgehts
 
@@ -75,7 +80,7 @@ the description of the ubuntu cd is "This one is left from your famous ordering 
 Rule for printing the banner text while turn count is 1: say "[paragraph break] The Secret of Smiley Island  [paragraph break]  [paragraph break] ".
 
 when play begins:
-	say "Deep in the west indies. The island of boredom. Just coming from the boat without puking, but still in a bad feeling. Your holidays starting for you to reach the state of total boredomness. Great, lets begin.".
+	say "Deep in the west indies. The island of boredom. Just coming from the boat without puking, but still in a bad feeling. Your holidays starting for you to reach the state of total boredomness.".
 	[pause the game.]
 	
 sustainable food is in the rucksack. the description is "You don't want to eat it, until you're in peril of your nearly starved away life.".
@@ -98,9 +103,30 @@ wrist is part of the player. the description is "On your wrist you can see [ribb
 the description of the towel is "This is, what every adventurer needs. [if the player carries the brass lantern] [otherwise] Further needed: A brass lantern[end if][if the player carries the rope][otherwise] and maybe a rope[end if].".
 
 
+
+chapter new actions
+
+Thinking about is an action applying to one visible thing.
+Understand "think about [any thing]" as thinking about.
+Understand "think about [any known thing]" as thinking about.
+Report thinking about something unknown:
+	say "You can't hink ath the moment. [no thoughts]"
+
+Report thinking about something known:
+	say "You are too excited to think about this at the moment.[the thought of the noun] [paragraph break]"
+
+A thing has a text called thought.
+Pondering is an action applying to one topic.
+Understand "think about [text]" as pondering.
+Report pondering:
+	say "no thoughts"
+
+To say no thoughts:
+	say "You have no thoughts on that subject right now."
+
 chapter tims approach
 
-the description of boring beach is "[one of]You arrived at a nice beach, sandy, sunny. Overwhelming, but even better to the west behind a fence with a [gate] seems to be a holiday resort. [The fence] is against the poor natives maybe. But no offence you are just imagening yourself there, at the bar, in the pool, on the beach. you even feel the taste of cocktails on your tongue. Mouthwatering it is. So you tend to go west. A narrow trail follows the fence to the northwest. To the north and to the northeast are small paths into the jungle. Looks dark and full of ugly insects. Thats the reason you booked your kind of active-holidays to stay in your save resorts. Not too much contact to natives or  even nature. [if tim is in boring beach]there is a guy behind a [sewing machine]. He seems to be focused at his work.[end if] Behind him is a [wooden infoboard].[or]This sandy spot is hot, really hot. Besides that there is only the [bush] around the beach and it opens to the sea and a far away [horizon]. It makes you  feel undrunken, thirsty, wanting to go west into the holiday resort.  [if tim is in boring beach]There is an guy behind a sewing machine. he seems to be focused at his work.[end if] behind the desk is an [wooden infoboard]. A path leads north to a jungle spot and northeast to a jungle path. A narrow trail follows the fence to northwest.[stopping] To the south it opens right into the sea inviting to take a bath.".
+the description of boring beach is "[if pyrate-opera is happening]Now this is also an empty place, the gate stands wide open..TODO[end if][one of]You arrived at a nice beach, sandy, sunny. Overwhelming, but even better to the west behind a fence with a [gate] seems to be a holiday resort. [The fence] is against the poor natives maybe. But no offence you are just imagening yourself there, at the bar, in the pool, on the beach. You even feel the taste of cocktails on your tongue. Mouthwatering it is. So you tend to go west. A narrow trail follows the fence to the northwest. To the north and to the northeast are small paths into the jungle. Looks dark and full of ugly insects. Thats the reason you booked your kind of active-holidays to stay in your save resorts. Not too much contact to natives or  even nature. [if tim is in boring beach]There is a guy behind a [sewing machine]. He seems to be focused at his work.[end if] Behind him is a [wooden infoboard].[or]This sandy spot is hot, really hot. Besides that there is only the [bush] around the beach and it opens to the sea and a far away [horizon]. It makes you  feel undrunken, thirsty, wanting to go west into the holiday resort.[if tim is in boring beach]There is an guy behind a sewing machine. he seems to be focused at his work.[end if] Behind the desk is an [wooden infoboard]. A path leads north to a jungle spot and northeast to a jungle path. A narrow trail follows the fence to northwest.[stopping] To the south it opens right into the sea inviting to take a bath.".
 
 instead of going inside in boring beach, try going west.
 
@@ -120,6 +146,7 @@ understand "river" and "creek" as the fresh water.
 
 gate is scenery in boring beach. the description is "The gate is right within a strong fence. At the very closed gate is a spidery writing 'For the three-ribboned only'.".
 understand "fence" as the gate.
+instead of opening the gate, say "It's really strong and you have no chance to open it somewhere."
 
 resort is scenery in boring beach. the description is "It's closed for you.".
 understand "holiday resort" as the resort.
@@ -281,7 +308,7 @@ digging is an action applying to one thing and requiring light.
 	say "You prefer to dig in the ground";
 	try digging the ground.]
 
-instead of digging in the trail, say "big whoop!." [TODO damit isses da ja gesperrt]
+[instead of digging in the trail, say "big whoop!." ]
 
 [instead of digging the ground when the player does not carry the shovel: 
 	say "with your bare fingers? no. simply. no.".]
@@ -362,6 +389,7 @@ instead of going inside in trail, say "You can't go in. the fence seems to be bo
 
 the bold fence is scenery in trail. the description is " Its made out of strong bold wooden planks, like the ones used to build ships with.".
 understand "planks", "plank" as the bold fence.
+instead of opening the fence, say "No plank is loose, no chance to get into the resort right now."
 
 [ Examining it reveales a [small hole]."
 
@@ -373,10 +401,14 @@ instead of searching the small hole, say "You could kneel down and peek through 
 ]
 
 the vbar is scenery in trail. the description is "you are spotting kalua and fresh milk. You just imagine yourself in a bath robe at this bar, supping a white russian. yes, that would be real holidays. And nobody pissed on your carpet.".
+the printed name of vbar is "bar". understand "bar" as the vbar.
 the vpool is scenery in trail. the description is "A big enough pool to swim, but as you watch nobody is swimming just hanging at the edge, drinking cocktails.".
+the printed name of vpool is "pool". understand "pool" as the vpool.
 the  vswimming spot is scenery in trail. the description is "This is a beach after your liking. Fresh, cleaned sand. Loungers with towels on it.".
-understand "towels", "loungers" as the vswimming spot.
+the printed name of vswimming spot is "swimming spot".
+understand "towels", "loungers", "swimming spot" as the vswimming spot.
 the vstage is scenery in trail. the description is "A stage, are the giving a performance tonight? You want to hurry up to get in on time.".
+the printed name of vstage is "stage". understand "stage" as the vstage.
 
 part scenes
 
@@ -407,6 +439,13 @@ chapter second act
 
 pyrate-opera is a scene.
 pyrate-opera begins when all-new ends.
+
+when pyrate-opera begins:
+	say "[bold type]PART II.[paragraph break] [roman type] So you achieved the first goals. the story isn't at the end. Amazing job for traversing a not-ready-yet piece of interactive fiction. Please stay tuned for further releases. The story will go on and will break all your savegames after each update. Thanks for playing and I hope to see you again on smiley island or on github [paragraph break]for the story:[line break]https://github.com/nebocamin/tsosi-story [paragraph break]and for the open web app around:[line break]https://github.com/nebocamin/tsosi-app";
+	now ron is off-stage;
+	now dave is off-stage;
+	now tim is off-stage;
+	end the story.
 
 part monk island
 
@@ -580,6 +619,16 @@ after dropping the treasure:
 	otherwise:
 		say "nope! not here, it has to be very save to hide a treasure."
 
+the description of crossing is "a [palm tree] in which is a [birds nest]".
+the birds nest is a distant scenery open container in crossing.
+the palm tree is a enterable scenery supporter in crossing.
+
+A distant objects rule for the birds nest when the player is on the palm tree: rule succeeds.
+A distant objects rule for something enclosed by birds nest when the player is on the palm tree: rule succeeds.
+
+after inserting the treasure into the birds nest:
+	say "haha, wenn das mal nicht nen kreatives versteck is";
+	now treasure-hidden is true.
 
 
 part monk island
@@ -789,9 +838,7 @@ the player wears trousers. the description of the trousers is "worn out, but ext
 
 chapter meanwhiles
 
-when pyrate-opera begins:
-	say "[bold type]PART II.[paragraph break] [roman type] So you achieved the first goals. the story isn't at the end. but for you i have to say amazing job".
-	[end the story.]
+
 
 when all-new begins:
 	the meanwhile-1 appears in 7 turns from now;
@@ -814,7 +861,22 @@ at the time when the meanwhile-4 appears:
 	say "[bold type]MEANWHILE ...[paragraph break] [roman type] You think to yourself that a fresh white russian would be the right thing in your mouth now.". 
 
 at the time when the meanwhile-5 appears:
-	say "[bold type]MEANWHILE ...[paragraph break] [roman type]  meanwhile 5".
+	say "[bold type]MEANWHILE ...[paragraph break] [roman type]  Suddenly you hear an explosion maybe from a canon on the black freighter? if known TODO	".
+
+[
+
+born in plymouth 1653 
+
+since june 1694 first maat on "carlos 2" 
+
+"carlos 2" attacked frz. smuggler @ martinique
+
+in near of la coruna meuterei against cpr gibson. after that every is cpt. and ship renamed into "fancy" 46canons, 150man
+
+the sloops made tents out of their sails
+sloop commanders are now the kings of madagaskar
+following generations
+]
 
 the ship is a backdrop in smiley island. the description is "Strange it looks like escaped from a pirates movie film set. It seems to be black, including the sails.".
 understand "black freighter", "freighter", "sails", "sail" and "black ship" as the ship.
@@ -845,12 +907,12 @@ the different bottles are on the bar.
 
 within the different bottles is kaluah and vodka. [possibility to mix a white russian]
 
-the pool is in holiday resort. the description is "The pool is round and seems to be deep enough to go swimming inside. around the pool are loungers. On the red lounger lays a gown. TODObademantel wort is wearable. if its worn and not a white russian carried, say its only a white russian thats now missing."
+the pool is scenery in holiday resort. the description is "The pool is round and seems to be deep enough to go swimming inside. around the pool are loungers. On the red lounger lays a gown. TODObademantel wort is wearable. if its worn and not a white russian carried, say its only a white russian thats now missing."
 
 
-the stage is in holiday resort. the description is "the stage is already filled. there are seats in front of the stage. A bunch of tourists is already seated and wating for the play on stage to begin. There is a comfy seat that invites you.".
+the stage is scenery in holiday resort. the description is "the stage is already filled. there are seats in front of the stage. A bunch of tourists is already seated and wating for the play on stage to begin. There is a comfy seat that invites you.".
 
-the swimming spot is in holiday resort. the description is "The swimming spot is clean and the way has not that many stones. But swimming in the nature of the seas was possible before you got here. You're more interrested to stimulate yourself within a cultural happening. Like Sitting well drunk in a theater."
+the swimming spot is scenery in holiday resort. the description is "The swimming spot is clean and the way has not that many stones. But swimming in the nature of the seas was possible before you got here. You're more interrested to stimulate yourself within a cultural happening. Like Sitting well drunk in a theater."
 
 [
 understand 'sit on' as getting on the comfy seat.
