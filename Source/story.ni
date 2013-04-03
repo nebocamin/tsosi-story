@@ -146,20 +146,17 @@ understand "river" and "creek" as the fresh water.
 
 gate is scenery in boring beach. the description is "The gate is right within a strong fence. At the very closed gate is a spidery writing 'For the three-ribboned only'.".
 understand "fence" as the gate.
-instead of opening the gate, say "It's really strong and you have no chance to open it somewhere."
+instead of opening the gate, say "It's really strong and you have no chance to open it somewhere.". instead of attacking the gate, say "You swing your full weight against the gate. Your body reacts with pain, the gate with sniffy nothing.". instead of doing anything other than opening the gate, try attacking the gate.
 
 resort is scenery in boring beach. the description is "It's closed for you.".
 understand "holiday resort" as the resort.
 
 the lounger is a enterable supporter in boring beach. the initial appearance is "There is an inviting lounger in front of you, ready for you to get on it.". the description is "Made out of bambus and looks comfy. It has a built in sunshade."
 
-sewing machine is scenery in boring beach. the description is "It's an original singer. One of these foot-driven ones.".
-wooden infoboard is scenery in boring beach. the description is "There is mostly manatee related stuff on this wall".
+sewing machine is scenery in boring beach. the description is "It's an original singer. One of these foot-driven ones.". instead of doing anything other than examining the sewing machine, say "You don't want to do anything with that machine. These machines were introduced in your life as extremely dangerous by your grandma."
+
+wooden infoboard is scenery in boring beach. the description is "There is mostly manatee related stuff on this wooden panel and their bad situation of being nearly extinct.".
 understand "board" as the infoboard.
-
-manatee-stuff is scenery in boring beach. the description is "there are pictures of a manatee skeleton, about there bad situation nearly extinct."
-
-understand "stuff" as the manatee-stuff.
 
 after examining the wooden infoboard:
 	enable the tim-manatee quip for tim.
@@ -172,7 +169,7 @@ instead of dropping the towel in river mouth:
 
 instead of entering the lounger:
 	if the towel is on the lounger:
-		say "You lay down and try to relax, but too much is to be done. So you get off the lounger soon. the adventure is waiting.";
+		say "You lay down and try to relax, but too much is to be done. So you get off the lounger soon. Your adventure is waiting.";
 	otherwise:
 		say "Without your towel on it?".
 
@@ -441,7 +438,7 @@ pyrate-opera is a scene.
 pyrate-opera begins when all-new ends.
 
 when pyrate-opera begins:
-	say "[bold type]PART II.[paragraph break] [roman type] So you achieved the first goals. the story isn't at the end. Amazing job for traversing a not-ready-yet piece of interactive fiction. Please stay tuned for further releases. The story will go on and will break all your savegames after each update. Thanks for playing and I hope to see you again on smiley island or on github [paragraph break]for the story:[line break]https://github.com/nebocamin/tsosi-story [paragraph break]and for the open web app around:[line break]https://github.com/nebocamin/tsosi-app";
+	say "[bold type]PART II.[paragraph break] [roman type] So you achieved the first goals. the story isn't at the end. Amazing job for traversing a not-ready-yet piece of interactive fiction. Please stay tuned for further releases. The story will go on and will break all your savegames after each update. Thanks for playing and I hope to see you again on smiley island or on github [paragraph break]for the story:[line break]https://github.com/nebocamin/tsosi-story [paragraph break]and for the open web app:[line break]https://github.com/nebocamin/tsosi-app";
 	now ron is off-stage;
 	now dave is off-stage;
 	now tim is off-stage;
@@ -601,16 +598,17 @@ after taking brennessel, say "autsch".
 
 chapter treasure hunt
 
-the treasure is a closed and openable container. the description is "Its made out of plastic and has a really cheap look and feel."
+the treasure is a closed and openable container. the description is "Its made out of plastic and has a really cheap look and feel.". the scent of it is "plastic odour".  understand "chest", "treasure chest" as the treasure.
 
 
-chocolate coins are edible.
+the chocolate coins are edible. the description is "They are brown with white stains from being remelted not only once this summer.". the chocolate coins are in treasure. they are edible. the scent of the chocolate coins is "something like the inside of an old cupboard". instead of touching the chocolate coins, say "Solid, feels not like something you want to eat.".  after eating the chocolate coins, say "Nearly breaking your expensively fixed teeth you were able to chop them small enough to swallow them.".
 
-the chocolate coins are in treasure.
-they are edible.
+after touching the windbeutel:
+	say "creamy".
 
-the windbeutel is in treasure. it is edible.
-the scent of windbeutel is "artificial rum aroma".
+the windbeutel is in treasure. the description is "Its a creamy puff. Its creamy between the puff.". it is edible.
+the scent of windbeutel is "artificial rum aroma". understand "creamy puff", "creamy", "puff" as the windbeutel.
+
 after eating the windbeutel, say "That was nice and sweet with a fine note of rum. Your first caribean windbeutel."
 
 after dropping the treasure:
@@ -677,14 +675,14 @@ Table of Quip Texts (continued)
 quip	quiptext
 slog-hello	"Ahoj, what do ya want here?" 
 	slog-pirate-action	"The pirate actions are prepared by us, you have to take one and afterwards come back and I will give you the appropriate ribbon for achieving the actions goal. So you have to choose, which pirate-action do you want. This week we have 'Being marroned.', 'treasure hunt' or 'barbacue.''"
-slog-start-treasurehunt	"[if treasure-hunt has ended]Its enough, yours was my last treasure of its kind. [otherwise]Arrrgh. classic. So let me tell you. Treasures were often not as in the known stories on big islands and with a map somewhere. Real treasures are verbuddelt/burrowed in a hurry, because some spaniards or other pyrates were coming to get all they can. Thats the reason that your task is to hide this treasure I will give you. Its just about the chest, the content is yours if you want." [TODO]
+slog-start-treasurehunt	"[if treasure-hunt has ended]Its enough, yours was my last treasure of its kind. [otherwise]Arrrgh. classic. So let me tell you. Treasures were often not as in the known stories on big islands and with a map somewhere. Real treasures are burrowed in a hurry, because some spaniards or other pyrates were coming to get all they can. Thats the reason that your task is to hide this treasure I will give you. Its just about the chest, the content is yours if you want." [TODO]
 slog-start-marooned	"Are you sure that you want to be put alone on another island right now?"
 slog-ask-marooned	"[if getting-marooned has ended]No please. Not again. Just stay here and get bored like you wanted earlier.[otherwise]Well played junior adventurer."
 slog-marooned-no	"okay. so stay here, but you aren't getting a ribbon."
 slog-start-barbecue	"[if barbacueing has ended]Thanks for taking aktion, but please don't do that again. ever.[otherwise]Listen. It's all about manatees in this task. You will get the manatee-ribbon, if you catch one with a fishing rod and appropriate bait. You can get your tools in the small market as you see to the east at the river mouth."
 slog-real-adventurer	"Arrgh. Show me the three ribbons."
 slog-ask-ribbons	"Every _real_ adventurer and or tourist has to get the three ribbons. They have different colors. We offer them here for achieving pirate actions. This island was a pirates nest before. So we support traditional pirate actions."
-tim-manatee	"Ah, the manatees. such nice and friendly animals. But rarely seen on this island nowadays."
+tim-manatee	"Ah, the manatees. such nice and friendly animals. But rarely seen on this island nowadays. My self-stitched ones seem to be the only manatees left on this island."
 slog-ask-meat	"Sure it seems to be big enough to make a suit out of it. [paragraph break] and he takes it, stitches and stitches...[paragraph break]..and hours later...[paragraph break]... it is a manatee suit."
 
 
