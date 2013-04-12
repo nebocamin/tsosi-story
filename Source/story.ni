@@ -704,7 +704,7 @@ slog-cant-remember	"The more we love your island, the more we will hate you for 
 slog-how	"In the best case not at all. But if you insist, you will need a boat, map and a compass. Come back, when you are prepared."
 ron-new-in-town	"Oh, cool. We need new ones. It's getting empty here."
 ron-fruit	"Sure, take a bite."
-ron-gives-rod	"Sure. I heard you are on the manatee hunt. good luck. and yes, you can have this fishing rod. someone forgot it here or maybe its just floatsam. [paragraph break] He hands over the fishing rod and you add it to your inventory."
+ron-gives-rod	"Sure.[if barbacueing is happening] I heard you are on the manatee hunt.[end if] Good luck. And yes, you can have this fishing rod. Someone forgot it here or maybe its just floatsam.[paragraph break] He hands over the fishing rod and you add it to your inventory."
 ron-meat	"[if keeping-meat is true]Get your fingers off it! Meat is rare in these times.[otherwise] Go on, just take the meat. I love your sustainable food.[end if]"
 silence	"Bye."
 
