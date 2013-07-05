@@ -1,8 +1,39 @@
 "the secret of smiley island" by "stereo"
-[branch fistact]
-[Include GNU General Public License V3 by Free Software Foundation.]
+[branch firstact]
+
+[Include GNU General Public License V3 by Free Software Foundation.
+
+[
+    The Secret Of Smiley Island is Copyright (C) 2012 by stereo.
+   
+    This program is free software: you can redistribute it and/or modify
+    it under the terms of the GNU General Public License as published by
+    the Free Software Foundation, either version 3 of the License, or
+    (at your option) any later version.
+
+    This program is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    GNU General Public License for more details.
+
+    You should have received a copy of the GNU General Public License
+    along with this program.  If not, see <http://www.gnu.org/licenses/>.
+
+    The author grants permission to anyone who wishes to expand or
+    improve this extension in a manner consistent with the GPL v3 or later.
+    The author can be reached via email at mozilla@tanebi.de.
+]
 
 [a scrum is in boring beach. "A scrum lies here.". the description is "its awful and loves meetings.". it is edible.]
+
+suppress GPL author instructions is true.
+
+
+
+story creation year is 2013.
+the copyright holder is "stereo".]
+
+
 
 use full-length room descriptions.
 use no scoring.
@@ -11,6 +42,7 @@ The Story Genre is "unterschiedliches".  The release number is 0. The Story Head
 
 release along with a "OneColumn" website and an interpreter.
 [release along with a website, source text, library card and an interpreter.]
+[Include Player Experience Upgrade by Aaron Reed.]
 
 Include Quip-Based Conversation by Michael Martin.
 Include Basic Screen Effects by Emily Short.
@@ -47,7 +79,7 @@ ribbon-count is a number that varies. ribbon-count is zero.
 
 Carry out switching on the brass lantern:
 say "A wonderful warm ray of light covers the land before you.";
-now the brass lantern is lit.
+	now the brass lantern is lit.
 
 [Switching off the brass lantern gives it the dark property so it will not provide light.]
 
@@ -98,7 +130,7 @@ every turn:
 
 [the player wears a blue ribbon. the description of the blue ribbon is "This little blue ribbon around your [wrist] shows your all-inkclusiveness."]
 
-wrist is part of the player. the description is "On your wrist you can see [ribbon-count] ribbons.".
+wrist is part of the player. the description is "On your wrist you can see [ribbon-count in words] ribbons.".
 
 the description of the towel is "This is, what every adventurer needs. [if the player carries the brass lantern] [otherwise] Further needed: A brass lantern[end if][if the player carries the rope][otherwise] and maybe a rope[end if].".
 
@@ -126,7 +158,7 @@ To say no thoughts:
 
 chapter tims approach
 
-the description of boring beach is "[if pyrate-opera is happening]Now this is also an empty place, the gate stands wide open..TODO[end if][one of]You arrived at a nice beach, sandy, sunny. Overwhelming, but even better to the west behind a fence with a [gate] seems to be a holiday resort. [The fence] is against the poor natives maybe. But no offence you are just imagening yourself there, at the bar, in the pool, on the beach. You even feel the taste of cocktails on your tongue. Mouthwatering it is. So you tend to go west. A narrow trail follows the fence to the northwest. To the north and to the northeast are small paths into the jungle. Looks dark and full of ugly insects. Thats the reason you booked your kind of active-holidays to stay in your save resorts. Not too much contact to natives or  even nature. [if tim is in boring beach]There is a guy behind a [sewing machine]. He seems to be focused at his work.[end if] Behind him is a [wooden infoboard].[or]This sandy spot is hot, really hot. Besides that there is only the [bush] around the beach and it opens to the sea and a far away [horizon]. It makes you  feel undrunken, thirsty, wanting to go west into the holiday resort.[if tim is in boring beach]There is an guy behind a sewing machine. he seems to be focused at his work.[end if] Behind the desk is an [wooden infoboard]. A path leads north to a jungle spot and northeast to a jungle path. A narrow trail follows the fence to northwest.[stopping] To the south it opens right into the sea inviting to take a bath.".
+the description of boring beach is "[if pyrate-opera is happening]Now this is also an empty place, the gate stands wide open..TODO[end if][one of]You arrived at a nice beach, sandy, sunny. Overwhelming, but even better to the west behind a fence with a [gate] seems to be a holiday resort. [The fence] is against the poor natives maybe. But no offence you are just imagening yourself there, at the bar, in the pool, on the beach. You even feel the taste of cocktails on your tongue. Mouthwatering it is. So you tend to go west. A narrow trail follows the fence to the northwest. To the north and to the northeast are small paths into the jungle. Looks dark and full of ugly insects. Thats the reason you booked your kind of active-holidays to stay in your save resorts. Not too much contact to natives or  even nature. [if tim is in boring beach]There is a guy behind a [sewing machine]. He seems to be focused at his work.[end if] Behind him is a [wooden infoboard].[or]This sandy spot is hot, really hot. Besides that there is only the [bush] around the beach and it opens to the sea and a far away [horizon]. It makes you  feel undrunken, thirsty, wanting to go west into the holiday resort.[if tim is in boring beach] There is an guy behind a sewing machine. he seems to be focused at his work.[end if] Behind the desk is an [wooden infoboard]. A path leads north to a jungle spot and northeast to a jungle path. A narrow trail follows the fence to northwest.[stopping] To the south it opens right into the sea inviting to go south to take a bath.".
 
 instead of going inside in boring beach, try going west.
 
@@ -153,7 +185,7 @@ understand "holiday resort" as the resort.
 
 the lounger is a enterable supporter in boring beach. the initial appearance is "There is an inviting lounger in front of you, ready for you to get on it.". the description is "Made out of bambus and looks comfy. It has a built in sunshade."
 
-sewing machine is scenery in boring beach. the description is "It's an original singer. One of these foot-driven ones.". instead of doing anything other than examining the sewing machine, say "You don't want to do anything with that machine. These machines were introduced in your life as extremely dangerous by your grandma."
+sewing machine is scenery device in boring beach. the description is "It's an original singer. One of these foot-driven ones.". instead of doing anything other than examining the sewing machine, say "You don't want to do anything with that machine. These machines were introduced in your life as extremely dangerous by your grandma."
 
 wooden infoboard is scenery in boring beach. the description is "There is mostly manatee related stuff on this wooden panel and their bad situation of being nearly extinct.".
 understand "board" as the infoboard.
@@ -181,7 +213,7 @@ instead of going west in boring beach during all-new:
 	if ribbon-count is 0:
 		say "The gate doesn't open and you want to get these ribbons. As you understood the guy he will then open the gate for you.";
 	otherwise:
-		say "Yes, you've got [ribbon-count] of these silly ribbons. But it doesn't help for now. You still need [three - ribbon-count] of them.".
+		say "Yes, you've got [ribbon-count in words] of these silly ribbons. But it doesn't help for now. You still need [three - ribbon-count in words] of them.".
 
 [cruise ship is a room. "You're standing at the railing. ready to jump."]
 
@@ -237,13 +269,14 @@ manatee suit is a wearable thing. the description is "hrmpft. its an suit made o
 
 chapter marooned
 
-marooned ribbon is wearable. the description is "A pistol is stitched into it. Its one of your [ribbon-count] ribbons.".
+marooned ribbon is wearable. the description is "A pistol is stitched into it. Its one of your [ribbon-count in words] ribbons.".
 
-the description of shashrick is "Jungle. You're in it. deeper than you expected. suddenly green plants all around you and really near. leaves tickeling your neck. It rememberes you to tv documentaries about these little poisenous green snakes. You freeze your steps, so you are really able to turn around rather quickly and step back. its the path back southwest to the sea[if jungle path is visited] that you kow[end if] and you could walk there fast. now. There is also a passage to northeast.".
+the description of shashrick is "Jungle. You're in it. deeper than you expected. suddenly green plants all around you and really near. leaves tickeling your neck. It rememberes you to tv documentaries about these little poisenous green snakes. You freeze your steps, so you are really able to turn around rather quickly and step back. its the path southwest  a bit more near to the sea[if jungle path is visited] that you kow[end if] and you could walk there fast. now. There is also a passage to northeast.".
+[open paths for next release 
 instead of going north in shashrick during all-new, say "No.".
 instead of going north in shashrick during getting-marooned, say "No. You clearly feel that it would'nt be the right direction either.".
 instead of going west in shashrick during all-new, say "No.".
-instead of going west in shashrick during getting-marooned, say "No. You clearly feel that it would'nt be the right direction neither.".
+instead of going west in shashrick during getting-marooned, say "No. You clearly feel that it would't be the right direction neither.".]
 
 the description of ipecac is "[Flowers]. Yellow flowers all around. They look familiar. Not that you've seen them in real life. Something special is about this flower. In a way there seems to be a relationship with your first kind-of-beard. There is are two passages one to the southwest and one to the east."
 
@@ -257,7 +290,9 @@ before going somewhere in bambus fields for the first time, say "...Hours of lab
 
 before going nowhere in bambus fields, say "[one of]You hate mazes, but no chance to workaround you have to find an exit. But here wasn't one.[or]Also this try leads not back to a trail or something.[or]That was a nice try to jump over your shadow into the bushes, but it leads nowhere. So you went back into the bambus.[stopping]".
 
-the description of view around is "It ends here to creep up and you can have a wide view over the sea. a fresh wind blows against your face. Really small at the horizon you notice a ship with eight sails. right. sails. A ship seeming to be a ghost from another time. Maybe its a museums sail. You will later have a look if its coming nearer or not. You can go down to the south back to the bambus field.".
+the description of view around is "It ends here to creep up and you can have a wide view over the sea because you're just standing right on the tip of a cliff. a fresh wind blows against your face. Really small at the horizon you notice a ship with eight sails. right. sails. A ship seeming to be a ghost from another time. Maybe its a museums sail. You will later have a look if its coming nearer or not. You can go down to the south back to the bambus field.".
+
+the cliff is scenery in view around. "har har... down below there, you can see lots of those plastic treasures.".
 
 instead of jumping in view around:
 	say "Are you nuts?".
@@ -286,7 +321,7 @@ getting-marooned ends when the player wears the marooned ribbon.
 
 chapter treasure hunt
 
-treasure-ribbon is wearable. the description is "A treasure chest is stitched into it. Its one of your [ribbon-count] ribbons.".
+treasure-ribbon is wearable. the description is "A treasure chest is stitched into it. Its one of your [ribbon-count in words] ribbons.".
 
 [Rule for supplying a missing noun while digging:
 	now noun is the location.]
@@ -373,7 +408,7 @@ before going to boring beach during treasure-hunt:
 		increment ribbon-count;
 		continue the action;
 	otherwise:
-		say "'Yes I know its hard to find the real place that fits for the treasure.";
+		say "'Yes I know its hard to find a good place that fits for the treasure.'";
 		continue the action.
 
 treasure-hunt ends when the player wears the treasure-ribbon.
@@ -478,6 +513,9 @@ chapter jungle path
 
 the description of jungle path is "There is a creek flowing from northwest down to southeast, where it ends in a river mouth. a [path along] the creek's bank follows the same direction. a [wooden bridge] leads northeast deeper into the jungle and exits also to southwest back to the boring beach.".
 
+tauchmaschinendings is a device in jungle path. "There stands a big machine with lots of brass elements and flexible tubes.".
+understand "tmd" as the tauchmaschinendings.
+
 the path along is scenery in jungle path. the description is "Instead of the other trails this one is well-trodden.".
 
 wooden bridge is scenery in jungle path. the description is "Its stable as a rock and it is made out of, you guessed it already.. [rocks].".
@@ -505,13 +543,19 @@ small market is a room. "There is just a [fruit table] with fruits on it."
 
 chapter river mouth
 
-manatee ribbon is wearable.  the description is "A small manatee is stitched into it. Its one of your [ribbon-count] ribbons.".
+manatee ribbon is wearable.  the description is "A small manatee is stitched into it. Its one of your [ribbon-count in words] ribbons.".
 
 fake manatee is a thing. "looking a bit awkward, the fake manatee swims here." 
 
 [todo fishing only with rod+durian]
 
-the description of river mouth is "The [fresh water] delutes itself into the salty sea. the way back follows upstream to northwest."
+the description of river mouth is "The [fresh water] delutes itself into the salty sea. the way back follows upstream to northwest. a [fireplace] and a [boardwalk]."
+
+the fireplace is a device in river mouth. "Above of the old, black, burnt pieces stands a pyramid of wood. ready to be lit on. Because of its size you think that this could be well used as a signal fire during the night.".
+
+[instead if switching the fireplace on , say "You will wait for the night."]
+
+the boardwalk is scenery in river mouth.
 
 instead of going up in river mouth, try going northwest.
 
@@ -592,7 +636,7 @@ instead of attacking a woman:
 brennessel is a thing in small market.
 
 instead of taking the brennessel:
-	say "[list of the things carried by the player]"
+	say "[the list of the things carried by the player]"
 
 after taking brennessel, say "autsch".
 
@@ -601,7 +645,7 @@ chapter treasure hunt
 the treasure is a closed and openable container. the description is "Its made out of plastic and has a really cheap look and feel.". the scent of it is "plastic odour".  understand "chest", "treasure chest" as the treasure.
 
 
-the chocolate coins are edible. the description is "They are brown with white stains from being remelted not only once this summer.". the chocolate coins are in treasure. they are edible. the scent of the chocolate coins is "something like the inside of an old cupboard". instead of touching the chocolate coins, say "Solid, feels not like something you want to eat.".  after eating the chocolate coins, say "Nearly breaking your expensively fixed teeth you were able to chop them small enough to swallow them.".
+the chocolate coins are edible. the description is "They are brown with white stains from being remelted not only once this summer.". the chocolate coins are in treasure. they are edible. the scent of the chocolate coins is "something like the inside of an old cupboard". instead of touching the chocolate coins, say "Solid, feels not like something you want to eat.".  after eating the chocolate coins, say "Nearly breaking your expensively fixed teeth you were able to chop them small enough to swallow them.". understand "coin", "chocolate coin" as the chocolate coins.
 
 after touching the windbeutel:
 	say "creamy".
@@ -615,19 +659,36 @@ after dropping the treasure:
 	if the player is in boring beach:
 		say "You throw the treasure as far as you could into the salty sea. You look at the horizon to see how far you were able to throw it. But before you discovered it a strong current placed the treasure exactly in front of your feet.";
 	otherwise:
-		say "nope! not here, it has to be very save to hide a treasure."
+		if the player is in view around:
+			say "You throw the treasure deep down, so it lands above all those other plastic treasures dumped forever here at the coast line.";
+			now the treasure is off-stage;
+		otherwise:
+			say "Nope! Not here, it has to be very save to hide a treasure."
 
-the description of crossing is "a [palm tree] in which is a [birds nest]".
-the birds nest is a distant scenery open container in crossing.
+the description of crossing is "a [palm tree] in which is a [crows nest]".
+the crows nest is a distant scenery open container in crossing.
+instead of examining the crows nest, say "You don't know exactly, but you strongly feels that this must be a crows nest. In there is [the list of things in the crows nest].".
+
+the crow is in the crows nest. the description of the crow is "Black. After you were looking at the crow she was looking back at you knowinglyTODO.".
+
+[at the time when the player sees the crow:
+	say "etwas".]
+
+after taking the crow:
+	say "Like your grandma always said, a real adventure needs an animal in your pocket.";
+	enable the tim-crow quip for tim.
+
 the palm tree is a enterable scenery supporter in crossing.
 
-A distant objects rule for the birds nest when the player is on the palm tree: rule succeeds.
-A distant objects rule for something enclosed by birds nest when the player is on the palm tree: rule succeeds.
+A distant objects rule for the crows nest when the player is on the palm tree: rule succeeds.
+A distant objects rule for something enclosed by crows nest when the player is on the palm tree: rule succeeds.
 
-after inserting the treasure into the birds nest:
-	say "haha, wenn das mal nicht nen kreatives versteck is";
+after inserting the treasure into the crows nest:
+	say "TODO haha, wenn das mal nicht nen kreatives versteck is";
 	now treasure-hidden is true.
 
+instead of climbing the palm tree:
+	try entering the palm tree.
 
 part monk island
 
@@ -641,9 +702,10 @@ find my way to total boredomness"	slog-real-adventurer	1
 "Watch out. I'm a mighty tourist"	slog-real-adventurer	1
 "Hello, I'm new in town."	slog-new-in-town	1
 "What about the manatees?"	tim-manatee	0
+"What about the crow?"	tim-crow	0
 "Tell me more about the pirate actions."	slog-pirate-action	0
 "I bought this island, you know?"	slog-bought-island	0
-"How do I get to Smiley Island"	slog-how	0
+"How do I get to Smiley Island"	slog-how	0	
 "Nothing"	silence	1
 
 table of daves talk
@@ -674,7 +736,7 @@ Before going: terminate the conversation.
 Table of Quip Texts (continued)
 quip	quiptext
 slog-hello	"Ahoj, what do ya want here?" 
-	slog-pirate-action	"The pirate actions are prepared by us, you have to take one and afterwards come back and I will give you the appropriate ribbon for achieving the actions goal. So you have to choose, which pirate-action do you want. This week we have 'Being marroned.', 'treasure hunt' or 'barbacue.''"
+	slog-pirate-action	"The pirate actions are prepared by us, you have to take one and afterwards come back and I will give you the appropriate ribbon for achieving the actions goal. So you have to choose, which pirate-action do you want. This week we have 'Being marooned.', 'treasure hunt' or 'barbacue.''"
 slog-start-treasurehunt	"[if treasure-hunt has ended]Its enough, yours was my last treasure of its kind. [otherwise]Arrrgh. classic. So let me tell you. Treasures were often not as in the known stories on big islands and with a map somewhere. Real treasures are burrowed in a hurry, because some spaniards or other pyrates were coming to get all they can. Thats the reason that your task is to hide this treasure I will give you. Its just about the chest, the content is yours if you want." [TODO]
 slog-start-marooned	"Are you sure that you want to be put alone on another island right now?"
 slog-ask-marooned	"[if getting-marooned has ended]No please. Not again. Just stay here and get bored like you wanted earlier.[otherwise]Well played junior adventurer."
@@ -683,7 +745,9 @@ slog-start-barbecue	"[if barbacueing has ended]Thanks for taking aktion, but ple
 slog-real-adventurer	"Arrgh. Show me the three ribbons."
 slog-ask-ribbons	"Every _real_ adventurer and or tourist has to get the three ribbons. They have different colors. We offer them here for achieving pirate actions. This island was a pirates nest before. So we support traditional pirate actions."
 tim-manatee	"Ah, the manatees. such nice and friendly animals. But rarely seen on this island nowadays. My self-stitched ones seem to be the only manatees left on this island."
+tim-crow	"These clever birds are helping us."
 slog-ask-meat	"Sure it seems to be big enough to make a suit out of it. [paragraph break] and he takes it, stitches and stitches...[paragraph break]..and hours later...[paragraph break]... it is a manatee suit."
+
 
 
 Table of quip texts (continued)
