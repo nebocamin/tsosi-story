@@ -36,7 +36,7 @@ the copyright holder is "stereo".]
 
 
 use full-length room descriptions.
-use no scoring.
+use no scoring. 
 
 The Story Genre is "unterschiedliches".  The release number is 0. The Story Headline is "the sun carries it to the daylight.". The Story description is "A story of someone going for his search."
 
@@ -158,7 +158,13 @@ To say no thoughts:
 
 chapter tims approach
 
-the description of boring beach is "[if pyrate-opera is happening]Now this is also an empty place, the gate stands wide open..TODO[end if][one of]You arrived at a nice beach, sandy, sunny. Overwhelming, but even better to the west behind a fence with a [gate] seems to be a holiday resort. [The fence] is against the poor natives maybe. But no offence you are just imagening yourself there, at the bar, in the pool, on the beach. You even feel the taste of cocktails on your tongue. Mouthwatering it is. So you tend to go west. A narrow trail follows the fence to the northwest. To the north and to the northeast are small paths into the jungle. Looks dark and full of ugly insects. Thats the reason you booked your kind of active-holidays to stay in your save resorts. Not too much contact to natives or  even nature. [if tim is in boring beach]There is a guy behind a [sewing machine]. He seems to be focused at his work.[end if] Behind him is a [wooden infoboard].[or]This sandy spot is hot, really hot. Besides that there is only the [bush] around the beach and it opens to the sea and a far away [horizon]. It makes you  feel undrunken, thirsty, wanting to go west into the holiday resort.[if tim is in boring beach] There is an guy behind a sewing machine. he seems to be focused at his work.[end if] Behind the desk is an [wooden infoboard]. A path leads north to a jungle spot and northeast to a jungle path. A narrow trail follows the fence to northwest.[stopping] To the south it opens right into the sea inviting to go south to take a bath.".
+the description of boring beach is "[if pyrate-opera is happening]Now this is also an empty place, the gate stands wide open..TODO[end if][one of]You arrived at a nice beach, sandy, sunny. Overwhelming, but even better to the west behind a fence with a [gate] seems to be a holiday resort. [The fence] is against the poor natives maybe. But no offence you are just imagening yourself there, at the bar, in the pool, on the beach. You even feel the taste of cocktails on your tongue. Mouthwatering it is. So you tend to go west. A narrow trail follows the fence to the northwest. To the north and to the northeast are small paths into the jungle. Looks dark and full of ugly insects. Thats the reason you booked your kind of active-holidays to stay in your save resorts. Not too much contact to natives or  even nature. [if tim is in boring beach]There is a guy behind a [sewing machine]. He seems to be focused at his work.[end if] Behind him is a [wooden infoboard].[or]This sandy spot is hot, really hot. Besides that there is only the [bush] around the beach and it opens to the sea and a far away [horizon]. It makes you  feel undrunken, thirsty, wanting to go west into the holiday resort.[if tim is in boring beach] There is [timguy] behind a sewing machine. he seems to be focused at his work.[end if] Behind the desk is an [wooden infoboard]. A path leads north to a jungle spot and northeast to a jungle path. A narrow trail follows the fence to northwest.[stopping] To the south it opens right into the sea inviting to go south to take a bath.".
+
+to say timguy:
+	if name plate is familiar:
+		say "Tim";
+	otherwise:
+		say "a guy"
 
 instead of going inside in boring beach, try going west.
 
@@ -170,7 +176,7 @@ instead of going east in boring beach, say "You can see right there the shortest
 
 bush is a backdrop in smiley island. the description is "barely penetrable jungle.".
 understand "jungle" as the bush.
-horizon is a backdrop in boring beach, in river mouth, in view around, in steep coast, in rocky cliffs. the description is "[one of]You press your lids together to see as much as you can. Your eyes follow the fine line of the quiet sea on the horizon. You notice a black ship with eight sails. It moves slowly from the right to the left.[or]Again you notice this very old ship far away at the horizon.[or] You notice a slowly growing bad feeling caused by the very old ship.[or]You tried to ignore it, but your eyes were catched again and you had to take a look into the FERNE[stopping]". [TODO ferne]
+horizon is a backdrop in boring beach, in river mouth, in view around, in steep coast, in rocky cliffs. the description is "[one of]You press your lids together to see as much as you can. Your eyes follow the fine line of the quiet sea on the horizon. You notice a black ship with eight sails. It moves slowly from the right to the left.[or]Again you notice this very old ship far away at the horizon.[or] You notice a slowly growing bad feeling caused by the very old ship.[or]You tried to ignore it, but your eyes were catched again and you had to take a look into the distance.[stopping]".
 understand "sea" as the horizon.
 
 fresh water is a backdrop in river mouth, in jungle path, in crossing and in lake. the description is "[if dave is off-stage]You see still stired up water as dave was swimming around and pretending to be a manatee.[otherwise][one of]You look deep into the streaming water. There seems to be life in there. But from manatees, no trail, nothing. Maybe the nearly extict can be deleted and now they are. At least in this little creek here.[or]Again you focus to see anything in the water. movements of something living and big. but nothing.[or]You don't want to search again. There was no sign of manatee life and it will now be the same. No sign of mammals here.[stopping]".
@@ -181,7 +187,7 @@ understand "fence" as the gate.
 instead of opening the gate, say "It's really strong and you have no chance to open it somewhere.". instead of attacking the gate, say "You swing your full weight against the gate. Your body reacts with pain, the gate with sniffy nothing.". instead of doing anything other than opening the gate, try attacking the gate.
 
 resort is scenery in boring beach. the description is "It's closed for you.".
-understand "holiday resort" as the resort.
+understand "holiday resort", "camp", "holiday camp" as the resort.
 
 the lounger is a enterable supporter in boring beach. the initial appearance is "There is an inviting lounger in front of you, ready for you to get on it.". the description is "Made out of bambus and looks comfy. It has a built in sunshade."
 
@@ -194,10 +200,6 @@ after examining the wooden infoboard:
 	enable the tim-manatee quip for tim.
 
 sunshade is part of lounger. the description is "Striped."
-
-[warum zum.. TODO]
-instead of dropping the towel in river mouth:
-	enable the ron-gives-rod quip for ron.
 
 instead of entering the lounger:
 	if the towel is on the lounger:
@@ -234,7 +236,7 @@ check fishing when noun is not fake manatee: instead say "No, there is a better 
 check fishing when noun is not visible: instead say "You can't fish something that isnt there."
 
 instead of fishing the fake manatee:
-	say "After putting the fishhook into the water it was all daves show. He grabbed the hook. rons big eyes were able to see this giant, wet and shiny meat-man manatee getting out of the water. Not shivering but with a nod that meant respect he came over to you and put the manatee ribbon around your wrist.";
+	say "After putting the fishhook into the water it was all daves show. He grabbed the hook. Rons big eyes were able to see this giant, wet and shiny meat-man manatee getting out of the water. Not shivering but with a nod that meant respect he came over to you and put the manatee ribbon around your wrist.";
 	now the player wears the manatee ribbon;
 	increment ribbon-count;
 	now the fake manatee is off-stage;
@@ -278,7 +280,7 @@ instead of going north in shashrick during getting-marooned, say "No. You clearl
 instead of going west in shashrick during all-new, say "No.".
 instead of going west in shashrick during getting-marooned, say "No. You clearly feel that it would't be the right direction neither.".]
 
-the description of ipecac is "[Flowers]. Yellow flowers all around. They look familiar. Not that you've seen them in real life. Something special is about this flower. In a way there seems to be a relationship with your first kind-of-beard. There is are two passages one to the southwest and one to the east."
+the description of ipecac is "[Flowers]. Yellow flowers all around. They look familiar. Not that you've seen them in real life. Something special is about this flower. In a way there seems to be a relationship with your first kind-of-beard. There are two passages one to the southwest and one to the east."
 
 flowers are scenery in ipecac. the description is "Yellow.". understand "flower" as the flowers.
 
@@ -449,12 +451,12 @@ chapter scenes first act
 all-new is a scene. all-new begins when play begins.
 
 instead of going north in boring beach the first time during all-new:
-	say "No, you can't imagine any reason to put even a baby step into the jungle. The guy with the Tim [name plate] watches interested as you hesitate to go north.".
+	say "No, you can't imagine any reason to put even a baby step into the jungle. The guy with the [if the name plate is familiar]Tim [end if][name plate] watches interested as you hesitate to go north.".
 
 name plate is worn by tim. the description is "'Tim' is written on it.".
 
 instead of going north in boring beach the second time during all-new:
-	say "As you were evaluating to go or not to go into the bush, the guy with the tim [name plate] approaches you and begins to speak.";
+	say "As you were evaluating to go or not to go into the bush, the guy with the [if the name plate is familiar]Tim [end if][name plate] approaches you and begins to speak.";
 	try talking to tim.
 
 instead of going north in boring beach during all-new, say "no."
@@ -513,8 +515,12 @@ chapter jungle path
 
 the description of jungle path is "There is a creek flowing from northwest down to southeast, where it ends in a river mouth. a [path along] the creek's bank follows the same direction. a [wooden bridge] leads northeast deeper into the jungle and exits also to southwest back to the boring beach.".
 
-tauchmaschinendings is a device in jungle path. "There stands a big machine with lots of brass elements and flexible tubes.".
-understand "tmd" as the tauchmaschinendings.
+dave-diving is a truth state that varies. dave-diving is false.
+
+diving apparatus is a device in jungle path. "There stands a machine with lots of brass elements and flexible tubes. Its connected to Daves helmet to provide oxygen.[if dave-diving is true] The tubes are vanishing into the water, dave seems to dive deep in the water. You can't see him.[end if]". the diving apparatus is switched on. the scent of it is "hot oil".
+understand "machine", "brass elements", "brass", "elements", "flexible tubes", "tubes", "flexible" as the diving apparatus.
+
+[one turn after visiting jungle path, say "hallo".]
 
 the path along is scenery in jungle path. the description is "Instead of the other trails this one is well-trodden.".
 
@@ -526,7 +532,20 @@ instead of going down in jungle path, try going southeast.
 instead of going northwest in jungle path:
 	say "the fact that a creek is flowing doesnt mean you want to get in the water and swim against the stream. Don't forget you are here to get total boredomnes.".
 
-Dave is a person in jungle path. the description is "awesome. not.". the litany of dave is the table of daves talk.
+Dave is a person in jungle path. the description is "[if diving helmet is worn by dave] You really can't see his face inside that full metal helmet. [otherwise] Not that awesome you wish he will wear that helmet again.[end if]". the litany of dave is the table of daves talk. the greeting of dave is dave-hello.
+
+dave wears a diving helmet. it is wearable. the description of the diving helmet is "Thats what you call a perfect costum for every steampunk party.".
+understand "visor" as the diving helmet.
+
+instead of giving the treasure to dave:
+	say "You ask Dave whether he knows about a good hideaway. Dave nodded, takes the treasure and vanishes into the bush.";
+	now dave is off-stage;
+	now the diving helmet is in jungle path;
+	now diving apparatus is switched off;
+	now treasure is off-stage;
+	now treasure-hidden is true.
+
+
 
 instead of giving the durian to someone, say "There will be a better use for tasty fruit."
 
@@ -535,6 +554,7 @@ village center is a room. "[one of]After one month of travelling you step on ear
 ocean is a room. "Ice cold water to all sides. Overwhelming. Before you loose consciuosness, you see your life going by."
 
 [one turn after visiting ocean,then player is in banana beach.]
+
 
 chapter small market
 
@@ -549,13 +569,19 @@ fake manatee is a thing. "looking a bit awkward, the fake manatee swims here."
 
 [todo fishing only with rod+durian]
 
-the description of river mouth is "The [fresh water] delutes itself into the salty sea. the way back follows upstream to northwest. a [fireplace] and a [boardwalk]."
+the description of river mouth is "The [fresh water] delutes itself into the salty sea. the way back follows upstream to northwest. Wooden planks are forming a [boardwalk] reaching some feet into the sea."
 
-the fireplace is a device in river mouth. "Above of the old, black, burnt pieces stands a pyramid of wood. ready to be lit on. Because of its size you think that this could be well used as a signal fire during the night.".
+the fireplace is in river mouth. the description is "Above of the old, black, burnt pieces stands a pyramid of wood. Ready to be lit. Because of its size you think that this could be well used as a signal fire.".
+understand "fire" as the fireplace.
+
+the fireplace can be lit or unlit.
+the fireplace is fixed in place.
 
 [instead if switching the fireplace on , say "You will wait for the night."]
 
 the boardwalk is scenery in river mouth.
+
+the description is "stable.TODO"
 
 instead of going up in river mouth, try going northwest.
 
@@ -564,7 +590,7 @@ instead of going west in river mouth:
 	continue the action.
 
 the fruit table is a supporter in river mouth.
-Ron is a man. the description is "TODO vielleicht is initial appeareance die loesung".
+Ron is a man. the initial appearance of ron is "init ron(TODO)". the description is "TODO vielleicht is initial appeareance die loesung".
 ron is in river mouth.  the litany of ron is the table of rons talk. fruit table is privately-named. understand "table" and "fruit table" as fruit table.
 understand "man" as ron.
 
@@ -580,11 +606,14 @@ instead of inserting the fishhook into the durian:
 	now the durian is part of the fishing rod.
 
 instead of taking the rod:
-	say "It belongs to this man. you have to ask him first.";
-	enable the ron-gives-rod quip for ron.
+	if ron is in river mouth:
+		say "It belongs to this man. you have to ask him first.";
+		enable the ron-gives-rod quip for ron;
+	otherwise:
+		continue the action.
 
 instead of dropping the durian in river mouth:
-	say "you just began to wait for the bait to get a bite from a pyrate."
+	say "you just began to wait for the bait to get a bite from a pyrate. TODO hae?"
 
 pile of meat is in river mouth. the description is "[if pile of meat carried by the player]Its heavy and red juice is dripping down from it.[otherwise]Not appetizing, but its really a big pile of meat. It goes up to the height of your hip.[end if]"
 
@@ -593,14 +622,14 @@ keeping-meat is a truth state that varies. keeping-meat is true.
 
 instead of taking the meat:
 	if keeping-meat is true:
-		say "The man behind the table TODO kneift the eyes together, he doesn't want you to just pick up the meat.";
+		say "The man behind the table squeezes his eyes shut, he doesn't want you to just pick up the meat.";
 		enable the ron-meat quip for ron;
 	otherwise:
 		say "grunting and holding your breath you are now carrying the whole pile of meat.";
 		continue the action. 
 
 instead of giving the sustainable food to ron:
-	say "ron looks thankfully and quickly pocket the food from you. He adds that TODO seinetwegen kannste gerne getting the meat pile. if you promise to create something really special out of it.";
+	say "Ron looks thankfully and quickly pocket the food from you. He adds that for his sake you can take the meat pile. But under one condition, if you promise to create something really special out of it.";
 	now keeping-meat is false;
 	now sustainable food is off-stage;
 	disable the ron-meat quip for ron.
@@ -615,16 +644,24 @@ instead of eating the durian, say "nope, no way. the smell is like a punch in yo
 
 before taking the durian:
 	if the durian is on the fruit table:
-		say "You ask the man, whether it would be okay to pick it up. His head nodded friendly in your direction.";
+		say "[if ron is in river mouth]You ask Ron, whether it would be okay to pick it up. His head nodded friendly in your direction.[end if]";
 		disable the ron-fruit quip for ron;
 	otherwise:
 		say "it was hard, but you managed to get the durian again."
 
-instead of smelling the durian, say "Woahh, this, so this, is really a new experience in smelling. Boah, good tasting awfulness."
+the scent of durian is "Woahh, this, so this, is really a new experience in smelling. Boah, good tasting awfulness.".
 
 after eating the durian:
 	say "You respond allergic. Your throat is suddenly swollen. You can't breath.";
 	end the story.
+
+instead of giving the treasure to ron:
+	say "You ask Ron whether he knows about a good hideaway. Ron nodded, takes the treasure and vanishes into the bush.";
+	now Ron is off-stage;
+	now treasure is off-stage;
+	now keeping-meat is false;
+	now treasure-hidden is true.
+
 
 instead of attacking a man:
 	say "Violently you byte in his throat like a vampire. His lifeless body falls down. Blood running on the floor. You killed [the noun].";
@@ -669,7 +706,7 @@ the description of crossing is "a [palm tree] in which is a [crows nest]".
 the crows nest is a distant scenery open container in crossing.
 instead of examining the crows nest, say "You don't know exactly, but you strongly feels that this must be a crows nest. In there is [the list of things in the crows nest].".
 
-the crow is in the crows nest. the description of the crow is "Black. After you were looking at the crow she was looking back at you knowinglyTODO.".
+the crow is in the crows nest. the description of the crow is "Black. After you were looking at the crow she was looking back at you knowingly.".
 
 [at the time when the player sees the crow:
 	say "etwas".]
@@ -684,11 +721,16 @@ A distant objects rule for the crows nest when the player is on the palm tree: r
 A distant objects rule for something enclosed by crows nest when the player is on the palm tree: rule succeeds.
 
 after inserting the treasure into the crows nest:
-	say "TODO haha, wenn das mal nicht nen kreatives versteck is";
+	say "You smile to yourself, what a fine hideaway you found.";
 	now treasure-hidden is true.
 
 instead of climbing the palm tree:
 	try entering the palm tree.
+
+passage is below lake.
+undercave is below cave.
+
+passage is east of undercave.
 
 part monk island
 
@@ -712,6 +754,7 @@ table of daves talk
 prompt	response	enabled
 "Hej, are you dave?"	dave-are-you	0
 "I'm an adventurer, spending my holidays on this island."	dave-ask-ribbons	1
+"Hey, I like the lanterns matching your helmet."	dave-brass	1
 "Do you keep any ribbons for pirate actions?"	dave-keep-ribbons	0
 "Ey. I have a great idea. I want to offer you a deal. If you 
 dive into that creek wearing this manatee suit, I'll fish 
@@ -737,7 +780,7 @@ Table of Quip Texts (continued)
 quip	quiptext
 slog-hello	"Ahoj, what do ya want here?" 
 	slog-pirate-action	"The pirate actions are prepared by us, you have to take one and afterwards come back and I will give you the appropriate ribbon for achieving the actions goal. So you have to choose, which pirate-action do you want. This week we have 'Being marooned.', 'treasure hunt' or 'barbacue.''"
-slog-start-treasurehunt	"[if treasure-hunt has ended]Its enough, yours was my last treasure of its kind. [otherwise]Arrrgh. classic. So let me tell you. Treasures were often not as in the known stories on big islands and with a map somewhere. Real treasures are burrowed in a hurry, because some spaniards or other pyrates were coming to get all they can. Thats the reason that your task is to hide this treasure I will give you. Its just about the chest, the content is yours if you want." [TODO]
+slog-start-treasurehunt	"[if treasure-hunt has ended]Its enough, yours was my last treasure of its kind. [otherwise]Arrrgh. classic. So let me tell you. Because some spaniards or other pyrates were coming to get all they can, treasures were often burrowed in a hurry . Thats the reason that your task is to hide this treasure I will give you. Its just about the chest, the content is yours if you want."
 slog-start-marooned	"Are you sure that you want to be put alone on another island right now?"
 slog-ask-marooned	"[if getting-marooned has ended]No please. Not again. Just stay here and get bored like you wanted earlier.[otherwise]Well played junior adventurer."
 slog-marooned-no	"okay. so stay here, but you aren't getting a ribbon."
@@ -752,6 +795,8 @@ slog-ask-meat	"Sure it seems to be big enough to make a suit out of it. [paragra
 
 Table of quip texts (continued)
 quip	quiptext
+dave-hello	"Dave opens the visor of his [diving helmet], so he is able to communicate with you. 'Whats up?'"
+dave-brass	"Can you please go, I have some serious work going on."
 dave-start-barbecue	"Manatis are protected today, so we have fake ones to get."
 dave-are-you	"Name yes, profession no."
 dave-ask-ribbons	"Really? Would be great to talk to a guy with many ribbons. Show me yours."
@@ -885,7 +930,7 @@ after opening the chest, say "You lift the heavy lid. Out there streams a smell 
 
 chest is an openable container. chest is closed. 
 
-the leather jacket is in chest. the leather jacket is wearable.
+the leather jacket is in chest. the leather jacket is wearable. scent of the leather jacket is "tanned".
 the description is "On the back side there is a symbol, seems to be a map. in the middle of that map is a cross and an asterisk. the asterisk leads to another written line: [italic type]'An [bold type]X[roman type] [italic type]marks the spot.'[roman type]"
 
 
@@ -923,7 +968,7 @@ at the time when the meanwhile-4 appears:
 	say "[bold type]MEANWHILE ...[paragraph break] [roman type] You think to yourself that a fresh white russian would be the right thing in your mouth now.". 
 
 at the time when the meanwhile-5 appears:
-	say "[bold type]MEANWHILE ...[paragraph break] [roman type]  Suddenly you hear an explosion maybe from a canon on the black freighter? if known TODO	".
+	say "[bold type]MEANWHILE ...[paragraph break] [roman type]  Suddenly you hear an explosion maybe from a canon[if ship is familiar] on the black freighter?[otherwise]?[end if]".
 
 [
 
@@ -969,7 +1014,12 @@ the different bottles are on the bar.
 
 within the different bottles is kaluah and vodka. [possibility to mix a white russian]
 
-the pool is scenery in holiday resort. the description is "The pool is round and seems to be deep enough to go swimming inside. around the pool are loungers. On the red lounger lays a gown. TODObademantel wort is wearable. if its worn and not a white russian carried, say its only a white russian thats now missing."
+the pool is scenery in holiday resort. the description is "The pool is round and seems to be deep enough to go swimming inside. around the pool are loungers. On the [red lounger] lays a [bath robe] TODObademantel wort is wearable. if its worn and not a white russian carried, say its only a white russian thats now missing."
+
+a red lounger is in holiday resort.
+a bath robe is on the red lounger. bath robe is wearable.
+
+
 
 
 the stage is scenery in holiday resort. the description is "the stage is already filled. there are seats in front of the stage. A bunch of tourists is already seated and wating for the play on stage to begin. There is a comfy seat that invites you.".
