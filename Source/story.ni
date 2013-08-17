@@ -158,7 +158,7 @@ To say no thoughts:
 
 chapter tims approach
 
-the description of boring beach is "[if pyrate-opera is happening]Now this is also an empty place, the gate stands wide open..TODO[end if][one of]You arrived at a nice beach, sandy, sunny. Overwhelming, but even better to the west behind a fence with a [gate] seems to be a holiday resort. [The fence] is against the poor natives maybe. But no offence you are just imagening yourself there, at the bar, in the pool, on the beach. You even feel the taste of cocktails on your tongue. Mouthwatering it is. So you tend to go west. A narrow trail follows the fence to the northwest. To the north and to the northeast are small paths into the jungle. Looks dark and full of ugly insects. Thats the reason you booked your kind of active-holidays to stay in your save resorts. Not too much contact to natives or  even nature. [if tim is in boring beach]There is a guy behind a [sewing machine]. He seems to be focused at his work.[end if] Behind him is a [wooden infoboard].[or]This sandy spot is hot, really hot. Besides that there is only the [bush] around the beach and it opens to the sea and a far away [horizon]. It makes you  feel undrunken, thirsty, wanting to go west into the holiday resort.[if tim is in boring beach] There is [timguy] behind a sewing machine. he seems to be focused at his work.[end if] Behind the desk is an [wooden infoboard]. A path leads north to a jungle spot and northeast to a jungle path. A narrow trail follows the fence to northwest.[stopping] To the south it opens right into the sea inviting to go south to take a bath.".
+the description of boring beach is "[if pyrate-opera is happening]Now this is also an empty place, the gate stands wide open..TODO[end if][one of]You arrived at a nice beach, sandy, sunny. Overwhelming, but even better to the west behind a fence with a [gate] seems to be a holiday resort. [The fence] is against the poor natives maybe. But no offence you are just imagening yourself there, at the bar, in the pool, on the beach. You even feel the taste of cocktails on your tongue. Mouthwatering it is. So you tend to go west. Into the northern directions it looks dark and full of ugly insects. Thats the reason you booked your kind of active-holidays to stay in your save resorts. Not too much contact to natives or  even nature. [if tim is in boring beach]There is a guy behind a [sewing machine]. He seems to be focused at his work.[end if] Behind him is a [wooden infoboard].[or]This sandy spot is hot, really hot. Besides that there is only the [bush] around the beach and it opens to the sea and a far away [horizon]. It makes you  feel undrunken, thirsty, wanting to go west into the holiday resort.[if tim is in boring beach] There is [timguy] behind a sewing machine. he seems to be focused at his work.[end if] Behind the desk is an [wooden infoboard]. A path leads north to a jungle spot and northeast to a jungle path. A narrow trail follows the fence to northwest.[stopping] To the south it opens right into the sea inviting to go south to take a bath.".
 
 to say timguy:
 	if name plate is familiar:
@@ -182,7 +182,7 @@ understand "sea" as the horizon.
 fresh water is a backdrop in river mouth, in jungle path, in crossing and in lake. the description is "[if dave is off-stage]You see still stired up water as dave was swimming around and pretending to be a manatee.[otherwise][one of]You look deep into the streaming water. There seems to be life in there. But from manatees, no trail, nothing. Maybe the nearly extict can be deleted and now they are. At least in this little creek here.[or]Again you focus to see anything in the water. movements of something living and big. but nothing.[or]You don't want to search again. There was no sign of manatee life and it will now be the same. No sign of mammals here.[stopping]".
 understand "river" and "creek" as the fresh water.
 
-gate is scenery in boring beach. the description is "The gate is right within a strong fence. At the very closed gate is a spidery writing 'For the three-ribboned only'.".
+the description of the gate is "The gate is right within a strong fence. At the very closed gate is a spidery writing 'For the three-ribboned only'.".
 understand "fence" as the gate.
 instead of opening the gate, say "It's really strong and you have no chance to open it somewhere.". instead of attacking the gate, say "You swing your full weight against the gate. Your body reacts with pain, the gate with sniffy nothing.". instead of doing anything other than opening the gate, try attacking the gate.
 
@@ -265,6 +265,7 @@ instead of giving the pile of meat to tim:
 	enable the dave-manatee quip for dave.
 
 after taking the pile of meat:
+	say "grunting and holding your breath you are now carrying the whole pile of meat.";
 	enable the slog-ask-meat quip for tim.
 
 manatee suit is a wearable thing. the description is "hrmpft. its an suit made of meat in the form of a manatee.".
@@ -280,13 +281,13 @@ instead of going north in shashrick during getting-marooned, say "No. You clearl
 instead of going west in shashrick during all-new, say "No.".
 instead of going west in shashrick during getting-marooned, say "No. You clearly feel that it would't be the right direction neither.".]
 
-the description of ipecac is "[Flowers]. Yellow flowers all around. They look familiar. Not that you've seen them in real life. Something special is about this flower. In a way there seems to be a relationship with your first kind-of-beard. There are two passages one to the southwest and one to the east."
+the description of flower bed is "[Flowers]. Yellow flowers all around. They look familiar. Not that you've seen them in real life. Something special is about this flower. In a way there seems to be a relationship with your first kind-of-beard. There are two passages one to the southwest and one to the east."
 
-flowers are scenery in ipecac. the description is "Yellow.". understand "flower" as the flowers.
+flowers are scenery in flower bed. the description is "Yellow.". understand "flower" as the flowers.
 
 the scent of flowers is "strong, uncomfortable, like wanting to vomit" 
 
-the description of bambus fields is "[one of]You find yourself trapped in a well made bambus field labyrinth. Green bambus all around. [if getting-marooned is happening]But contrary to your imagination of marooning, it seems quite un-dangerous and you don't even received a gun.[end if] You hear the strong currents breaking against the shore far down the hill[stopping]. [if ipecac is visited][one of]You remember you can leave trying to go west.[or] You know the path to the west right into the ipecac flower bed.[stopping][otherwise] You haven't any clue in which direction to escape from here.[end if][if view around is visited] You know a path to the north, to have a nice view around.".
+the description of bambus fields is "[one of]You find yourself trapped in a well made bambus field labyrinth. Green bambus all around. [if getting-marooned is happening]But contrary to your imagination of marooning, it seems quite un-dangerous and you don't even received a gun.[end if] You hear the strong currents breaking against the shore far down the hill[stopping]. [if flower bed is visited][one of]You remember you can leave trying to go west.[or] You know the path to the west right into the flower bed flower bed.[stopping][otherwise] You haven't any clue in which direction to escape from here.[end if][if view around is visited] You know a path to the north, to have a nice view around.".
 
 before going somewhere in bambus fields for the first time, say "...Hours of labyrinth-running later...".
 
@@ -308,7 +309,7 @@ instead of going north in view around:
 instead of going down in bambus fields:
 	try going west.
 
-instead of going up in ipecac:
+instead of going up in flower bed:
 	try going east.
 
 after going to boring beach during getting-marooned:
@@ -465,6 +466,13 @@ treasure-hunt is a scene.
 getting-marooned is a scene.
 barbacueing is a scene.
 
+when barbacueing begins:
+	ron-disappears appears in 20 turns from now.
+
+at the time when ron-disappears appears:
+	say "ron wuerde jetze abtauchen";
+	move ron to cave.
+
 barbacueing ends when the player wears the manatee ribbon.
 
 all-new ends when the ribbon-count is three.
@@ -475,11 +483,11 @@ pyrate-opera is a scene.
 pyrate-opera begins when all-new ends.
 
 when pyrate-opera begins:
-	say "[bold type]PART II.[paragraph break] [roman type] So you achieved the first goals. the story isn't at the end. Amazing job for traversing a not-ready-yet piece of interactive fiction. Please stay tuned for further releases. The story will go on and will break all your savegames after each update. Thanks for playing and I hope to see you again on smiley island or on github [paragraph break]for the story:[line break]https://github.com/nebocamin/tsosi-story [paragraph break]and for the open web app:[line break]https://github.com/nebocamin/tsosi-app";
+	say "[bold type]PART II.[paragraph break] [roman type] So you achieved the first goals. the story isn't at the end. Amazing job for traversing a not-ready-yet piece of interactive fiction. Please stay tuned for further releases. The story will go on and will break all your savegames after each update. Thanks for playing and I hope to see you again on smiley island or on github [paragraph break]for the story:[line break]https://github.com/nebocamin/tsosi-story [paragraph break]and for the open web app:[line break]https://github.com/nebocamin/tsosi-app[paragraph break][paragraph break][paragraph break]*** THE END***[paragraph break]now you can go on with the second act in dev-state.";
 	now ron is off-stage;
 	now dave is off-stage;
-	now tim is off-stage;
-	end the story.
+	now tim is off-stage.
+	[end the story.]
 
 part monk island
 
@@ -620,7 +628,7 @@ pile of meat is in river mouth. the description is "[if pile of meat carried by 
 wanting-meat is a truth state that varies. wanting-meat is false.
 keeping-meat is a truth state that varies. keeping-meat is true.
 
-instead of taking the meat:
+instead of taking the meat in the presence of ron:
 	if keeping-meat is true:
 		say "The man behind the table squeezes his eyes shut, he doesn't want you to just pick up the meat.";
 		enable the ron-meat quip for ron;
@@ -699,28 +707,29 @@ after dropping the treasure:
 		if the player is in view around:
 			say "You throw the treasure deep down, so it lands above all those other plastic treasures dumped forever here at the coast line.";
 			now the treasure is off-stage;
+			now treasure-hidden is true;
 		otherwise:
 			say "Nope! Not here, it has to be very save to hide a treasure."
 
-the description of crossing is "a [palm tree] in which is a [crows nest]".
-the crows nest is a distant scenery open container in crossing.
-instead of examining the crows nest, say "You don't know exactly, but you strongly feels that this must be a crows nest. In there is [the list of things in the crows nest].".
+the description of crossing is "a [palm tree] in which is a [magpies nest]".
+the magpies nest is a distant scenery open container in crossing.
+instead of examining the magpies nest, say "You don't know exactly, but you strongly feels that this must be a magpies nest. In there is [the list of things in the magpies nest].".
 
-the crow is in the crows nest. the description of the crow is "Black. After you were looking at the crow she was looking back at you knowingly.".
+the magpie is in the magpies nest. the description of the magpie is "Black and white witch a blue glance over the black. Reminds you of a crow, but a bit more beautiful. After you were looking at the magpie she was looking back at you knowingly.".
 
-[at the time when the player sees the crow:
+[at the time when the player sees the magpie:
 	say "etwas".]
 
-after taking the crow:
+after taking the magpie:
 	say "Like your grandma always said, a real adventure needs an animal in your pocket.";
-	enable the tim-crow quip for tim.
+	enable the tim-magpie quip for tim.
 
 the palm tree is a enterable scenery supporter in crossing.
 
-A distant objects rule for the crows nest when the player is on the palm tree: rule succeeds.
-A distant objects rule for something enclosed by crows nest when the player is on the palm tree: rule succeeds.
+A distant objects rule for the magpies nest when the player is on the palm tree: rule succeeds.
+A distant objects rule for something enclosed by magpies nest when the player is on the palm tree: rule succeeds.
 
-after inserting the treasure into the crows nest:
+after inserting the treasure into the magpies nest:
 	say "You smile to yourself, what a fine hideaway you found.";
 	now treasure-hidden is true.
 
@@ -744,7 +753,7 @@ find my way to total boredomness"	slog-real-adventurer	1
 "Watch out. I'm a mighty tourist"	slog-real-adventurer	1
 "Hello, I'm new in town."	slog-new-in-town	1
 "What about the manatees?"	tim-manatee	0
-"What about the crow?"	tim-crow	0
+"What about the magpie?"	tim-magpie	0
 "Tell me more about the pirate actions."	slog-pirate-action	0
 "I bought this island, you know?"	slog-bought-island	0
 "How do I get to Smiley Island"	slog-how	0	
@@ -788,7 +797,7 @@ slog-start-barbecue	"[if barbacueing has ended]Thanks for taking aktion, but ple
 slog-real-adventurer	"Arrgh. Show me the three ribbons."
 slog-ask-ribbons	"Every _real_ adventurer and or tourist has to get the three ribbons. They have different colors. We offer them here for achieving pirate actions. This island was a pirates nest before. So we support traditional pirate actions."
 tim-manatee	"Ah, the manatees. such nice and friendly animals. But rarely seen on this island nowadays. My self-stitched ones seem to be the only manatees left on this island."
-tim-crow	"These clever birds are helping us."
+tim-magpie	"These clever birds are helping us."
 slog-ask-meat	"Sure it seems to be big enough to make a suit out of it. [paragraph break] and he takes it, stitches and stitches...[paragraph break]..and hours later...[paragraph break]... it is a manatee suit."
 
 
@@ -838,6 +847,8 @@ after quipping when the current quip is ron-meat: enable the ron-meat quip.
 after quipping when the current quip is dave-durian:
 	now dave is off-stage;
 	now manatee suit is off-stage;
+	now the diving helmet is in jungle path;
+	now diving apparatus is switched off;
 	say "You can't believe your eyes as dave wears the manatee suit, coming near the water and plouf, out of sight and within a blink of an eye he vanishes between the plants under water. You fairly see him, when he leaves into the direction of river mouth to the southeast.";
 	now fake manatee is in river mouth;
 	terminate the conversation.
@@ -999,10 +1010,12 @@ at the time when the blue whale explodes:
 part pyrates hunting pyrates
 
 instead of going west in boring beach during pyrate-opera:
-	say "The gate opens and your great expectations are still growing.";
+	say "The [gate] opens and your great expectations are still growing.";
 	continue the action.
-	
-the holiday resort is west of boring beach. the description is  "You are right in the middle between the [bar], the [pool],the [swimming spot] and even the theater [stage].";
+
+the gate is a door and locked. the gate is west of boring beach.
+
+the holiday resort is west of the gate. the description is  "You are right in the middle between the [bar], the [pool],the [swimming spot] and even the theater [stage].";
 
 the bar is in holiday resort. the description is " The bar seems to be unattended. There is a variety of different bottles and a fridge."
 
@@ -1055,7 +1068,7 @@ instead of going east, say 'no you want to stay here. its so wonderful you even 
 
 cabin is a room. the description is "A wooden room inside a ship. You feel the waves but can't look outside. there is just a [bed] and a [pot] of water."
 
-bed is a supporter in cabin. the description is "looks really comfy... not.".
+four-poster bed is a enterable supporter in cabin. the description of bed is "looks really comfy... not.".
 pot is a container in cabin. the description is "wenn voll wasser, dann welches drin."
 
 
