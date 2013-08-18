@@ -103,7 +103,7 @@ Definition: a thing is scented if the scent of it is not "nothing".
 Before printing the name of something scented while smelling a room: say "[scent] from the "
 
 
-the brass lantern and an ubuntu cd are in the rucksack. the rucksack is a player's holdall and wearable. "A red rucksack is lying here.". the description is "Yeah, a czech one.". understand "backpack" and "sack" and "knapsack" as the rucksack. 
+the brass lantern and an ubuntu cd are in the rucksack. the rucksack is a player's holdall and wearable. "A red rucksack is lying here.". the description is "Yeah, a czech one. You can put all your stuff in it. It seems to have infinite space inside.". understand "backpack" and "sack" and "knapsack" as the rucksack. 
 
 the description of the ubuntu cd is "This one is left from your famous ordering of 80 ubuntu cds with free shipping.".
 
@@ -114,7 +114,8 @@ Rule for printing the banner text while turn count is 1: say "[paragraph break] 
 when play begins:
 	say "Deep in the west indies. The island of boredom. Just coming from the boat without puking, but still in a bad feeling. Your holidays starting for you to reach the state of total boredomness.".
 	[pause the game.]
-	
+
+sustainable food is edible.
 sustainable food is in the rucksack. the description is "You don't want to eat it, until you're in peril of your nearly starved away life.".
 instead of eating the sustainable food, say "No, you know for sure that there will be one who is more in a necessity than you are.".
 
@@ -264,9 +265,6 @@ instead of giving the pile of meat to tim:
 	now the player carries the manatee suit;
 	enable the dave-manatee quip for dave.
 
-after taking the pile of meat:
-	say "grunting and holding your breath you are now carrying the whole pile of meat.";
-	enable the slog-ask-meat quip for tim.
 
 manatee suit is a wearable thing. the description is "hrmpft. its an suit made of meat in the form of a manatee.".
 
@@ -633,11 +631,15 @@ instead of taking the meat in the presence of ron:
 		say "The man behind the table squeezes his eyes shut, he doesn't want you to just pick up the meat.";
 		enable the ron-meat quip for ron;
 	otherwise:
-		say "grunting and holding your breath you are now carrying the whole pile of meat.";
-		continue the action. 
-
-instead of giving the sustainable food to ron:
-	say "Ron looks thankfully and quickly pocket the food from you. He adds that for his sake you can take the meat pile. But under one condition, if you promise to create something really special out of it.";
+		say "Now it's okay for him, so you are allowed to take it.";
+		continue the action.
+		
+after taking the pile of meat:
+	say "Grunting and holding your breath you are now carrying the whole pile of meat.";
+	enable the slog-ask-meat quip for tim.
+		
+instead of giving the something edible to ron:
+	say "Ron looks thankfully and quickly pocket the [noun] from you. He adds that for his sake you can take the meat pile. But under one condition, if you promise to create something really special out of it.";
 	now keeping-meat is false;
 	now sustainable food is off-stage;
 	disable the ron-meat quip for ron.
@@ -795,7 +797,7 @@ slog-ask-marooned	"[if getting-marooned has ended]No please. Not again. Just sta
 slog-marooned-no	"okay. so stay here, but you aren't getting a ribbon."
 slog-start-barbecue	"[if barbacueing has ended]Thanks for taking aktion, but please don't do that again. ever.[otherwise]Listen. It's all about manatees in this task. You will get the manatee-ribbon, if you catch one with a fishing rod and appropriate bait. You can get your tools in the small market as you see to the east at the river mouth."
 slog-real-adventurer	"Arrgh. Show me the three ribbons."
-slog-ask-ribbons	"Every _real_ adventurer and or tourist has to get the three ribbons. They have different colors. We offer them here for achieving pirate actions. This island was a pirates nest before. So we support traditional pirate actions."
+slog-ask-ribbons	"Every _real_ adventurer and or tourist has to get the three ribbons. They have different colors. We offer them here for achieving pirate actions. This island was a pirates nest before. So we support traditional pirate actions. You can always see your achievements if you examine your wrist."
 tim-manatee	"Ah, the manatees. such nice and friendly animals. But rarely seen on this island nowadays. My self-stitched ones seem to be the only manatees left on this island."
 tim-magpie	"These clever birds are helping us."
 slog-ask-meat	"Sure it seems to be big enough to make a suit out of it. [paragraph break] and he takes it, stitches and stitches...[paragraph break]..and hours later...[paragraph break]... it is a manatee suit."
