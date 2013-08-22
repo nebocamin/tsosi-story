@@ -71,7 +71,7 @@ part losgehts
 
 chapter preparation
 
-the description of the yourself is "Shiny. On your wrist you can see [ribbon-count in words] ribbons. You are wearing [list of things worn by the player] and holding [list of things carried by the player]."
+the description of the yourself is "Shiny. On your wrist you can see [ribbon-count in words] ribbons. You are wearing [the list of things worn by the player] and holding [the list of things carried by the player]."
 
 ribbon-count is a number that varies. ribbon-count is zero.
 
@@ -257,7 +257,11 @@ instead of fishing the fake manatee in the presence of ron:
 	now the player wears the manatee ribbon;
 	increment ribbon-count;
 	now the fake manatee is off-stage;
-	now the player carries the manatee suit.
+	now the player carries the manatee suit;
+	now dave is in cave;
+	now diving helmet is in cave;
+	now diving apparatus is switched on;
+	now dave-diving is true.
 
 instead of fishing the fake manatee:
 	say "Because [ronguy] isn't looking, you better leave the fake manatee swimming until a better chance to achieve officially this pirate action.".
@@ -279,9 +283,10 @@ instead of smelling in town hall:
 	say "Awkward smell, like someone xy"
 
 instead of giving the pile of meat to tim:
-	say "tim understood your wish and began to stitch and sew the meat together to a manatee meat suit. You don't want to wear such ugly stuff, but you take it for future use.";
+	say "[timguy] understood your wish and began to stitch and sew the meat together to a manatee meat suit. You don't want to wear such ugly stuff, but you take it for future use.";
 	now the pile of meat is off-stage;
 	now the player carries the manatee suit;
+	disable the slog-ask-meat quip for tim;
 	enable the dave-manatee quip for dave.
 
 
@@ -291,7 +296,7 @@ chapter marooned
 
 marooned ribbon is wearable. the description is "A pistol is stitched into it. Its one of your [ribbon-count in words] ribbons.".
 
-the description of shashrick is "Jungle. You're in it. deeper than you expected. suddenly green plants all around you and really near. leaves tickeling your neck. It rememberes you to tv documentaries about these little poisenous green snakes. You freeze your steps, so you are really able to turn around rather quickly and step back. its the path southwest  a bit more near to the sea[if jungle path is visited] that you kow[end if] and you could walk there fast. now. There is also a passage to northeast.".
+the description of shashrick is "Jungle. You're in it. deeper than you expected. suddenly green plants all around you and really near. leaves tickeling your neck. It rememberes you to tv documentaries about these little poisenous green snakes. You freeze your steps, so you are really able to turn around rather quickly and step back. Its the path southwest  a bit more near to the sea[if jungle path is visited] that you kow[end if] and you could walk there fast. now. There is also a passage to northeast.".
 
 [open paths for next release ]
 instead of going north in shashrick during all-new, say "No.".
@@ -378,7 +383,7 @@ after digging the ground the first time:
 	now the first hole is in the location of the player;
 
 after digging the ground the second time:
-	say "You dig your second hole in the ground.";
+	say "You dig your second hole in the ground. Revealing an old diary.TODO";
 	now the second hole is in the location of the player;
 
 after digging the ground the third time:
@@ -495,7 +500,7 @@ when barbacueing begins:
 	ron-disappears appears in 20 turns from now.
 
 at the time when ron-disappears appears:
-	say "ron wuerde jetze abtauchen";
+	say "Suddenly [ronguy] turns his face to the see and then vanishes fast into the bush.";
 	move ron to cave.
 
 barbacueing ends when the player wears the manatee ribbon.
@@ -600,7 +605,6 @@ instead of giving the treasure to dave:
 	now treasure-hidden is true.
 
 
-
 instead of giving the durian to someone, say "There will be a better use for tasty fruit."
 
 village center is a room. "[one of]After one month of travelling you step on earth again. It feels stable. Your interest is growing. How will it be? On your own island. Forever escaped from the industrialized world. To the east is the so called [town hall], where you're supposed to get more information about the island and how to get there.[or]This is what wthe natives call 'village center'. You don't know which of these two words is the more stupid one for a place like this. There is the so called [town hall] to the east, a small market to the west.[stopping]"
@@ -619,7 +623,7 @@ chapter river mouth
 
 manatee ribbon is wearable.  the description is "A small manatee is stitched into it. Its one of your [ribbon-count in words] ribbons.".
 
-fake manatee is a thing. "looking a bit awkward, the fake manatee swims here." 
+fake manatee is a thing. "looking a bit awkward, the fake manatee swims here.". the description is "He seems to have problems to come out of the water without help. What a pitty that you have lots of other things to do. Maybe you wait until you will fish this fake manatee.".
 
 [todo fishing only with rod+durian]
 
@@ -801,7 +805,7 @@ Table of tims Talk
 prompt	response	enabled
 "I want to go into the holiday resort to 
 find my way to total boredomness"	slog-real-adventurer	1
-"tim, I know you like stitching manatees. My question is, are you also able to create one just out of this pile of meat?"	slog-ask-meat	0 
+"I know you like stitching manatees. My question is, are you also able to create one just out of this pile of meat?"	slog-ask-meat	0 
 "Watch out. I'm a mighty tourist"	slog-real-adventurer	1
 "Hello, I'm new in town."	slog-new-in-town	1
 "What about the manatees?"	tim-manatee	0
@@ -1131,4 +1135,6 @@ pot is a container in cabin. the description is "wenn voll wasser, dann welches 
 
 part first intro to typ
 
-the old diary is in second hole. the description is "[italic type]Its hot and humid here. I miss the cold rain from home. must be autumn there. Leaves falling to the ground. Drinking tea @ grandmas. Those times are over. Those times are gone. This one chest full of pieces of eight. Even that I have to hide. 'They' are still on this island. I must be careful. Wiping my spuren, leading them to the cave.".
+the old diary is in second hole. the description is "[italic type]Its hot and humid here. I miss the cold rain from home. must be autumn there. Leaves falling to the ground. Drinking tea @ grandmas. Those times are over. Those times are gone. This one chest full of pieces of eight. Even that I have to hide. 'They' are still on this island. I must be careful. Covering my track, leading them to the [cave].".
+
+[after examining the old diary, now the cave is familiar.]
