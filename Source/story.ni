@@ -24,7 +24,8 @@
     The author can be reached via email at mozilla@tanebi.de.
 ]
 
-[a scrum is in boring beach. "A scrum lies here.". the description is "its awful and loves meetings.". it is edible.]
+[a scrum is in boring beach. "A scrum lies here.". the description is "its awful and loves
+meetings.". it is edible.]
 
 suppress GPL author instructions is true.
 
@@ -61,7 +62,7 @@ test th with "talk / 3  / 1 / 1 / 3 / 1 / ne / dig / put treasure into hole / cl
 
 test gm with "talk / 3 / 2 / 1 / w / sw / sw / sw"
 
-test b with "talk / 3 / 3 /4 / ne / se / talk / 2 / 2 / 2 / get meat/ talk / 2 / 3 / open sack / give food to ron / get meat / nw / sw / talk / 2 /4 / ne / talk / 3 / 1 / se / fish manatee "
+test b with "talk / 3 / 3 /4 / ne / se / talk / 2 / 2 / 2 / get meat/ talk / 2 / 3 / open sack / give food to ron / get meat / nw / sw / talk / 2 /4 / ne / talk / 3 / 1 / 2 / 1 / 2/ 1 / se / fish manatee "
 
 test thgm with "look / test th / look / i / test gm ".
 
@@ -103,21 +104,29 @@ Definition: a thing is scented if the scent of it is not "nothing".
 Before printing the name of something scented while smelling a room: say "[scent] from the "
 
 
-the brass lantern and an ubuntu cd are in the rucksack. the rucksack is a player's holdall and wearable. "A red rucksack is lying here.". the description is "Yeah, a czech one. You can put all your stuff in it. It seems to have infinite space inside.". understand "backpack" and "sack" and "knapsack" as the rucksack. 
+the brass lantern and an ubuntu cd are in the rucksack. the rucksack is a player's holdall and wearable. "A red rucksack is lying here.". the description is "Yeah, a czech one. You
+can put all your stuff in it. It seems to have infinite space inside.". understand "backpack"
+and "sack" and "knapsack" as the rucksack. 
 
-the description of the ubuntu cd is "This one is left from your famous ordering of 80 ubuntu cds with free shipping.".
+the description of the ubuntu cd is "This one is left from your famous ordering of 80
+ubuntu cds with free shipping.".
 
 [rucksack fuer 5 runden nass sein lassen. bzw. ersten akt dafuer verwenden.]
 
-Rule for printing the banner text while turn count is 1: say "[paragraph break] The Secret of Smiley Island  [paragraph break]  [paragraph break] ".
+Rule for printing the banner text while turn count is 1: say "[paragraph break] The Secret
+of Smiley Island  [paragraph break]  [paragraph break] ".
 
 when play begins:
-	say "Deep in the west indies. The island of boredom. Just coming from the boat without puking, but still in a bad feeling. Your holidays starting for you to reach the state of total boredomness.".
+	say "Deep in the west indies. The island of boredom. Just coming from the boat
+	 without puking, but still in a bad feeling. Your holidays starting for you to reach the
+	 state of total boredomness.".
 	[pause the game.]
 
 sustainable food is edible.
-sustainable food is in the rucksack. the description is "You don't want to eat it, until you're in peril of your nearly starved away life.".
-instead of eating the sustainable food, say "No, you know for sure that there will be one who is more in a necessity than you are.".
+sustainable food is in the rucksack. the description is "You don't want to eat it, until
+ you're in peril of your nearly starved away life.".
+instead of eating the sustainable food, say "No, you know for sure that there will be one
+ who is more in a necessity than you are.".
 
 the player carries the towel. the towel is a wearable thing.
 
@@ -131,11 +140,14 @@ every turn:
 
 [the player wears a blue ribbon. the description of the blue ribbon is "This little blue ribbon around your [wrist] shows your all-inkclusiveness."]
 
-wrist is part of the player. the description is "On your wrist you can see [ribbon-count in words] ribbons.".
+wrist is part of the player. the description is "On your wrist you can see 
+[ribbon-count in words] ribbons.".
 
-the description of the towel is "This is, what every adventurer needs. [if the player carries the brass lantern] [otherwise] Further needed: A brass lantern[end if][if the player carries the rope][otherwise] and maybe a rope[end if].".
+the description of the towel is "This is, what every adventurer needs. 
+[if the player carries the brass lantern] [otherwise] Further needed: A brass lantern[end if]
+[if the player carries the rope][otherwise] and maybe a rope[end if].".
 
-
+tsosi-hunch is an unfamiliar subject.
 
 chapter new actions
 
@@ -146,7 +158,8 @@ Report thinking about something unknown:
 	say "You can't hink ath the moment. [no thoughts]"
 
 Report thinking about something known:
-	say "You are too excited to think about this at the moment.[the thought of the noun] [paragraph break]"
+	say "You are too excited to think about this at the moment.
+	[the thought of the noun] [paragraph break]"
 
 A thing has a text called thought.
 Pondering is an action applying to one topic.
@@ -159,7 +172,24 @@ To say no thoughts:
 
 chapter tims approach
 
-the description of boring beach is "[if pyrate-opera is happening]Now this is also an empty place, the gate stands wide open..TODO[end if][one of]You arrived at a nice beach, sandy, sunny. Overwhelming, but even better to the west behind a fence with a [gate] seems to be a holiday resort. [The fence] is against the poor natives maybe. But no offence you are just imagening yourself there, at the bar, in the pool, on the beach. You even feel the taste of cocktails on your tongue. Mouthwatering it is. So you tend to [bold type]go west[roman type]. Into the northern directions it looks dark and full of ugly insects. Thats the reason you booked your kind of active-holidays to stay in your save resorts. Not too much contact to natives or  even nature. [if tim is in boring beach]There is a guy behind a [sewing machine]. He seems to be focused at his work.[end if] Behind him is a [wooden infoboard].[or]This sandy spot is hot, really hot. Besides that there is only the [bush] around the beach and it opens to the sea and a far away [horizon]. It makes you  feel undrunken, thirsty, wanting to go west into the holiday resort.[if tim is in boring beach] There is [timguy] behind a sewing machine. he seems to be focused at his work.[end if] Behind the desk is an [wooden infoboard]. A path leads north to a jungle spot and northeast to a jungle path. A narrow trail follows the fence to northwest.[stopping] To the south it opens right into the sea inviting to go south to take a bath.".
+the description of boring beach is "[if pyrate-opera is happening]Now this is also an
+ empty place, the gate stands wide open..TODO[end if][one of]You arrived at a nice beach,
+ sandy, sunny. Overwhelming, but even better to the west behind a fence with a [gate]
+ seems to be a holiday resort. [The fence] is against the poor natives maybe. But no
+ offence you are just imagening yourself there, at the bar, in the pool, on the böeach. You
+ even feel the taste of cocktails on your tongue. Mouthwatering it is. So you tend to 
+[bold type]go west[roman type]. Into the northern directions it looks dark and full of ugly
+ insects. Thats the reason you booked your kind of active-holidays to stay in your save
+ resorts. Not too much contact to natives or  even nature. [if tim is in boring beach]There
+ is a guy behind a [sewing machine]. He seems to be focused at his work.[end if] Behind
+ him is a [wooden infoboard].[or]This sandy spot is hot, really hot. Besides that there is
+ only the [bush] around the beach and it opens to the sea and a far away [horizon]. It
+ makes you  feel undrunken, thirsty, wanting to go west into the holiday resort.
+[if tim is in boring beach] There is [timguy] behind a sewing machine. he seems to be
+ focused at his work.[end if] Behind the desk is an [wooden infoboard]. A path leads
+ north to a jungle spot and northeast to a jungle path. A narrow trail follows the fence to
+ northwest.[stopping] To the south it opens right into the sea inviting to go south to
+ take a bath.".
 
 to say timguy:
 	if name plate is familiar:
@@ -194,17 +224,27 @@ understand "jungle", "ugly insects", "insects" as the bush.
 horizon is a backdrop in boring beach, in river mouth, in view around, in steep coast, in rocky cliffs. the description is "[one of]You press your lids together to see as much as you can. Your eyes follow the fine line of the quiet sea on the horizon. You notice a black ship with eight sails. It moves slowly from the right to the left.[or]Again you notice this very old ship far away at the horizon.[or] You notice a slowly growing bad feeling caused by the very old ship.[or]You tried to ignore it, but your eyes were catched again and you had to take a look into the distance.[stopping]".
 understand "sea" as the horizon.
 
-fresh water is a backdrop in river mouth, in jungle path, in crossing and in lake. the description is "[if dave is off-stage]You see still stired up water as [daveguy] was swimming around and pretending to be a manatee.[otherwise][one of]You look deep into the streaming water. There seems to be life in there. But from manatees, no trail, nothing. Maybe the nearly extict can be deleted and now they are. At least in this little creek here.[or]Again you focus to see anything in the water. movements of something living and big. but nothing.[or]You don't want to search again. There was no sign of manatee life and it will now be the same. No sign of mammals here.[stopping]".
+creek is scenery in jungle path. the description is "[if dave is off-stage]You see still stired up water as [daveguy] was swimming around and pretending to be a manatee.[otherwise][one of]You look deep into the streaming water. There seems to be life in there. But from manatees, no trail, nothing. Maybe the attribute 'nearly extict' can be deleted and now they are. At least in this place here.[or]Again you focus to see anything in the water. movements of something living and big. but nothing.[or]You don't want to search again. There was no sign of manatee life and it will now be the same. No sign of mammals here.[stopping]".
+understand "water", "fresh water" as the creek.
+
+fresh water is a backdrop in river mouth, in crossing and in lake. the description is "[one of]You look deep into the streaming water. There seems to be life in there. But from manatees, no trail, nothing. Maybe the attribute 'nearly extict' can be deleted and now they are. At least in this little creek here.[or]Again you focus to see anything in the water. movements of something living and big. but nothing.[or]You don't want to search again. There was no sign of manatee life and it will now be the same. No sign of mammals here.[stopping]".
 understand "river" and "creek" as the fresh water.
 
 the description of the gate is "The gate is right within a strong fence. At the very closed gate is a spidery writing 'For the three-ribboned only'.".
 understand "fence" as the gate.
-instead of opening the gate, say "It's really strong and you have no chance to open it somewhere.". instead of attacking the gate, say "You swing your full weight against the gate. Your body reacts with pain, the gate with sniffy nothing.". instead of doing anything other than opening the gate, try attacking the gate.
+instead of opening the gate:
+	if all-new2 is happening:
+		say "Slowly you try to open that gate and it really moves. So you put you first step into the resort.";
+		continue the action;
+	otherwise:
+		say "It's really strong and you have no chance to open it somewhere.". 
+
+instead of attacking the gate, say "You swing your full weight against the gate. Your body reacts with pain, the gate with sniffy nothing.". instead of doing anything other than opening the gate, try attacking the gate.
 
 resort is scenery in boring beach. the description is "It's closed for you.".
 understand "holiday resort", "camp", "holiday camp" as the resort.
 
-the lounger is a enterable supporter in boring beach. the initial appearance is "[if lounger is kaputt]The broken lounger stands before you, reminding yourself of your overweight. [otherwise]There is an inviting lounger in front of you, ready for you to get on it.[end if]". the description is "[if lounger is kaputt]The broken pieces of the once comfy looking lounger are looking at you searching for revenge.[otherwise]Made out of bambus and looks comfy. It has a built in sunshade.[end if]".
+the lounger is a enterable supporter in boring beach. the initial appearance is "[if lounger is kaputt]The broken lounger stands before you, reminding yourself of your little overweight. [otherwise]There is an inviting lounger in front of you, ready for you to get on it.[end if]". the description is "[if lounger is kaputt]The broken pieces of the once comfy looking lounger are looking at you searching for revenge.[otherwise]Made out of bambus and looks comfy. It has a built in sunshade.[end if]".
 the lounger can be kaputt. the lounger is not kaputt.
 
 sewing machine is scenery device in boring beach. the description is "It's an original singer. One of these foot-driven ones.". instead of doing anything other than examining the sewing machine, say "You don't want to do anything with that machine. These machines were introduced in your life as extremely dangerous by your grandma."
@@ -221,10 +261,11 @@ instead of entering the lounger:
 	if the towel is on the lounger:
 		say "You lay down and try to relax, but too much is to be done. So you get off the lounger soon. Your adventure is waiting. And [italic type]crack![roman type] as you tried to get up again, the lounger broke under your weight.";
 		now the lounger is kaputt;
+		now the printed name of lounger is "broken lounger";
 	otherwise:
 		say "Without your towel on it?".
 
-instead of going west in boring beach the first time during all-new:
+instead of going west in boring beach in the presence of tim for the first time during all-new:
 	say "On this gate is written 'For three ribboned only' It seems to be opened only by [if the name plate is familiar]Tim[otherwise] this guy[end if] here watching the gate. Now he approaches you. So you stay here and await what he wants to tell you.";
 	try talking to tim.
 
@@ -232,7 +273,10 @@ instead of going west in boring beach during all-new:
 	if ribbon-count is 0:
 		say "The gate doesn't open and you want to get these ribbons. As you understood the guy he will then open the gate for you.";
 	otherwise:
-		say "Yes, you've got [ribbon-count in words] of these silly ribbons. But it doesn't help for now. You still need [three - ribbon-count in words] of them.".
+		if all-new2 is happening:
+			continue the action;
+		otherwise:
+			say "Yes, you've got [ribbon-count in words] of these silly ribbons. But it doesn't help for now. You still need [three - ribbon-count in words] of them.".
 
 [cruise ship is a room. "You're standing at the railing. ready to jump."]
 
@@ -296,7 +340,7 @@ chapter marooned
 
 marooned ribbon is wearable. the description is "A pistol is stitched into it. Its one of your [ribbon-count in words] ribbons.".
 
-the description of shashrick is "Jungle. You're in it. deeper than you expected. suddenly green plants all around you and really near. leaves tickeling your neck. It rememberes you to tv documentaries about these little poisenous green snakes. You freeze your steps, so you are really able to turn around rather quickly and step back. Its the path southwest  a bit more near to the sea[if jungle path is visited] that you kow[end if] and you could walk there fast. now. There is also a passage to northeast.".
+the description of shashrick is "Jungle. You're in it. deeper than you expected. suddenly green plants all around you and really near. Leaves tickeling your neck. It rememberes you to tv documentaries about these little poisenous green snakes. You freeze your steps, so you are really able to turn around rather quickly and step back. Its the path southwest a bit more near to the sea[if jungle path is visited] that you kow[end if] and you could walk there fast. now. There is also a passage to northeast.".
 
 [open paths for next release ]
 instead of going north in shashrick during all-new, say "No.".
@@ -318,7 +362,7 @@ before going nowhere in bambus fields, say "[one of]You hate mazes, but no chanc
 
 the description of view around is "It ends here to creep up and you can have a wide view over the sea because you're just standing right on the tip of a cliff. a fresh wind blows against your face. Really small at the horizon you notice a ship with eight sails. right. sails. A ship seeming to be a ghost from another time. Maybe its a museums sail. You will later have a look if its coming nearer or not. You can go down to the south back to the bambus field.".
 
-after going north in bambus fields for the first time:
+instead of going north in bambus fields for the first time:
 	now kopi is familiar;
 	continue the action.
 
@@ -496,27 +540,35 @@ treasure-hunt is a scene.
 getting-marooned is a scene.
 barbacueing is a scene.
 
-when barbacueing begins:
-	ron-disappears appears in 20 turns from now.
+[when barbacueing begins:
+	ron-disappears appears in 20 turns from now.]
 
-at the time when ron-disappears appears:
+[at the time when ron-disappears appears:
 	say "Suddenly [ronguy] turns his face to the see and then vanishes fast into the bush.";
-	move ron to cave.
+	move ron to cave.]
 
 barbacueing ends when the player wears the manatee ribbon.
 
-all-new ends when the ribbon-count is three.
+all-new2 is a scene.
+all-new2 begins when the ribbon-count is three.
+when all-new2 begins:
+	say "[bold type]Suddenly TODO you hearfeelsmell irgendwie,dass jetze alle drei typen
+	 weg sind.";
+	now ron is off-stage;
+	now dave is off-stage;
+	now tim is off-stage;
+	now the gate is unlocked.
+
+all-new2 ends when holiday resort is visited.
 
 chapter second act
 
 pyrate-opera is a scene.
-pyrate-opera begins when all-new ends.
+pyrate-opera begins when all-new2 ends.
+all-new ends when pyrate-opera begins.
 
 when pyrate-opera begins:
-	say "[bold type]PART II.[paragraph break] [roman type] So you achieved the first goals. the story isn't at the end. Amazing job for traversing a not-ready-yet piece of interactive fiction. Please stay tuned for further releases. The story will go on and will break all your savegames after each update. Thanks for playing and I hope to see you again on smiley island or on github [paragraph break]for the story:[line break]https://github.com/nebocamin/tsosi-story [paragraph break]and for the open web app:[line break]https://github.com/nebocamin/tsosi-app[paragraph break][paragraph break][paragraph break]*** THE END***[paragraph break]now you can go on with the second act in dev-state.";
-	now ron is off-stage;
-	now dave is off-stage;
-	now tim is off-stage.
+	say "[bold type]PART II.[paragraph break] [roman type] So you achieved the first goals. the story isn't at the end. Amazing job for traversing a not-ready-yet piece of interactive fiction. Please stay tuned for further releases. The story will go on and will break all your savegames after each update. Thanks for playing and I hope to see you again on smiley island or on github [paragraph break]for the story:[line break]https://github.com/nebocamin/tsosi-story [paragraph break]and for the open web app:[line break]https://github.com/nebocamin/tsosi-app[paragraph break][paragraph break][paragraph break]*** THE END***[paragraph break]now you can go on with the second act in dev-state.".
 	[end the story.]
 
 part monk island
@@ -648,7 +700,7 @@ instead of going west in river mouth:
 	continue the action.
 
 the fruit table is a supporter in river mouth.
-Ron is a man. the initial appearance of ron is "init [ronguy](TODO)". the description is "TODO vielleicht is initial appeareance die loesung".
+Ron is a man. the initial appearance of ron is "There stands [ronguy] like he wants to sell some stuff.". the description is "Looks like a pirate that stood for a long time at the same place.".
 ron is in river mouth.  the litany of ron is the table of rons talk. fruit table is privately-named. understand "table" and "fruit table" as fruit table.
 understand "man" as ron.
 
@@ -803,6 +855,7 @@ part quips
 
 Table of tims Talk
 prompt	response	enabled
+"I am Eric Wristthirst and you?"	slog-are-you	1
 "I want to go into the holiday resort to 
 find my way to total boredomness"	slog-real-adventurer	1
 "I know you like stitching manatees. My question is, are you also able to create one just out of this pile of meat?"	slog-ask-meat	0 
@@ -817,7 +870,7 @@ find my way to total boredomness"	slog-real-adventurer	1
 
 table of daves talk
 prompt	response	enabled
-"Hej, are you dave?"	dave-are-you	0
+"Ahoj, my brain just told me that you have to be Dave. Are you?"	dave-are-you	1
 "I'm an adventurer, spending my holidays on this island."	dave-ask-ribbons	1
 "Hey, I like the lanterns matching your helmet."	dave-brass	1
 "Do you keep any ribbons for pirate actions?"	dave-keep-ribbons	0
@@ -849,12 +902,13 @@ slog-start-treasurehunt	"[if treasure-hunt has ended]Its enough, yours was my la
 slog-start-marooned	"Are you sure that you want to be put alone on another island right now?"
 slog-ask-marooned	"[if getting-marooned has ended]No please. Not again. Just stay here and get bored like you wanted earlier.[otherwise]Well played junior adventurer."
 slog-marooned-no	"okay. so stay here, but you aren't getting a ribbon."
-slog-start-barbecue	"[if barbacueing has ended]Thanks for taking aktion, but please don't do that again. ever.[otherwise]Listen. It's all about manatees in this task. You will get the manatee-ribbon, if you catch one with a fishing rod and appropriate bait. You can get your tools in the small market as you see to the east at the river mouth."
+slog-start-barbecue	"[if barbacueing has ended]Thanks for taking aktion, but please don't do that again. ever.[otherwise]Listen. It's all about manatees in this task. You will get the manatee-ribbon, if you catch one with a fishing rod and appropriate bait. You can get your tools from Ron in the small market as you see to the east at the river mouth."
 slog-real-adventurer	"Arrgh. Show me the three ribbons."
 slog-ask-ribbons	"Every _real_ adventurer and or tourist has to get the three ribbons. They have different colors. We offer them here for achieving pirate actions. This island was a pirates nest before. So we support traditional pirate actions. You can always see your achievements if you examine your wrist."
 tim-manatee	"Ah, the manatees. such nice and friendly animals. But rarely seen on this island nowadays. My self-stitched ones seem to be the only manatees left on this island."
 tim-magpie	"These clever birds are helping us."
 slog-ask-meat	"Sure it seems to be big enough to make a suit out of it. [paragraph break] and he takes it, stitches and stitches...[paragraph break]..and hours later...[paragraph break]... it is a manatee suit."
+slog-are-you	"I'm Tim and thats all you must know at the moment."
 
 
 
@@ -880,6 +934,7 @@ ron-new-in-town	"Oh, cool. We need new ones. It's getting empty here."
 ron-fruit	"Sure, take a bite."
 ron-gives-rod	"Sure.[if barbacueing is happening] I heard you are on the manatee hunt.[end if] Good luck. And yes, you can have this fishing rod. Someone forgot it here or maybe its just floatsam.[paragraph break] He hands over the fishing rod and you add it to your inventory."
 ron-meat	"[if keeping-meat is true]Get your fingers off it! Meat is rare in these times.[otherwise] Go on, just take the meat. I love your sustainable food.[end if]"
+dave-secret	"We are diving for the secret you shouldn't know anything about."
 silence	"Bye."
 
 
@@ -924,6 +979,15 @@ after quipping when the current quip is slog-ask-meat:
 	now the player carries the manatee suit.
 after quipping when the current quip is slog-real-adventurer:
 	now 3quests is familiar.
+after quipping when the current quip is dave-are-you:
+	now dave-name is familiar.
+after quipping when the current quip is slog-are-you:
+	now name plate is familiar.
+after quipping when the current quip is slog-start-barbecue:
+	now ron-name is familiar.
+after quipping when the current quip is dave-secret:
+	now tsosi-hunch is familiar.
+	
 	
 treasure-hunt begins when the current quip is slog-start-treasurehunt the first time.
 getting-marooned begins when the current quip is slog-ask-marooned the first time.
@@ -945,6 +1009,8 @@ dave-manatee	"What about a durian as your fishing bait?"	dave-durian
 dave-manatee	"I can't imagine anything to wake your interest."	dave-nobait
 slog-start-marooned	"Yes, want it. Now. I wanna have as much boredomness afterwards as possible."	slog-ask-marooned
 slog-start-marooned	"No way. I don't want your silly pirate stuff."	slog-marooned-no
+dave-brass	"What kind of serious work do you mean?"	dave-secret
+dave-brass	"Are you diving for something special?"	dave-secret
 
 part initial connections
 
@@ -1024,6 +1090,12 @@ when all-new begins:
 	the meanwhile-4 appears in 31 turns from now;
 	the meanwhile-5 appears in 40 turns from now.
 
+when pyrate-opera begins:
+	the opera-1 appears in 1 turn from now;
+	the opera-2 appears in 2 turn from now;
+	the opera-3 appears in 3 turn from now;
+	the opera-4 appears in 4 turn from now;
+	the opera-5 appears in 5 turn from now.
 
 at the time when the meanwhile-1 appears:
 	say "[bold type]MEANWHILE ...[paragraph break] [roman type] far away a ship, a black freighter takes course to jamaika after escaping from madagaskar".
@@ -1039,6 +1111,22 @@ at the time when the meanwhile-4 appears:
 
 at the time when the meanwhile-5 appears:
 	say "[bold type]MEANWHILE ...[paragraph break] [roman type]  Suddenly you hear an explosion maybe from a canon[if ship is familiar] on the black freighter?[otherwise]?[end if]".
+
+at the time when opera-1 appears:
+	say "fertschmachen fuers opern".
+
+at the time when opera-2 appears:
+	say "fertschmachen fuers opern".
+
+at the time when opera-3 appears:
+	say "fertschmachen fuers opern".
+
+at the time when opera-4 appears:
+	say "fertschmachen fuers opern".
+
+at the time when opera-5 appears:
+	say "fertschmachen fuers opern".
+
 
 [
 
@@ -1092,9 +1180,7 @@ a red lounger is in holiday resort.
 a bath robe is on the red lounger. bath robe is wearable.
 
 
-
-
-the stage is scenery in holiday resort. the description is "the stage is already filled. there are seats in front of the stage. A bunch of tourists is already seated and wating for the play on stage to begin. There is a comfy seat that invites you.".
+the stage is scenery in holiday resort. the description is "the stage is already filled. there are seats in front of the stage. A bunch of tourists is already seated and waiting for the play on stage to begin. [if the player is not on the comfy seat]There is a comfy seat that invites you.[end if]".
 
 the swimming spot is scenery in holiday resort. the description is "The swimming spot is clean and the way has not that many stones. But swimming in the nature of the seas was possible before you got here. You're more interrested to stimulate yourself within a cultural happening. Like Sitting well drunk in a theater."
 
@@ -1105,7 +1191,11 @@ understand 'sit on' as getting on the comfy seat.
 the comfy seat is an enterable supporter in holiday resort.
 bottle of rum is in holiday resort.
 instead of entering the comfy seat:
-	say "the play starts. As you sit down, the people are getting quieter. [if the player carries the white russian]with caution not to disturb the silence you take a schluck of your white russian.[end if] You noticed a [bottle of rum] under your feet in the sand."
+	say "the play starts. As you sit down, the people are getting quieter. [if the player
+	 carries the white russian]With caution not to disturb the silence you take a schluck
+	 of your white russian.[end if] You noticed a [bottle of rum] under your feet in the
+	 sand.";
+	continue the action.
 
 [
 zzz
