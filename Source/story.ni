@@ -224,6 +224,13 @@ understand "jungle", "ugly insects", "insects" as the bush.
 horizon is a backdrop in boring beach, in river mouth, in view around, in steep coast, in rocky cliffs. the description is "[one of]You press your lids together to see as much as you can. Your eyes follow the fine line of the quiet sea on the horizon. You notice a black ship with eight sails. It moves slowly from the right to the left.[or]Again you notice this very old ship far away at the horizon.[or] You notice a slowly growing bad feeling caused by the very old ship.[or]You tried to ignore it, but your eyes were catched again and you had to take a look into the distance.[stopping]".
 understand "sea" as the horizon.
 
+after examining horizon:
+	kopi-familiar appears in 0 turns from now.
+
+at the time when kopi-familiar appears:
+	say "That ship at the horizon lets you ponder about its purpose.";
+	now kopi is familiar.
+
 creek is scenery in jungle path. the description is "[if dave is off-stage]You see still stired up water as [daveguy] was swimming around and pretending to be a manatee.[otherwise][one of]You look deep into the streaming water. There seems to be life in there. But from manatees, no trail, nothing. Maybe the attribute 'nearly extict' can be deleted and now they are. At least in this place here.[or]Again you focus to see anything in the water. movements of something living and big. but nothing.[or]You don't want to search again. There was no sign of manatee life and it will now be the same. No sign of mammals here.[stopping]".
 understand "water", "fresh water" as the creek.
 
@@ -427,7 +434,7 @@ to be a ghost from another time. Maybe its a museums sail. You will later
 back to the bambus field.".
 
 instead of going north in bambus fields for the first time:
-	now kopi is familiar;
+	kopi-familiar appears in 0 turns from now;
 	continue the action.
 
 the cliff is scenery in view around. "har har... down below there, you can see 
@@ -1075,7 +1082,8 @@ find my way to total boredomness"	slog-real-adventurer	1
 "What about the magpie?"	tim-magpie	0
 "Tell me more about the pirate actions."	slog-pirate-action	0
 "I bought this island, you know?"	slog-bought-island	0
-"How do I get to Smiley Island"	slog-how	0	
+"How do I get to Smiley Island"	slog-how	0
+"About that pirate ship at the horizon..."	tim-kopi	0
 "Nothing"	silence	1
 
 table of daves talk
@@ -1088,6 +1096,7 @@ prompt	response	enabled
 dive into that creek wearing this manatee suit, I'll fish 
 you near the river mouth, so ron is able to see it and 
 I'm getting the ribbon. wouldn't it be great?"	dave-manatee	0
+"About that pirate ship at the horizon..."	dave-kopi	0
 "I'll leave you... sitting around doing nothing"	silence	1
 
 
@@ -1098,6 +1107,7 @@ prompt	response	enabled
 "Can I get this fruit?"	ron-fruit	1
 "[one of]aehm.. what about this pile of meat over her?
 [or]about... that meat again..[stopping]"	ron-meat	0
+"About that pirate ship at the horizon..."	ron-kopi	0
 "I have to go. Bye."	silence	1
 
 
@@ -1137,6 +1147,9 @@ slog-ask-meat	"Sure it seems to be big enough to make a suit out of it. [paragra
 and he takes it, stitches and stitches...[paragraph break]..and hours later...
 [paragraph break]... it is a manatee suit."
 slog-are-you	"I'm Tim and thats all you must know at the moment."
+tim-kopi	"sdfsdf"
+dave-kopi	"sadsd
+ron-kopi	"sfdsfd"
 
 
 
