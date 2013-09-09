@@ -229,7 +229,10 @@ after examining horizon:
 
 at the time when kopi-familiar appears:
 	say "That ship at the horizon lets you ponder about its purpose.";
-	now kopi is familiar.
+	now kopi is familiar;
+	enable the the tim-kopi quip for tim;
+	enable the the dave-kopi quip for dave;
+	enable the the ron-kopi quip for ron;
 
 creek is scenery in jungle path. the description is "[if dave is off-stage]You see still stired up water as [daveguy] was swimming around and pretending to be a manatee.[otherwise][one of]You look deep into the streaming water. There seems to be life in there. But from manatees, no trail, nothing. Maybe the attribute 'nearly extict' can be deleted and now they are. At least in this place here.[or]Again you focus to see anything in the water. movements of something living and big. but nothing.[or]You don't want to search again. There was no sign of manatee life and it will now be the same. No sign of mammals here.[stopping]".
 understand "water", "fresh water" as the creek.
@@ -759,7 +762,7 @@ instead of switching off the diving apparatus for the second time during all-new
 	continue the action.
 	
 instead of switching on the diving apparatus during all-new2:
-	say "Using some moments for pondering about the TODO schicksal of 
+	say "Using some moments for pondering about the fate of 
 	the divers. You turn it back on, but maybe now it is really too late for the diving guys.".
 
 instead of going inside in jungle path, try going down. 
@@ -786,7 +789,7 @@ instead of going down in jungle path:
 		say "No, you heard terrible things about the flowing fresh waters in the caribbean.".
 
 instead of taking off the helmet in undercreek:
-	say "[paragraph break]***[paragraph break]YOU have DIED!!![paragraph break]***[paragraph break][paragraph break]Just kidding above was a TODO gummy tree.".
+	say "[paragraph break]***[paragraph break]YOU have DIED!!![paragraph break]***[paragraph break][paragraph break]Just kidding above was a gum-tree root.".
 
 instead of going northwest in jungle path:
 	say "the fact that a creek is flowing doesnt mean you want to get in the 
@@ -815,7 +818,7 @@ instead of giving the treasure to dave:
 	now treasure-hidden is true.
 
 at the time when dave-back appears:
-	say "Dave just arrives after he TODO hid hidden your treasure.";
+	say "Dave just arrives after he hid your treasure.";
 	now dave is in jungle path.
 
 instead of giving the durian to someone, say "There will be a better use for tasty fruit."
@@ -1147,9 +1150,9 @@ slog-ask-meat	"Sure it seems to be big enough to make a suit out of it. [paragra
 and he takes it, stitches and stitches...[paragraph break]..and hours later...
 [paragraph break]... it is a manatee suit."
 slog-are-you	"I'm Tim and thats all you must know at the moment."
-tim-kopi	"sdfsdf"
-dave-kopi	"sadsd
-ron-kopi	"sfdsfd"
+tim-kopi	"Outch, really?"
+dave-kopi	"Outch, really?"
+ron-kopi	"Outch, really?"
 
 
 
@@ -1397,7 +1400,7 @@ at the time when opera-4 appears:
 
 at the time when opera-5 appears:
 	say "[paragraph break][bold type]Panic[paragraph break]
-	[roman type]the bunch of tourist TODO(is so erschrocken), that they are fleeing in
+	[roman type]the bunch of tourist is that frightened, that they are fleeing in
 	 different directions. But they are trapped within the massive [fence]. zaun is
 	 backdrop drinnen und draussen?
 	
@@ -1480,7 +1483,7 @@ within the different bottles is kaluah and vodka. [possibility to mix a white ru
 
 the pool is scenery in holiday resort. the description is "The pool is round and
  seems to be deep enough to go swimming inside. around the pool are loungers.
- On the [red lounger] lays a [bath robe] TODObademantel wort is wearable. if its
+ On the [red lounger] lays a [bath robe] is wearable. if its TODO
  worn and not a white russian carried, say its only a white russian thats now missing."
 
 a red lounger is in holiday resort.
