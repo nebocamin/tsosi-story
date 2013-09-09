@@ -385,11 +385,11 @@ Its one of your [ribbon-count in words] ribbons.".
 
 the description of shashrick is "Jungle. You're in it. deeper than you 
 expected. suddenly green plants all around you and really near. Leaves
- tickeling your neck. It rememberes you to tv documentaries about 
+ tickeling your neck. It remembers you to tv documentaries about 
 these little poisenous green snakes. You freeze your steps, so you 
 are really able to turn around rather quickly and step back. Its the 
 path southwest a bit more near to the sea
-[if jungle path is visited] that you kow[end if]
+[if jungle path is visited] that you know[end if]
  and you could walk there fast. now. There is also a passage to northeast.".
 
 [open paths for next release ]
@@ -453,7 +453,7 @@ instead of going down in view around:
 instead of going north in view around:
 	say "Would be one step for you, but also the last. So you will not go any further.".
 
-instead of going down in bambus fields:
+before going down in bambus fields:
 	try going west.
 
 instead of going up in flower bed:
@@ -1405,8 +1405,9 @@ at the time when opera-5 appears:
 	 backdrop drinnen und draussen?
 	
 	a next canonball goes down and an awful smell is streaming out of it. your
-	 stomach wants to return (TODO if sth getrunken)the drinks. you TODObeugst
-	 yourself and...";
+	 stomach wants to return [if windbeutel is off-stage]the windbeutel[otherwise]the 
+	content of your stomach[end if]. You bend over and ...[paragraph break] until the next version on october the 10th. This is:";
+	end the story;
 	now resort-crashed is true.
 
 resort-crashed is a truth state that varies. resort-crashed is false.
