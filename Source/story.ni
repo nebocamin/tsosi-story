@@ -740,6 +740,7 @@ water, [daveguy] seems to dive deep in the water. You can't see him.[end if]".
 the diving apparatus is switched off. the scent of it is "hot oil".
 understand "machine", "brass elements", "brass", "elements", 
 "flexible tubes", "tubes", "flexible" as the diving apparatus.
+the diving apparatus is fixed in place.
 
 after examining the diving apparatus during all-new2, say "You notice that three 
 tubes are vanishing into the water. You are asking yourself whether there are 
@@ -818,8 +819,10 @@ instead of giving the treasure to dave:
 	now treasure-hidden is true.
 
 at the time when dave-back appears:
-	say "Dave just arrives after he hid your treasure.";
-	now dave is in jungle path.
+	now dave is in jungle path;
+	if the player is in jungle path:
+		say "Dave just arrives after he hid your treasure.".
+		
 
 instead of giving the durian to someone, say "There will be a better use for tasty fruit."
 
@@ -851,6 +854,7 @@ fake manatee is a thing. "looking a bit awkward, the fake manatee swims here.".
 the description is "He seems to have problems to come out of the water without 
 help. What a pitty that you have lots of other things to do. Maybe you wait until 
 you will fish this fake manatee.".
+understand "dave" as the fake manatee.
 
 [todo fishing only with rod+durian]
 
@@ -919,7 +923,8 @@ instead of dropping the durian in river mouth:
 
 pile of meat is in river mouth. the description is "[if pile of meat carried by the player]Its
  heavy and red juice is dripping down from it.[otherwise]Not appetizing, but its really a 
-big pile of meat. It goes up to the height of your hip.[end if]"
+big pile of meat. It goes up to the height of your hip.[end if]".
+the scent of pile of meat is "blood".
 
 wanting-meat is a truth state that varies. wanting-meat is false.
 keeping-meat is a truth state that varies. keeping-meat is true.
@@ -1035,8 +1040,7 @@ after dropping the treasure:
 
 the description of crossing is "a [palm tree] in which is a [magpies nest]".
 the magpies nest is a distant scenery open container in crossing.
-instead of examining the magpies nest, say "You don't know exactly, but you strongly feels that
-this must be a magpies nest. In there is [the list of things in the magpies nest].".
+instead of examining the magpies nest, say "You don't know exactly, but you strongly feels that this must be a magpies nest. In there is [the list of things in the magpies nest].".
 
 the magpie is in the magpies nest. the description of the magpie is "Black and white witch a 
 blue glance over the black. Reminds you of a crow, but a bit more beautiful. After you were 
@@ -1150,9 +1154,9 @@ slog-ask-meat	"Sure it seems to be big enough to make a suit out of it. [paragra
 and he takes it, stitches and stitches...[paragraph break]..and hours later...
 [paragraph break]... it is a manatee suit."
 slog-are-you	"I'm Tim and thats all you must know at the moment."
-tim-kopi	"Outch, really?"
-dave-kopi	"Outch, really?"
-ron-kopi	"Outch, really?"
+tim-kopi	"Outch, thanks. I have to inform Dave and Ron about it."
+dave-kopi	"Outch, thanks. I habe to inform Tim and Ron about it."
+ron-kopi	"Outch, thanks. I have to inform Tim and Dave about it."
 
 
 
@@ -1323,8 +1327,7 @@ and right, the chest is full of them.".
 chest is an openable container. chest is closed. 
 
 the leather jacket is in chest. the leather jacket is wearable. scent of the leather jacket is "tanned".
-the description is "On the back side there is a symbol, seems to be a map. in the middle of that
-map is a cross and an asterisk. the asterisk leads to another written 
+the description is "On the back side there is a symbol, seems to be a map. In the middle of that map is a cross and an asterisk. The asterisk leads to another written 
 line: [italic type]'An [bold type]X[roman type] [italic type]marks the spot.'[roman type]".
 understand "jackets" as the leather jacket.
 
@@ -1396,7 +1399,7 @@ at the time when opera-4 appears:
 	to the sea. And the black ships with eight sails appeared. A pillar of smoke arises 
 	over a cannon. In that second, a next canon is fired and you are able to follow the 
 	canon ball with your own eyes. You have to turn your head and half believing what 
-	you see. the canonball goes down in the middle of the stage and breaks the wodden planks.".
+	you see. The canonball goes down in the middle of the stage and breaks the wodden planks.".
 
 at the time when opera-5 appears:
 	say "[paragraph break][bold type]Panic[paragraph break]
@@ -1404,9 +1407,9 @@ at the time when opera-5 appears:
 	 different directions. But they are trapped within the massive [fence]. zaun is
 	 backdrop drinnen und draussen?
 	
-	a next canonball goes down and an awful smell is streaming out of it. your
+	A next canonball goes down and an awful smell is streaming out of it. your
 	 stomach wants to return [if windbeutel is off-stage]the windbeutel[otherwise]the 
-	content of your stomach[end if]. You bend over and ...[paragraph break] until the next version on october the 10th. This is:";
+	content of your stomach[end if]. You bend over and ...[paragraph break] until the next version on november the 10th. This is:";
 	end the story;
 	now resort-crashed is true.
 
@@ -1458,6 +1461,7 @@ at the time when the blue whale explodes:
 
 part pyrates hunting pyrates
 
+[da kommt toter code. wenn man da west geht is eigentlich noch all-new2 und eben nicht pyrate-opera]
 instead of going west in boring beach during pyrate-opera:
 	say "The [gate] opens and your great expectations are still growing.";
 	continue the action.
