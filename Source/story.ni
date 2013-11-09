@@ -292,7 +292,7 @@ instead of going west in boring beach in the presence of tim for the first time 
 instead of going west in boring beach during all-new:
 	if ribbon-count is 0:
 		say "The gate doesn't open and you want to get these ribbons. 
-		As you understood the guy he will then open the gate for you.";
+		As you understood [timguy]. He will then open the gate for you.";
 	otherwise:
 		if all-new2 is happening:
 			continue the action;
@@ -312,6 +312,13 @@ understand "angle [something]" as fishing.
 instead of fishing ron:
 	say "probier doch den manatee";
 	try fishing the manatee.
+
+inflating is an action applying to one thing.
+understand "inflate [something]" as inflating.
+understand "bloat [something]" as inflating.
+understand "blow [something]" as inflating.
+understand "blow up [something]" as inflating.
+understand "blow [something] up" as inflating.
 
 [felor is the magic word]
 
@@ -333,7 +340,7 @@ instead of fishing the fake manatee in the presence of ron:
 	now dave is in jungle path;
 	now dave-diving is false;
 	now the scent of dave is "meat, bloody meat";
-	now diving helmet is in cave;
+	now diving helmet is in cave; [todo wieso landet der denn dorten?]
 	now diving apparatus is switched on.
 
 instead of fishing the fake manatee:
@@ -693,16 +700,16 @@ mouth, between your teeth. You even feel like you're breathing sand.
 And you try to take a look around. the [sun] is shining and burnt your 
 back. But hey, you're still wearing your [trousers]. [or] Hot light [sand] 
 all around.[stopping] In the middle of this beach is a lonely banana tree. 
-Making you think, it was escaping the jungle behind him to the north. 
-To the west you are able to spot  [smiley island].".
+Making you think, it was escaping the jungle behind him to the north.".
 
 banana tree is scenery in banana beach. the description is "Three times taller than you and at the top there are some [bananas].".
 the bananas are part of the banana tree. the description is "yellow, ready to be picked".
-instead of taking the bananas, say "this is not a low hanging fruit.".
+understand "banana" as the bananas.
+instead of taking the bananas, say "This is not a low hanging fruit.".
 sand is scenery in banana beach. the description is "fine grained.".
 sun is scenery in banana beach.
 
-uhuru is an animal in banana beach. 
+an uhuru is an animal in banana beach. 
 the description is "Sure, it's a black uhuru and it has a fleety foot.".
 instead of talking to the uhuru, say "He talks. No joke. he talks and 
 its:'push the tree, quuoak, push the tree.'".
@@ -835,7 +842,7 @@ words is the more stupid one for a place like this. There is the so called [town
  the east, a small market to the west.[stopping]"
 
 ocean is a room. "Ice cold water to all sides. Overwhelming. Before you loose 
-consciuosness, you see your life going by."
+consciousness, you see your life going by."
 
 [one turn after visiting ocean,then player is in banana beach.]
 
@@ -1409,9 +1416,10 @@ at the time when opera-5 appears:
 	
 	A next canonball goes down and an awful smell is streaming out of it. your
 	 stomach wants to return [if windbeutel is off-stage]the windbeutel[otherwise]the 
-	content of your stomach[end if]. You bend over and ...[paragraph break] until the next version on november the 10th. This is:";
-	end the story;
-	now resort-crashed is true.
+	content of your stomach[end if]. You bend over and ...[paragraph break] ... a hard smack... you lose 
+	consciousness[paragraph break] [paragraph break] After recovering you found yourself in an unknown place.  [paragraph break] A place thats moving. Up and down. You guessed right... the small porthole on one side assured it to you that you are on a ship.";
+	now resort-crashed is true;
+	now the player is in cabin.
 
 resort-crashed is a truth state that varies. resort-crashed is false.
 pyrate-opera ends when resort-crashed is true.
@@ -1519,12 +1527,94 @@ instead of entering the comfy seat:
 	continue the action.
 
 
-cabin is a room. the description is "A wooden room inside a ship. You feel the waves
- but can't look outside. there is just a [bed] and a [pot] of water."
+cabin is a room. the description is "A wooden room inside a ship. You feel the waves. 
+There is just a [bed] and a [pot] of water in it and a [porthole] to the north shows the
+way onto the sea. A single [cabin door] is to the south."
 
-four-poster bed is a enterable supporter in cabin. the description of bed is "looks really comfy... not.".
+the porthole is south of ocean.
+
+the porthole is a scenery door. it is north of cabin. it is closed.
+the description of the porthole is "Looking through the porthole, you see a beautiful island spread at the horizon. To far to swim without any support, but close enough to reach it by your own muscular strength.".
+the cabin door is a scenery door. it is south of cabin. it is closed and locked.
+rule for supplying a missing noun when entering in the ocean: now the noun is the porthole.
+
+instead of exiting in cabin, try entering the porthole.
+instead of going north from cabin, try entering the porthole.
+
+instead of entering the porthole:
+	if empty water mattress is carried by the player:
+		say "okay, geht";
+		continue the action;
+	otherwise:
+		if airfull water mattress is carried by the player:
+			say "Yes this wonderful mattress is able to carry you to this island, 
+			but what a pitty, it doesn't fit through that porthole now.";
+		otherwise:
+			if waterfull water mattress is carried by the player:
+				say "You have your hands on a corner of that heavy water filled mattress,
+				but you are not able to move the whole thing. Even if you were able, it
+				 wouldn't fit through that porthole. Even if it would fit, it would sink right
+				 away.";
+			otherwise:
+				say "No, you don't have a good swimming help with you. There is 
+				too much ocean between the island and you. ".
+
+instead of going north in ocean:
+	if empty water mattress is carried by the player:
+		say "You are still not convinced that muscular power is enough and you picked 
+		up that inflatable mattress for a reason.";
+	otherwise:
+		say "With the support of your air filled mattress you reached that island together with a curious feeling to explore that place.[paragraph break]...but...[paragraph break] [paragraph break] until december the 10th, this is ...";
+		[10nov2013release end]
+		end the story.
+		[continue the action.]
+
+cabin is inside of ocean.
+
+the four-poster bed is a enterable supporter in cabin. the description of four-poster bed is "Examining the bed you notice that a big water filled mattress is on the bed.".
 pot is a container in cabin. the description is "wenn voll wasser, dann welches drin."
 
+on the four-poster bed is an water mattress. the description of the water mattress is "[plugstate] and it seems to be full of [mattresscontent]". the printed name of the water mattress is "inflated deflatable mattress". the water mattress can be airfull or waterfull or empty. the water mattress is waterfull. the plug is part of the water mattress.
+
+to say plugstate:
+	if the water mattress is waterfull:
+		say "It has a [plug] ready to be pulled";
+	otherwise:
+		if the water mattress is airfull:
+			say "It has a [plug] ready to be pulled";
+		otherwise:
+			say "It has a plug ready to be inserted again".
+
+to say mattresscontent:
+	if the water mattress is waterfull:
+		say "water";
+	otherwise:
+		if the water mattress is airfull:
+			say "air";
+		otherwise:
+			say "nothing".
+
+instead of pulling the plug:
+	if the water mattress is waterfull:
+		say "wasser marsch, du bist am arsch";
+		now the printed name of water mattress is "deflated inflatable mattress";
+		now the water mattress is empty;
+	otherwise:
+		if the water mattress is airfull:
+			say "pffffft, air gone";
+			now the printed name of water mattress is "deflated inflatable mattress";
+			now the water mattress is empty;
+
+instead of inflating the water mattress:
+	if the water mattress is empty:
+		say "You sit down, take a deep breath and you blow your breath into the mattress until its filled. As fast as possible, you put the plug back in so the mattress stays full.";
+		now the mattress is airfull;
+	otherwise:
+		say "The mattress is not empty, so you are not able to inflate it.".
+		
+
+instead of inserting the plug into the empty water mattress:
+	say "You don't plug the plug back into the mattress, because it's not needed in an empty one.".
 
 [the old story gets connections to the present]
 
