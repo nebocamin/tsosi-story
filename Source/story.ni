@@ -213,7 +213,7 @@ to say daveguy:
 
 instead of going inside in boring beach, try going west.
 
-instead of going south in boring beach, say "[one of]You go a few steps into the water. Its warmer than expected. Maybe you would go for a swim. But in sight of this beach, so you will have it easy to find your way back.[or] Yes you want it and time is enough. You go deeper up to you hips into the sea water. Its still clear, you are able to see the ground. After some minutes walk you get back to the beach. You dry fast in the hot sun. [or] You don't want to go again into the water for now, because you still remember how it feels.[stopping]".
+instead of going south in boring beach, say "[one of]You go a few steps into the water. Its warmer than expected. Maybe you would go for a swim. But in sight of this beach, so you will have it easy to find your way back. So you choosed to stay at the beach[or] Yes you want it and time is enough. You go deeper up to you hips into the sea water. Its still clear, you are able to see the ground. After some minutes walk you get back to the beach. You dry fast in the hot sun. [or] You don't want to go again into the water for now, because you still remember how it feels.[stopping]".
 
 instead of going east in boring beach, say "You can see right there the shortest connection to the river mouth and the small market. But caused by the coast line you have to go to the northeast and then southeast afterwards.".
 
@@ -841,8 +841,7 @@ you're supposed to get more information about the island and how to get there.
 words is the more stupid one for a place like this. There is the so called [town hall] to
  the east, a small market to the west.[stopping]"
 
-ocean is a room. "Ice cold water to all sides. Overwhelming. Before you loose 
-consciousness, you see your life going by."
+ocean is a room. "Its still far away to the coast line to the north. directly behind your back is the sloop or ketch you just used to call them boats. To the other directions is just open sea and you don't want to explore that any further."
 
 [one turn after visiting ocean,then player is in banana beach.]
 
@@ -930,7 +929,7 @@ instead of dropping the durian in river mouth:
 
 pile of meat is in river mouth. the description is "[if pile of meat carried by the player]Its
  heavy and red juice is dripping down from it.[otherwise]Not appetizing, but its really a 
-big pile of meat. It goes up to the height of your hip.[end if]".
+big pile of meat. It goes up to the height of your hip.[end if] Stitched together it would be large enough to cover a human.".
 the scent of pile of meat is "blood".
 
 wanting-meat is a truth state that varies. wanting-meat is false.
@@ -1144,7 +1143,7 @@ slog-start-marooned	"Are you sure that you want to be put alone on another islan
  right now?"
 slog-ask-marooned	"[if getting-marooned has ended]No please. Not again. Just stay
  here and get bored like you wanted earlier.[otherwise]Well played junior adventurer."
-slog-marooned-no	"okay. so stay here, but you aren't getting a ribbon."
+slog-marooned-no	"Okay. But you have to stay here and you aren't getting a ribbon."
 slog-start-barbecue	"[if barbacueing has ended]Thanks for taking aktion, but please 
 don't do that again. ever.[otherwise]Listen. It's all about manatees in this task. You will
 get the manatee-ribbon, if you catch one with a fishing rod and appropriate bait. You 
@@ -1193,7 +1192,8 @@ hunt.[end if] Good luck. And yes, you can have this fishing rod. Someone forgot 
 maybe its just floatsam.[paragraph break] He hands over the fishing rod and you add it to
 your inventory."
 ron-meat	"[if keeping-meat is true]Get your fingers off it! Good meals are rare in
-these times.[otherwise] Go on, just take the meat. I loved your food.[end if]"
+these times. Except you can give me a good alternative, maybe a bit more sustaining?
+[otherwise] Go on, just take the meat. I loved your food.[end if]"
 dave-secret	"We are diving for the secret you shouldn't know anything about."
 silence	"Bye."
 
@@ -1527,9 +1527,11 @@ instead of entering the comfy seat:
 	continue the action.
 
 
-cabin is a room. the description is "A wooden room inside a ship. You feel the waves. 
+cabin is a room. the description is "A wooden room inside a ship.[if cabin is wet] All those nice wooded planks are now soaking wet.[end if] You feel the waves. 
 There is just a [bed] and a [pot] of water in it and a [porthole] to the north shows the
 way onto the sea. A single [cabin door] is to the south."
+
+cabin can be wet. cabin is not wet.
 
 the porthole is south of ocean.
 
@@ -1565,8 +1567,9 @@ instead of going north in ocean:
 		up that inflatable mattress for a reason.";
 	otherwise:
 		say "With the support of your air filled mattress you reached that island together with a curious feeling to explore that place.[paragraph break]...but...[paragraph break] [paragraph break] until december the 10th, this is ...";
+		continue the action.
 		[10nov2013release end]
-		end the story.
+		[end the story.]
 		[continue the action.]
 
 cabin is inside of ocean.
@@ -1594,9 +1597,12 @@ to say mattresscontent:
 		otherwise:
 			say "nothing".
 
+instead of opening the mattress, try pulling the plug.
+
 instead of pulling the plug:
 	if the water mattress is waterfull:
-		say "wasser marsch, du bist am arsch";
+		say "A flush of water flows to the floor and vanishes under the door.";
+		now cabin is wet;
 		now the printed name of water mattress is "deflated inflatable mattress";
 		now the water mattress is empty;
 	otherwise:
