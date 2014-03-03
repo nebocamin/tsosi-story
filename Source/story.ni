@@ -1,4 +1,5 @@
 "the secret of smiley island" by "stereo"
+
 [branch firstact]
 
 [Include GNU General Public License V3 by Free Software Foundation.
@@ -62,11 +63,13 @@ test th with "talk / 3  / 1 / 1 / 3 / 1 / ne / dig / put treasure into hole / cl
 
 test gm with "talk / 3 / 2 / 1 / w / sw / sw / sw"
 
-test b with "talk / 3 / 3 /4 / ne / se / talk / 2 / 2 / 2 / get meat/ talk / 2 / 3 / open sack / give food to ron / get meat / nw / sw / talk / 2 /4 / ne / talk / 3 / 1 / 2 / 1 / 2/ 1 / se / fish manatee "
+test b with "talk / 3 / 3 /4 / ne / se / talk / 2 / 2 / 2 / get meat/ talk / 2 / 3 / open sack / give food to ron / get meat / nw / sw / talk / 2 /4 / ne / talk / 3 / 1 / 2 / 1 / 2/ 1 / 1 / 1/ se / fish manatee "
 
 test thgm with "look / test th / look / i / test gm ".
 
 test thgmb with "test th / test gm / test b"
+
+test all with "test th / test gm / test b / nw / sw /w/z/z/z/z/z/open mattress/get mattress/n/inflate mattress/n"
 
 part losgehts
 
@@ -184,9 +187,9 @@ the description of boring beach is "[if pyrate-opera is happening]Now this is al
  is a guy behind a [sewing machine]. He seems to be focused at his work.[end if] Behind
  him is a [wooden infoboard].[or]This sandy spot is hot, really hot. Besides that there is
  only the [bush] around the beach and it opens to the sea and a far away [horizon]. It
- makes you  feel undrunken, thirsty, wanting to go west into the holiday resort.
-[if tim is in boring beach] There is [timguy] behind a sewing machine. he seems to be
- focused at his work.[end if] Behind the desk is an [wooden infoboard]. A path leads
+ makes you feel undrunken, thirsty, wanting to go west into the holiday resort.
+[if tim is in boring beach]There is [timguy] behind a sewing machine. He seems to be
+ focused at his work.[end if] Behind the [machine] is an [wooden infoboard]. A path leads
  north to a jungle spot and northeast to a jungle path. A narrow trail follows the fence to
  northwest.[stopping] To the south it opens right into the sea inviting to go south to
  take a bath.".
@@ -213,13 +216,22 @@ to say daveguy:
 
 instead of going inside in boring beach, try going west.
 
-instead of going south in boring beach, say "[one of]You go a few steps into the water. Its warmer than expected. Maybe you would go for a swim. But in sight of this beach, so you will have it easy to find your way back. So you choosed to stay at the beach[or] Yes you want it and time is enough. You go deeper up to you hips into the sea water. Its still clear, you are able to see the ground. After some minutes walk you get back to the beach. You dry fast in the hot sun. [or] You don't want to go again into the water for now, because you still remember how it feels.[stopping]".
+instead of going south in boring beach, say "[one of]You go a few steps into the water.
+ Its warmer than expected. Maybe you would go for a swim. But in sight of this beach, 
+so you will have it easy to find your way back. So you choosed to stay at the beach[or]
+ Yes you want it and time is enough. You go deeper up to you hips into the sea water.
+ Its still clear, you are able to see the ground. After some minutes walk you get back 
+to the beach. You dry fast in the hot sun. [or] You don't want to go again into the 
+water for now, because you still remember how it feels.[stopping]".
 
-instead of going east in boring beach, say "You can see right there the shortest connection to the river mouth and the small market. But caused by the coast line you have to go to the northeast and then southeast afterwards.".
+instead of going east in boring beach, say "You can see right there the shortest 
+connection to the river mouth and the small market. But caused by the coast line 
+you have to go to the northeast and then southeast afterwards.".
 
 [high fence is scenery in boring beach. the description is "haha, wennde da durchschlunzt, siehste folgendes: ".]
 
-bush is a backdrop in smiley island. the description is "Barely penetrable jungle. Not only because its physical impossible. Also because of you not wanting to go inside.".
+bush is a backdrop in smiley island. the description is "Barely penetrable jungle. 
+Not only because its physical impossible. Also because of you not wanting to go inside.".
 understand "jungle", "ugly insects", "insects" as the bush.
 horizon is a backdrop in boring beach, in river mouth, in view around, in steep coast, in rocky cliffs. the description is "[one of]You press your lids together to see as much as you can. Your eyes follow the fine line of the quiet sea on the horizon. You notice a black ship with eight sails. It moves slowly from the right to the left.[or]Again you notice this very old ship far away at the horizon.[or] You notice a slowly growing bad feeling caused by the very old ship.[or]You tried to ignore it, but your eyes were catched again and you had to take a look into the distance.[stopping]".
 understand "sea" as the horizon.
@@ -323,7 +335,7 @@ understand "blow [something] up" as inflating.
 [felor is the magic word]
 
 
-check fishing when noun is not fake manatee: instead say "No, there is a better purpose. trust me.".
+check fishing when noun is not fake manatee: instead say "No, there is a better purpose. Trust me.".
 check fishing when noun is not visible: instead say "You can't fish something that isnt there."
 
 instead of fishing the fake manatee in the presence of ron:
@@ -359,6 +371,8 @@ Tim is wearing a molton sheet. he is in boring beach. the description is "This b
 He wears a name plate.".
 
 understand "man", "guy" as tim. 
+the printed name of tim is "guy".
+
 the initial appearance of tim is "[if name plate is familiar]Tim is sitting here.
 [otherwise]There is a guy working here.".
 The litany of tim is the Table of tims Talk. the greeting of tim is slog-hello. tim is a man. 
@@ -418,7 +432,7 @@ flowers are scenery in flower bed. the description is "Yellow.". understand "flo
 the scent of flowers is "strong, uncomfortable, like wanting to vomit" 
 
 the description of bambus fields is "[one of]You find yourself trapped 
-in a well made bambus field labyrinth. Green bambus all around. 
+in a well made [bambus] field labyrinth. Green [bambus] all around. 
 [if getting-marooned is happening]But contrary to your imagination 
 of marooning, it seems quite un-dangerous and you don't even received a gun.[end if] 
 You hear the strong currents breaking against the shore far down the hill[stopping]. 
@@ -426,6 +440,11 @@ You hear the strong currents breaking against the shore far down the hill[stoppi
 [or] You know the path to the west right into the flower bed flower bed.[stopping]
 [otherwise] You haven't any clue in which direction to escape from here.[end if]
 [if view around is visited] You know a path to the north, to have a nice view around.".
+
+green-bambus is scenery in bambus fields. "Green, sturdy and no chance to move them away."
+
+the printed name of green-bambus is "bambus".
+understand "green bambus", "bambus"  as the green-bambus.
 
 before going somewhere in bambus fields for the first time, say "...Hours of labyrinth-running later...".
 
@@ -626,7 +645,7 @@ kopi is a unfamiliar subject.
 
 instead of going north in boring beach the first time during all-new:
 	say "No, you can't imagine any reason to put even a baby step into 
-	the jungle. The guy with the [if the name plate is familiar]Tim [end if]
+	the jungle. The guy with the[if the name plate is familiar] Tim[end if]
 	[name plate] watches interested as you hesitate to go north.".
 
 name plate is worn by tim. the description is "'Tim' is written on it.".
@@ -702,6 +721,8 @@ back. But hey, you're still wearing your [trousers]. [or] Hot light [sand]
 all around.[stopping] In the middle of this beach is a lonely banana tree. 
 Making you think, it was escaping the jungle behind him to the north.".
 
+instead of going south in banana beach, say "You don't want to go into the water 'again'."
+
 banana tree is scenery in banana beach. the description is "Three times taller than you and at the top there are some [bananas].".
 the bananas are part of the banana tree. the description is "yellow, ready to be picked".
 understand "banana" as the bananas.
@@ -741,13 +762,16 @@ into the jungle and exits also to southwest back to the boring beach.".
 dave-diving is a truth state that varies. dave-diving is false.
 
 diving apparatus is a device in jungle path. "There stands a machine with 
-lots of brass elements and flexible tubes. Its connected to [daveguy]s helmet
- to provide oxygen.[if dave-diving is true] The tubes are vanishing into the 
+lots of brass elements and flexible tubes. [if diving helmet is connected]Its connected to [daveguy]s helmet
+ to provide oxygen.[end if][if dave-diving is true] The tubes are vanishing into the 
 water, [daveguy] seems to dive deep in the water. You can't see him.[end if]". 
 the diving apparatus is switched off. the scent of it is "hot oil".
 understand "machine", "brass elements", "brass", "elements", 
 "flexible tubes", "tubes", "flexible" as the diving apparatus.
 the diving apparatus is fixed in place.
+
+after taking the diving helmet:
+	now the diving helmet is not connected.
 
 after examining the diving apparatus during all-new2, say "You notice that three 
 tubes are vanishing into the water. You are asking yourself whether there are 
@@ -809,11 +833,13 @@ You really can't see his face inside that full metal helmet.
  [otherwise] Not that awesome you wish he will wear that helmet again.[end if]". 
 the initial appearance of dave is "[daveguy] stands here and seems to wait for something.".
  the litany of dave is the table of daves talk. the greeting of dave is dave-hello.
+the printed name of dave is "guy".
 
 understand "guy" as dave.
 
 dave wears a diving helmet. it is wearable. the description of the diving helmet is "Thats what you call a perfect costum for every steampunk party.".
 understand "visor", "helm" as the diving helmet.
+the diving helmet can be connected. the diving helmet is connected.
 
 instead of giving the treasure to dave:
 	say "You ask [daveguy] whether he knows a good hideaway. [daveguy] nodded, takes the
@@ -841,7 +867,7 @@ you're supposed to get more information about the island and how to get there.
 words is the more stupid one for a place like this. There is the so called [town hall] to
  the east, a small market to the west.[stopping]"
 
-ocean is a room. "Its still far away to the coast line to the north. directly behind your back is the sloop or ketch you just used to call them boats. To the other directions is just open sea and you don't want to explore that any further."
+ocean is a room. "Its still far away to the coast line to the north. Directly behind your back is the sloop or ketch you just used to call them boats. To the other directions is just open sea and you don't want to explore that any further."
 
 [one turn after visiting ocean,then player is in banana beach.]
 
@@ -880,6 +906,8 @@ the fireplace is fixed in place.
 
 the boardwalk is scenery in river mouth.
 
+instead of doing anything to the boardwalk, say "It looks stable enough, but for now you have no reason to do anything to the boardwalk.".
+
 the description is "stable.TODO"
 
 instead of going up in river mouth, try going northwest.
@@ -895,6 +923,9 @@ function of a fruit table seems that there are TODO 'dellen' to place the fruits
 Ron is a man. the initial appearance of ron is "There stands [ronguy] like he wants
  to sell some stuff.". the description is "Looks like a pirate that stood for a long 
 time at the same place.".
+
+the printed name of ron is "guy". understand "guy" as ron.
+
 ron is in river mouth.  the litany of ron is the table of rons talk. fruit table is 
 privately-named. understand "table" and "fruit table" as fruit table.
 understand "man" as ron.
@@ -918,9 +949,12 @@ instead of inserting the fishhook into the durian:
 	now the durian is part of the fishing rod.
 
 instead of taking the rod:
-	if ron is in river mouth:
-		say "It belongs to [ronguy]. You have to ask him first.";
-		enable the ron-gives-rod quip for ron;
+	if the rod is on the fruit table:
+		if ron is in river mouth:
+			say "It belongs to [ronguy]. You have to ask him first.";
+			enable the ron-gives-rod quip for ron;
+		otherwise:
+			continue the action;
 	otherwise:
 		continue the action.
 
@@ -946,6 +980,7 @@ instead of taking the meat in the presence of ron:
 		
 after taking the pile of meat:
 	say "Grunting and holding your breath you are now carrying the whole pile of meat.";
+	enable the dave-meat quip for dave;
 	enable the slog-ask-meat quip for tim.
 		
 instead of giving the something edible to ron:
@@ -1042,7 +1077,7 @@ after dropping the treasure:
 			now the treasure is off-stage;
 			now treasure-hidden is true;
 		otherwise:
-			say "Nope! Not here, it has to be very save to hide a treasure."
+			say "You dropped the treasure, but it's not hidden. The treasure is placed right before your feet."
 
 the description of crossing is "a [palm tree] in which is a [magpies nest]".
 the magpies nest is a distant scenery open container in crossing.
@@ -1105,7 +1140,8 @@ prompt	response	enabled
 "I'm an adventurer, spending my holidays on this island."	dave-ask-ribbons	1
 "Hey, I like the lanterns matching your helmet."	dave-brass	1
 "Do you keep any ribbons for pirate actions?"	dave-keep-ribbons	0
-"Ey. I have a great idea. I want to offer you a deal. If you 
+"I have such a great idea, but first I have to give that pile of meat to someone else."	dave-meat	0
+"Ey. About my great idea. I want to offer you a deal. If you 
 dive into that creek wearing this manatee suit, I'll fish 
 you near the river mouth, so ron is able to see it and 
 I'm getting the ribbon. wouldn't it be great?"	dave-manatee	0
@@ -1160,6 +1196,7 @@ slog-ask-meat	"Sure it seems to be big enough to make a suit out of it. [paragra
 and he takes it, stitches and stitches...[paragraph break]..and hours later...
 [paragraph break]... it is a manatee suit."
 slog-are-you	"I'm Tim and thats all you must know at the moment."
+dave-meat	"I'm not sure whether I don't want to know that."
 tim-kopi	"Outch, thanks. I have to inform Dave and Ron about it."
 dave-kopi	"Outch, thanks. I habe to inform Tim and Ron about it."
 ron-kopi	"Outch, thanks. I have to inform Tim and Dave about it."
@@ -1243,11 +1280,14 @@ after quipping when the current quip is slog-ask-meat:
 after quipping when the current quip is slog-real-adventurer:
 	now 3quests is familiar.
 after quipping when the current quip is dave-are-you:
-	now dave-name is familiar.
+	now dave-name is familiar;
+	now the printed name of dave is "Dave".
 after quipping when the current quip is slog-are-you:
-	now name plate is familiar.
+	now name plate is familiar;
+	now the printed name of tim is "Tim".
 after quipping when the current quip is slog-start-barbecue:
-	now ron-name is familiar.
+	now ron-name is familiar;
+	now the printed name of ron is "Ron".
 after quipping when the current quip is dave-secret:
 	now tsosi-hunch is familiar.
 	
@@ -1566,7 +1606,7 @@ instead of going north in ocean:
 		say "You are still not convinced that muscular power is enough and you picked 
 		up that inflatable mattress for a reason.";
 	otherwise:
-		say "With the support of your air filled mattress you reached that island together with a curious feeling to explore that place.[paragraph break]...but...[paragraph break] [paragraph break] until december the 10th, this is ...";
+		say "With the support of your air filled mattress you reached that island together with a curious feeling to explore that place.[paragraph break]...but...[paragraph break] [paragraph break] until another date, this is ...";
 		continue the action.
 		[10nov2013release end]
 		[end the story.]
@@ -1575,7 +1615,7 @@ instead of going north in ocean:
 cabin is inside of ocean.
 
 the four-poster bed is a enterable supporter in cabin. the description of four-poster bed is "Examining the bed you notice that a big water filled mattress is on the bed.".
-pot is a container in cabin. the description is "wenn voll wasser, dann welches drin."
+pot is a container in cabin. the description is "No pot inside this pot."
 
 on the four-poster bed is an water mattress. the description of the water mattress is "[plugstate] and it seems to be full of [mattresscontent]". the printed name of the water mattress is "inflated deflatable mattress". the water mattress can be airfull or waterfull or empty. the water mattress is waterfull. the plug is part of the water mattress.
 
