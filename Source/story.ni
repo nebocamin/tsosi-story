@@ -122,7 +122,7 @@ of Smiley Island  [paragraph break]  [paragraph break] ".
 when play begins:
 	say "Deep in the west indies. The island of boredom. Just coming from the boat
 	 without puking, but still in a bad feeling. Your holidays starting for you to reach the
-	 state of total boredomness.".
+	 state of total boredomness. (version march2014)".
 	[pause the game.]
 
 sustainable food is edible.
@@ -254,6 +254,7 @@ understand "river" and "creek" as the fresh water.
 
 the description of the gate is "The gate is right within a strong fence. At the very closed gate is a spidery writing 'For the three-ribboned only'.".
 understand "fence" as the gate.
+
 instead of opening the gate:
 	if all-new2 is happening:
 		say "Slowly you try to open that gate and it really moves. So you put you first step into the resort.";
@@ -261,7 +262,17 @@ instead of opening the gate:
 	otherwise:
 		say "It's really strong and you have no chance to open it somewhere.". 
 
-instead of attacking the gate, say "You swing your full weight against the gate. Your body reacts with pain, the gate with sniffy nothing.". instead of doing anything other than opening the gate, try attacking the gate.
+instead of attacking the gate:
+	say "You swing your full weight against the gate. Your body reacts with pain, the gate with sniffy nothing.". 
+
+instead of doing anything other than opening the gate:
+	if all-new2 is happening:
+		try opening the gate;
+	otherwise:
+		try attacking the gate.
+
+instead of doing anything to the gate during pyrate-opera:
+	say "Enough of Gates. Windows are closed.".
 
 resort is scenery in boring beach. the description is "It's closed for you.".
 understand "holiday resort", "camp", "holiday camp" as the resort.
@@ -338,22 +349,30 @@ understand "blow [something] up" as inflating.
 check fishing when noun is not fake manatee: instead say "No, there is a better purpose. Trust me.".
 check fishing when noun is not visible: instead say "You can't fish something that isnt there."
 
+after taking the fishing rod:
+	say "You took the fishing rod.";
+	disable the ron-gives-rod quip for ron.
+
 instead of fishing the fake manatee in the presence of ron:
-	say "After putting the fishhook into the water it was all [daveguy]s show. 
-	He grabbed the hook. Rons big eyes were able to see this giant, wet and 
-	shiny meat-man manatee getting out of the water. Not shivering but with
-	 a nod that meant respect he came over to you and put the manatee ribbon
-	 around your wrist.[paragraph break] Smelling on himself Dave goes back 
-	to northwest to his diving apparatus.";
-	now the player wears the manatee ribbon;
-	increment ribbon-count;
-	now the fake manatee is off-stage;
-	now the player carries the manatee suit;
-	now dave is in jungle path;
-	now dave-diving is false;
-	now the scent of dave is "meat, bloody meat";
-	now diving helmet is in cave; [todo wieso landet der denn dorten?]
-	now diving apparatus is switched on.
+	try taking the fishing rod;
+	if fishing rod carried by the player:
+		say "After putting the fishhook into the water it was all [daveguy]s show. 
+		He grabbed the hook. Rons big eyes were able to see this giant, wet and 
+		shiny meat-man manatee getting out of the water. Not shivering but with
+	 	a nod that meant respect he came over to you and put the manatee ribbon
+	 	around your wrist.[paragraph break] Smelling on himself Dave goes back 
+		to northwest to his diving apparatus.";
+		now the player wears the manatee ribbon;
+		increment ribbon-count;
+		now the fake manatee is off-stage;
+		now the player carries the manatee suit;
+		now dave is in jungle path;
+		now dave-diving is false;
+		now the scent of dave is "meat, bloody meat";
+		now diving helmet is in cave; [todo wieso landet der denn dorten?]
+		now diving apparatus is switched on;
+	otherwise:
+		say "You'll need a fishing rod to do that.".
 
 instead of fishing the fake manatee:
 	say "Because [ronguy] isn't looking, you better leave the fake manatee swimming
@@ -650,6 +669,8 @@ instead of going north in boring beach the first time during all-new:
 
 name plate is worn by tim. the description is "'Tim' is written on it.".
 
+after examining the name plate, now the printed name of tim is "Tim".
+
 instead of going north in boring beach the second time during all-new:
 	say "As you were evaluating to go or not to go into the bush, 
 	the guy with the [if the name plate is familiar]Tim [end if][name plate] 
@@ -680,6 +701,7 @@ when all-new2 begins:
 	now ron is off-stage;
 	now dave is off-stage;
 	now tim is off-stage;
+	now the diving helmet is not connected;
 	now the gate is unlocked.
 
 all-new2 ends when holiday resort is visited.
@@ -773,6 +795,9 @@ the diving apparatus is fixed in place.
 after taking the diving helmet:
 	now the diving helmet is not connected.
 
+instead of giving the diving helmet to somebody:
+	say "'No thanks, you can keep it.'". 
+
 after examining the diving apparatus during all-new2, say "You notice that three 
 tubes are vanishing into the water. You are asking yourself whether there are 
 three guys now diving there?".
@@ -854,7 +879,7 @@ instead of giving the treasure to dave:
 at the time when dave-back appears:
 	now dave is in jungle path;
 	if the player is in jungle path:
-		say "Dave just arrives after he hid your treasure.".
+		say "[Daveguy] just arrives after he hid your treasure.".
 		
 
 instead of giving the durian to someone, say "There will be a better use for tasty fruit."
@@ -924,6 +949,7 @@ Ron is a man. the initial appearance of ron is "There stands [ronguy] like he wa
  to sell some stuff.". the description is "Looks like a pirate that stood for a long 
 time at the same place.".
 
+understand "guy" as ron.
 the printed name of ron is "guy". understand "guy" as ron.
 
 ron is in river mouth.  the litany of ron is the table of rons talk. fruit table is 
@@ -1018,11 +1044,16 @@ after eating the durian:
 instead of giving the treasure to ron:
 	say "You ask Ron whether he knows about a good hideaway. Ron nodded, takes 
 	the treasure and vanishes into the bush.";
+	ron-back appears in two turns from now;
 	now Ron is off-stage;
 	now treasure is off-stage;
 	now keeping-meat is false;
 	now treasure-hidden is true.
 
+at the time when ron-back appears:
+	now ron is in river mouth;
+	if the player is in river mouth:
+		say "[ronguy] just arrives after he hid your treasure.".
 
 instead of attacking a man:
 	say "Violently you byte in his throat like a vampire. His lifeless body falls down.
@@ -1196,7 +1227,7 @@ slog-ask-meat	"Sure it seems to be big enough to make a suit out of it. [paragra
 and he takes it, stitches and stitches...[paragraph break]..and hours later...
 [paragraph break]... it is a manatee suit."
 slog-are-you	"I'm Tim and thats all you must know at the moment."
-dave-meat	"I'm not sure whether I don't want to know that."
+dave-meat	"I'm not sure whether I want to know that."
 tim-kopi	"Outch, thanks. I have to inform Dave and Ron about it."
 dave-kopi	"Outch, thanks. I habe to inform Tim and Ron about it."
 ron-kopi	"Outch, thanks. I have to inform Tim and Dave about it."
@@ -1205,7 +1236,7 @@ ron-kopi	"Outch, thanks. I have to inform Tim and Dave about it."
 
 Table of quip texts (continued)
 quip	quiptext
-dave-hello	"[daveguy] opens the visor of his [diving helmet], so he is able to communicate with you. 'Whats up?'"
+dave-hello	"[if dave is wearing the diving helmet][daveguy] opens the visor of his [diving helmet], so he is able to communicate with you. [end if]'Whats up?'"
 dave-brass	"Can you please go, I have some serious work going on."
 dave-start-barbecue	"Manatis are protected today, so we have fake ones to get."
 dave-are-you	"Name yes, profession no."
@@ -1250,7 +1281,10 @@ after quipping when the current quip is slog-ask-ribbons:
 after quipping when the current quip is slog-pirate-action: enable the slog-pirate-action quip.
 after quipping when the current quip is ron-fruit: now the player carries the durian.
 after quipping when the current quip is ron-gives-rod: now the player carries the fishing rod.
-after quipping when the current quip is slog-start-barbecue the first time: enable the ron-gives-rod quip for ron.
+after quipping when the current quip is slog-start-barbecue the first time:
+	if the fishing rod is on the fruit table:
+		enable the ron-gives-rod quip for ron.
+
 after quipping when the current quip is ron-meat: enable the ron-meat quip.
 after quipping when the current quip is dave-durian:
 	now dave is off-stage;
@@ -1388,6 +1422,12 @@ when getting-marooned begins:
 the player wears the rucksack. the rucksack is closed.
 the player wears trousers. the description of the trousers is "worn out, but extremly comfortable.
 Your holiday trousers."
+
+instead of inserting something into the rucksack:
+	if the rucksack is closed:
+		try silently opening the rucksack;
+		say "(You open the rucksack first.)";
+	continue the action.
 
 chapter meanwhiles
 
