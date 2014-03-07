@@ -75,9 +75,9 @@ part losgehts
 
 chapter preparation
 
-the description of the yourself is "Shiny. On your wrist you can see [ribbon-count in words] ribbons. You are wearing [the list of things worn by the player] and holding [the list of things carried by the player]."
+the description of the yourself is "Shiny. On your wrist you can see [wristband-count in words] wristbands. You are wearing [the list of things worn by the player] and holding [the list of things carried by the player]."
 
-ribbon-count is a number that varies. ribbon-count is zero.
+wristband-count is a number that varies. wristband-count is zero.
 
 [Switching on the brass lantern gives it the lit property so it will provide light.]
 
@@ -141,10 +141,10 @@ every turn:
 		try silently taking off the towel;
 		try silently dropping the towel.
 
-[the player wears a blue ribbon. the description of the blue ribbon is "This little blue ribbon around your [wrist] shows your all-inkclusiveness."]
+[the player wears a blue wristband. the description of the blue wristband is "This little blue wristband around your [wrist] shows your all-inkclusiveness."]
 
 wrist is part of the player. the description is "On your wrist you can see 
-[ribbon-count in words] ribbons.".
+[wristband-count in words] wristbands.".
 
 the description of the towel is "This is, what every adventurer needs. 
 [if the player carries the brass lantern] [otherwise] Further needed: A brass lantern[end if]
@@ -183,7 +183,7 @@ the description of boring beach is "[if pyrate-opera is happening]Now this is al
  even feel the taste of cocktails on your tongue. Mouthwatering it is. So you tend to 
 [bold type]go west[roman type]. Into the northern directions it looks dark and full of ugly
  insects. Thats the reason you booked your kind of active-holidays to stay in your save
- resorts. Not too much contact to natives or  even nature. [if tim is in boring beach]There
+ resorts. Not too much contact to natives or  even nature. [if tim is in boring beach] There
  is a guy behind a [sewing machine]. He seems to be focused at his work.[end if] Behind
  him is a [wooden infoboard].[or]This sandy spot is hot, really hot. Besides that there is
  only the [bush] around the beach and it opens to the sea and a far away [horizon]. It
@@ -252,12 +252,12 @@ understand "water", "fresh water" as the creek.
 fresh water is a backdrop in river mouth, in crossing and in lake. the description is "[one of]You look deep into the streaming water. There seems to be life in there. But from manatees, no trail, nothing. Maybe the attribute 'nearly extict' can be deleted and now they are. At least in this little creek here.[or]Again you focus to see anything in the water. movements of something living and big. but nothing.[or]You don't want to search again. There was no sign of manatee life and it will now be the same. No sign of mammals here.[stopping]".
 understand "river" and "creek" as the fresh water.
 
-the description of the gate is "The gate is right within a strong fence. At the very closed gate is a spidery writing 'For the three-ribboned only'.".
+the description of the gate is "The gate is right within a strong fence. At the very closed gate is a spidery writing 'For the three-wristbanded only'.".
 understand "fence" as the gate.
 
 instead of opening the gate:
 	if all-new2 is happening:
-		say "Slowly you try to open that gate and it really moves. So you put you first step into the resort.";
+		say "Slowly you try to open that gate and it really moves. So you put you first step into the resort ready to go west. Finally.";
 		continue the action;
 	otherwise:
 		say "It's really strong and you have no chance to open it somewhere.". 
@@ -307,21 +307,21 @@ instead of entering the lounger:
 		say "Without your towel on it?".
 
 instead of going west in boring beach in the presence of tim for the first time during all-new:
-	say "On this gate is written 'For three ribboned only' It seems to be opened only by
+	say "On this gate is written 'For three wristbanded only' It seems to be opened only by
 	 [if the name plate is familiar]Tim[otherwise] this guy[end if] here watching the gate. 
 	Now he approaches you. So you stay here and await what he wants to tell you.";
 	try talking to tim.
 
 instead of going west in boring beach during all-new:
-	if ribbon-count is 0:
-		say "The gate doesn't open and you want to get these ribbons. 
+	if wristband-count is 0:
+		say "The gate doesn't open and you want to get these wristbands. 
 		As you understood [timguy]. He will then open the gate for you.";
 	otherwise:
 		if all-new2 is happening:
 			continue the action;
 		otherwise:
-			say "Yes, you've got [ribbon-count in words] of these silly ribbons. 
-			But it doesn't help for now. You still need [three - ribbon-count in words] 
+			say "Yes, you've got [wristband-count in words] of these silly wristbands. 
+			But it doesn't help for now. You still need [three - wristband-count in words] 
 			of them to get into the holiday resort.".
 
 [cruise ship is a room. "You're standing at the railing. ready to jump."]
@@ -359,11 +359,11 @@ instead of fishing the fake manatee in the presence of ron:
 		say "After putting the fishhook into the water it was all [daveguy]s show. 
 		He grabbed the hook. Rons big eyes were able to see this giant, wet and 
 		shiny meat-man manatee getting out of the water. Not shivering but with
-	 	a nod that meant respect he came over to you and put the manatee ribbon
+	 	a nod that meant respect he came over to you and put the manatee wristband
 	 	around your wrist.[paragraph break] Smelling on himself Dave goes back 
 		to northwest to his diving apparatus.";
-		now the player wears the manatee ribbon;
-		increment ribbon-count;
+		now the player wears the manatee wristband;
+		increment wristband-count;
 		now the fake manatee is off-stage;
 		now the player carries the manatee suit;
 		now dave is in jungle path;
@@ -412,6 +412,9 @@ instead of giving the pile of meat to tim:
 	disable the slog-ask-meat quip for tim;
 	enable the dave-manatee quip for dave.
 
+instead of dropping the pile of meat:
+	say "Its heavy but there is a better purpose as just dropping it.".
+
 
 manatee suit is a wearable thing. the description is "hrmpft. its an suit 
 made of meat in the form of a manatee.".
@@ -420,8 +423,8 @@ instead of giving the manatee suit to dave, say "You better talk to him first."
 
 chapter marooned
 
-marooned ribbon is wearable. the description is "A pistol is stitched into it. 
-Its one of your [ribbon-count in words] ribbons.".
+marooned wristband is wearable. the description is "A pistol is stitched into it. 
+Its one of your [wristband-count in words] wristbands.".
 
 the description of shashrick is "Jungle. You're in it. deeper than you 
 expected. suddenly green plants all around you and really near. Leaves
@@ -432,7 +435,7 @@ path southwest a bit more near to the sea
 [if jungle path is visited] that you know[end if]
  and you could walk there fast. now. There is also a passage to northeast.".
 
-[open paths for next release ]
+[open paths for next release]
 instead of going north in shashrick during all-new, say "No.".
 instead of going north in shashrick during getting-marooned, say "No. 
 You clearly feel that it would'nt be the right direction either.".
@@ -505,21 +508,21 @@ instead of going up in flower bed:
 	try going east.
 
 after going to boring beach during getting-marooned:
-	say "Tim waves at you and presents you the achieved ribbon for surviving
+	say "Tim waves at you and presents you the achieved wristband for surviving
 	 the marooning pirate action. He puts around your wrist. Proudly and in 
 	hope to get into the ressort soon, you're awaiting your total boredomness.";
-	now the player wears the marooned ribbon;
-	increment ribbon-count;
+	now the player wears the marooned wristband;
+	increment wristband-count;
 	continue the action.
 	
-	[getting-marooned ends when the player carries the marooned ribbon.]
-getting-marooned ends when the player wears the marooned ribbon.
+	[getting-marooned ends when the player carries the marooned wristband.]
+getting-marooned ends when the player wears the marooned wristband.
 
 
 chapter treasure hunt
 
-treasure-ribbon is wearable. the description is "A treasure chest is stitched into it.
-Its one of your [ribbon-count in words] ribbons.".
+treasure-wristband is wearable. the description is "A treasure chest is stitched into it.
+Its one of your [wristband-count in words] wristbands.".
 
 [Rule for supplying a missing noun while digging:
 	now noun is the location.]
@@ -530,6 +533,7 @@ Rule for supplying a missing noun while digging:
 Understand "dig" or "dig hole/here" or "dig in ground/dirt/earth" as digging.
 
 digging is an action applying to one thing and requiring light.
+
 [Understand "dig [something]" or "dig in [something]" as digging. ]
 
 [shovel is a thing. the description is "Sturdy and made in germany.".]
@@ -605,16 +609,16 @@ before filling up a treasure-hideaway, try closing the noun instead.
 before going to boring beach during treasure-hunt:
 	if treasure-hidden is true:
 		say "'I see, your treasure is well hidden somewhere 
-		you can't even find yourself.' and [timguy] puts the ribbon
+		you can't even find yourself.' and [timguy] puts the wristband
 		 for the treasure hunt over your wrist.";
-		now the player wears the treasure-ribbon;
-		increment ribbon-count;
+		now the player wears the treasure-wristband;
+		increment wristband-count;
 		continue the action;
 	otherwise:
 		say "'Yes I know its hard to find a good place that fits for the treasure.'";
 		continue the action.
 
-treasure-hunt ends when the player wears the treasure-ribbon.
+treasure-hunt ends when the player wears the treasure-wristband.
 
 chapter trail
 
@@ -690,10 +694,10 @@ barbacueing is a scene.
 	say "Suddenly [ronguy] turns his face to the see and then vanishes fast into the bush.";
 	move ron to cave.]
 
-barbacueing ends when the player wears the manatee ribbon.
+barbacueing ends when the player wears the manatee wristband.
 
 all-new2 is a scene.
-all-new2 begins when the ribbon-count is three.
+all-new2 begins when the wristband-count is three.
 when all-new2 begins:
 	say "Suddenly the guys where shouting at each other that 
 	it is [italic type] e-v-e-r-y time [roman type] and they ran 
@@ -826,7 +830,7 @@ instead of going inside in jungle path, try going down.
 instead of going down in jungle path during all-new:
 	say "No. You don't want to dive into that water. The first thing you want 
 	is to get into that holiday resort[if 3quests is familiar] even if you have to 
-	earn those three ribbons in the first place.[otherwise]. Other kinds of 
+	earn those three wristbands in the first place.[otherwise]. Other kinds of 
 	adventures have to wait after you reached the state of total boredomness.[end if]".
 	
 
@@ -904,8 +908,8 @@ small market is a room. "There is just a [fruit table] with fruits on it."
 
 chapter river mouth
 
-manatee ribbon is wearable.  the description is "A small manatee is stitched into it. 
-Its one of your [ribbon-count in words] ribbons.".
+manatee wristband is wearable.  the description is "A small manatee is stitched into it. 
+Its one of your [wristband-count in words] wristbands.".
 
 fake manatee is a thing. "looking a bit awkward, the fake manatee swims here.". 
 the description is "He seems to have problems to come out of the water without 
@@ -1168,14 +1172,14 @@ find my way to total boredomness"	slog-real-adventurer	1
 table of daves talk
 prompt	response	enabled
 "Ahoj, my brain just told me that you have to be Dave. Are you?"	dave-are-you	1
-"I'm an adventurer, spending my holidays on this island."	dave-ask-ribbons	1
+"I'm an adventurer, spending my holidays on this island."	dave-ask-wristbands	1
 "Hey, I like the lanterns matching your helmet."	dave-brass	1
-"Do you keep any ribbons for pirate actions?"	dave-keep-ribbons	0
+"Do you keep any wristbands for pirate actions?"	dave-keep-wristbands	0
 "I have such a great idea, but first I have to give that pile of meat to someone else."	dave-meat	0
 "Ey. About my great idea. I want to offer you a deal. If you 
 dive into that creek wearing this manatee suit, I'll fish 
 you near the river mouth, so ron is able to see it and 
-I'm getting the ribbon. wouldn't it be great?"	dave-manatee	0
+I'm getting the wristband. wouldn't it be great?"	dave-manatee	0
 "About that pirate ship at the horizon..."	dave-kopi	0
 "I'll leave you... sitting around doing nothing"	silence	1
 
@@ -1198,7 +1202,7 @@ Table of Quip Texts (continued)
 quip	quiptext
 slog-hello	"Ahoj, what do ya want here?"
 slog-pirate-action	"The pirate actions are prepared by us, you have to take one
- and afterwards come back and I will give you the appropriate ribbon for achieving the
+ and afterwards come back and I will give you the appropriate wristband for achieving the
  actions goal. So you have to choose, which pirate-action do you want. This week we have
  'Being marooned.', 'treasure hunt' or 'barbacue.''"
 slog-start-treasurehunt	"[if treasure-hunt has ended]Its enough, yours was my last
@@ -1210,14 +1214,14 @@ slog-start-marooned	"Are you sure that you want to be put alone on another islan
  right now?"
 slog-ask-marooned	"[if getting-marooned has ended]No please. Not again. Just stay
  here and get bored like you wanted earlier.[otherwise]Well played junior adventurer."
-slog-marooned-no	"Okay. But you have to stay here and you aren't getting a ribbon."
+slog-marooned-no	"Okay. But you have to stay here and you aren't getting a wristband."
 slog-start-barbecue	"[if barbacueing has ended]Thanks for taking aktion, but please 
 don't do that again. ever.[otherwise]Listen. It's all about manatees in this task. You will
-get the manatee-ribbon, if you catch one with a fishing rod and appropriate bait. You 
+get the manatee-wristband, if you catch one with a fishing rod and appropriate bait. You 
 can get your tools from Ron in the small market as you see to the east at the river mouth."
-slog-real-adventurer	"Arrgh. Show me the three ribbons."
-slog-ask-ribbons	"Every _real_ adventurer and or tourist has to get the three 
-ribbons. They have different colors. We offer them here for achieving pirate actions. 
+slog-real-adventurer	"Arrgh. Show me the three wristbands."
+slog-ask-wristbands	"Every _real_ adventurer and or tourist has to get the three 
+wristbands. They have different colors. We offer them here for achieving pirate actions. 
 This island was a pirates nest before. So we support traditional pirate actions. You can 
 always see your achievements if you examine your wrist."
 tim-manatee	"Ah, the manatees. such nice and friendly animals. But rarely seen on
@@ -1240,8 +1244,8 @@ dave-hello	"[if dave is wearing the diving helmet][daveguy] opens the visor of h
 dave-brass	"Can you please go, I have some serious work going on."
 dave-start-barbecue	"Manatis are protected today, so we have fake ones to get."
 dave-are-you	"Name yes, profession no."
-dave-ask-ribbons	"Really? Would be great to talk to a guy with many ribbons. Show me yours."
-dave-keep-ribbons	"No, I'm used to be a scuba diver. I'm un employed now. It's a bad job situation here on these islands. So I live from the fruits in the jungle and I'm still trying to find my way out of the complete boredomness."
+dave-ask-wristbands	"Really? Would be great to talk to a guy with many wristbands. Show me yours."
+dave-keep-wristbands	"No, I'm used to be a scuba diver. I'm un employed now. It's a bad job situation here on these islands. So I live from the fruits in the jungle and I'm still trying to find my way out of the complete boredomness."
 dave-manatee	"Do you think i'm completely dull? But... hmm. No, not without a cause."
 dave-durian	"That sounds like a fair deal. So give me the suit."
 dave-nobait	"grmpft."
@@ -1275,15 +1279,15 @@ After quipping when the current quip is slog-smiley:
 	enable the slog-how quip;
 	say "ron comes near you.";
 	move ron to town hall.
-after quipping when the current quip is slog-ask-ribbons:
+after quipping when the current quip is slog-ask-wristbands:
 	enable the slog-pirate-action quip;
-	enable the dave-keep-ribbons quip for dave.
+	enable the dave-keep-wristbands quip for dave.
 after quipping when the current quip is slog-pirate-action: enable the slog-pirate-action quip.
 after quipping when the current quip is ron-fruit: now the player carries the durian.
 after quipping when the current quip is ron-gives-rod: now the player carries the fishing rod.
 after quipping when the current quip is slog-start-barbecue the first time:
-	if the fishing rod is on the fruit table:
 		enable the ron-gives-rod quip for ron.
+[todo wenn ich die angel schon hab, brauchsch ja ne fragen]
 
 after quipping when the current quip is ron-meat: enable the ron-meat quip.
 after quipping when the current quip is dave-durian:
@@ -1341,7 +1345,7 @@ slog-pirate-action	"barbecue."	slog-start-barbecue
 slog-new-in-town	"No. I will stay. End of discussion."	slog-deal-with
 slog-bought-island	"Smiley Island. I bought Smiley Island."	slog-smiley
 slog-bought-island	"I can't remember it's name."	slog-cant-remember
-slog-real-adventurer	"Which ribbons do you mean?"	slog-ask-ribbons
+slog-real-adventurer	"Which wristbands do you mean?"	slog-ask-wristbands
 dave-manatee	"What about a durian as your fishing bait?"	dave-durian
 dave-manatee	"I can't imagine anything to wake your interest."	dave-nobait
 slog-start-marooned	"Yes, want it. Now. I wanna have as much boredomness afterwards as possible."	slog-ask-marooned
@@ -1607,7 +1611,7 @@ instead of entering the comfy seat:
 	continue the action.
 
 
-cabin is a room. the description is "A wooden room inside a ship.[if cabin is wet] All those nice wooded planks are now soaking wet.[end if] You feel the waves. 
+cabin is a room. the description is "A wooden room inside a ship.[if cabin is wet] All those nice wooden planks are now soaking wet.[end if] You feel the waves. 
 There is just a [bed] and a [pot] of water in it and a [porthole] to the north shows the
 way onto the sea. A single [cabin door] is to the south."
 
@@ -1618,6 +1622,9 @@ the porthole is south of ocean.
 the porthole is a scenery door. it is north of cabin. it is closed.
 the description of the porthole is "Looking through the porthole, you see a beautiful island spread at the horizon. To far to swim without any support, but close enough to reach it by your own muscular strength.".
 the cabin door is a scenery door. it is south of cabin. it is closed and locked.
+the cabin door can be wet. the cabin door is not wet.
+the description of the cabin door is "This door is shut and seems to be too strong to even think about opening it[if the cabin door is wet] and now the door is also wet because you flooded the cabin[end if].".
+
 rule for supplying a missing noun when entering in the ocean: now the noun is the porthole.
 
 instead of exiting in cabin, try entering the porthole.
@@ -1683,6 +1690,7 @@ instead of pulling the plug:
 	if the water mattress is waterfull:
 		say "A flush of water flows to the floor and vanishes under the door.";
 		now cabin is wet;
+		now cabin door is wet;
 		now the printed name of water mattress is "deflated inflatable mattress";
 		now the water mattress is empty;
 	otherwise:
