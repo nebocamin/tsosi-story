@@ -111,6 +111,9 @@ the brass lantern and an ubuntu cd are in the rucksack. the rucksack is a player
 can put all your stuff in it. It seems to have infinite space inside.". understand "backpack"
 and "sack" and "knapsack" as the rucksack. 
 
+instead of taking off the rucksack:
+	say "No. This czech rucksack is nearly a body part of you. You keep wearing it.".
+
 the description of the ubuntu cd is "This one is left from your famous ordering of 80
 ubuntu cds with free shipping.".
 
@@ -151,6 +154,7 @@ the description of the towel is "This is, what every adventurer needs.
 [if the player carries the rope][otherwise] and maybe a rope[end if].".
 
 tsosi-hunch is an unfamiliar subject.
+yesnid is an unfamiliar subject.
 
 chapter new actions
 
@@ -426,6 +430,7 @@ chapter marooned
 marooned wristband is wearable. the description is "A pistol is stitched into it. 
 Its one of your [wristband-count in words] wristbands.".
 
+the printed name of shashrick is "deep in the jungle".
 the description of shashrick is "Jungle. You're in it. deeper than you 
 expected. suddenly green plants all around you and really near. Leaves
  tickeling your neck. It remembers you to tv documentaries about 
@@ -478,8 +483,8 @@ but it leads nowhere. So you went back into the bambus.[stopping]".
 
 the description of view around is "It ends here to creep up and you can
  have a wide view over the sea because you're just standing right on the 
-tip of a cliff. a fresh wind blows against your face. Really small at the 
-horizon you notice a ship with eight sails. right. sails. A ship seeming 
+tip of a cliff. A fresh wind blows against your face. Really small at the 
+horizon you notice a ship with eight sails. Right. Sails. A ship seeming 
 to be a ghost from another time. Maybe its a museums sail. You will later
  have a look if its coming nearer or not. You can go down to the south 
 back to the bambus field.".
@@ -965,8 +970,7 @@ a durian is on the fruit table. the description is "[if the durian is part of th
  durian. Wonderful. For such a long time you wanted to take a nose and taste it."
 
 a fishing rod is on the fruit table. the description is "Thats a strong looking fishing rod
- with a fishhook. You're not quiet sure, if its believable to catch such a big animal with
-this tiny rod. [if the durian is part of the fishing rod] A durian is at the fishhook of the 
+ with a fishhook. You're not quiet sure, if its believable to catch such a big animal like a manatee with this tiny rod. [if the durian is part of the fishing rod] A durian is at the fishhook of the 
 rod, ready to go fishing.[otherwise]And what about the bait?[end if]"
 
 fishhook is part of the fishing rod. description is "[if the durian is part of the fishing rod] 
@@ -1154,7 +1158,7 @@ part quips
 
 Table of tims Talk
 prompt	response	enabled
-"I am Eric Wristthirst and you?"	slog-are-you	1
+"I am Buyshrug Wristthirst and you?"	slog-are-you	1
 "I want to go into the holiday resort to 
 find my way to total boredomness"	slog-real-adventurer	1
 "I know you like stitching manatees. My question is, are you also able to
@@ -1167,6 +1171,7 @@ find my way to total boredomness"	slog-real-adventurer	1
 "I bought this island, you know?"	slog-bought-island	0
 "How do I get to Smiley Island"	slog-how	0
 "About that pirate ship at the horizon..."	tim-kopi	0
+"Can you tell me something about the people of Yesnid inside the resort?"	tim-yesnid	0
 "Nothing"	silence	1
 
 table of daves talk
@@ -1181,17 +1186,21 @@ dive into that creek wearing this manatee suit, I'll fish
 you near the river mouth, so ron is able to see it and 
 I'm getting the wristband. wouldn't it be great?"	dave-manatee	0
 "About that pirate ship at the horizon..."	dave-kopi	0
+"Hey whats your relation to the people of Yesnid down inside the resort?"	dave-yesnid	0
 "I'll leave you... sitting around doing nothing"	silence	1
 
 
 Table of rons Talk
 prompt	response	enabled
-"Hi. I'm the new neighbor"	ron-new-in-town	1
+"Hi. I'm Buyshrug, who are you?"	ron-new-in-town	1
 "Nice fishing rod, exactly the one I need."	ron-gives-rod	0
 "Can I get this fruit?"	ron-fruit	1
+"Which plan, do you know it?"	ron-plan	0
+"Who was that boss?"	ron-sacul	0
 "[one of]aehm.. what about this pile of meat over her?
 [or]about... that meat again..[stopping]"	ron-meat	0
 "About that pirate ship at the horizon..."	ron-kopi	0
+"What about those people already inside the holiday resort?"	ron-people	0
 "I have to go. Bye."	silence	1
 
 
@@ -1235,17 +1244,19 @@ dave-meat	"I'm not sure whether I want to know that."
 tim-kopi	"Outch, thanks. I have to inform Dave and Ron about it."
 dave-kopi	"Outch, thanks. I habe to inform Tim and Ron about it."
 ron-kopi	"Outch, thanks. I have to inform Tim and Dave about it."
+ron-sacul	"He was the boss of Sacul Film. The famous maker of the 'Planet Wars' movies"
+ron-plan	"It was all about an old pirate secret that's still unrevealed. L. the boss of Sacul Film. The famous maker of 'Planet Wars' does anything to get it."
 
 
 
 Table of quip texts (continued)
 quip	quiptext
 dave-hello	"[if dave is wearing the diving helmet][daveguy] opens the visor of his [diving helmet], so he is able to communicate with you. [end if]'Whats up?'"
-dave-brass	"Can you please go, I have some serious work going on."
+dave-brass	"Can you please go, I have some serious work going on. And yes, I'm not interested a member of the steampunk society."
 dave-start-barbecue	"Manatis are protected today, so we have fake ones to get."
-dave-are-you	"Name yes, profession no."
+dave-are-you	"Yes thats me."
 dave-ask-wristbands	"Really? Would be great to talk to a guy with many wristbands. Show me yours."
-dave-keep-wristbands	"No, I'm used to be a scuba diver. I'm un employed now. It's a bad job situation here on these islands. So I live from the fruits in the jungle and I'm still trying to find my way out of the complete boredomness."
+dave-keep-wristbands	"I'm unemployed now. It's a bad job situation here on these islands. So I live from the fruits in the jungle and I'm still trying to find my way out of the complete boredomness."
 dave-manatee	"Do you think i'm completely dull? But... hmm. No, not without a cause."
 dave-durian	"That sounds like a fair deal. So give me the suit."
 dave-nobait	"grmpft."
@@ -1257,7 +1268,8 @@ slog-smiley	"Oh, that one. Brave. Nobody wants it or will even step on it. Good 
 slog-cant-remember	"The more we love your island, the more we will hate you for bying it."
 slog-how	"In the best case not at all. But if you insist, you will need a boat, map and a
 compass. Come back, when you are prepared."
-ron-new-in-town	"Oh, cool. We need new ones. It's getting empty here."
+ron-new-in-town	"I am an electronic story teller. Or better: I was."
+ron-boss	"Our big boss was following his own plan."
 ron-fruit	"Sure, take a bite."
 ron-gives-rod	"Sure.[if barbacueing is happening] I heard you are on the manatee
 hunt.[end if] Good luck. And yes, you can have this fishing rod. Someone forgot it here or
@@ -1267,9 +1279,16 @@ ron-meat	"[if keeping-meat is true]Get your fingers off it! Good meals are rare 
 these times. Except you can give me a good alternative, maybe a bit more sustaining?
 [otherwise] Go on, just take the meat. I loved your food.[end if]"
 dave-secret	"We are diving for the secret you shouldn't know anything about."
+ron-secret	"Not really. But it seems, we discovered something important to find it during our investigation for our project."
+ron-people	"They are from Yesnid, the company that bought ours."
+tim-yesnid	"They conquered, what was ours once and with their money they support L.´s quest for the secret of ... But I better keep my mouth shut."
+dave-yesnid	"Not my problem, but I want to be part of the revenge. Hopefully getting rich afterwards."
 silence	"Bye."
 
-
+after quipping when the current quip is ron-people:
+	now yesnid is familiar;
+	enable the tim-yesnid quip for tim;
+	enable the dave-yesnid quip for dave.
 After quipping when the current quip is silence:
 	enable the silence quip;
 	terminate the conversation;
@@ -1279,6 +1298,8 @@ After quipping when the current quip is slog-smiley:
 	enable the slog-how quip;
 	say "ron comes near you.";
 	move ron to town hall.
+after quipping when the current quip is ron-sacul for the first time:
+	enable the ron-plan quip for ron.
 after quipping when the current quip is slog-ask-wristbands:
 	enable the slog-pirate-action quip;
 	enable the dave-keep-wristbands quip for dave.
@@ -1352,6 +1373,11 @@ slog-start-marooned	"Yes, want it. Now. I wanna have as much boredomness afterwa
 slog-start-marooned	"No way. I don't want your silly pirate stuff."	slog-marooned-no
 dave-brass	"What kind of serious work do you mean?"	dave-secret
 dave-brass	"Are you diving for something special?"	dave-secret
+ron-new-in-town	"What happened?"	ron-boss
+ron-boss	"Who was your boss?"	ron-plan
+ron-boss	"Which plan, do you know it?"	ron-plan
+ron-plan	"Do you know what this secret is?"	ron-secret
+
 
 part initial connections
 
@@ -1463,6 +1489,7 @@ at the time when the meanwhile-2 appears:
 at the time when the meanwhile-3 appears:
 	say "[bold type]MEANWHILE ...[paragraph break] [roman type] party noise from
 	 direction of the holiday resort";
+	enable the ron-people quip for ron.
 
 at the time when the meanwhile-4 appears:
 	say "[bold type]MEANWHILE ...[paragraph break] [roman type] You think to yourself
