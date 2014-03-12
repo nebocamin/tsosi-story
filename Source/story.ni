@@ -541,7 +541,7 @@ Its one of your [wristband-count in words] wristbands.".
 	now noun is the location.]
 
 Rule for supplying a missing noun while digging:
-	now noun is ground.
+	now noun is the location.
 
 Understand "dig" or "dig hole/here" or "dig in ground/dirt/earth" as digging.
 
@@ -563,19 +563,22 @@ digging is an action applying to one thing and requiring light.
 [check digging:
 	if the player does not carry the shovel, stop the action.]
 
-after digging the ground the first time:
+instead of digging in the presence of a person:
+	say "It's not a good idea to dig here in the presence of [list of visible person].".
+
+after digging the first time:
 	say "You dig your first hole in the ground.";
 	now the first hole is in the location of the player;
 
-after digging the ground the second time:
+after digging the second time:
 	say "You dig your second hole in the ground. Revealing an old diary.TODO";
 	now the second hole is in the location of the player;
 
-after digging the ground the third time:
+after digging the third time:
 	say "You dig your third hole in the ground.";
 	now the third hole is in the location of the player.
 
-after digging the ground more than three times:
+after digging more than three times:
 	say "Thats enough. You don't feel like digging anymore.";
 
 [merke, das war die falsche Zeitform
