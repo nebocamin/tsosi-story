@@ -347,6 +347,9 @@ understand "blow [something]" as inflating.
 understand "blow up [something]" as inflating.
 understand "blow [something] up" as inflating.
 
+deflating is an action applying to one thing.
+understand "deflate [something]" as deflating.
+
 [felor is the magic word]
 
 
@@ -393,7 +396,7 @@ Tim is wearing a molton sheet. he is in boring beach. the description is "This b
  with curly hair is sitting behind a sewing machine, stitching some [cloth]. 
 He wears a name plate.".
 
-understand "man", "guy" as tim. 
+understand "beardy man", "beard", "curly hair", "hair", "man", "guy" as tim. 
 the printed name of tim is "guy".
 
 the initial appearance of tim is "[if name plate is familiar]Tim is sitting here.
@@ -422,6 +425,9 @@ instead of dropping the pile of meat:
 
 manatee suit is a wearable thing. the description is "hrmpft. its an suit 
 made of meat in the form of a manatee.".
+
+instead of doing anything other than wearing the manatee suit:
+	say "Its heavy but there must be a better purpose for it".
 
 instead of giving the manatee suit to dave, say "You better talk to him first."
 
@@ -459,7 +465,7 @@ flowers are scenery in flower bed. the description is "Yellow.". understand "flo
 the scent of flowers is "strong, uncomfortable, like wanting to vomit" 
 
 the description of bambus fields is "[one of]You find yourself trapped 
-in a well made [bambus] field labyrinth. Green [bambus] all around. 
+in a well made bambus field labyrinth. Green bambus all around. 
 [if getting-marooned is happening]But contrary to your imagination 
 of marooning, it seems quite un-dangerous and you don't even received a gun.[end if] 
 You hear the strong currents breaking against the shore far down the hill[stopping]. 
@@ -493,9 +499,11 @@ instead of going north in bambus fields for the first time:
 	kopi-familiar appears in 0 turns from now;
 	continue the action.
 
-the cliff is scenery in view around. "har har... down below there, you can see 
-lots of those plastic treasures. [if treasure-cliff is true]You can see additionally 
+the cliff is scenery in view around. "[if treasure-hunt is happening]har har... [end if]Down below there, you can see 
+lots of [if treasure-hunt is happening]those should-be-hidden [end if][plastic treasures]. [if treasure-cliff is true]You can see additionally 
 the treasure you had to hide.[end if]".
+
+plastic treasures are scenery in view around. the description is "An awkward bunch of plastic treasures thrown away by tourists to solve the treasure hunt as fast as possible."
 
 instead of jumping in view around:
 	say "Are you nuts?".
@@ -1230,7 +1238,7 @@ get the manatee-wristband, if you catch one with a fishing rod and appropriate b
 can get your tools from Ron in the small market as you see to the east at the river mouth."
 slog-real-adventurer	"Arrgh. Show me the three wristbands."
 slog-ask-wristbands	"Every _real_ adventurer and or tourist has to get the three 
-wristbands. They have different colors. We offer them here for achieving pirate actions. 
+wristbands. We offer them here for achieving pirate actions. 
 This island was a pirates nest before. So we support traditional pirate actions. You can 
 always see your achievements if you examine your wrist."
 tim-manatee	"Ah, the manatees. such nice and friendly animals. But rarely seen on
@@ -1242,7 +1250,7 @@ and he takes it, stitches and stitches...[paragraph break]..and hours later...
 slog-are-you	"I'm Tim and thats all you must know at the moment."
 dave-meat	"I'm not sure whether I want to know that."
 tim-kopi	"Outch, thanks. I have to inform Dave and Ron about it."
-dave-kopi	"Outch, thanks. I habe to inform Tim and Ron about it."
+dave-kopi	"Outch, thanks. I have to inform Tim and Ron about it."
 ron-kopi	"Outch, thanks. I have to inform Tim and Dave about it."
 ron-sacul	"He was the boss of Sacul Film. The famous maker of the 'Planet Wars' movies"
 ron-plan	"It was all about an old pirate secret that's still unrevealed. L. the boss of Sacul Film. The famous maker of 'Planet Wars' does anything to get it."
@@ -1252,7 +1260,7 @@ ron-plan	"It was all about an old pirate secret that's still unrevealed. L. the 
 Table of quip texts (continued)
 quip	quiptext
 dave-hello	"[if dave is wearing the diving helmet][daveguy] opens the visor of his [diving helmet], so he is able to communicate with you. [end if]'Whats up?'"
-dave-brass	"Can you please go, I have some serious work going on. And yes, I'm not interested a member of the steampunk society."
+dave-brass	"Can you please go, I have some serious work going on. And yes, I'm not an interested member of the steampunk society."
 dave-start-barbecue	"Manatis are protected today, so we have fake ones to get."
 dave-are-you	"Yes thats me."
 dave-ask-wristbands	"Really? Would be great to talk to a guy with many wristbands. Show me yours."
@@ -1659,7 +1667,7 @@ instead of going north from cabin, try entering the porthole.
 
 instead of entering the porthole:
 	if empty water mattress is carried by the player:
-		say "okay, geht";
+		say "(together with the empty mattress)";
 		continue the action;
 	otherwise:
 		if airfull water mattress is carried by the player:
@@ -1685,6 +1693,12 @@ instead of going north in ocean:
 		[10nov2013release end]
 		[end the story.]
 		[continue the action.]
+
+instead of going west in ocean:
+	say "Nice thought to slowly starve in the open ocean... not. You better try to go north to reach the beach before that mattress is loosing its air.".
+
+instead of going east in ocean:
+	say "You see in that direction lies the island you were coming from. But its too far away to get there with that mattress, so you better try to go north to reach the beach.".
 
 cabin is inside of ocean.
 
@@ -1713,6 +1727,8 @@ to say mattresscontent:
 
 instead of opening the mattress, try pulling the plug.
 
+instead of deflating the mattress, try pulling the plug.
+
 instead of pulling the plug:
 	if the water mattress is waterfull:
 		say "A flush of water flows to the floor and vanishes under the door.";
@@ -1728,7 +1744,7 @@ instead of pulling the plug:
 
 instead of inflating the water mattress:
 	if the water mattress is empty:
-		say "You sit down, take a deep breath and you blow your breath into the mattress until its filled. As fast as possible, you put the plug back in so the mattress stays full.";
+		say "You[if the player is in cabin] sit down,[end if] take a deep breath and you blow your breath into the mattress until its filled. As fast as possible, you put the plug back in so the mattress stays full.";
 		now the mattress is airfull;
 	otherwise:
 		say "The mattress is not empty, so you are not able to inflate it.".
