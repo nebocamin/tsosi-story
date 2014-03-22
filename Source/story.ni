@@ -59,7 +59,7 @@ Index map with shashrick mapped northeast of jungle path.
 
 part testing
 
-test th with "talk / 3  / 1 / 1 / 3 / 1 / ne / dig / put treasure into hole / close hole / sw "
+test th with "talk / 3  / 1 / 1 / 3 / 1 / nw / dig / put treasure into hole / close hole / se "
 
 test gm with "talk / 3 / 2 / 1 / w / sw / sw / sw"
 
@@ -219,6 +219,14 @@ to say daveguy:
 		say "that guy".
 
 instead of going inside in boring beach, try going west.
+
+Swimming is an action applying to nothing. Understand "go to swim","swim", "take bath", "take a bath" or "dive" as swimming.
+[dive wirklich als synonym to swim? eher instead und dann eine bewegung in down south?]
+
+Instead of swimming in boring beach:
+	try going south.
+
+instead of swimming, say "No way.".
 
 instead of going south in boring beach, say "[one of]You go a few steps into the water.
  Its warmer than expected. Maybe you would go for a swim. But in sight of this beach, 
@@ -462,7 +470,7 @@ southwest and one to the east."
 
 flowers are scenery in flower bed. the description is "Yellow.". understand "flower" as the flowers.
 
-the scent of flowers is "strong, uncomfortable, like wanting to vomit" 
+the scent of flowers is "Strong, uncomfortable, like wanting to vomit." 
 
 the description of bambus fields is "[one of]You find yourself trapped 
 in a well made bambus field labyrinth. Green bambus all around. 
@@ -473,6 +481,8 @@ You hear the strong currents breaking against the shore far down the hill[stoppi
 [or] You know the path to the west right into the flower bed flower bed.[stopping]
 [otherwise] You haven't any clue in which direction to escape from here.[end if]
 [if view around is visited] You know a path to the north, to have a nice view around.".
+
+currents are scenery in bambus fields. the description is "You hear the currents downwards which means to the west."
 
 green-bambus is scenery in bambus fields. "Green, sturdy and no chance to move them away."
 
@@ -563,7 +573,9 @@ digging is an action applying to one thing and requiring light.
 [check digging:
 	if the player does not carry the shovel, stop the action.]
 
-instead of digging in the presence of a person:
+Definition: a person is another if it is not the player.
+
+instead of digging in the presence of another person:
 	say "It's not a good idea to dig here in the presence of [list of visible person].".
 
 after digging the first time:
@@ -802,6 +814,9 @@ down to southeast, where it ends in a river mouth. a [path along] the creek's
 into the jungle and exits also to southwest back to the boring beach.".
 
 dave-diving is a truth state that varies. dave-diving is false.
+
+Instead of swimming in jungle path:
+	try going down.
 
 diving apparatus is a device in jungle path. "There stands a machine with 
 lots of brass elements and flexible tubes. [if diving helmet is connected]Its connected to [daveguy]s helmet
