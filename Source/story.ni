@@ -63,7 +63,7 @@ test th with "talk / 3  / 1 / 1 / 3 / 1 / nw / dig / put treasure into hole / cl
 
 test gm with "talk / 3 / 2 / 1 / w / sw / sw / sw"
 
-test b with "talk / 3 / 3 /4 / ne / se / talk / 2 / 2 / 2 / get meat/ talk / 2 / 3 / open sack / give food to ron / get meat / nw / sw / talk / 2 /4 / ne / talk / 3 / 1 / 2 / 1 / 2/ 1 / 1 / 1/ se / fish manatee "
+test b with "talk / 3 / 3 /4 / ne / se / talk / 2 / 2 / 2 / get meat/ talk / 2 / 3 / open sack / give food to ron / get meat / nw / sw / talk / 2 /4 / ne / talk / 3 / 1 / 2 / 1 / 2/ 1 / 1 / 1/ 1/ se / fish manatee "
 
 test thgm with "look / test th / look / i / test gm ".
 
@@ -125,7 +125,7 @@ of Smiley Island  [paragraph break]  [paragraph break] ".
 when play begins:
 	say "Deep in the west indies. The island of boredom. Just coming from the boat
 	 without puking, but still in a bad feeling. Your holidays starting for you to reach the
-	 state of total boredomness. (version march2014)".
+	 state of total boredomness. (version july2014)".
 	[pause the game.]
 
 sustainable food is edible.
@@ -150,8 +150,8 @@ wrist is part of the player. the description is "On your wrist you can see
 [wristband-count in words] wristbands.".
 
 the description of the towel is "This is, what every adventurer needs. 
-[if the player carries the brass lantern] [otherwise] Further needed: A brass lantern[end if]
-[if the player carries the rope][otherwise] and maybe a rope[end if].".
+[if the player carries the brass lantern][otherwise]Further needed: A brass lantern[end if]
+[if the player carries the rope][otherwise] and maybe a rope[end if]".
 
 tsosi-hunch is an unfamiliar subject.
 yesnid is an unfamiliar subject.
@@ -162,11 +162,13 @@ Thinking about is an action applying to one visible thing.
 Understand "think about [any thing]" as thinking about.
 Understand "think about [any known thing]" as thinking about.
 Report thinking about something unknown:
-	say "You can't hink ath the moment. [no thoughts]"
+	say "You can't think clearly at the moment. [no thoughts]"
 
 Report thinking about something known:
 	say "You are too excited to think about this at the moment.
-	[the thought of the noun] [paragraph break]"
+		[the thought of the noun] [paragraph break]"
+	
+the thought of flowers is "mir wird uebel".
 
 A thing has a text called thought.
 Pondering is an action applying to one topic.
@@ -251,6 +253,8 @@ understand "sea" as the horizon.
 after examining horizon:
 	kopi-familiar appears in 0 turns from now.
 
+rtd-know-kopi is a truth state that varies. rtd-know-kopi is false.
+
 at the time when kopi-familiar appears:
 	say "That ship at the horizon lets you ponder about its purpose.";
 	now kopi is familiar;
@@ -272,7 +276,7 @@ instead of opening the gate:
 		say "Slowly you try to open that gate and it really moves. So you put you first step into the resort ready to go west. Finally.";
 		continue the action;
 	otherwise:
-		say "It's really strong and you have no chance to open it somewhere.". 
+		say "It's really strong and you have no chance to open it somewhere. You've got [wristband-count in words] of these silly wristbands. It seems you really need [three - wristband-count in words] more of them to get into the holiday resort.". 
 
 instead of attacking the gate:
 	say "You swing your full weight against the gate. Your body reacts with pain, the gate with sniffy nothing.". 
@@ -334,7 +338,7 @@ instead of going west in boring beach during all-new:
 		otherwise:
 			say "Yes, you've got [wristband-count in words] of these silly wristbands. 
 			But it doesn't help for now. You still need [three - wristband-count in words] 
-			of them to get into the holiday resort.".
+			more of them to get into the holiday resort.".
 
 [cruise ship is a room. "You're standing at the railing. ready to jump."]
 
@@ -345,7 +349,7 @@ understand "fish [something]" as fishing.
 understand "angle [something]" as fishing.
 
 instead of fishing ron:
-	say "probier doch den manatee";
+	say "You don't want to fish that guy, but fishing a manatee would be a real achievement.";
 	try fishing the manatee.
 
 inflating is an action applying to one thing.
@@ -359,7 +363,6 @@ deflating is an action applying to one thing.
 understand "deflate [something]" as deflating.
 
 [felor is the magic word]
-
 
 check fishing when noun is not fake manatee: instead say "No, there is a better purpose. Trust me.".
 check fishing when noun is not visible: instead say "You can't fish something that isnt there."
@@ -425,6 +428,7 @@ instead of giving the pile of meat to tim:
 	now the pile of meat is off-stage;
 	now the player carries the manatee suit;
 	disable the slog-ask-meat quip for tim;
+	disable the dave-meat quip for dave;
 	enable the dave-manatee quip for dave.
 
 instead of dropping the pile of meat:
@@ -470,7 +474,9 @@ southwest and one to the east."
 
 flowers are scenery in flower bed. the description is "Yellow.". understand "flower" as the flowers.
 
-the scent of flowers is "Strong, uncomfortable, like wanting to vomit." 
+the scent of flowers is "Strong, uncomfortable, like wanting to vomit" 
+
+instead of taking the flowers, say "No, you don't want to nearly-kill puppies.".
 
 the description of bambus fields is "[one of]You find yourself trapped 
 in a well made bambus field labyrinth. Green bambus all around. 
@@ -512,6 +518,8 @@ instead of going north in bambus fields for the first time:
 the cliff is scenery in view around. "[if treasure-hunt is happening]har har... [end if]Down below there, you can see 
 lots of [if treasure-hunt is happening]those should-be-hidden [end if][plastic treasures]. [if treasure-cliff is true]You can see additionally 
 the treasure you had to hide.[end if]".
+
+instead of examining down in view around, try examining the cliff.
 
 plastic treasures are scenery in view around. the description is "An awkward bunch of plastic treasures thrown away by tourists to solve the treasure hunt as fast as possible."
 
@@ -680,7 +688,7 @@ the printed name of vpool is "pool". understand "pool" as the vpool.
 the  vswimming spot is scenery in trail. the description is "This is a beach 
 after your liking. Fresh, cleaned sand. Loungers with towels on it.".
 the printed name of vswimming spot is "swimming spot".
-understand "towels", "loungers", "swimming spot" as the vswimming spot.
+understand "towels", "loungers", "swimming spot", "sand" as the vswimming spot.
 the vstage is scenery in trail. the description is "A stage, are the giving a 
 performance tonight? You want to hurry up to get in on time.".
 the printed name of vstage is "stage". understand "stage" as the vstage.
@@ -810,7 +818,7 @@ chapter jungle path
 
 the description of jungle path is "There is a creek flowing from northwest 
 down to southeast, where it ends in a river mouth. a [path along] the creek's
- bank follows the same direction. a [wooden bridge] leads northeast deeper 
+ bank follows the same direction. A [wooden bridge] leads northeast deeper 
 into the jungle and exits also to southwest back to the boring beach.".
 
 dave-diving is a truth state that varies. dave-diving is false.
@@ -824,7 +832,7 @@ lots of brass elements and flexible tubes. [if diving helmet is connected]Its co
 water, [daveguy] seems to dive deep in the water. You can't see him.[end if]". 
 the diving apparatus is switched off. the scent of it is "hot oil".
 understand "machine", "brass elements", "brass", "elements", 
-"flexible tubes", "tubes", "flexible" as the diving apparatus.
+"flexible tubes", "tubes", "flexible", "tmd" as the diving apparatus.
 the diving apparatus is fixed in place.
 
 after taking the diving helmet:
@@ -858,8 +866,12 @@ instead of switching on the diving apparatus during all-new2:
 	the divers. You turn it back on, but maybe now it is really too late for the diving guys.".
 
 instead of going inside in jungle path, try going down. 
-instead of going down in jungle path during all-new:
-	say "No. You don't want to dive into that water. The first thing you want 
+instead of going down in jungle path:
+	if all-new2 is happening:
+		say "After getting the three wristbands, you really want to go into the holiday resort.";
+	otherwise:
+		if all-new is happening:
+			say "No. You don't want to dive into that water. The first thing you want 
 	is to get into that holiday resort[if 3quests is familiar] even if you have to 
 	earn those three wristbands in the first place.[otherwise]. Other kinds of 
 	adventures have to wait after you reached the state of total boredomness.[end if]".
@@ -870,8 +882,8 @@ instead of going down in jungle path during all-new:
 
 the path along is scenery in jungle path. the description is "Instead of the other trails this one is well-trodden.".
 
-wooden bridge is scenery in jungle path. the description is "Its stable as a rock and it is made out of, you guessed it already.. [rocks].".
-rocks are part of wooden bridge. the description is "really simple masonry, but solid.". 
+wooden bridge is scenery in jungle path. the description is "Its stable as a rock and it is made out of, you guessed it already.. wooden [rocks].".
+rocks are part of wooden bridge. the description is "really simple masonry, but solid.". understand "rock" as rocks.
 
 instead of going down in jungle path:
 	if the diving apparatus is switched on:
@@ -891,15 +903,19 @@ instead of going northwest in jungle path:
 Dave is a person in jungle path. the description is "[if diving helmet is worn by dave] 
 You really can't see his face inside that full metal helmet.
  [otherwise] Not that awesome you wish he will wear that helmet again.[end if]". 
-the initial appearance of dave is "[daveguy] stands here and seems to wait for something.".
+the initial appearance of dave is "[daveguy] stands here and seems to wait for something[if dave-wait-reason is true] he doesn't want to tell you[end if].".
  the litany of dave is the table of daves talk. the greeting of dave is dave-hello.
 the printed name of dave is "guy".
+
+dave-wait-reason is a truth state that varies. dave-wait-reason is false.
 
 understand "guy" as dave.
 
 dave wears a diving helmet. it is wearable. the description of the diving helmet is "Thats what you call a perfect costum for every steampunk party.".
 understand "visor", "helm" as the diving helmet.
 the diving helmet can be connected. the diving helmet is connected.
+
+instead of opening the helmet, say "Maybe you just talk to him first."
 
 instead of giving the treasure to dave:
 	say "You ask [daveguy] whether he knows a good hideaway. [daveguy] nodded, takes the
@@ -917,7 +933,14 @@ at the time when dave-back appears:
 		say "[Daveguy] just arrives after he hid your treasure.".
 		
 
-instead of giving the durian to someone, say "There will be a better use for tasty fruit."
+instead of giving the durian to someone, say "There will be a better use for that tasty fruit."
+
+instead of giving the durian to dave during barbacueing, say "You'll give him the durian after you fished the manatee.".
+
+instead of giving the durian to dave:
+	if barbacueing has happened:
+		say "that awful smellung fruit is the right thing to eat right now.";
+		now the durian is off-stage.
 
 village center is a room. "[one of]After one month of travelling you step on earth again. 
 It feels stable. Your interest is growing. How will it be? On your own island. Forever 
@@ -942,10 +965,9 @@ chapter river mouth
 manatee wristband is wearable.  the description is "A small manatee is stitched into it. 
 Its one of your [wristband-count in words] wristbands.".
 
-fake manatee is a thing. "looking a bit awkward, the fake manatee swims here.". 
+fake manatee is a thing. "Looking a bit awkward, the fake manatee swims here.". 
 the description is "He seems to have problems to come out of the water without 
-help. What a pitty that you have lots of other things to do. Maybe you wait until 
-you will fish this fake manatee.".
+help. What a pitty that you have lots of other things to do. Maybe he has to wait until you will fish this fake manatee.".
 understand "dave" as the fake manatee.
 
 [todo fishing only with rod+durian]
@@ -987,13 +1009,14 @@ time at the same place.".
 understand "guy" as ron.
 the printed name of ron is "guy". understand "guy" as ron.
 
-ron is in river mouth.  the litany of ron is the table of rons talk. fruit table is 
-privately-named. understand "table" and "fruit table" as fruit table.
+ron is in river mouth.  the litany of ron is the table of rons talk. the greeting of ron is ron-hello. 
+
+fruit table is privately-named. understand "table" and "fruit table" as fruit table.
 understand "man" as ron.
 
 a durian is on the fruit table. the description is "[if the durian is part of the fishing rod] A
- durian is at the fishhook of the rod, ready to go fishing.[otherwise]This looks like a
- durian. Wonderful. For such a long time you wanted to take a nose and taste it."
+ durian is at the fishhook of the rod, ready to go fishing.[end if][if the durian is smashed]This looked like a durian, now its smashed into an unnameable ugly state of decay.[otherwise]This looks like a
+ durian. Wonderful. For such a long time you wanted to take a nose and taste it.[end if]"
 
 a fishing rod is on the fruit table. the description is "Thats a strong looking fishing rod
  with a fishhook. You're not quiet sure, if its believable to catch such a big animal like a manatee with this tiny rod. [if the durian is part of the fishing rod] A durian is at the fishhook of the 
@@ -1018,8 +1041,8 @@ instead of taking the rod:
 	otherwise:
 		continue the action.
 
-instead of dropping the durian in river mouth:
-	say "you just began to wait for the bait to get a bite from a pyrate. TODO hae?"
+[instead of dropping the durian in river mouth:
+	say "you just began to wait for the bait to get a bite from a pyrate. TODO hae?"]
 
 pile of meat is in river mouth. the description is "[if pile of meat carried by the player]Its
  heavy and red juice is dripping down from it.[otherwise]Not appetizing, but its really a 
@@ -1053,10 +1076,12 @@ instead of giving the something edible to ron:
 
 understand "fruit" as the durian.
 
-the durian is edible.
+the durian is edible. the durian can be smashed or unsmashed. the durian is unsmashed.
 
-after dropping the durian, say "You throw the durian and it smashed against the floor.
-An awful odor starts flowing around.".
+after dropping the durian:
+	say "You throw the durian and it smashed against the floor.
+An awful odor starts flowing around.";
+	now the durian is smashed.
 
 instead of eating the durian, say "Nope, no way. The smell is like a punch in your face."
 
@@ -1108,6 +1133,8 @@ chapter treasure hunt
 
 the treasure is a closed and openable container. the description is "Its made out of plastic and has a really cheap look and feel.". the scent of it is "plastic odour".  understand "chest", "treasure chest" as the treasure.
 
+instead of attacking the treasure:
+	try dropping the treasure.
 
 the chocolate coins are edible. the description is "They are brown with white stains from
 being remelted not only once this summer.". the chocolate coins are in treasure. they are edible.
@@ -1130,6 +1157,7 @@ Your first caribbean windbeutel."
 treasure-cliff is a truth state that varies. treasure-cliff is false.
 
 after dropping the treasure:
+	now treasure is open;
 	if the player is in boring beach:
 		say "You throw the treasure as far as you could into the salty sea. You look at the horizon
 		 to see how far you were able to throw it. But before you discovered it a strong current 
@@ -1203,6 +1231,7 @@ find my way to total boredomness"	slog-real-adventurer	1
 table of daves talk
 prompt	response	enabled
 "Ahoj, my brain just told me that you have to be Dave. Are you?"	dave-are-you	1
+"Are you waiting for something specific?"	dave-waiting	1
 "I'm an adventurer, spending my holidays on this island."	dave-ask-wristbands	1
 "Hey, I like the lanterns matching your helmet."	dave-brass	1
 "Do you keep any wristbands for pirate actions?"	dave-keep-wristbands	0
@@ -1235,7 +1264,8 @@ Before going: terminate the conversation.
 
 Table of Quip Texts (continued)
 quip	quiptext
-slog-hello	"Ahoj, what do ya want here?"
+ron-hello	"[if the player wears the manatee suit]Ahhh, help! Oh its you. You frightened me wearing that manatee suit.[otherwise] Ahoj.[end if]"
+slog-hello	"[if the player wears the manatee suit]Ahhh, help! Oh its you. You frightened me wearing that manatee suit.[otherwise]Ahoj, what do ya want here?[end if]"
 slog-pirate-action	"The pirate actions are prepared by us, you have to take one
  and afterwards come back and I will give you the appropriate wristband for achieving the
  actions goal. So you have to choose, which pirate-action do you want. This week we have
@@ -1267,9 +1297,9 @@ and he takes it, stitches and stitches...[paragraph break]..and hours later...
 [paragraph break]... it is a manatee suit."
 slog-are-you	"I'm Tim and thats all you must know at the moment."
 dave-meat	"I'm not sure whether I want to know that."
-tim-kopi	"Outch, thanks. I have to inform Dave and Ron about it."
-dave-kopi	"Outch, thanks. I have to inform Tim and Ron about it."
-ron-kopi	"Outch, thanks. I have to inform Tim and Dave about it."
+tim-kopi	"[if rtd-know-kopi is true]If you want an adwise, stay away from the resort.[otherwise]Outch, thanks. I have to inform Dave and Ron about it.[end if]"
+dave-kopi	"[if rtd-know-kopi is true]Now time counts, we have to get earlier to the secret.[otherwise]Outch, thanks. I have to inform Tim and Ron about it.[end if]"
+ron-kopi	"[if rtd-know-kopi is true]I'm watching the coast line carefully.[otherwise]Outch, thanks. I have to inform Tim and Dave about it.[end if]"
 ron-sacul	"He was the boss of Sacul Film. The famous maker of the 'Planet Wars' movies"
 ron-plan	"It was all about an old pirate secret that's still unrevealed. L. the boss of Sacul Film. The famous maker of 'Planet Wars' does anything to get it."
 
@@ -1277,7 +1307,7 @@ ron-plan	"It was all about an old pirate secret that's still unrevealed. L. the 
 
 Table of quip texts (continued)
 quip	quiptext
-dave-hello	"[if dave is wearing the diving helmet][daveguy] opens the visor of his [diving helmet], so he is able to communicate with you. [end if]'Whats up?'"
+dave-hello	"[if dave is wearing the diving helmet][daveguy] opens the visor of his [diving helmet], so he is able to communicate with you. [end if][if the player wears the manatee suit]Ahhh, help! Oh its you. You frightened me wearing that manatee suit.[otherwise]'Whats up?'[end if]"
 dave-brass	"Can you please go, I have some serious work going on. And yes, I'm not an interested member of the steampunk society."
 dave-start-barbecue	"Manatis are protected today, so we have fake ones to get."
 dave-are-you	"Yes thats me."
@@ -1286,6 +1316,7 @@ dave-keep-wristbands	"I'm unemployed now. It's a bad job situation here on these
 dave-manatee	"Do you think i'm completely dull? But... hmm. No, not without a cause."
 dave-durian	"That sounds like a fair deal. So give me the suit."
 dave-nobait	"grmpft."
+dave-waiting	"Sure. But is non of your business."
 slog-new-in-town	"You hold just [the list of the things carried by the player] in your hands. Do you think, you have any chance to survive here?"
 slog-deal-with	"'So we have to deal with you and You want me to tolerate your face, everytime you come along?'"
 slog-go-away	"'Nice one... so please leave. fast. very fast.'"
@@ -1375,6 +1406,14 @@ after quipping when the current quip is slog-start-barbecue:
 	now the printed name of ron is "Ron".
 after quipping when the current quip is dave-secret:
 	now tsosi-hunch is familiar.
+after quipping when the current quip is ron-kopi:
+	now rtd-know-kopi is true.
+after quipping when the current quip is tim-kopi:
+	now rtd-know-kopi is true.
+after quipping when the current quip is dave-kopi:
+	now rtd-know-kopi is true.
+after quipping when the current quip is dave-waiting:
+	now dave-wait-reason is true.
 	
 	
 treasure-hunt begins when the current quip is slog-start-treasurehunt the first time.
@@ -1764,6 +1803,7 @@ instead of inflating the water mattress:
 	if the water mattress is empty:
 		say "You[if the player is in cabin] sit down,[end if] take a deep breath and you blow your breath into the mattress until its filled. As fast as possible, you put the plug back in so the mattress stays full.";
 		now the mattress is airfull;
+		now the printed name of water mattress is "inflated deflatable mattress";
 	otherwise:
 		say "The mattress is not empty, so you are not able to inflate it.".
 		
