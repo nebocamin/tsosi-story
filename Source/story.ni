@@ -125,7 +125,7 @@ of Smiley Island  [paragraph break]  [paragraph break] ".
 when play begins:
 	say "Deep in the west indies. The island of boredom. Just coming from the boat
 	 without puking, but still in a bad feeling. Your holidays starting for you to reach the
-	 state of total boredomness. (version july2014)".
+	 state of total boredomness. (version sept2014)".
 	[pause the game.]
 
 sustainable food is edible.
@@ -184,12 +184,12 @@ chapter tims approach
 the description of boring beach is "[if pyrate-opera is happening]Now this is also an
  empty place, the gate stands wide open..TODO[end if][one of]You arrived at a nice beach,
  sandy, sunny. Overwhelming, but even better to the west behind a fence with a [gate]
- seems to be a holiday resort. [The fence] is against the poor natives maybe. But no
+ seems to be the holiday resort. [The fence] is against the poor natives maybe. But no
  offence you are just imagening yourself there, at the bar, in the pool, on the beach. You
  even feel the taste of cocktails on your tongue. Mouthwatering it is. So you tend to 
 [bold type]go west[roman type]. Into the northern directions it looks dark and full of ugly
  insects. Thats the reason you booked your kind of active-holidays to stay in your save
- resorts. Not too much contact to natives or  even nature. [if tim is in boring beach] There
+ resorts. Not too much contact to natives or even nature. [if tim is in boring beach] There
  is a guy behind a [sewing machine]. He seems to be focused at his work.[end if] Behind
  him is a [wooden infoboard].[or]This sandy spot is hot, really hot. Besides that there is
  only the [bush] around the beach and it opens to the sea and a far away [horizon]. It
@@ -246,7 +246,7 @@ you have to go to the northeast and then southeast afterwards.".
 
 bush is a backdrop in smiley island. the description is "Barely penetrable jungle. 
 Not only because its physical impossible. Also because of you not wanting to go inside.".
-understand "jungle", "ugly insects", "insects" as the bush.
+understand "jungle", "ugly insects", "insects", "leaves" as the bush.
 horizon is a backdrop in boring beach, in river mouth, in view around, in steep coast, in rocky cliffs. the description is "[one of]You press your lids together to see as much as you can. Your eyes follow the fine line of the quiet sea on the horizon. You notice a black ship with eight sails. It moves slowly from the right to the left.[or]Again you notice this very old ship far away at the horizon.[or] You notice a slowly growing bad feeling caused by the very old ship.[or]You tried to ignore it, but your eyes were catched again and you had to take a look into the distance.[stopping]".
 understand "sea" as the horizon.
 
@@ -411,7 +411,7 @@ understand "beardy man", "beard", "curly hair", "hair", "man", "guy" as tim.
 the printed name of tim is "guy".
 
 the initial appearance of tim is "[if name plate is familiar]Tim is sitting here.
-[otherwise]There is a guy working here.".
+[otherwise]There is this a guy working here.".
 The litany of tim is the Table of tims Talk. the greeting of tim is slog-hello. tim is a man. 
 
 cloth is scenery in boring beach. the description is "Its an unnameable patchwork
@@ -449,13 +449,12 @@ marooned wristband is wearable. the description is "A pistol is stitched into it
 Its one of your [wristband-count in words] wristbands.".
 
 the printed name of shashrick is "deep in the jungle".
-the description of shashrick is "Jungle. You're in it. deeper than you 
+the description of shashrick is "Jungle. You're in it. Deeper than you 
 expected. suddenly green plants all around you and really near. Leaves
  tickeling your neck. It remembers you to tv documentaries about 
 these little poisenous green snakes. You freeze your steps, so you 
 are really able to turn around rather quickly and step back. Its the 
-path southwest a bit more near to the sea
-[if jungle path is visited] that you know[end if]
+path southwest a bit more near to the sea[if jungle path is visited] that you know[end if]
  and you could walk there fast. now. There is also a passage to northeast.".
 
 [open paths for next release]
@@ -702,7 +701,7 @@ all-new is a scene. all-new begins when play begins.
 3quests is a unfamiliar subject.
 kopi is a unfamiliar subject.
 
-instead of going north in boring beach the first time during all-new:
+instead of going north in boring beach in the presence of tim the first time during all-new:
 	say "No, you can't imagine any reason to put even a baby step into 
 	the jungle. The guy with the[if the name plate is familiar] Tim[end if]
 	[name plate] watches interested as you hesitate to go north.".
@@ -711,13 +710,15 @@ name plate is worn by tim. the description is "'Tim' is written on it.".
 
 after examining the name plate, now the printed name of tim is "Tim".
 
-instead of going north in boring beach the second time during all-new:
+instead of going north in boring beach in the presence of tim the second time during all-new:
 	say "As you were evaluating to go or not to go into the bush, 
 	the guy with the [if the name plate is familiar]Tim [end if][name plate] 
 	approaches you and begins to speak.";
 	try talking to tim.
 
 instead of going north in boring beach during all-new, say "No."
+
+instead of going north in boring beach during all-new2, say "No."
 
 treasure-hunt is a scene.
 getting-marooned is a scene.
@@ -874,7 +875,10 @@ instead of going down in jungle path:
 			say "No. You don't want to dive into that water. The first thing you want 
 	is to get into that holiday resort[if 3quests is familiar] even if you have to 
 	earn those three wristbands in the first place.[otherwise]. Other kinds of 
-	adventures have to wait after you reached the state of total boredomness.[end if]".
+	adventures have to wait after you reached the state of total boredomness.[end if]";
+		otherwise:
+			say "okay, nuetzt ja nix TODO";
+			continue the action.
 	
 
 
@@ -979,7 +983,7 @@ reaching some feet into the sea."
 the fireplace is in river mouth. the description is "Above of the old, black, burnt 
 pieces stands a pyramid of wood. Ready to be lit. Because of its size you think 
 that this could be well used as a signal fire.".
-understand "pieces", "wood", "fire" as the fireplace.
+understand "pieces", "wood", "fire", "pyramid" as the fireplace.
 
 the fireplace can be lit or unlit.
 the fireplace is fixed in place.
@@ -1561,7 +1565,7 @@ at the time when the meanwhile-4 appears:
 	 that a fresh white russian would be the right thing in your mouth now.". 
 
 at the time when the meanwhile-5 appears:
-	say "[bold type]MEANWHILE ...[paragraph break] [roman type]  Suddenly you hear an
+	say "[bold type]MEANWHILE ...[paragraph break] [roman type]  Suddenly you hear far away an
 	 explosion maybe from a canon[if ship is familiar] on the black freighter?[otherwise]?[end if]".
 
 at the time when opera-1 appears:
