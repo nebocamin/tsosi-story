@@ -1585,6 +1585,7 @@ at the time when opera-4 appears:
 	you see. The canonball goes down in the middle of the stage and breaks the wodden planks.".
 
 at the time when opera-5 appears:
+	say "stuff? janein";
 	say "[paragraph break][bold type]Panic[paragraph break]
 	[roman type]the bunch of tourist is that frightened, that they are fleeing in
 	 different directions. But they are trapped within the massive [fence]. zaun is
