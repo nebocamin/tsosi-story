@@ -51,6 +51,8 @@ Include Basic Screen Effects by Emily Short.
 Include epistemology by eric eve.
 Include Secret Doors by Andrew Owen.
 Include Far Away by Jon Ingold.
+Include Questions by Michael Callaghan.
+
 
 Include Smiley island by stereo.
 Index map with EPS file.
@@ -520,7 +522,7 @@ the treasure you had to hide.[end if]".
 
 instead of examining down in view around, try examining the cliff.
 
-plastic treasures are scenery in view around. the description is "An awkward bunch of plastic treasures thrown away by tourists to solve the treasure hunt as fast as possible."
+plastic treasures are scenery in view around. the description is "Thats an awkward bunch of plastic treasures thrown away deep down the cliff by tourists to solve the treasure hunt as fast as possible."
 
 instead of jumping in view around:
 	say "Are you nuts?".
@@ -630,8 +632,8 @@ instead of opening a treasure-hideaway:
 		continue the action.
 
 the first hole is a treasure-hideaway.
-the second hole is a  treasure-hideaway.
-the third hole is a  treasure-hideaway.
+the second hole is a treasure-hideaway.
+the third hole is a treasure-hideaway.
 ground is a backdrop in smiley island.
 
 understand "fill up [treasure-hideaway]" as filling up.
@@ -1180,7 +1182,7 @@ the description of crossing is "a [palm tree] in which is a [magpies nest]".
 the magpies nest is a distant scenery open container in crossing.
 instead of examining the magpies nest, say "You don't know exactly, but you strongly feels that this must be a magpies nest. In there is [the list of things in the magpies nest].".
 
-the magpie is in the magpies nest. the description of the magpie is "Black and white witch a 
+the magpie is in the magpies nest. the description of the magpie is "Black and white with a 
 blue glance over the black. Reminds you of a crow, but a bit more beautiful. After you were 
 looking at the magpie she was looking back at you knowingly.".
 
@@ -1188,7 +1190,7 @@ looking at the magpie she was looking back at you knowingly.".
 	say "etwas".]
 
 after taking the magpie:
-	say "Like your grandma always said, a real adventure needs an animal in your pocket.";
+	say "Like your grandma always said, a real adventure needs an animal in her pocket.";
 	enable the tim-magpie quip for tim.
 
 the palm tree is a enterable scenery supporter in crossing.
@@ -1272,7 +1274,7 @@ ron-hello	"[if the player wears the manatee suit]Ahhh, help! Oh its you. You fri
 slog-hello	"[if the player wears the manatee suit]Ahhh, help! Oh its you. You frightened me wearing that manatee suit.[otherwise]Ahoj, what do ya want here?[end if]"
 slog-pirate-action	"The pirate actions are prepared by us, you have to take one
  and afterwards come back and I will give you the appropriate wristband for achieving the
- actions goal. So you have to choose, which pirate-action do you want. This week we have
+ actions goal. So you have to do all three of them. For now choose which pirate-action do you want to start. This week we have
  'Being marooned.', 'treasure hunt' or 'barbacue.''"
 slog-start-treasurehunt	"[if treasure-hunt has ended]Its enough, yours was my last
  treasure of its kind. [otherwise]Arrrgh. classic. So let me tell you. Because some spaniards
@@ -1543,8 +1545,7 @@ when pyrate-opera begins:
 	the opera-1 appears in 1 turn from now;
 	the opera-2 appears in 2 turn from now;
 	the opera-3 appears in 3 turn from now;
-	the opera-4 appears in 4 turn from now;
-	the opera-5 appears in 5 turn from now.
+	the opera-4 appears in 4 turn from now.
 
 at the time when the meanwhile-1 appears:
 	say "[bold type]MEANWHILE ...[paragraph break] [roman type] far away a ship,
@@ -1586,21 +1587,28 @@ at the time when opera-4 appears:
 	to the sea. And the black ships with eight sails appeared. A pillar of smoke arises 
 	over a cannon. In that second, a next canon is fired and you are able to follow the 
 	canon ball with your own eyes. You have to turn your head and half believing what 
-	you see. The canonball goes down in the middle of the stage and breaks the wodden planks.".
+	you see. The canonball goes down in the middle of the stage and breaks the wodden planks.[paragraph break]";
+	now the current question is "Should you stay or should you go?";
+	now current question menu is { "I should Stay", "I should go."};
+	ask a closed question, in menu mode.
 
-at the time when opera-5 appears:
-	say "stuff? janein";
-	say "[paragraph break][bold type]Panic[paragraph break]
-	[roman type]the bunch of tourist is that frightened, that they are fleeing in
-	 different directions. But they are trapped within the massive [fence]. zaun is
-	 backdrop drinnen und draussen?
-	
-	A next canonball goes down and an awful smell is streaming out of it. your
-	 stomach wants to return [if windbeutel is off-stage]the windbeutel[otherwise]the 
-	content of your stomach[end if]. You bend over and ...[paragraph break] ... a hard smack... you lose 
-	consciousness[paragraph break] [paragraph break] After recovering you found yourself in an unknown place.  [paragraph break] A place thats moving. Up and down. You guessed right... the small porthole on one side assured it to you that you are on a ship.";
-	now resort-crashed is true;
-	now the player is in cabin.
+A menu question rule (this is the gather character rule):
+	if the number understood is 2:
+		say "Thank you.";
+		now the player is in crossing;
+		exit;
+	otherwise:
+		say "You decided to stay here, watching the show. What breaks out is:";
+		say "[paragraph break][bold type]Panic[paragraph break]
+		[roman type]The bunch of tourists is that frightened, that they are fleeing in
+		 different directions. But they are trapped within the massive [fence]. 
+		
+		A next canonball goes down and an awful smell is streaming out of it. your
+		 stomach wants to return [if windbeutel is off-stage]the windbeutel[otherwise]the 
+		content of your stomach[end if]. You bend over and ...[paragraph break] ... a hard smack... you lose 
+		consciousness[paragraph break] [paragraph break] After recovering you found yourself in an unknown place.  [paragraph break] A place thats moving. Up and down. You guessed right... the small porthole on one side assured it to you that you are on a ship.";
+		now resort-crashed is true;
+		now the player is in cabin.
 
 resort-crashed is a truth state that varies. resort-crashed is false.
 pyrate-opera ends when resort-crashed is true.
@@ -1827,3 +1835,13 @@ Drinking tea @ grandmas. Those times are over. Those times are gone. This one ch
 be careful. Covering my track, leading them to the [cave].".
 
 [after examining the old diary, now the cave is familiar.]
+
+church of homoeopathy is inside of pond. the description is "On it you can read a TODO durchgestrichen old letters Voodoo followed by a fresher homoeopathy".
+
+the hut is scenery in pond. the printed name is "swimming hut".
+understand "swimming", "swimming hut" as the hut.
+
+instead of entering something in pond, try going inside.
+
+the description of pond is "There is a pond with water and in the middle is a swimming hut.".
+
