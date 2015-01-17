@@ -1,5 +1,6 @@
 "the secret of smiley island" by "stereo"
 
+
 [branch firstact]
 
 [Include GNU General Public License V3 by Free Software Foundation.
@@ -44,6 +45,7 @@ The Story Genre is "unterschiedliches".  The release number is 1. The Story Head
 
 [release along with a "OneColumn" website and an interpreter.]
 release along with a website, source text, library card and an interpreter.
+Release along with the "Quixe" interpreter.
 [Include Player Experience Upgrade by Aaron Reed.]
 
 Include Quip-Based Conversation by Michael Martin.
@@ -127,7 +129,7 @@ of Smiley Island  [paragraph break]  [paragraph break] ".
 when play begins:
 	say "Deep in the west indies. The island of boredom. Just coming from the boat
 	 without puking, but still in a bad feeling. Your holidays starting for you to reach the
-	 state of total boredomness. (version sept2014)".
+	 state of total boredomness. (version dec2014)".
 	[pause the game.]
 
 sustainable food is edible.
@@ -485,11 +487,14 @@ in a well made bambus field labyrinth. Green bambus all around.
 of marooning, it seems quite un-dangerous and you don't even received a gun.[end if] 
 You hear the strong currents breaking against the shore far down the hill[stopping]. 
 [if flower bed is visited][one of]You remember you can leave trying to go west.
-[or] You know the path to the west right into the flower bed flower bed.[stopping]
+[or] You know the path to the west right into the flower bed.[stopping]
 [otherwise] You haven't any clue in which direction to escape from here.[end if]
 [if view around is visited] You know a path to the north, to have a nice view around.".
 
 currents are scenery in bambus fields. the description is "You hear the currents downwards which means to the west."
+
+instead of listening to the currents:
+	try examining the currents.
 
 green-bambus is scenery in bambus fields. "Green, sturdy and no chance to move them away."
 
@@ -756,23 +761,11 @@ pyrate-opera begins when all-new2 ends.
 all-new ends when pyrate-opera begins.
 
 when pyrate-opera begins:
-	say "[bold type]PART II.
+	say "[bold type]PART II --- The Escape
 	[paragraph break] 
-	[roman type] So you achieved 
-	the first goals. the story isn't at the end. Amazing job for traversing a 
-	not-ready-yet piece of interactive fiction. Please stay tuned for further 
-	releases. The story will go on and will break all your savegames after 
-	each update. Thanks for playing and I hope to see you again on smiley island
-	 or on github 
-	[paragraph break]
-	for the story:
-	[line break]https://github.com/nebocamin/tsosi-story 
-	[paragraph break]and for the open web app:
-	[line break]https://github.com/nebocamin/tsosi-app
-	[paragraph break]
-	[paragraph break]
-	[paragraph break]*** THE END***
-	[paragraph break]now you can go on with the second act in dev-state.".
+	[roman type] You noticed that something is going on on this Island. Your wish to get boredomness is blown away. You smell salty air and your taste for adventure awakes...
+	[paragraph break]";
+	try looking.
 	[end the story.]
 
 part monk island
@@ -1272,7 +1265,7 @@ Table of Quip Texts (continued)
 quip	quiptext
 ron-hello	"[if the player wears the manatee suit]Ahhh, help! Oh its you. You frightened me wearing that manatee suit.[otherwise] Ahoj.[end if]"
 slog-hello	"[if the player wears the manatee suit]Ahhh, help! Oh its you. You frightened me wearing that manatee suit.[otherwise]Ahoj, what do ya want here?[end if]"
-slog-pirate-action	"The pirate actions are prepared by us, you have to take one
+slog-pirate-action	"The pirate actions are prepared by us, you have to take one or more
  and afterwards come back and I will give you the appropriate wristband for achieving the
  actions goal. So you have to do all three of them. For now choose which pirate-action do you want to start. This week we have
  'Being marooned.', 'treasure hunt' or 'barbacue.''"
@@ -1295,7 +1288,7 @@ slog-ask-wristbands	"Every _real_ adventurer and or tourist has to get the three
 wristbands. We offer them here for achieving pirate actions. 
 This island was a pirates nest before. So we support traditional pirate actions. You can 
 always see your achievements if you examine your wrist."
-tim-manatee	"Ah, the manatees. such nice and friendly animals. But rarely seen on
+tim-manatee	"Ah, the manatees. Such nice and friendly animals. But rarely seen on
  this island nowadays. My self-stitched ones seem to be the only manatees left on this island."
 tim-magpie	"These clever birds are helping us."
 slog-ask-meat	"Sure it seems to be big enough to make a suit out of it. [paragraph break] 
@@ -1585,20 +1578,20 @@ at the time when opera-3 appears:
 at the time when opera-4 appears:
 	say "Suddenly you hear an explosion from behind. Immediatly you turn your head 
 	to the sea. And the black ships with eight sails appeared. A pillar of smoke arises 
-	over a cannon. In that second, a next canon is fired and you are able to follow the 
+	over a cannon. In that second, a next cannon is fired and you are able to follow the 
 	canon ball with your own eyes. You have to turn your head and half believing what 
-	you see. The canonball goes down in the middle of the stage and breaks the wodden planks.[paragraph break]";
+	you see, the cannonball goes down in the middle of the stage and breaks the wodden planks.[paragraph break]";
 	now the current question is "Should you stay or should you go?";
-	now current question menu is { "I should Stay", "I should go."};
+	now current question menu is { "I should stay.", "I should go."};
 	ask a closed question, in menu mode.
 
 A menu question rule (this is the gather character rule):
 	if the number understood is 2:
-		say "Thank you.";
+		say "Too much danger for you. As you ran aimlessly into the bush forgetting all your bad feelings about insects and dirt, you hear behind you the screaming of the people and other cannonballs smashing between them. Now you seem to be far away enough to take a deep breath and take a look where you are.";
 		now the player is in crossing;
 		exit;
 	otherwise:
-		say "You decided to stay here, watching the show. What breaks out is:";
+		say "You decided to stay here, enjoying the show. What breaks out is:";
 		say "[paragraph break][bold type]Panic[paragraph break]
 		[roman type]The bunch of tourists is that frightened, that they are fleeing in
 		 different directions. But they are trapped within the massive [fence]. 
@@ -1758,7 +1751,7 @@ instead of going north in ocean:
 		say "You are still not convinced that muscular power is enough and you picked 
 		up that inflatable mattress for a reason.";
 	otherwise:
-		say "With the support of your air filled mattress you reached that island together with a curious feeling to explore that place.[paragraph break]...but...[paragraph break] [paragraph break] until another date, this is ...";
+		say "With the support of your air filled mattress you reached that island together with a curious feeling to explore that place.[paragraph break]...but...[paragraph break] [paragraph break] ";
 		continue the action.
 		[10nov2013release end]
 		[end the story.]
