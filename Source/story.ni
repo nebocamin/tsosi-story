@@ -280,7 +280,7 @@ instead of opening the gate:
 		say "Slowly you try to open that gate and it really moves. So you put you first step into the resort ready to go west. Finally.";
 		continue the action;
 	otherwise:
-		say "It's really strong and you have no chance to open it somewhere. You've got [wristband-count in words] of these silly wristbands. It seems you really need [three - wristband-count in words] more of them to get into the holiday resort.". 
+		say "It's really strong and you have no chance to open it somewhere. On it is written 'For three-wristbanded only'. You've got [wristband-count in words] of these silly wristbands. It seems you really need [three - wristband-count in words] more of them to get into the holiday resort.". 
 
 instead of attacking the gate:
 	say "You swing your full weight against the gate. Your body reacts with pain, the gate with sniffy nothing.". 
@@ -1296,7 +1296,7 @@ and he takes it, stitches and stitches...[paragraph break]..and hours later...
 [paragraph break]... it is a manatee suit."
 slog-are-you	"I'm Tim and thats all you must know at the moment."
 dave-meat	"I'm not sure whether I want to know that."
-tim-kopi	"[if rtd-know-kopi is true]If you want an adwise, stay away from the resort.[otherwise]Outch, thanks. I have to inform Dave and Ron about it.[end if]"
+tim-kopi	"[if rtd-know-kopi is true]If you want an advise, stay away from the resort.[otherwise]Outch, thanks. I have to inform Dave and Ron about it.[end if]"
 dave-kopi	"[if rtd-know-kopi is true]Now time counts, we have to get earlier to the secret.[otherwise]Outch, thanks. I have to inform Tim and Ron about it.[end if]"
 ron-kopi	"[if rtd-know-kopi is true]I'm watching the coast line carefully.[otherwise]Outch, thanks. I have to inform Tim and Dave about it.[end if]"
 ron-sacul	"He was the boss of Sacul Film. The famous maker of the 'Planet Wars' movies"
@@ -1389,6 +1389,7 @@ after quipping when the current quip is slog-start-treasurehunt the first time:
 	now the player carries the treasure.
 after quipping when the current quip is slog-ask-meat:
 	say "He gives you the manatee suit.";
+	disable the dave-meat quip for dave;
 	enable the dave-manatee quip for dave;
 	now the pile of meat is off-stage;
 	now the player carries the manatee suit.
