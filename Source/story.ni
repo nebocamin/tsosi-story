@@ -160,6 +160,29 @@ the description of the towel is "This is, what every adventurer needs.
 tsosi-hunch is an unfamiliar subject.
 yesnid is an unfamiliar subject.
 
+[a fluid container is a kind of container. a fluid container has a volume called fluid capacity. a fluid container has a volume called kaluha volume. a fluid container has a volume called rum volume. a fluid container has a volume called milk volume.
+
+the fluid capacity of a fluid container is usually 12.0 fl oz.
+]
+
+a bottle is a kind of container. a bottle can be empty or full. a bottle is usually full.
+
+a person is either sober or drunk. a person is usually sober.
+a person is either bekifft or unbekifft. a person is usually unbekifft.
+
+stomach is a container. 
+
+
+instead of drinking a bottle:
+	if bottle is full:
+		say "You drink the [noun] until its empty.";
+		now the noun is empty;
+		now the player is drunk;
+		try vomitting;
+	otherwise:
+		say "The [noun] is empty already.".
+
+
 chapter new actions
 
 Thinking about is an action applying to one visible thing.
@@ -348,6 +371,27 @@ instead of going west in boring beach during all-new:
 
 chapter fishing a manatee
 
+vomitting is an action applying to nothing.
+understand "vomit" as vomitting.
+
+futter is a kind of thing. futter is always edible.
+
+futter is either eaten or uneaten. futter is usually uneaten.
+
+after eating futter:
+	now the noun is eaten.
+
+[food is either fresh or vomitted.]
+
+
+
+instead of vomitting:
+	if the stomach is not enclosing something:
+		say "As you vomit you notice that your stomach is empty, so no recognisable output lands before your feet.";
+	otherwise:
+		say "You vomit right before your feet and you are able to recognise the [list of things in stomach]";
+		now all things enclosed by stomach are in the location of the player.
+	
 fishing is an action applying to one thing and requiring light.
 understand "fish [something]" as fishing.
 understand "angle [something]" as fishing.
@@ -1135,23 +1179,36 @@ the treasure is a closed and openable container. the description is "Its made ou
 instead of attacking the treasure:
 	try dropping the treasure.
 
-the chocolate coins are edible. the description is "They are brown with white stains from
+the chocolate coins are futter. the description is "They are brown with white stains from
 being remelted not only once this summer.". the chocolate coins are in treasure. they are edible.
 the scent of the chocolate coins is "something like the inside of an old cupboard". 
 instead of touching the chocolate coins, say "Solid, feels not like something you want to eat.".  
-after eating the chocolate coins, say "Nearly breaking your expensively fixed teeth you were able
- to chop them small enough to swallow them.". understand "coin", "chocolate coin" as the chocolate coins.
+after eating the chocolate coins:
+	say "Nearly breaking your expensively fixed teeth you were able
+ to chop them small enough to swallow them.";
+	now the chocolate coins are eaten;
+	now the chocolate coins are in stomach.
+
+instead of eating something eaten:
+	say "Its always your habbit to not eat anything twice.".
+
+understand "coin", "chocolate coin" as the chocolate coins.
 
 after touching the windbeutel:
 	say "creamy".
 
+the windbeutel is futter. 
+
 the windbeutel is in treasure. the description is "Its a creamy puff. Its creamy between the puff.". 
-it is edible.
+
 the scent of windbeutel is "artificial rum aroma". 
 understand "creamy puff", "creamy", "puff" as the windbeutel.
 
-after eating the windbeutel, say "That was nice and sweet with a fine note of rum. 
-Your first caribbean windbeutel."
+after eating the windbeutel:
+	say "That was nice and sweet with a fine note of rum. 
+Your first caribbean windbeutel.";
+	now the windbeutel is eaten;
+	now the windbeutel is in stomach.
 
 treasure-cliff is a truth state that varies. treasure-cliff is false.
 
@@ -1701,6 +1758,9 @@ understand 'sit on' as getting on the comfy seat.
 ]
 
 the comfy seat is an enterable supporter in holiday resort.
+the bottle of rum is a bottle.
+
+
 bottle of rum is in holiday resort.
 instead of entering the comfy seat:
 	say "the play starts. As you sit down, the people are getting quieter. [if the player
