@@ -165,7 +165,13 @@ yesnid is an unfamiliar subject.
 the fluid capacity of a fluid container is usually 12.0 fl oz.
 ]
 
-a bottle is a kind of container. a bottle can be empty or full. a bottle is usually full.
+a bottle is a kind of thing. a bottle can be empty or full. a bottle is usually full.
+
+instead of examining a bottle (called the drinkthing):
+	if the drinkthing is full:
+		say "The [drinkthing] is still filled up ";
+	otherwise:
+		say "The drinkthing is empty, but you feel a need of more.".
 
 a person is either sober or drunk. a person is usually sober.
 a person is either bekifft or unbekifft. a person is usually unbekifft.
@@ -173,10 +179,10 @@ a person is either bekifft or unbekifft. a person is usually unbekifft.
 stomach is a container. 
 
 
-instead of drinking a bottle:
-	if bottle is full:
-		say "You drink the [noun] until its empty.";
-		now the noun is empty;
+instead of drinking a bottle (called the drinkthing):
+	if the drinkthing is full:
+		say "You drink [the drinkthing] until its empty.";
+		now the drinkthing is empty;
 		now the player is drunk;
 		try vomitting;
 	otherwise:
@@ -372,7 +378,7 @@ instead of going west in boring beach during all-new:
 chapter fishing a manatee
 
 vomitting is an action applying to nothing.
-understand "vomit" as vomitting.
+understand "vomit", "puke" as vomitting.
 
 futter is a kind of thing. futter is always edible.
 
@@ -1356,8 +1362,8 @@ dave-meat	"I'm not sure whether I want to know that."
 tim-kopi	"[if rtd-know-kopi is true]If you want an advise, stay away from the resort.[otherwise]Outch, thanks. I have to inform Dave and Ron about it.[end if]"
 dave-kopi	"[if rtd-know-kopi is true]Now time counts, we have to get earlier to the secret.[otherwise]Outch, thanks. I have to inform Tim and Ron about it.[end if]"
 ron-kopi	"[if rtd-know-kopi is true]I'm watching the coast line carefully.[otherwise]Outch, thanks. I have to inform Tim and Dave about it.[end if]"
-ron-sacul	"He was the boss of Sacul Film. The famous maker of the 'Planet Wars' movies"
-ron-plan	"It was all about an old pirate secret that's still unrevealed. L. the boss of Sacul Film. The famous maker of 'Planet Wars' does anything to get it."
+ron-sacul	"He was the boss of Sacul Film. The famous maker of the 'Planet Peace' movies"
+ron-plan	"It was all about an old pirate secret that's still unrevealed. L. the boss of Sacul Film. The famous maker of 'Planet Peace' does anything to get it."
 
 
 
@@ -1726,13 +1732,15 @@ middle between the [bar], the [pool],the [swimming spot] and even the theater [s
 the bar is in holiday resort. the description is " The bar seems to be unattended. 
 There is a variety of different bottles and a fridge."
 
+white russian is a bottle.
 a white russian is on the bar.
 
-a fridge is part of the bar. it is a container and openable. milk is inside the fridge.
+a fridge is part of the bar. it is a container and openable. the milk is inside the fridge. milk is a bottle.
 
-the different bottles are on the bar.
+vodka is a bottle. vodka is on the bar.
 
-within the different bottles is kaluah and vodka. [possibility to mix a white russian]
+
+[within the different bottles is kahlua and vodka. [possibility to mix a white russian]]
 
 the pool is scenery in holiday resort. the description is "The pool is round and
  seems to be deep enough to go swimming inside. around the pool are loungers.
