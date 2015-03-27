@@ -129,7 +129,7 @@ of Smiley Island  [paragraph break]  [paragraph break] ".
 when play begins:
 	say "Deep in the west indies. The island of boredom. Just coming from the boat
 	 without puking, but still in a bad feeling. Your holidays starting for you to reach the
-	 state of total boredomness. (version dec2014)".
+	 state of total boredomness. (version apr2015)".
 	[pause the game.]
 
 sustainable food is edible.
@@ -818,6 +818,9 @@ when pyrate-opera begins:
 	try looking.
 	[end the story.]
 
+smiley-island-escape is a scene.
+smiley-island-escape begins when pyrate-opera ends.
+
 part monk island
 
 chapter banana beach
@@ -848,7 +851,7 @@ back and forth and... [or]...  and nothing happens.[or] Really, thats it.[or]
 instead of pulling the tree, try pushing the tree.
 	
 before going north in banana beach:
-	say "langsam fortastend[paragraph break]".
+	say "langsam fortastend TODO[paragraph break]".
 
 chapter canyon
 
@@ -858,6 +861,7 @@ the rope is a thing. the rope is in canyon.
 chapter volcano
 
 volcano is a room. "herman lies here.".
+herman is a man in volcano. 
 
 
 chapter jungle path
@@ -1529,7 +1533,7 @@ Now its overgrown with [plants] and [moss].".
 
 The stone is scenery in maybe temple.
 plants are scenery in maybe temple.
-moss is scenery in maybe temple.
+moss is scenery in maybe temple.	
 
 monk island is a region.
 
@@ -1653,6 +1657,7 @@ A menu question rule (this is the gather character rule):
 	if the number understood is 2:
 		say "Too much danger for you. As you ran aimlessly into the bush forgetting all your bad feelings about insects and dirt, you hear behind you the screaming of the people and other cannonballs smashing between them. Now you seem to be far away enough to take a deep breath and take a look where you are.";
 		now the player is in crossing;
+		now resort-crashed is true;
 		exit;
 	otherwise:
 		say "You decided to stay here, enjoying the show. What breaks out is:";
@@ -1820,7 +1825,8 @@ instead of going north in ocean:
 		say "You are still not convinced that muscular power is enough and you picked 
 		up that inflatable mattress for a reason.";
 	otherwise:
-		say "With the support of your air filled mattress you reached that island together with a curious feeling to explore that place.[paragraph break]...but...[paragraph break] [paragraph break] ";
+		say "With the support of your air filled mattress you reached nearly that island. But near enough to achieve it by swimming. the mattress itself decided to sink into the deeper parts of the ocean as you where riding it. Together with a curious feeling to explore that new place you reached it.[paragraph break]...but...[paragraph break] [paragraph break] ";
+		now the mattress is off-stage;
 		continue the action.
 		[10nov2013release end]
 		[end the story.]
@@ -1831,6 +1837,9 @@ instead of going west in ocean:
 
 instead of going east in ocean:
 	say "You see in that direction lies the island you were coming from. But its too far away to get there with that mattress, so you better try to go north to reach the beach.".
+
+instead of going south in ocean:
+	say "You are happy to escape your swimming prison and don't want to go back into it. Especially when such a nice and welcoming island waits directly to the north..".
 
 cabin is inside of ocean.
 
@@ -1893,15 +1902,34 @@ part first intro to typ
 the old diary is in second hole. the description is "[italic type]Its hot and humid here.
  I miss the cold rain from home. Must be autumn there. Leaves falling to the ground. 
 Drinking tea @ grandmas. Those times are over. Those times are gone. This one chest
- full of pieces of eight. Even that I have to hide. 'They' are still on this island. I must 
+ full of pieces of eight. Even that I have to hide. 'They' are still on this island. I must
 be careful. Covering my track, leading them to the [cave].".
 
 [after examining the old diary, now the cave is familiar.]
 
 church of homoeopathy is inside of pond. the description is "On it you can read a TODO durchgestrichen old letters Voodoo followed by a fresher homoeopathy".
+[war mal "house of mojo"]
+
+voodoo-door is a door. it is locked.
+the printed name of voodoo-door is "door to the backroom".
+understand "door", "backroom" , "door to the backroom", "backroom door" as the voodoo-door.
+
+the description of voodoo-door is "It seems to be locked from the inside and you are able to hear someone alive behind the door the sound reminds you of shaking a cocktail. And its a really big one."
+
+backroom is north of voodoo-door.
+voodoo-door is north of church of homoeopathy.
+
+exvolady is a woman in backroom.
+the printed name of exvolady is "ex-voodoo lady". understand "ex", "ex-voodoo", "voodoo", "lady" as the exvolady.
+
+earwax is in backroom.
+
 
 the hut is scenery in pond. the printed name is "swimming hut".
 understand "swimming", "swimming hut" as the hut.
+
+instead of going south in the church of homoeopathy , try going outside.
+instead of going north in the pond, try going inside.
 
 instead of entering something in pond, try going inside.
 
