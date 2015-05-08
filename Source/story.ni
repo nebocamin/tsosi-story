@@ -73,7 +73,7 @@ test thgm with "look / test th / look / i / test gm ".
 
 test thgmb with "test th / test gm / test b"
 
-test all with "test th / test gm / test b / nw / sw /w/z/z/z/z/z/open mattress/get mattress/n/inflate mattress/n"
+test all with "test th / test gm / test b / nw / sw /w/z/z/z/z/1/open mattress/get mattress/n/inflate mattress/n"
 
 part losgehts
 
@@ -184,7 +184,7 @@ instead of drinking a bottle (called the drinkthing):
 		say "You drink [the drinkthing] until its empty.";
 		now the drinkthing is empty;
 		now the player is drunk;
-		try vomitting;
+		[try vomitting; TODO]
 	otherwise:
 		say "The [noun] is empty already.".
 
@@ -218,7 +218,7 @@ the description of boring beach is "[if pyrate-opera is happening]Now this is al
  empty place, the gate stands wide open..TODO[end if][one of]You arrived at a nice beach,
  sandy, sunny. Overwhelming, but even better to the west behind a fence with a [gate]
  seems to be the holiday resort. [The fence] is against the poor natives maybe. But no
- offence you are just imagening yourself there, at the bar, in the pool, on the beach. You
+ offence you are just imagining yourself there, at the bar, in the pool, on the beach. You
  even feel the taste of cocktails on your tongue. Mouthwatering it is. So you tend to 
 [bold type]go west[roman type]. Into the northern directions it looks dark and full of ugly
  insects. Thats the reason you booked your kind of active-holidays to stay in your save
@@ -302,7 +302,7 @@ fresh water is a backdrop in river mouth, in crossing and in lake. the descripti
 understand "river" and "creek" as the fresh water.
 
 the description of the gate is "The gate is right within a strong fence. At the very closed gate is a spidery writing 'For the three-wristbanded only'.".
-understand "fence" as the gate.
+understand "fence" , "door" as the gate.
 
 instead of opening the gate:
 	if all-new2 is happening:
@@ -828,7 +828,7 @@ chapter banana beach
 banana beach is a room. "[One of]... [Sand] in your ears, [sand] in your 
 mouth, between your teeth. You even feel like you're breathing sand. 
 And you try to take a look around. the [sun] is shining and burnt your 
-back. But hey, you're still wearing your [trousers]. [or] Hot light [sand] 
+back. But hey, you're still wearing your [trousers]. [or]Hot light [sand] 
 all around.[stopping] In the middle of this beach is a lonely banana tree. 
 Making you think, it was escaping the jungle behind him to the north.".
 
@@ -847,8 +847,15 @@ instead of talking to the uhuru, say "He talks. No joke. he talks and
 its:'push the tree, quuoak, push the tree.'".
 instead of pushing the tree, say "[one of]You pull and push the tree 
 back and forth and... [or]...  and nothing happens.[or] Really, thats it.[or]
- editors note: you will not be able to get the bananas this way.[stopping]".
+ editors note: you will not be able to get the bananas this way.[or] Ok, you've got one thats enough.[stopping]".
 instead of pulling the tree, try pushing the tree.
+
+the bananafruit is a thing. 
+the printed name of bananafruit is "banana". understand "banana" as bananafruit.
+
+instead of pushing the banana tree the fifth time:
+	say " na jut";
+	now the bananafruit is in banana beach.
 	
 before going north in banana beach:
 	say "langsam fortastend TODO[paragraph break]".
@@ -862,6 +869,9 @@ chapter volcano
 
 volcano is a room. "herman lies here.".
 herman is a man in volcano. 
+
+the initial appearance of herman is "TODO.".
+The litany of herman is the Table of hermans Talk. the greeting of herman is herman-hello.
 
 
 chapter jungle path
@@ -1324,6 +1334,9 @@ prompt	response	enabled
 "What about those people already inside the holiday resort?"	ron-people	0
 "I have to go. Bye."	silence	1
 
+Table of hermans talk
+prompt	response	enabled
+"ahoj"	herman-hello	1
 
 
 Before going: terminate the conversation.
@@ -1406,6 +1419,7 @@ ron-secret	"Not really. But it seems, we discovered something important to find 
 ron-people	"They are from Yesnid, the company that bought ours."
 tim-yesnid	"They conquered, what was ours once and with their money they support L.´s quest for the secret of ... But I better keep my mouth shut."
 dave-yesnid	"Not my problem, but I want to be part of the revenge. Hopefully getting rich afterwards."
+herman-hello	"ja, was gibts?TODO."
 silence	"Bye."
 
 after quipping when the current quip is ron-people:
@@ -1825,7 +1839,7 @@ instead of going north in ocean:
 		say "You are still not convinced that muscular power is enough and you picked 
 		up that inflatable mattress for a reason.";
 	otherwise:
-		say "With the support of your air filled mattress you reached nearly that island. But near enough to achieve it by swimming. the mattress itself decided to sink into the deeper parts of the ocean as you where riding it. Together with a curious feeling to explore that new place you reached it.[paragraph break]...but...[paragraph break] [paragraph break] ";
+		say "With the support of your air filled mattress you reached nearly that island. But near enough to achieve it by swimming, the mattress itself decided to sink into the deeper parts of the ocean as you where riding it. Together with a curious feeling to explore that new place you reached it after noticing it was more far away than you thought and your body was not really easy in managing swimming to the island.[paragraph break]...but...[paragraph break] [paragraph break] ";
 		now the mattress is off-stage;
 		continue the action.
 		[10nov2013release end]
