@@ -129,7 +129,7 @@ of Smiley Island  [paragraph break]  [paragraph break] ".
 when play begins:
 	say "Deep in the west indies. The island of boredom. Just coming from the boat
 	 without puking, but still in a bad feeling. Your holidays starting for you to reach the
-	 state of total boredomness. (version apr2015)".
+	 state of total boredomness. (version may2015)".
 	[pause the game.]
 
 sustainable food is edible.
@@ -821,6 +821,10 @@ when pyrate-opera begins:
 smiley-island-escape is a scene.
 smiley-island-escape begins when pyrate-opera ends.
 
+mattress-escape is a scene.
+mattress-escape begins when the player is in cabin.
+mattress-escape ends, when the player is in banana beach.
+
 part monk island
 
 chapter banana beach
@@ -887,13 +891,36 @@ Instead of swimming in jungle path:
 	try going down.
 
 diving apparatus is a device in jungle path. "There stands a machine with 
-lots of brass elements and flexible tubes. [if diving helmet is connected]Its connected to [daveguy]s helmet
- to provide oxygen.[end if][if dave-diving is true] The tubes are vanishing into the 
+lots of brass elements and a flexible tube. [if diving helmet is connected]Its connected to [daveguy]s helmet
+ to provide oxygen.[end if][if dave-diving is true] The tube is vanishing into the 
 water, [daveguy] seems to dive deep in the water. You can't see him.[end if]". 
 the diving apparatus is switched off. the scent of it is "hot oil".
-understand "machine", "brass elements", "brass", "elements", 
-"flexible tubes", "tubes", "flexible", "tmd" as the diving apparatus.
+understand "machine", "brass elements", "brass", "elements",  "tmd" as the diving apparatus.
 the diving apparatus is fixed in place.
+
+tube is undescribed in jungle path. the description is "[if diving helmet is connected]They are connected to [daveguy]s helmet
+ to provide oxygen.[end if][if dave-diving is true] The tube is vanishing into the 
+water, [daveguy] seems to dive deep in the water. You can't see him.[end if]".
+understand "flexible tubes", "tubes", "flexible", "tube", "flexible tube" as the tube.
+
+[TODO tubes during allnew2: they verschwinden im wasser, helm is och weg.... maybe dran ziehen?]
+
+instead of taking the tube:
+	if diving helmet is connected:
+		say "No, he needs them right now and they are connected to his helmet.";
+	otherwise:
+		try pulling the tube.
+
+instead of pulling the tube:
+	if diving helmet is connected:
+		say "No, he needs them right now and they are connected to his helmet.";
+	otherwise:
+		say "As you pull the tube out of the water on the far away end there was still this helmet. Now the whole tube is before you with the helmet connected to its very end.";
+		now the helmet is in jungle path;
+		now the helmet is connected.
+
+instead of taking the helmet during all-new2:
+	say "As you unlocked the achievement to get all three wristbands, you really want to go into the holiday resort first. You leave the helmet on its place for later, maybe."
 
 after taking the diving helmet:
 	now the diving helmet is not connected.
@@ -936,8 +963,12 @@ instead of going down in jungle path:
 	earn those three wristbands in the first place.[otherwise]. Other kinds of 
 	adventures have to wait after you reached the state of total boredomness.[end if]";
 		otherwise:
-			say "okay, nuetzt ja nix TODO";
-			continue the action.
+			if the helmet is worn:
+				say "You prepare yourself for the next adventure, you check the helmet. You check if the diving aparatus is running.";
+				try switching on the diving apparatus;
+				continue the action;
+			otherwise:
+				say "without the wearing that helmet, no way.".
 	
 
 
@@ -950,7 +981,7 @@ rocks are part of wooden bridge. the description is "really simple masonry, but 
 
 instead of going down in jungle path:
 	if the diving apparatus is switched on:
-		say "ok, tauchen";
+		say "You really go into that water, diving deeper than you thought you are able to want. until the endless blue gets darker [paragraph break] and darker. Until ... [paragraph break] it is pitch black.";
 		continue the action;
 	otherwise:
 		say "No, you heard terrible things about the flowing fresh waters in the caribbean.".
@@ -958,10 +989,19 @@ instead of going down in jungle path:
 instead of taking off the helmet in undercreek:
 	say "[paragraph break]***[paragraph break]YOU have DIED!!![paragraph break]***[paragraph break][paragraph break]Just kidding above was a gum-tree root.".
 
+undercreek is a dark room. the description is "nice round walls in that cave, leading clearly into the northwest from here.". the printed name is "under the creek".
+
 instead of going northwest in jungle path:
 	say "the fact that a creek is flowing doesnt mean you want to get in the 
 	water and swim against the stream. Don't forget you are here to get 
 	total boredomnes.".
+
+instead of going somewhere in jungle path:
+	if going down:
+		continue the action;
+	otherwise:
+		try silently dropping the helmet;
+		continue the action.
 
 Dave is a person in jungle path. the description is "[if diving helmet is worn by dave] 
 You really can't see his face inside that full metal helmet.
@@ -1097,7 +1137,7 @@ instead of inserting the fishhook into the durian:
 instead of taking the rod:
 	if the rod is on the fruit table:
 		if ron is in river mouth:
-			say "It belongs to [ronguy]. You have to ask him first.";
+			say "The fishing rod belongs to [ronguy]. You have to ask him first.";
 			enable the ron-gives-rod quip for ron;
 		otherwise:
 			continue the action;
@@ -1275,12 +1315,16 @@ after inserting the treasure into the magpies nest:
 instead of climbing the palm tree:
 	try entering the palm tree.
 
-passage is below lake.
-undercave is below cave.
+[passage is below lake.]
+[undercave is below cave.]
 undercreek is below jungle path.
 
-passage is east of undercave.
+[passage is east of undercave.]
 undercreek is southeast of passage.
+
+bluehole is west of passage.
+bluehole is below ocean.
+
 
 part monk island
 
@@ -1395,7 +1439,8 @@ dave-keep-wristbands	"I'm unemployed now. It's a bad job situation here on these
 dave-manatee	"Do you think i'm completely dull? But... hmm. No, not without a cause."
 dave-durian	"That sounds like a fair deal. So give me the suit."
 dave-nobait	"grmpft."
-dave-waiting	"Sure. But is non of your business."
+dave-waiting	"Sure. I'm planning my next dive. There is a horizontal passage down there. I assume it leads into a 'Blue Hole'."
+dave-bluehole	"It is very deep vertical cave with a special flora and fauna. The can be that so deep that fesh and salty water are mixing in them. They can have long horizontal arms. When  I'm right and one of them is ending here, we could sell diving trips into it. "
 slog-new-in-town	"You hold just [the list of the things carried by the player] in your hands. Do you think, you have any chance to survive here?"
 slog-deal-with	"'So we have to deal with you and You want me to tolerate your face, everytime you come along?'"
 slog-go-away	"'Nice one... so please leave. fast. very fast.'"
@@ -1515,6 +1560,7 @@ slog-bought-island	"I can't remember it's name."	slog-cant-remember
 slog-real-adventurer	"Which wristbands do you mean?"	slog-ask-wristbands
 dave-manatee	"What about a durian as your fishing bait?"	dave-durian
 dave-manatee	"I can't imagine anything to wake your interest."	dave-nobait
+dave-waiting	"What is a Blue Hole?"	dave-bluehole
 slog-start-marooned	"Yes, want it. Now. I wanna have as much boredomness afterwards as possible."	slog-ask-marooned
 slog-start-marooned	"No way. I don't want your silly pirate stuff."	slog-marooned-no
 dave-brass	"What kind of serious work do you mean?"	dave-secret
@@ -1834,12 +1880,12 @@ instead of entering the porthole:
 				say "No, you don't have a good swimming help with you. There is 
 				too much ocean between the island and you. ".
 
-instead of going north in ocean:
+instead of going north in ocean during mattress-escape:
 	if empty water mattress is carried by the player:
 		say "You are still not convinced that muscular power is enough and you picked 
 		up that inflatable mattress for a reason.";
 	otherwise:
-		say "With the support of your air filled mattress you reached nearly that island. But near enough to achieve it by swimming, the mattress itself decided to sink into the deeper parts of the ocean as you where riding it. Together with a curious feeling to explore that new place you reached it after noticing it was more far away than you thought and your body was not really easy in managing swimming to the island.[paragraph break]...but...[paragraph break] [paragraph break] ";
+		say "With the support of your air filled mattress you reached nearly that island. But near enough to achieve it by swimming, the mattress itself decided to sink into the deeper parts of the ocean as you where riding it. Together with a curious feeling to explore that new place you reached it after noticing it was more far away than you thought and your body was not really easy in managing swimming to the island.[paragraph break]...but...[paragraph break] [paragraph break] *** THE END (for now) *** [paragraph break] [paragraph break] But you can continue on your own risk in this development stage. otherwise see https://github.com/nebocamin/tsosi-story for a chance to participate[paragraph break]";
 		now the mattress is off-stage;
 		continue the action.
 		[10nov2013release end]
@@ -1925,7 +1971,7 @@ church of homoeopathy is inside of pond. the description is "On it you can read 
 [war mal "house of mojo"]
 
 voodoo-door is a door. it is locked.
-the printed name of voodoo-door is "door to the backroom".
+the printed name of voodoo-door is "the door to the backroom".
 understand "door", "backroom" , "door to the backroom", "backroom door" as the voodoo-door.
 
 the description of voodoo-door is "It seems to be locked from the inside and you are able to hear someone alive behind the door the sound reminds you of shaking a cocktail. And its a really big one."
