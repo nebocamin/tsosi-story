@@ -666,8 +666,6 @@ instead of digging:
 instead of digging when the shovel is not carried by the player:
 	say "with your bare fingers? no. simply. no.".]
 
-
-
 [ground is scenery in smiley island.]
 
 a treasure-hideaway is a kind of container. it is openable. it is usually open. it is fixed in place.
@@ -690,6 +688,10 @@ instead of opening a treasure-hideaway:
 	otherwise:
 		say "maybe you forgot to put the right thing in it.";
 		continue the action.
+
+instead of dropping the treasure in the presence of a treasure-hideaway:
+	say "As you digged the hole for a purpose, you are inserting the treasure into the hole.";
+	try inserting the treasure into the hole.
 
 the first hole is a treasure-hideaway.
 the second hole is a treasure-hideaway.
@@ -720,14 +722,16 @@ treasure-hunt ends when the player wears the treasure-wristband.
 chapter trail
 
 trail is northwest of boring. "[The fence] vanishes into the [bush]. The trail 
-ends here and leads only back to southeast. The [vbar], the [vpool], 
+ends here and leads only back to southeast. Through a small crack in the fence you can spot the [vbar], the [vpool], 
 the [vswimming spot], and the [vstage]."
 
 instead of going inside in trail, say "You can't go in. The fence seems to be bold and you dont want to start an argument with [timguy] and maybe some other spare time pirates.".
 
-the bold fence is scenery in trail. the description is " Its made out of strong bold wooden planks, like the ones used to build ships with.".
-understand "planks", "plank" as the bold fence.
-instead of opening the fence, say "No plank is loose, no chance to get into the resort right now."
+the bold fence is scenery in trail. the description is "This fence is made out of strong bold wooden planks, like the ones used to build ships with.".
+understand "planks", "plank", "crack" as the bold fence.
+instead of opening the fence, say "No plank is loose, no chance to get into the resort right now.".
+
+instead of attacking the fence, try opening the fence.
 
 [ Examining it reveales a [small hole]."
 
@@ -1414,7 +1418,7 @@ get the manatee-wristband, if you catch one with a fishing rod and appropriate b
 can get your tools from Ron in the small market as you see to the east at the river mouth."
 slog-real-adventurer	"Arrgh. Show me the three wristbands."
 slog-ask-wristbands	"Every _real_ adventurer and or tourist has to get the three 
-wristbands. We offer them here for achieving pirate actions. 
+wristbands first before going into the resort. We offer them here for achieving pirate actions. 
 This island was a pirates nest before. So we support traditional pirate actions. You can 
 always see your achievements if you examine your wrist."
 tim-manatee	"Ah, the manatees. Such nice and friendly animals. But rarely seen on
