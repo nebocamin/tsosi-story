@@ -639,23 +639,28 @@ digging is an action applying to one thing and requiring light.
 
 Definition: a person is another if it is not the player.
 
+hole-count is a number that varies. hole-count is zero.
+
 instead of digging in the presence of another person:
-	say "It's not a good idea to dig here in the presence of [list of visible person].".
+	say "It's not a good idea to dig here in the presence of [list of visible person].";
+	stop the action.
 
-after digging the first time:
-	say "You dig your first hole in the ground.";
-	now the first hole is in the location of the player;
-
-after digging the second time:
-	say "You dig your second hole in the ground. Revealing an old diary.TODO";
-	now the second hole is in the location of the player;
-
-after digging the third time:
-	say "You dig your third hole in the ground.";
-	now the third hole is in the location of the player.
-
-after digging more than three times:
-	say "Thats enough. You don't feel like digging anymore.";
+instead of digging:
+	if hole-count is zero:
+		say "You dig your first hole in the ground.";
+		now the first hole is in the location of the player;
+		increment hole-count;
+	otherwise:
+		if hole-count is one:
+			say "You dig your second hole in the ground. Revealing an old diary.TODO";
+			now the second hole is in the location of the player;
+			increment hole-count;
+		otherwise:
+			if hole-count is two:
+				say "You dig your third hole in the ground.";
+				now the third hole is in the location of the player;
+			otherwise:
+				say "Thats enough. You don't feel like digging anymore.".
 
 [merke, das war die falsche Zeitform
 instead of digging when the shovel is not carried by the player:
@@ -996,7 +1001,7 @@ instead of going northwest in jungle path:
 	water and swim against the stream. Don't forget you are here to get 
 	total boredomnes.".
 
-instead of going somewhere in jungle path:
+instead of going somewhere in jungle path wearing the helmet:
 	if going down:
 		continue the action;
 	otherwise:
