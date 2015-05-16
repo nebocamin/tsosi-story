@@ -304,6 +304,9 @@ understand "river" and "creek" as the fresh water.
 the description of the gate is "The gate is right within a strong fence. At the very closed gate is a spidery writing 'For the three-wristbanded only'.".
 understand "fence" , "door" as the gate.
 
+instead of examining the gate:
+	say "It's really strong and you have no chance to open it somewhere. On it is written 'For three-wristbanded only'. You've got [wristband-count in words] of these silly wristbands. It seems you really need [three - wristband-count in words] more of them to get into the holiday resort.". 
+
 instead of opening the gate:
 	if all-new2 is happening:
 		say "Slowly you try to open that gate and it really moves. So you put you first step into the resort ready to go west. Finally.";
@@ -617,7 +620,7 @@ Its one of your [wristband-count in words] wristbands.".
 Rule for supplying a missing noun while digging:
 	now noun is the location.
 
-Understand "dig" or "dig hole/here" or "dig in ground/dirt/earth" as digging.
+Understand "dig" or "dig hole/here" or "dig in ground/dirt/earth" or "burrow" or "sink" as digging.
 
 digging is an action applying to one thing and requiring light.
 
@@ -652,7 +655,7 @@ instead of digging:
 		increment hole-count;
 	otherwise:
 		if hole-count is one:
-			say "You dig your second hole in the ground. Revealing an old diary.TODO";
+			say "You dig your second hole in the ground. Revealing an old diary.";
 			now the second hole is in the location of the player;
 			increment hole-count;
 		otherwise:
@@ -689,9 +692,9 @@ instead of opening a treasure-hideaway:
 		say "maybe you forgot to put the right thing in it.";
 		continue the action.
 
-instead of dropping the treasure in the presence of a treasure-hideaway:
+instead of dropping the treasure in the presence of a treasure-hideaway (called current-hole):
 	say "As you digged the hole for a purpose, you are inserting the treasure into the hole.";
-	try inserting the treasure into the hole.
+	try inserting the treasure into the current-hole.
 
 the first hole is a treasure-hideaway.
 the second hole is a treasure-hideaway.
@@ -714,7 +717,7 @@ before going to boring beach during treasure-hunt:
 		increment wristband-count;
 		continue the action;
 	otherwise:
-		say "'Yes I know its hard to find a good place that fits for the treasure.'";
+		say "'Yes I know its hard to find a good place that fits for the treasure. Please try it again, if you really want to achieve that treasure hunt wristband.'";
 		continue the action.
 
 treasure-hunt ends when the player wears the treasure-wristband.
@@ -1112,11 +1115,13 @@ instead of going west in river mouth:
 	continue the action.
 
 the fruit table is a supporter in river mouth. the description is "The special 
-function of a fruit table seems that there are TODO 'dellen' to place the fruits
+function of a fruit table seems that there are dents to place the fruits
  on the table and they can't roll away.".
 Ron is a man. the initial appearance of ron is "There stands [ronguy] like he wants
  to sell some stuff.". the description is "Looks like a pirate that stood for a long 
 time at the same place.".
+
+understand "dents", "dent" as the fruit table.
 
 understand "guy" as ron.
 the printed name of ron is "guy". understand "guy" as ron.
@@ -1403,9 +1408,7 @@ slog-pirate-action	"The pirate actions are prepared by us, you have to take one 
  actions goal. So you have to do all three of them. For now choose which pirate-action do you want to start. This week we have
  'Being marooned.', 'treasure hunt' or 'barbacue.''"
 slog-start-treasurehunt	"[if treasure-hunt has ended]Its enough, yours was my last
- treasure of its kind. [otherwise]Arrrgh. classic. So let me tell you. Because some spaniards
- or other pyrates were coming to get all they can, treasures were often burrowed in a
- hurry. Thats the reason that your task is to hide this treasure I will give you. Its just
+ treasure of its kind. [otherwise]Arrrgh. classic. So let me tell you. We make the real life version of it, which means burrowing a treasure instead of looking for it. Thats the reason that your task is to hide this treasure I will give you. Its just
 about the chest, the content is yours if you want."
 slog-start-marooned	"Are you sure that you want to be put alone on another island
  right now?"
@@ -1418,7 +1421,7 @@ get the manatee-wristband, if you catch one with a fishing rod and appropriate b
 can get your tools from Ron in the small market as you see to the east at the river mouth."
 slog-real-adventurer	"Arrgh. Show me the three wristbands."
 slog-ask-wristbands	"Every _real_ adventurer and or tourist has to get the three 
-wristbands first before going into the resort. We offer them here for achieving pirate actions. 
+wristbands first, before going into the resort. We offer them here for achieving pirate actions. 
 This island was a pirates nest before. So we support traditional pirate actions. You can 
 always see your achievements if you examine your wrist."
 tim-manatee	"Ah, the manatees. Such nice and friendly animals. But rarely seen on
@@ -1821,7 +1824,7 @@ the pool is scenery in holiday resort. the description is "The pool is round and
  On the [red lounger] lays a [bath robe] is wearable. if its TODO
  worn and not a white russian carried, say its only a white russian thats now missing."
 
-a red lounger is in holiday resort.
+a red lounger is an enterable supporter in holiday resort.
 a bath robe is on the red lounger. bath robe is wearable.
 
 
