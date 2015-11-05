@@ -96,7 +96,7 @@ Carry out switching off the brass lantern:
 
 the brass lantern is a device. "A brass lantern with a really fat battery."
 
-understand "lamp" as the brass lantern.
+understand "lamp", "light" as the brass lantern.
 
 A thing has some text called scent. The scent of a thing is usually "nothing".
 The block smelling rule is not listed in the check smelling rulebook.
@@ -158,7 +158,7 @@ the description of the towel is "This is, what every adventurer needs.
 [if the player carries the rope][otherwise] and maybe a rope[end if]".
 
 tsosi-hunch is an unfamiliar subject.
-yesnid is an unfamiliar subject.
+yensid is an unfamiliar subject.
 
 [a fluid container is a kind of container. a fluid container has a volume called fluid capacity. a fluid container has a volume called kaluha volume. a fluid container has a volume called rum volume. a fluid container has a volume called milk volume.
 
@@ -376,6 +376,8 @@ instead of going west in boring beach during all-new:
 			But it doesn't help for now. You still need [three - wristband-count in words] 
 			more of them to get into the holiday resort.".
 
+instead of going west in boring beach during smiley-island-escape:
+	say "There is still a fight going on inside. You prefer not to disturb them."
 [cruise ship is a room. "You're standing at the railing. ready to jump."]
 
 chapter fishing a manatee
@@ -832,6 +834,7 @@ when pyrate-opera begins:
 
 smiley-island-escape is a scene.
 smiley-island-escape begins when pyrate-opera ends.
+smiley-island-escape ends when mattress-escape begins.
 
 mattress-escape is a scene.
 mattress-escape begins when the player is in cabin.
@@ -863,14 +866,14 @@ instead of talking to the uhuru, say "He talks. No joke. he talks and
 its:'push the tree, quuoak, push the tree.'".
 instead of pushing the tree, say "[one of]You pull and push the tree 
 back and forth and... [or]...  and nothing happens.[or] Really, thats it.[or]
- editors note: you will not be able to get the bananas this way.[or] Ok, you've got one thats enough.[stopping]".
+ editors note: you will not be able to get the bananas this way.[or] Ok, one was falling down and that seems to be enough.[stopping]".
 instead of pulling the tree, try pushing the tree.
 
-the bananafruit is a thing. 
+the bananafruit is a thing. it is edible.
 the printed name of bananafruit is "banana". understand "banana" as bananafruit.
 
 instead of pushing the banana tree the fifth time:
-	say " na jut";
+	say "Oh, what a surprise. A single one was falling to the ground.";
 	now the bananafruit is in banana beach.
 	
 before going north in banana beach:
@@ -912,7 +915,7 @@ the diving apparatus is fixed in place.
 
 tube is undescribed in jungle path. the description is "[if diving helmet is connected]They are connected to [daveguy]s helmet
  to provide oxygen.[end if][if dave-diving is true] The tube is vanishing into the 
-water, [daveguy] seems to dive deep in the water. You can't see him.[end if]".
+water, [daveguy] seems to dive deep in the water. You can't see him.[otherwise]The tube is vanishing into the water.[end if]".
 understand "flexible tubes", "tubes", "flexible", "tube", "flexible tube" as the tube.
 
 [TODO tubes during allnew2: they verschwinden im wasser, helm is och weg.... maybe dran ziehen?]
@@ -953,7 +956,7 @@ instead of switching on the diving apparatus:
 		say "Without wearing that shiny brass helmet you will not dive here.".
 
 instead of switching off the diving apparatus for the first time during all-new2 :
-	say "Your are not sure if you really want to turn off the oxygen for the three divers."
+	say "Your ethical standards are high enough to not turn off the oxygen for divers."
 
 instead of switching off the diving apparatus for the second time during all-new2:
 	say "Now you are sure. Those bastards with these silly 'pirate-actions'. 
@@ -980,7 +983,7 @@ instead of going down in jungle path:
 				try switching on the diving apparatus;
 				continue the action;
 			otherwise:
-				say "without the wearing that helmet, no way.".
+				say "Without wearing that shiny brass helmet, no way.".
 	
 
 
@@ -1088,10 +1091,12 @@ understand "dave" as the fake manatee.
 [todo fishing only with rod+durian]
 
 the description of river mouth is "The [fresh water] delutes itself into the salty sea. 
-The way back follows upstream to northwest. Wooden planks are forming a [boardwalk] 
-reaching some feet into the sea."
+The way back follows upstream to northwest. There is also a cableway leading from a [bullwheel] here to somewhere over the sea."
 
-the fireplace is in river mouth. the description is "Above of the old, black, burnt 
+[Wooden planks are forming a [boardwalk] 
+reaching some feet into the sea."]
+
+[the fireplace is in river mouth. the description is "Above of the old, black, burnt 
 pieces stands a pyramid of wood. Ready to be lit. Because of its size you think 
 that this could be well used as a signal fire.".
 understand "pieces", "wood", "fire", "pyramid" as the fireplace.
@@ -1105,7 +1110,7 @@ the boardwalk is scenery in river mouth.
 
 instead of doing anything to the boardwalk, say "It looks stable enough, but for now you have no reason to do anything to the boardwalk.".
 
-the description is "stable.TODO"
+the description is "stable.TODO"]
 
 instead of going up in river mouth, try going northwest.
 
@@ -1231,6 +1236,33 @@ at the time when ron-back appears:
 	if the player is in river mouth:
 		say "[ronguy] just arrives after he hid your treasure.".
 
+the bullwheel is an enterable scenery supporter in river mouth. the description is "Its a wooden bullwheel to lead a [long rope] around it. Its a bit rotten, but looks sturdy enough to be still trustworthy. Someone carved 'steps' into the mast to make it easy to climb on it.".
+
+A distant objects rule for the cableway basket when the player is on the bullwheel: rule succeeds.
+A distant objects rule for something enclosed by cableway basket when the player is on the palm tree: rule succeeds.
+
+instead of doing anything other than examining the bullwheel during all-new:
+	say "noch geht nix.".
+
+instead of doing anything other than examining the bullwheel during all-new2:
+	say "noch geht nix.".
+
+instead of climbing the bullwheel during smiley-island-escape:
+	try entering the bullwheel.
+
+instead of jumping while entering the bullwheel:
+	try entering the cableway basket.
+
+after entering the cableway basket during smiley-island-escape:
+	say "The basket begins to move. You're finally on your journey away from that dangerous unboring island in the hope to get into a better resort to get something fine on your tongue. 
+	[paragraph break] ***CRACK*** [paragraph break]  the rope is torn apart. The cableway basket fell down onto the ocean. Including you.";
+	now the cableway basket is in ocean.
+
+the long rope is scenery in river mouth. the description is "Its a big rope going around the bullwheel."
+
+the cableway basket is a distant scenery open container in river mouth. the cableway basket is enterable.
+understand "cableway", "basket" as the cableway basket.
+
 instead of attacking a man:
 	say "Violently you byte in his throat like a vampire. His lifeless body falls down.
 	Blood running on the floor. You killed [the noun].";
@@ -1302,7 +1334,13 @@ after dropping the treasure:
 		otherwise:
 			say "You dropped the treasure, but it's not hidden. The treasure is placed right before your feet."
 
-the description of crossing is "a [palm tree] in which is a [magpies nest]".
+the description of crossing is "a [palm tree] in which is a [magpies nest]. Here you can go to  nw, s, e.".
+
+instead of going northeast in crossing, say "no.".
+instead of going west in crossing, say "no.".
+instead of going northeast in crossing, say "no.".
+
+
 the magpies nest is a distant scenery open container in crossing.
 instead of examining the magpies nest, say "You don't know exactly, but you strongly feels that this must be a magpies nest. In there is [the list of things in the magpies nest].".
 
@@ -1328,6 +1366,8 @@ after inserting the treasure into the magpies nest:
 
 instead of climbing the palm tree:
 	try entering the palm tree.
+
+the description of jungle spot is "Thick jungle, nearly unpassable. Exits are north to the crossing and south to boring beach.".
 
 [passage is below lake.]
 [undercave is below cave.]
@@ -1359,7 +1399,7 @@ find my way to total boredomness"	slog-real-adventurer	1
 "I bought this island, you know?"	slog-bought-island	0
 "How do I get to Smiley Island"	slog-how	0
 "About that pirate ship at the horizon..."	tim-kopi	0
-"Can you tell me something about the people of Yesnid inside the resort?"	tim-yesnid	0
+"Can you tell me something about the people of yensid inside the resort?"	tim-yensid	0
 "Nothing"	silence	1
 
 table of daves talk
@@ -1375,7 +1415,7 @@ dive into that creek wearing this manatee suit, I'll fish
 you near the river mouth, so ron is able to see it and 
 I'm getting the wristband. wouldn't it be great?"	dave-manatee	0
 "About that pirate ship at the horizon..."	dave-kopi	0
-"Hey whats your relation to the people of Yesnid down inside the resort?"	dave-yesnid	0
+"Hey whats your relation to the people of yensid down inside the resort?"	dave-yensid	0
 "I'll leave you... sitting around doing nothing"	silence	1
 
 
@@ -1473,16 +1513,16 @@ these times. Except you can give me a good alternative, maybe a bit more sustain
 [otherwise] Go on, just take the meat. I loved your food.[end if]"
 dave-secret	"We are diving for the secret you shouldn't know anything about."
 ron-secret	"Not really. But it seems, we discovered something important to find it during our investigation for our project."
-ron-people	"They are from Yesnid, the company that bought ours."
-tim-yesnid	"They conquered, what was ours once and with their money they support L.´s quest for the secret of ... But I better keep my mouth shut."
-dave-yesnid	"Not my problem, but I want to be part of the revenge. Hopefully getting rich afterwards."
+ron-people	"They are from yensid, the company that bought ours."
+tim-yensid	"They conquered, what was ours once and with their money they support L.´s quest for the secret of ... But I better keep my mouth shut."
+dave-yensid	"Not my problem, but I want to be part of the revenge. Hopefully getting rich afterwards."
 herman-hello	"ja, was gibts?TODO."
 silence	"Bye."
 
 after quipping when the current quip is ron-people:
-	now yesnid is familiar;
-	enable the tim-yesnid quip for tim;
-	enable the dave-yesnid quip for dave.
+	now yensid is familiar;
+	enable the tim-yensid quip for tim;
+	enable the dave-yensid quip for dave.
 After quipping when the current quip is silence:
 	enable the silence quip;
 	terminate the conversation;
@@ -1680,9 +1720,15 @@ when pyrate-opera begins:
 	the opera-3 appears in 3 turn from now;
 	the opera-4 appears in 4 turn from now.
 
+when smiley-island-escape begins:
+	escape-1 appears in 3 turns from now;
+	escape-2 appears in 8 turns from now;
+	escape-3 appears in 15 turns from now;
+	escape-4 appears in 20 turns from now;
+
 at the time when the meanwhile-1 appears:
 	say "[bold type]MEANWHILE ...[paragraph break] [roman type] far away a ship,
-	a black freighter takes course to jamaika after escaping from madagaskar".
+	a black freighter takes course to jamaika after escaping from madagaskar.".
 
 at the time when the meanwhile-2 appears:
 	say "[bold type]MEANWHILE ...[paragraph break] [roman type]  far away in a 
@@ -1691,7 +1737,7 @@ at the time when the meanwhile-2 appears:
 
 at the time when the meanwhile-3 appears:
 	say "[bold type]MEANWHILE ...[paragraph break] [roman type] party noise from
-	 direction of the holiday resort";
+	 direction of the holiday resort.";
 	enable the ron-people quip for ron.
 
 at the time when the meanwhile-4 appears:
@@ -1724,6 +1770,19 @@ at the time when opera-4 appears:
 	now the current question is "Should you stay or should you go?";
 	now current question menu is { "I should stay.", "I should go."};
 	ask a closed question, in menu mode.
+
+at the time when escape-1 appears:
+	say "You feel the inner wish to leave that island. Unseen and fast.".
+
+at the time when escape-2 appears:
+	say "You feel the inner wish to leave that island. Unseen and fast.".
+
+at the time when escape-3 appears:
+	say "You feel the inner wish to leave that island. Unseen and fast.".
+
+at the time when escape-4 appears:
+	say "You feel the inner wish to leave that island. Unseen and fast.".
+
 
 A menu question rule (this is the gather character rule):
 	if the number understood is 2:
@@ -1854,6 +1913,7 @@ instead of entering the comfy seat:
 	 sand.";
 	continue the action.
 
+part cabin
 
 cabin is a room. the description is "A wooden room inside a ship.[if cabin is wet] All those nice wooden planks are now soaking wet.[end if] You feel the waves. 
 There is just a [bed] and a [pot] of water in it and a [porthole] to the north shows the
