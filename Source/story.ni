@@ -1256,9 +1256,14 @@ instead of jumping while entering the bullwheel:
 after entering the cableway basket during smiley-island-escape:
 	say "The basket begins to move. You're finally on your journey away from that dangerous unboring island in the hope to get into a better resort to get something fine on your tongue. 
 	[paragraph break] ***CRACK*** [paragraph break]  the rope is torn apart. The cableway basket fell down onto the ocean. Including you.";
+	now the long rope is torn;
 	now the cableway basket is in ocean.
 
+smiley-island-escape ends when the long rope is torn.
+
 the long rope is scenery in river mouth. the description is "Its a big rope going around the bullwheel."
+
+the long rope can be torn. the long rope is not torn.
 
 the cableway basket is a distant scenery open container in river mouth. the cableway basket is enterable.
 understand "cableway", "basket" as the cableway basket.
