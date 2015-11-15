@@ -747,20 +747,23 @@ the small hole is in trail. the description is "Peeking through it, you see.....
 instead of searching the small hole, say "You could kneel down and peek through that hole, but you will see more just looking over the fence."
 ]
 
-the vbar is scenery in trail. the description is "You are spotting kalua and
+the vbar is scenery in trail. the description is "[if smiley-island-escape is happening]TODO uebles durcheinander.[otherwise]You are spotting kalua and
  fresh milk. You just imagine yourself in a bath robe at this bar, supping 
 a white russian. Yes, that would be real holidays. And nobody pissed on
- your carpet.".
+ your carpet.[end if]".
 the printed name of vbar is "bar". understand "bar" as the vbar.
-the vpool is scenery in trail. the description is "A big enough pool to swim,
- but as you watch nobody is swimming just hanging at the edge, drinking cocktails.".
+
+the vpool is scenery in trail. the description is "[if smiley-island-escape is happening]TODO [otherwise]A big enough pool to swim,
+ but as you watch nobody is swimming just hanging at the edge, drinking cocktails.[end if]".
 the printed name of vpool is "pool". understand "pool" as the vpool.
-the  vswimming spot is scenery in trail. the description is "This is a beach 
-after your liking. Fresh, cleaned sand. Loungers with towels on it.".
+
+the  vswimming spot is scenery in trail. the description is "[if smiley-island-escape is happening]TODO [otherwise]This is a beach 
+after your liking. Fresh, cleaned sand. Loungers with towels on it.[end if]".
 the printed name of vswimming spot is "swimming spot".
 understand "towels", "loungers", "swimming spot", "sand" as the vswimming spot.
-the vstage is scenery in trail. the description is "A stage, are the giving a 
-performance tonight? You want to hurry up to get in on time.".
+
+the vstage is scenery in trail. the description is "[if smiley-island-escape is happening]TODO[otherwise]A stage, are the giving a 
+performance tonight? You want to hurry up to get in on time.[end if]".
 the printed name of vstage is "stage". understand "stage" as the vstage.
 
 part scenes
@@ -1381,8 +1384,12 @@ undercreek is below jungle path.
 [passage is east of undercave.]
 undercreek is southeast of passage.
 
+the description of passage is "It leads further to the west or to the southeast underneath the jungle entrance.".
+
 bluehole is west of passage.
 bluehole is below ocean.
+
+the description of bluehole is "You're now inside a big round hole, leading up to the wide open oceans surface.".
 
 
 part monk island
