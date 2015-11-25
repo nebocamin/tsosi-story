@@ -54,6 +54,7 @@ Include epistemology by eric eve.
 Include Secret Doors by Andrew Owen.
 Include Far Away by Jon Ingold.
 Include Questions by Michael Callaghan.
+Include Rideable Vehicles by Graham Nelson.
 
 
 Include Smiley island by stereo.
@@ -1240,6 +1241,7 @@ at the time when ron-back appears:
 		say "[ronguy] just arrives after he hid your treasure.".
 
 the bullwheel is an enterable scenery supporter in river mouth. the description is "Its a wooden bullwheel to lead a [long rope] around it. Its a bit rotten, but looks sturdy enough to be still trustworthy. Someone carved 'steps' into the mast to make it easy to climb on it.".
+understand "wheel" as the bullwheel.
 
 A distant objects rule for the cableway basket when the player is on the bullwheel: rule succeeds.
 A distant objects rule for something enclosed by cableway basket when the player is on the palm tree: rule succeeds.
@@ -1268,8 +1270,10 @@ the long rope is scenery in river mouth. the description is "Its a big rope goin
 
 the long rope can be torn. the long rope is not torn.
 
+
 the cableway basket is a distant scenery open container in river mouth. the cableway basket is enterable.
 understand "cableway", "basket" as the cableway basket.
+
 
 instead of attacking a man:
 	say "Violently you byte in his throat like a vampire. His lifeless body falls down.
