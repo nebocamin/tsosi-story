@@ -74,7 +74,7 @@ test thgm with "look / test th / look / i / test gm ".
 
 test thgmb with "test th / test gm / test b"
 
-test all with "test th / test gm / test b / nw / sw /w/z/z/z/z/1/open mattress/get mattress/n/inflate mattress/n"
+	test all with "test th / test gm / test b / nw / sw /w/z/z/z/z/1/open mattress/get mattress/n/inflate mattress/n"
 
 part losgehts
 
@@ -130,7 +130,7 @@ of Smiley Island  [paragraph break]  [paragraph break] ".
 when play begins:
 	say "Deep in the west indies. The island of boredom. Just coming from the boat
 	 without puking, but still in a bad feeling. Your holidays starting for you to reach the
-	 state of total boredomness. (version may2015)".
+	 state of total boredomness. (version december2015)".
 	[pause the game.]
 
 sustainable food is edible.
@@ -334,7 +334,10 @@ the lounger is a enterable supporter in boring beach. the initial appearance is 
 the lounger can be kaputt. the lounger is not kaputt.
 
 sewing machine is scenery device in boring beach. the description is "It's an original singer. 
-One of these foot-driven ones.". 
+One of these original foot-driven ones. Not one of the current generation with there plastic crapability to ". 
+
+understand "singer" as the sewing machine.
+
 instead of doing anything other than examining the sewing machine, say "You don't want
 to do anything with that machine. These machines were introduced in your life as 
 extremely dangerous by your grandma."
@@ -883,10 +886,13 @@ instead of pushing the banana tree the fifth time:
 before going north in banana beach:
 	say "langsam fortastend TODO[paragraph break]".
 
-chapter canyon
+chapter canyon edge
 
-canyon is a room. "You can look deep down a dried out canyon. Its dark down there.".
-the rope is a thing. the rope is in canyon.
+canyon edge is a room. "You can look deep down a dried out canyon edge. Its dark down there.".
+the rope is a thing. the rope is in canyon edge.
+
+canyon ground is a room. "Muddy and too hard to get up the high steep walls.".
+canyon ground is below canyon edge.
 
 chapter volcano
 
@@ -1451,7 +1457,41 @@ prompt	response	enabled
 Table of hermans talk
 prompt	response	enabled
 "ahoj"	herman-hello	1
+"What about this staggering, drunken dance?"	herman-dance	1
+"What about this secret?"	herman-secret	1
+"What about this totems?"	herman-totems	1
+"What about this Ron, Tim ans Dave?"	herman-rotida	1
+"What about Sacul Film?"	herman-sacul	1
+"What about the Yensids?"	herman-yensids	1
+"What about the Giant Q-Tip?"	herman-qtip	1
+"What about the  earwax?"	herman-earwax	1
+"What about the apehead-entry?"	herman-apehead-entry	1
 
+Table of exvoos talk
+prompt	response	enabled
+"uhu voodoo TODO"	exvoo-hello	1
+"What about this staggering, drunken dance?"	exvoo-dance	1
+"What about this secret?"	exvoo-secret	1
+"What about this totems?"	exvoo-totems	1
+"What about this Ron, Tim ans Dave?"	exvoo-rotida	1
+"What about Sacul Film?"	exvoo-sacul	1
+"What about the Yensids?"	exvoo-yensids	1
+"What about the Giant Q-Tip?"	exvoo-qtip	1
+"What about the  earwax?"	exvoo-earwax	1
+"What about the apehead-entry?"	exvoo-apehead-entry	1
+
+table of vegibals talk
+prompt	response	enabled
+"bored?TODO"	vegibal-hello	1
+"What about this staggering, drunken dance?"	vegibal-dance	1
+"What about this secret?"	vegibal-secret	1
+"What about this totems?"	vegibal-totems	1
+"What about this Ron, Tim ans Dave?"	vegibal-rotida	1
+"What about Sacul Film?"	vegibal-sacul	1
+"What about the Yensids?"	vegibal-yensids	1
+"What about the Giant Q-Tip?"	vegibal-qtip	1
+"What about the  earwax?"	vegibal-earwax	1
+"What about the apehead-entry?"	vegibal-apehead-entry	1
 
 Before going: terminate the conversation.
 
@@ -1532,7 +1572,36 @@ ron-secret	"Not really. But it seems, we discovered something important to find 
 ron-people	"They are from yensid, the company that bought ours."
 tim-yensid	"They conquered, what was ours once and with their money they support L.´s quest for the secret of ... But I better keep my mouth shut."
 dave-yensid	"Not my problem, but I want to be part of the revenge. Hopefully getting rich afterwards."
-herman-hello	"ja, was gibts?TODO."
+herman-hello	"It's impossible for a shipwrecked castaway to die in the silence that he deserves."
+exvoo-hello	"pssst, I have to bash this bottle on this leather bound book."
+vegibal-hello	"I smell meat-eaters."
+herman-dance	"Oh, thats stupid and they are loud. Disturbing me, so I can't sleep during the day or night."
+exvoo-dance	"Oh its so wonderful how these brilliant natives are keeping there traditions alive. So unreflected, so 'clear'."
+vegibal-dance	"Keep our stuff on our side and we won't eat you."
+vegibal-secret	"Its forbidden to see, even for us."
+vegibal-totems	"It belongs to the secret. period."
+vegibal-rotida	"We call them the intruders. They come every time with a different strategy."
+vegibal-sacul	"All hands of companies making holidays are disturbing us. They keep us extremely busy protecting our 'deities'."
+vegibal-yensids	"All hands of companies making holidays are disturbing us. They keep us extremely busy protecting our 'deities'."
+vegibal-qtip	"Where do you get that info? Its part of our deities secret. Get it for us, but don't ask questions or even expect answers from us."
+vegibal-earwax	"We put different things in our ears to get some rest from all this party noise of the tourists visiting this island. So would be a great idea to get enough earwax for all tomorrows parties."
+vegibal-apehead-entry	"Its only allowed to us and even we will not do that."
+exvoo-secret	"I will always respect their deities."
+exvoo-totems	"I like them, because I can sell my medicine in them."
+exvoo-rotida	"They wanted to hide in my shop, but I can't give shelter to people with such a bad karma."
+exvoo-sacul	"Commercial entertainment like is the reason I quit living in first world. Anything would be more prefered."
+exvoo-yensids	"I hope someday I have to chance to initiate them."
+exvoo-qtip	"You don't need this stuff. I have something better, which means homoeopathic,  for you. I will rattle it 4 days, then you can come back to it strong enough to help."
+exvoo-earwax	"You don't need this stuff. I have something better, which means homoeopathic, for you. I will rattle it 4 days, then you can come back to it strong enough to help."
+exvoo-apehead-entry	"I will never ever violate and or breach into this because I respect the natives and any believe system thats existing or will exist."
+herman-secret	"I wouldn't be interested, but inside... its paradise."
+herman-totems	"Ah yes, those idiots with the flask-totems. If you ever wanted to see a real cargo cult this is one."
+herman-rotida	"They get on my nerves. They visit this island every summer and ask questions over and over."
+herman-sacul	"Planet Wars. I was often at the movies in my former life. Maybe I will again after my recue. At the moment I only watch 'water world' over and over at the beach."
+herman-yensids	"Protect? The only supreme being is me and they don't protect me.TODO"
+herman-qtip	"Yes, true. I have stolen that damn thing again, because they broke my banana pflueckerTODO."
+herman-earwax	"Earwax? I have all sorts of waxes in any hole of my body."
+herman-apehead-entry	"You have to find your own way TODO if ohne q-tip you will not get into it otherwise schon."
 silence	"Bye."
 
 after quipping when the current quip is ron-people:
@@ -1645,33 +1714,42 @@ chapter monk island connections
 
 [jungle is north of banana beach.
  is northwest of banana beach.
-canyon is north of jungle.
+canyon edge is north of jungle.
 volcano is northwest of jungle.]
-canyon is north of banana beach.
+canyon edge is north of banana beach.
 volcano is northwest of banana beach.
-volcano is west of canyon.
-pond is northeast of canyon.
+volcano is west of canyon edge.
+pond is northeast of canyon edge.
 dam is northwest of pond.
-dam is north of canyon.
+dam is north of canyon edge.
 dam is west of fuzzy beach.
 
-maybe temple is a room. "Between tropical trees is a big [stone]. 
+monkey head is a room. "Between tropical trees is a big [stone]. 
 Maybe it is formed by human hands. Definitely a heck of a long time ago. 
 Now its overgrown with [plants] and [moss].".
 
-The stone is scenery in maybe temple.
-plants are scenery in maybe temple.
-moss is scenery in maybe temple.	
+the vegibal is a man in monkey head.
+
+the litany of vegibal is table of vegibals talk.
+
+The stone is scenery in monkey head.
+
+understand "head", "monkey", "monkey head" as the stone.
+
+the printed name of the stone is "monkey head".
+
+plants are scenery in monkey head.
+moss is scenery in monkey head.	
 
 monk island is a region.
 
-volcano, canyon, pond, dam, fuzzy beach, banana beach, maybe temple are in monk island.
+volcano, canyon edge, pond, dam, fuzzy beach, banana beach, monkey head are in monk island.
 
 [at the time when the player visits volcano:
 	now volcano is northwest of banana beach.]
 
 fuzzy beach is northeast of pond.
-maybe temple is east of fuzzy beach.
+monkey head is east of fuzzy beach.
 
 chapter furu island connections
 
@@ -1688,7 +1766,7 @@ ocean is west of pfandomat.
 
 cave is a room. "Seems to be a living room. Someone lives here. In one corner is a 
 heavy chest[if chest is open] full of leather jackets.[otherwise].[end if]". 
-cave is inside from maybe temple.
+cave is inside from monkey head.
 
 A chest is scenery in cave. "Maybe the guy who lives here is selling these fine leather jackets."
 
@@ -2067,8 +2145,8 @@ the description of voodoo-door is "It seems to be locked from the inside and you
 backroom is north of voodoo-door.
 voodoo-door is north of church of homoeopathy.
 
-exvolady is a woman in backroom.
-the printed name of exvolady is "ex-voodoo lady". understand "ex", "ex-voodoo", "voodoo", "lady" as the exvolady.
+
+the printed name of exvoo is "ex-voodoo lady". understand "ex", "ex-voodoo", "voodoo", "lady" as the exvoo.
 
 earwax is in backroom.
 
@@ -2082,4 +2160,9 @@ instead of going north in the pond, try going inside.
 instead of entering something in pond, try going inside.
 
 the description of pond is "There is a pond with water and in the middle is a swimming hut.".
+
+exvoo is a woman in the church of homoeopathy.
+The litany of exvoo is the Table of exvoos Talk. the greeting of exvoo is exvoo-hello. 
+
+chapter stagger drunken dance
 
