@@ -1080,6 +1080,8 @@ words is the more stupid one for a place like this. There is the so called [town
 
 ocean is a room. "Its still far away to the coast line to the north. Directly behind your back is the sloop or ketch you just used to call them boats. To the other directions is just open sea and you don't want to explore that any further."
 
+instead of going down in ocean, say "No way. You can already smell the stable ground to the north."
+
 [one turn after visiting ocean,then player is in banana beach.]
 
 
@@ -1253,10 +1255,10 @@ A distant objects rule for the cableway basket when the player is on the bullwhe
 A distant objects rule for something enclosed by cableway basket when the player is on the palm tree: rule succeeds.
 
 instead of doing anything other than examining the bullwheel during all-new:
-	say "noch geht nix.".
+	say "noch geht nix.TODO".
 
 instead of doing anything other than examining the bullwheel during all-new2:
-	say "noch geht nix.".
+	say "noch geht nix.TODO".
 
 instead of climbing the bullwheel during smiley-island-escape:
 	try entering the bullwheel.
@@ -1597,7 +1599,7 @@ exvoo-apehead-entry	"I will never ever violate and or breach into this because I
 herman-secret	"I wouldn't be interested, but inside... its paradise."
 herman-totems	"Ah yes, those idiots with the flask-totems. If you ever wanted to see a real cargo cult this is one."
 herman-rotida	"They get on my nerves. They visit this island every summer and ask questions over and over."
-herman-sacul	"Planet Wars. I was often at the movies in my former life. Maybe I will again after my recue. At the moment I only watch 'water world' over and over at the beach."
+herman-sacul	"Planet Peace. I was often at the movies in my former life. Maybe I will again after my rescue. At the moment I only watch 'water world' over and over at the beach."
 herman-yensids	"Protect? The only supreme being is me and they don't protect me.TODO"
 herman-qtip	"Yes, true. I have stolen that damn thing again, because they broke my banana pflueckerTODO."
 herman-earwax	"Earwax? I have all sorts of waxes in any hole of my body."
@@ -1866,16 +1868,16 @@ at the time when opera-4 appears:
 	ask a closed question, in menu mode.
 
 at the time when escape-1 appears:
-	say "You feel the inner wish to leave that island. Unseen and fast.".
+	say "[if smiley-island-escape is happening]You feel the inner wish to leave that island. Unseen and fast.[end if]".
 
 at the time when escape-2 appears:
-	say "You feel the inner wish to leave that island. Unseen and fast.".
+	say "[if smiley-island-escape is happening]You feel the inner wish to leave that island. Unseen and fast.[end if]".
 
 at the time when escape-3 appears:
-	say "You feel the inner wish to leave that island. Unseen and fast.".
+	say "[if smiley-island-escape is happening]You feel the inner wish to leave that island. Unseen and fast.[end if]".
 
 at the time when escape-4 appears:
-	say "You feel the inner wish to leave that island. Unseen and fast.".
+	say "[if smiley-island-escape is happening]You feel the inner wish to leave that island. Unseen and fast.[end if]".
 
 
 A menu question rule (this is the gather character rule):
@@ -2065,7 +2067,7 @@ instead of going east in ocean:
 	say "You see in that direction lies the island you were coming from. But its too far away to get there with that mattress, so you better try to go north to reach the beach.".
 
 instead of going south in ocean:
-	say "You are happy to escape your swimming prison and don't want to go back into it. Especially when such a nice and welcoming island waits directly to the north..".
+	say "You are happy to escape your swimming prison and don't want to go back into it. Especially when such a nice and welcoming island waits directly to the north.".
 
 cabin is inside of ocean.
 
