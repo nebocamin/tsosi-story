@@ -1745,7 +1745,7 @@ moss is scenery in monkey head.
 
 monk island is a region.
 
-volcano, canyon edge, pond, dam, fuzzy beach, banana beach, monkey head are in monk island.
+volcano, canyon edge, canyon ground, pond, dam, fuzzy beach, banana beach, monkey head, stream bed are in monk island.
 
 [at the time when the player visits volcano:
 	now volcano is northwest of banana beach.]
@@ -2167,4 +2167,8 @@ exvoo is a woman in the church of homoeopathy.
 The litany of exvoo is the Table of exvoos Talk. the greeting of exvoo is exvoo-hello. 
 
 chapter stagger drunken dance
+
+stream bed is a room. "The bed of this stream is armored with rocks, some very rounded (having had a longer life in the stream) and some not."
+
+stream bed is north of dam.
 
