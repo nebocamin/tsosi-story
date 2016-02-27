@@ -1,6 +1,5 @@
 "the secret of smiley island" by "stereo"
 
-
 [branch firstact]
 
 [Include GNU General Public License V3 by Free Software Foundation.
@@ -43,7 +42,7 @@ use no scoring.
 
 The Story Genre is "unterschiedliches".  The release number is 1. The Story Headline is "the sun carries it to the daylight.". The Story description is "A story of someone going for his search."
 
-[release along with a "OneColumn" website and an interpreter.]
+release along with a "OneColumn" website and an interpreter.
 release along with a website, source text, library card and an interpreter.
 Release along with the "Quixe" interpreter.
 [Include Player Experience Upgrade by Aaron Reed.]
@@ -130,7 +129,7 @@ of Smiley Island  [paragraph break]  [paragraph break] ".
 when play begins:
 	say "Deep in the west indies. The island of boredom. Just coming from the boat
 	 without puking, but still in a bad feeling. Your holidays starting for you to reach the
-	 state of total boredomness. (version december2015)".
+	 state of total boredomness. (version february2016)".
 	[pause the game.]
 
 sustainable food is edible.
@@ -902,6 +901,22 @@ herman is a man in volcano.
 the initial appearance of herman is "TODO.".
 The litany of herman is the Table of hermans Talk. the greeting of herman is herman-hello.
 
+The giant q-tip is a thing. the description is "It looks like the ones you know for human ears, but this one is giant. Larger than your legs.".
+the giant q-tip is in volcano.
+understand "qtip", "tip" as the giant q-tip.
+
+keeping-qtip is a truth state that varies. keeping-qtip is true.
+
+instead of taking the giant q-tip:
+	now q-tip is familiar;
+	if keeping-qtip is true:
+		say "This belongs to Herman.";
+	otherwise:
+		if stone is open:
+			say "No, you are quite satisfied with the monkeys mouth being open. You will let it in.";
+		otherwise:
+			say "TODO nimms halt".
+
 
 chapter jungle path
 
@@ -1461,12 +1476,12 @@ prompt	response	enabled
 "ahoj"	herman-hello	1
 "What about this staggering, drunken dance?"	herman-dance	1
 "What about this secret?"	herman-secret	1
-"What about this totems?"	herman-totems	1
-"What about this Ron, Tim ans Dave?"	herman-rotida	1
+"What about these totems?"	herman-totems	0
+"What about this Ron, Tim and Dave?"	herman-rotida	1
 "What about Sacul Film?"	herman-sacul	1
 "What about the Yensids?"	herman-yensids	1
 "What about the Giant Q-Tip?"	herman-qtip	1
-"What about the  earwax?"	herman-earwax	1
+"What about the earwax?"	herman-earwax	1
 "What about the apehead-entry?"	herman-apehead-entry	1
 
 Table of exvoos talk
@@ -1474,12 +1489,12 @@ prompt	response	enabled
 "uhu voodoo TODO"	exvoo-hello	1
 "What about this staggering, drunken dance?"	exvoo-dance	1
 "What about this secret?"	exvoo-secret	1
-"What about this totems?"	exvoo-totems	1
-"What about this Ron, Tim ans Dave?"	exvoo-rotida	1
+"What about these totems?"	exvoo-totems	0
+"What about this Ron, Tim and Dave?"	exvoo-rotida	1
 "What about Sacul Film?"	exvoo-sacul	1
 "What about the Yensids?"	exvoo-yensids	1
-"What about the Giant Q-Tip?"	exvoo-qtip	1
-"What about the  earwax?"	exvoo-earwax	1
+"What about the Giant Q-Tip?"	exvoo-qtip	0
+"Do you have anything against earwax?"	exvoo-earwax	0
 "What about the apehead-entry?"	exvoo-apehead-entry	1
 
 table of vegibals talk
@@ -1487,12 +1502,12 @@ prompt	response	enabled
 "bored?TODO"	vegibal-hello	1
 "What about this staggering, drunken dance?"	vegibal-dance	1
 "What about this secret?"	vegibal-secret	1
-"What about this totems?"	vegibal-totems	1
-"What about this Ron, Tim ans Dave?"	vegibal-rotida	1
+"What about these totems?"	vegibal-totems	0
+"What about this Ron, Tim and Dave?"	vegibal-rotida	1
 "What about Sacul Film?"	vegibal-sacul	1
 "What about the Yensids?"	vegibal-yensids	1
 "What about the Giant Q-Tip?"	vegibal-qtip	1
-"What about the  earwax?"	vegibal-earwax	1
+"What about the earwax?"	vegibal-earwax	1
 "What about the apehead-entry?"	vegibal-apehead-entry	1
 
 Before going: terminate the conversation.
@@ -1593,7 +1608,7 @@ exvoo-totems	"I like them, because I can sell my medicine in them."
 exvoo-rotida	"They wanted to hide in my shop, but I can't give shelter to people with such a bad karma."
 exvoo-sacul	"Commercial entertainment like is the reason I quit living in first world. Anything would be more prefered."
 exvoo-yensids	"I hope someday I have to chance to initiate them."
-exvoo-qtip	"You don't need this stuff. I have something better, which means homoeopathic,  for you. I will rattle it 4 days, then you can come back to it strong enough to help."
+exvoo-qtip	"You don't need this stuff. I have something better, which means homoeopathic, for you. I will rattle it 4 days, then you can come back to it strong enough to help."
 exvoo-earwax	"You don't need this stuff. I have something better, which means homoeopathic, for you. I will rattle it 4 days, then you can come back to it strong enough to help."
 exvoo-apehead-entry	"I will never ever violate and or breach into this because I respect the natives and any believe system thats existing or will exist."
 herman-secret	"I wouldn't be interested, but inside... its paradise."
@@ -1603,7 +1618,7 @@ herman-sacul	"Planet Peace. I was often at the movies in my former life. Maybe I
 herman-yensids	"Protect? The only supreme being is me and they don't protect me.TODO"
 herman-qtip	"Yes, true. I have stolen that damn thing again, because they broke my banana pflueckerTODO."
 herman-earwax	"Earwax? I have all sorts of waxes in any hole of my body."
-herman-apehead-entry	"You have to find your own way TODO if ohne q-tip you will not get into it otherwise schon."
+herman-apehead-entry	"[if q-tip is familiar]You will need the giant q-tip. [otherwise]You will not get into it if you don't have the right key.[end if]"
 silence	"Bye."
 
 after quipping when the current quip is ron-people:
@@ -1679,7 +1694,20 @@ after quipping when the current quip is dave-kopi:
 	now rtd-know-kopi is true.
 after quipping when the current quip is dave-waiting:
 	now dave-wait-reason is true.
-	
+after quipping when the current quip is herman-earwax:
+	enable the exvoo-earwax quip for exvoo;
+	enable the exvoo-qtip quip for exvoo.
+after quipping when the current quip is herman-qtip:
+	enable the exvoo-earwax quip for exvoo;
+	enable the exvoo-qtip quip for exvoo. 
+after quipping when the current quip is exvoo-earwax:
+	disable the exvoo-qtip quip for exvoo;
+	say "She went into the backroom and gets a big glass full of earwax!?[paragraph break]";
+	now the earwax is in church of homoeopathy.
+after quipping when the current quip is exvoo-qtip:
+	disable the exvoo-earwax quip for exvoo;
+	say "She went into the backroom and gets a big glass full of earwax!?[paragraph break]";
+	now the earwax is in church of homoeopathy.
 	
 treasure-hunt begins when the current quip is slog-start-treasurehunt the first time.
 getting-marooned begins when the current quip is slog-ask-marooned the first time.
@@ -1720,28 +1748,64 @@ canyon edge is north of jungle.
 volcano is northwest of jungle.]
 canyon edge is north of banana beach.
 volcano is northwest of banana beach.
-volcano is west of canyon edge.
+volcano is west of dam.
 pond is northeast of canyon edge.
-dam is northwest of pond.
+dam is west of pond.
 dam is north of canyon edge.
-dam is west of fuzzy beach.
 
 monkey head is a room. "Between tropical trees is a big [stone]. 
 Maybe it is formed by human hands. Definitely a heck of a long time ago. 
-Now its overgrown with [plants] and [moss].".
+Now its overgrown with [plants] and [moss].[if stone is closed] Its mouth is tightly shut and you can see a row of teeth[otherwise] Its mouth is open and a large tonge is stretched out like a red carpet.[end if]".
 
 the vegibal is a man in monkey head.
 
 the litany of vegibal is table of vegibals talk.
 
-The stone is scenery in monkey head.
+The stone is scenery in monkey head. the description is "It is the most giant monkey head you've ever seen. Only comparable to the Karl Marx Monument in Chemnitz.[if stone is closed] Its mouth is tightly shut and you can see a row of teeth[otherwise] Its mouth is open and a large tonge is stretched out like a red carpet.[end if]"
 
 understand "head", "monkey", "monkey head" as the stone.
 
 the printed name of the stone is "monkey head".
 
-plants are scenery in monkey head.
-moss is scenery in monkey head.	
+the stone can be open. the stone is not open.
+
+monkey ear is part of the stone. monkey ear is a container. the monkey ear is open.
+
+after examining the monkey ear:
+	enable the exvoo-earwax quip for exvoo;
+	enable the exvoo-qtip quip for exvoo.
+
+instead of inserting the giant q-tip into monkey ear:
+	if earwax is inside monkey ear:
+		say "TODO nu glor, you out the qtipin and it fits really";
+		now the stone is open;
+		continue the action;
+	otherwise:
+		say "TODO nee".
+
+instead of going inside in monkey head:
+	if stone is open:
+		say "You are goung in...";
+		continue the action;
+	otherwise:
+		say "You can't see any kind of entrance.".
+
+
+plants are scenery in monkey head. "Green, like the moss.".
+moss is scenery in monkey head. the description is "Green. Very green. Like the plants.".
+
+totems are scenery in monkey head. 
+
+shiny totem is in monkey head. the description is "There is a totem, looking like a flask.".
+
+after taking the shiny totem:
+	say "You took this shiny totem and it really seems to be a smaller modell of a flask.";
+	now totem-flask is familiar;
+	enable the herman-totems quip for herman;
+	enable the exvoo-totems quip for exvoo;
+	enable the vegibal-totems quip for vegibal.
+
+totem-flask is an unfamiliar subject.
 
 monk island is a region.
 
@@ -1750,7 +1814,7 @@ volcano, canyon edge, canyon ground, pond, dam, fuzzy beach, banana beach, monke
 [at the time when the player visits volcano:
 	now volcano is northwest of banana beach.]
 
-fuzzy beach is northeast of pond.
+fuzzy beach is east of pond.
 monkey head is east of fuzzy beach.
 
 chapter furu island connections
@@ -2150,7 +2214,14 @@ voodoo-door is north of church of homoeopathy.
 
 the printed name of exvoo is "ex-voodoo lady". understand "ex", "ex-voodoo", "voodoo", "lady" as the exvoo.
 
-earwax is in backroom.
+earwax is in backroom. the description is "Ugly would be too nice to describe this unnameable mass.".
+understand "wax" as the earwax.
+
+instead of taking the earwax:
+	if earwax is inside monkey ear:
+		say "No, it fits so perfectly into this giant ear.";
+	otherwise:
+		continue the action.
 
 
 the hut is scenery in pond. the printed name is "swimming hut".
@@ -2171,4 +2242,8 @@ chapter stagger drunken dance
 stream bed is a room. "The bed of this stream is armored with rocks, some very rounded (having had a longer life in the stream) and some not."
 
 stream bed is north of dam.
+
+rotida-gone is a truth state that varies. rotida-gone is false.
+saculs-gone is a truth state that varies. saculs-gone is false.
+yensids-gone is a truth state that varies. yensids-gone is false.
 
