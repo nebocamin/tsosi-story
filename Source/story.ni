@@ -73,7 +73,9 @@ test thgm with "look / test th / look / i / test gm ".
 
 test thgmb with "test th / test gm / test b"
 
-	test all with "test th / test gm / test b / nw / sw /w/z/z/z/z/1/open mattress/get mattress/n/inflate mattress/n"
+test basket with "test thgmb / nw / sw / w / z / z / z / z / 2 / s / s / ne / se / climb bullwheel / go into basket"
+
+test all with "test th / test gm / test b / nw / sw /w/z/z/z/z/1/open mattress/get mattress/n/inflate mattress/n"
 
 part losgehts
 
@@ -841,10 +843,19 @@ when pyrate-opera begins:
 smiley-island-escape is a scene.
 smiley-island-escape begins when pyrate-opera ends.
 smiley-island-escape ends when mattress-escape begins.
+smiley-island-escape ends when monkey-opening begins.
 
 mattress-escape is a scene.
 mattress-escape begins when the player is in cabin.
-mattress-escape ends, when the player is in banana beach.
+mattress-escape ends, when monkey-opening begins.
+
+ocean2-escape is a scene.
+ocean2-escape begins when the player is inside the cableway basket.
+ocean2-escape ends, when monkey-opening begins.
+
+monkey-opening is a scene.
+monkey-opening begins when the player is in banana beach for the first time.
+
 
 part monk island
 
@@ -853,9 +864,9 @@ chapter banana beach
 banana beach is a room. "[One of]... [Sand] in your ears, [sand] in your 
 mouth, between your teeth. You even feel like you're breathing sand. 
 And you try to take a look around. the [sun] is shining and burnt your 
-back. But hey, you're still wearing your [trousers]. [or]Hot light [sand] 
+back. But hey, you're still wearing your [trousers]. You see lots of [footprints], like a very big group of people was here and leaving into the jungle to the north.[or]Hot light [sand] 
 all around.[stopping] In the middle of this beach is a lonely banana tree. 
-Making you think, it was escaping the jungle behind him to the north.".
+Making you think, it was escaping the jungle behind him to the north. You see lots of [footprints], like a very big group of people was here and leaving into the jungle. Far away to the northwest leads a way up to a volcano.".
 
 instead of going south in banana beach, say "You don't want to go into the water 'again'."
 
@@ -865,6 +876,7 @@ understand "banana" as the bananas.
 instead of taking the bananas, say "This is not a low hanging fruit.".
 sand is scenery in banana beach. the description is "fine grained.".
 sun is scenery in banana beach.
+footprints are scenery in banana beach. the description is "They lead to the north.".
 
 an uhuru is an animal in banana beach. 
 the description is "Sure, it's a black uhuru and it has a fleety foot.".
@@ -887,7 +899,7 @@ before going north in banana beach:
 
 chapter canyon edge
 
-canyon edge is a room. "You can look deep down a dried out canyon edge. Its dark down there.".
+canyon edge is a room. "You can look deep down a dried out canyon edge. Its dark down there. A trail leads back south to the banana tree and north[if dam is visited] to the dam[end if].".
 the rope is a thing. the rope is in canyon edge.
 
 canyon ground is a room. "Muddy and too hard to get up the high steep walls.".
@@ -895,7 +907,7 @@ canyon ground is below canyon edge.
 
 chapter volcano
 
-volcano is a room. "herman lies here.".
+volcano is a room. "[if herman is visible]herman lies here.[otherwise]hermans 'flat'.[end if]".
 herman is a man in volcano. 
 
 the initial appearance of herman is "TODO.".
@@ -1029,7 +1041,7 @@ instead of going down in jungle path:
 instead of taking off the helmet in undercreek:
 	say "[paragraph break]***[paragraph break]YOU have DIED!!![paragraph break]***[paragraph break][paragraph break]Just kidding above was a gum-tree root.".
 
-undercreek is a dark room. the description is "nice round walls in that cave, leading clearly into the northwest from here.". the printed name is "under the creek".
+undercreek is a dark room. the description is "You see nice round walls in that cave, leading clearly into the northwest from here.". the printed name is "under the creek".
 
 instead of going northwest in jungle path:
 	say "the fact that a creek is flowing doesnt mean you want to get in the 
@@ -1285,7 +1297,12 @@ after entering the cableway basket during smiley-island-escape:
 	say "The basket begins to move. You're finally on your journey away from that dangerous unboring island in the hope to get into a better resort to get something fine on your tongue. 
 	[paragraph break] ***CRACK*** [paragraph break]  the rope is torn apart. The cableway basket fell down onto the ocean. Including you.";
 	now the long rope is torn;
-	now the cableway basket is in ocean.
+	now the cableway basket is in ocean2.
+
+ocean2 is a room. the description is "water, water, water TODO". the printed name of ocean2 is "somewhere on the ocean.".
+
+when ocean2-escape begins:
+	say "shit, ich will weg".
 
 smiley-island-escape ends when the long rope is torn.
 
@@ -1418,6 +1435,11 @@ bluehole is below ocean.
 
 the description of bluehole is "You're now inside a big round hole, leading up to the wide open oceans surface.".
 
+instead of going up in bluehole:
+	say "hui schlimme dinge, tube reisst ab, helm weg... blubb, strand";
+	now the player is in banana beach;
+	now the helmet is in bluehole.
+
 
 part monk island
 
@@ -1482,7 +1504,7 @@ prompt	response	enabled
 "What about the Yensids?"	herman-yensids	1
 "What about the Giant Q-Tip?"	herman-qtip	1
 "What about the earwax?"	herman-earwax	1
-"What about the apehead-entry?"	herman-apehead-entry	1
+"What about the apehead-entry?"	herman-apehead-entry	0
 
 Table of exvoos talk
 prompt	response	enabled
@@ -1495,7 +1517,7 @@ prompt	response	enabled
 "What about the Yensids?"	exvoo-yensids	1
 "What about the Giant Q-Tip?"	exvoo-qtip	0
 "Do you have anything against earwax?"	exvoo-earwax	0
-"What about the apehead-entry?"	exvoo-apehead-entry	1
+"What about the apehead-entry?"	exvoo-apehead-entry	0
 
 table of vegibals talk
 prompt	response	enabled
@@ -1508,7 +1530,7 @@ prompt	response	enabled
 "What about the Yensids?"	vegibal-yensids	1
 "What about the Giant Q-Tip?"	vegibal-qtip	1
 "What about the earwax?"	vegibal-earwax	1
-"What about the apehead-entry?"	vegibal-apehead-entry	1
+"Do you think there is a way to open this ape's head?"	vegibal-apehead-entry	0
 
 Before going: terminate the conversation.
 
@@ -1749,7 +1771,7 @@ volcano is northwest of jungle.]
 canyon edge is north of banana beach.
 volcano is northwest of banana beach.
 volcano is west of dam.
-pond is northeast of canyon edge.
+
 dam is west of pond.
 dam is north of canyon edge.
 
@@ -1771,13 +1793,19 @@ the stone can be open. the stone is not open.
 
 monkey ear is part of the stone. monkey ear is a container. the monkey ear is open.
 
+after examining the stone:
+	say "You get the feeling that there could be a hidden mechanism inside this head.";
+	enable the exvoo-apehead-entry quip for exvoo;
+	enable the herman-apehead-entry quip for herman;
+	enable the vegibal-apehead-entry quip for vegibal;
+
 after examining the monkey ear:
 	enable the exvoo-earwax quip for exvoo;
 	enable the exvoo-qtip quip for exvoo.
 
 instead of inserting the giant q-tip into monkey ear:
 	if earwax is inside monkey ear:
-		say "TODO nu glor, you out the qtipin and it fits really";
+		say "W.T.F. As you put the giant q-tip into this ear, you hear an ancient mechanism working. You feel the ground vibrating and see how the monkey's mouth is going to open wide. Wide enough to go into this entrance.";
 		now the stone is open;
 		continue the action;
 	otherwise:
@@ -1785,7 +1813,7 @@ instead of inserting the giant q-tip into monkey ear:
 
 instead of going inside in monkey head:
 	if stone is open:
-		say "You are goung in...";
+		say "You are going in...TODO";
 		continue the action;
 	otherwise:
 		say "You can't see any kind of entrance.".
@@ -1886,6 +1914,12 @@ when smiley-island-escape begins:
 	escape-3 appears in 15 turns from now;
 	escape-4 appears in 20 turns from now;
 
+when ocean2-escape begins:
+	ocean2-1 appears in 1 turn from now;
+	ocean2-2 appears in 2 turn from now;
+	ocean2-3 appears in 3 turn from now;
+	ocean2-4 appears in 4 turn from now.
+
 at the time when the meanwhile-1 appears:
 	say "[bold type]MEANWHILE ...[paragraph break] [roman type] far away a ship,
 	a black freighter takes course to jamaika after escaping from madagaskar.".
@@ -1943,10 +1977,23 @@ at the time when escape-3 appears:
 at the time when escape-4 appears:
 	say "[if smiley-island-escape is happening]You feel the inner wish to leave that island. Unseen and fast.[end if]".
 
+at the time when ocean2-1 appears:
+	say "You feel save. You are far away from any costumed but serious pirate business.".
+
+at the time when ocean2-2 appears:
+	say "You feel ... thirsty. This is the second day in this swimming cableway.".
+	
+at the time when ocean2-3 appears:
+	say "You try to have sweet dreams of holiday resorts full of the finest things you can imagine.".
+
+at the time when ocean2-4 appears:
+	say "But you fell into bitter dreams and instead of just dying, you wake up again. [paragraph break] [italic type]..... somewhere else......[roman type] [paragraph break]";
+	move the player to banana beach.
+
 
 A menu question rule (this is the gather character rule):
 	if the number understood is 2:
-		say "Too much danger for you. As you ran aimlessly into the bush forgetting all your bad feelings about insects and dirt, you hear behind you the screaming of the people and other cannonballs smashing between them. Now you seem to be far away enough to take a deep breath and take a look where you are.";
+		say "[paragraph break]Too much danger for you. As you ran aimlessly into the bush forgetting all your bad feelings about insects and dirt, you hear behind you the screaming of the people and other cannonballs smashing between them. Now you seem to be far away enough to take a deep breath and take a look where you are.";
 		now the player is in crossing;
 		now resort-crashed is true;
 		exit;
@@ -2226,6 +2273,7 @@ instead of taking the earwax:
 
 the hut is scenery in pond. the printed name is "swimming hut".
 understand "swimming", "swimming hut" as the hut.
+the description of the hut is "TODO".
 
 instead of going south in the church of homoeopathy , try going outside.
 instead of going north in the pond, try going inside.
@@ -2247,3 +2295,9 @@ rotida-gone is a truth state that varies. rotida-gone is false.
 saculs-gone is a truth state that varies. saculs-gone is false.
 yensids-gone is a truth state that varies. yensids-gone is false.
 
+chapter damn
+
+the description of dam is "You see a stream flowing through its streambed to the north and also to the east. There are the remains of a dam that stopped the flow to the east before. One way to the west[if volcano is visited] to hermans fort[end if] and a way to the east[if pond is visited] to the pond[end if]. To the south leads the way back into the direction of the banana tree beach.".
+
+the exdam is scenery in dam. the description is "These are the remains of a violent attack with explosives against this dam.".
+the printed name of exdam is "the dam". understand "dam", "the dam" as the exdam.
