@@ -129,9 +129,11 @@ Rule for printing the banner text while turn count is 1: say "[paragraph break] 
 of Smiley Island  [paragraph break]  [paragraph break] ".
 
 when play begins:
+	[say "Hi Arkadius, please type 'transcript' inside the game after it starts. Lectrote is automatically doing savegames. And you will finde the 'cheat sheet' for common commands inside the menu of lectrote.";
+	pause the game;]
 	say "Deep in the west indies. The island of boredom. Just coming from the boat
 	 without puking, but still in a bad feeling. Your holidays starting for you to reach the
-	 state of total boredomness. (version february2016)".
+	 state of total boredomness. (version june2016)".
 	[pause the game.]
 
 sustainable food is edible.
@@ -173,7 +175,7 @@ instead of examining a bottle (called the drinkthing):
 	if the drinkthing is full:
 		say "The [drinkthing] is still filled up ";
 	otherwise:
-		say "The drinkthing is empty, but you feel a need of more.".
+		say "The [drinkthing] is empty, but you feel a need of more.".
 
 a person is either sober or drunk. a person is usually sober.
 a person is either bekifft or unbekifft. a person is usually unbekifft.
@@ -497,7 +499,6 @@ instead of giving the pile of meat to tim:
 
 instead of dropping the pile of meat:
 	say "Its heavy but there is a better purpose as just dropping it.".
-
 
 manatee suit is a wearable thing. the description is "hrmpft. its an suit 
 made of meat in the form of a manatee.".
@@ -866,7 +867,7 @@ mouth, between your teeth. You even feel like you're breathing sand.
 And you try to take a look around. the [sun] is shining and burnt your 
 back. But hey, you're still wearing your [trousers]. You see lots of [footprints], like a very big group of people was here and leaving into the jungle to the north.[or]Hot light [sand] 
 all around.[stopping] In the middle of this beach is a lonely banana tree. 
-Making you think, it was escaping the jungle behind him to the north. You see lots of [footprints], like a very big group of people was here and leaving into the jungle. Far away to the northwest leads a way up to a volcano.".
+Making you think, it was escaping the jungle behind him to the north. You see lots of [footprints], like a very big group of people was here and leaving into the jungle. Far away to the northwest leads a way up to a volcano. To the south is water, just water.".
 
 instead of going south in banana beach, say "You don't want to go into the water 'again'."
 
@@ -902,12 +903,16 @@ chapter canyon edge
 canyon edge is a room. "You can look deep down a dried out canyon edge. Its dark down there. A trail leads back south to the banana tree and north[if dam is visited] to the dam[end if].".
 the rope is a thing. the rope is in canyon edge.
 
+instead of going down in canyon edge, say "No, you can't see any possiblity to get down there in a healthy state."
+
 canyon ground is a room. "Muddy and too hard to get up the high steep walls.".
 canyon ground is below canyon edge.
 
+steep walls are scenery in canyon ground. description is "Muddy, not possible to climb.".[todo, whether you'll need a rope or there are stairs. but nothing and it works is bad]
+
 chapter volcano
 
-volcano is a room. "[if herman is visible]herman lies here.[otherwise]hermans 'flat'.[end if]".
+volcano is a room. "[if herman is visible]Herman sleeps TODO here.[otherwise]hermans 'flat'.[end if]".
 herman is a man in volcano. 
 
 the initial appearance of herman is "TODO.".
@@ -1066,7 +1071,7 @@ dave-wait-reason is a truth state that varies. dave-wait-reason is false.
 
 understand "guy" as dave.
 
-dave wears a diving helmet. it is wearable. the description of the diving helmet is "Thats what you call a perfect costum for every steampunk party.".
+dave wears a diving helmet. it is wearable. the description of the diving helmet is "Thats what you call a perfect costume for every steampunk party.".
 understand "visor", "helm" as the diving helmet.
 the diving helmet can be connected. the diving helmet is connected.
 
@@ -1497,20 +1502,21 @@ Table of hermans talk
 prompt	response	enabled
 "ahoj"	herman-hello	1
 "What about this staggering, drunken dance?"	herman-dance	1
-"What about this secret?"	herman-secret	1
+"What's the secret of this island?"	herman-secret	1
 "What about these totems?"	herman-totems	0
 "What about this Ron, Tim and Dave?"	herman-rotida	1
 "What about Sacul Film?"	herman-sacul	1
 "What about the Yensids?"	herman-yensids	1
 "What about the Giant Q-Tip?"	herman-qtip	1
-"What about the earwax?"	herman-earwax	1
+"Ahem, is this stuff all earwax that is coming out of your head?"	herman-earwax	1
 "What about the apehead-entry?"	herman-apehead-entry	0
+"I better go."	silence	1
 
 Table of exvoos talk
 prompt	response	enabled
 "uhu voodoo TODO"	exvoo-hello	1
 "What about this staggering, drunken dance?"	exvoo-dance	1
-"What about this secret?"	exvoo-secret	1
+"What's the secret of this island?"	exvoo-secret	1
 "What about these totems?"	exvoo-totems	0
 "What about this Ron, Tim and Dave?"	exvoo-rotida	1
 "What about Sacul Film?"	exvoo-sacul	1
@@ -1518,12 +1524,13 @@ prompt	response	enabled
 "What about the Giant Q-Tip?"	exvoo-qtip	0
 "Do you have anything against earwax?"	exvoo-earwax	0
 "What about the apehead-entry?"	exvoo-apehead-entry	0
+"I am more in knowledge than believes, bye."	silence	1
 
 table of vegibals talk
 prompt	response	enabled
 "bored?TODO"	vegibal-hello	1
 "What about this staggering, drunken dance?"	vegibal-dance	1
-"What about this secret?"	vegibal-secret	1
+"What's the secret of this island?"	vegibal-secret	1
 "What about these totems?"	vegibal-totems	0
 "What about this Ron, Tim and Dave?"	vegibal-rotida	1
 "What about Sacul Film?"	vegibal-sacul	1
@@ -1531,6 +1538,7 @@ prompt	response	enabled
 "What about the Giant Q-Tip?"	vegibal-qtip	1
 "What about the earwax?"	vegibal-earwax	1
 "Do you think there is a way to open this ape's head?"	vegibal-apehead-entry	0
+"I go, looking for the three headed monkey."	silence	1
 
 Before going: terminate the conversation.
 
@@ -1611,7 +1619,7 @@ ron-secret	"Not really. But it seems, we discovered something important to find 
 ron-people	"They are from yensid, the company that bought ours."
 tim-yensid	"They conquered, what was ours once and with their money they support L.´s quest for the secret of ... But I better keep my mouth shut."
 dave-yensid	"Not my problem, but I want to be part of the revenge. Hopefully getting rich afterwards."
-herman-hello	"It's impossible for a shipwrecked castaway to die in the silence that he deserves."
+herman-hello	"It seems to be impossible for a shipwrecked castaway to die in the silence that he deserves."
 exvoo-hello	"pssst, I have to bash this bottle on this leather bound book."
 vegibal-hello	"I smell meat-eaters."
 herman-dance	"Oh, thats stupid and they are loud. Disturbing me, so I can't sleep during the day or night."
@@ -1783,15 +1791,15 @@ the vegibal is a man in monkey head.
 
 the litany of vegibal is table of vegibals talk.
 
-The stone is scenery in monkey head. the description is "It is the most giant monkey head you've ever seen. Only comparable to the Karl Marx Monument in Chemnitz.[if stone is closed] Its mouth is tightly shut and you can see a row of teeth[otherwise] Its mouth is open and a large tonge is stretched out like a red carpet.[end if]"
+The stone is scenery in monkey head. the description is "It is the most giant monkey head you've ever seen. Only comparable to the Karl Marx Monument in Chemnitz. It has such a big ear in front of you, you can easily look inside.[if stone is closed] Its mouth is tightly shut and you can see a row of teeth[otherwise] Its mouth is open and a large tonge is stretched out like a red carpet.[end if]"
 
-understand "head", "monkey", "monkey head" as the stone.
+understand "head", "monkey", "monkey head", "monument" as the stone.
 
 the printed name of the stone is "monkey head".
 
 the stone can be open. the stone is not open.
 
-monkey ear is part of the stone. monkey ear is a container. the monkey ear is open.
+the monkey ear is part of the stone. the monkey ear is a container. the monkey ear is open.
 
 after examining the stone:
 	say "You get the feeling that there could be a hidden mechanism inside this head.";
@@ -1809,7 +1817,7 @@ instead of inserting the giant q-tip into monkey ear:
 		now the stone is open;
 		continue the action;
 	otherwise:
-		say "TODO nee".
+		say "You pushed the q-tip hard into that ear, but it doesn't fit perfectly. Like something missing that nestles into that ear.".
 
 instead of going inside in monkey head:
 	if stone is open:
@@ -1824,7 +1832,9 @@ moss is scenery in monkey head. the description is "Green. Very green. Like the 
 
 totems are scenery in monkey head. 
 
-shiny totem is in monkey head. the description is "There is a totem, looking like a flask.".
+a shiny totem is in monkey head. the description is "There is a totem, looking like a flask.".
+the shiny totem is an openable container. it is closed.
+understand "flask" as the shiny totem.
 
 after taking the shiny totem:
 	say "You took this shiny totem and it really seems to be a smaller modell of a flask.";
@@ -1957,7 +1967,7 @@ at the time when opera-3 appears:
 
 at the time when opera-4 appears:
 	say "Suddenly you hear an explosion from behind. Immediatly you turn your head 
-	to the sea. And the black ships with eight sails appeared. A pillar of smoke arises 
+	to the sea. And the black ship with eight sails appeared. A pillar of smoke arises 
 	over a cannon. In that second, a next cannon is fired and you are able to follow the 
 	canon ball with your own eyes. You have to turn your head and half believing what 
 	you see, the cannonball goes down in the middle of the stage and breaks the wodden planks.[paragraph break]";
@@ -2280,7 +2290,7 @@ instead of going north in the pond, try going inside.
 
 instead of entering something in pond, try going inside.
 
-the description of pond is "There is a pond with water and in the middle is a swimming hut.".
+the description of pond is "There is a pond with water and in the middle is a swimming hut. You can enter the hut or leave this place to the west or east[if monkey head is visited] in direction of the monkey head[end if].".
 
 exvoo is a woman in the church of homoeopathy.
 The litany of exvoo is the Table of exvoos Talk. the greeting of exvoo is exvoo-hello. 
