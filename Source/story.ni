@@ -896,7 +896,7 @@ instead of pushing the banana tree the fifth time:
 	now the bananafruit is in banana beach.
 	
 before going north in banana beach:
-	say "langsam fortastend TODO[paragraph break]".
+	say "slowly feeling your way forward..[paragraph break]".
 
 chapter canyon edge
 
