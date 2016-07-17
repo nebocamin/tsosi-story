@@ -61,6 +61,8 @@ Index map with EPS file.
 Index map with trail mapped east of small gap.
 Index map with shashrick mapped northeast of jungle path.
 
+
+
 part testing
 
 test th with "talk / 3  / 1 / 1 / 3 / 1 / nw / dig / put treasure into hole / close hole / se "
@@ -130,11 +132,11 @@ of Smiley Island  [paragraph break]  [paragraph break] ".
 
 when play begins:
 	say "Hi Sarah, please type 'transcript' inside the game after it starts. Lectrote is automatically doing savegames. And you will finde the 'cheat sheet' for common commands inside the menu of lectrote.";
-	[pause the game;]
+	pause the game;
 	say "Deep in the west indies. The island of boredom. Just coming from the boat
 	 without puking, but still in a bad feeling. Your holidays starting for you to reach the
-	 state of total boredomness. (version july2016)".
-	[pause the game.]
+	 state of total boredomness. (version july2016)";
+	pause the game.
 
 sustainable food is edible.
 sustainable food is in the rucksack. the description is "You don't want to eat it, until
@@ -908,7 +910,7 @@ the rope is a thing. the rope is in canyon edge.
 
 the rope can be hanging. the rope is hanging.
 
-the description of the rope is "A quite robust kind of rope. [if the rope is hanging]The rope is hanging far down in the direction of the canyon ground.[end if]".
+the description of the rope is "A quite robust kind of rope. [if the rope is hanging]The rope is hanging far down in the direction of they canyon ground.[end if]".
 after taking the rope:
 	now the rope is not hanging;
 	continue the action.
@@ -1502,7 +1504,7 @@ prompt	response	enabled
 "Can I get this fruit?"	ron-fruit	1
 "Which plan, do you know it?"	ron-plan	0
 "Who was that boss?"	ron-sacul	0
-"[one of]aehm.. what about this pile of meat over her?
+"[one of]aehm.. what about this pile of meat over here?
 [or]about... that meat again..[stopping]"	ron-meat	0
 "About that pirate ship at the horizon..."	ron-kopi	0
 "What about those people already inside the holiday resort?"	ron-people	0
@@ -1600,12 +1602,12 @@ dave-brass	"Can you please go, I have some serious work going on. And yes, I'm n
 dave-start-barbecue	"Manatis are protected today, so we have fake ones to get."
 dave-are-you	"Yes thats me."
 dave-ask-wristbands	"Really? Would be great to talk to a guy with many wristbands. Show me yours."
-dave-keep-wristbands	"I'm unemployed now. It's a bad job situation here on these islands. So I live from the fruits in the jungle and I'm still trying to find my way out of the complete boredomness."
+dave-keep-wristbands	"No, this isn't me. I'm unemployed now. It's a bad job situation here on these islands. So I live from the fruits in the jungle and I'm still trying to find my way out of the complete boredomness."
 dave-manatee	"Do you think i'm completely dull? But... hmm. No, not without a cause."
 dave-durian	"That sounds like a fair deal. So give me the suit."
 dave-nobait	"grmpft."
 dave-waiting	"Sure. I'm planning my next dive. There is a horizontal passage down there. I assume it leads into a 'Blue Hole'."
-dave-bluehole	"It is very deep vertical cave with a special flora and fauna. The can be that so deep that fresh and salty water are mixing in them. They can have long horizontal arms. When  I'm right and one of them is ending here, we could sell diving trips into it. "
+dave-bluehole	"It is very deep vertical cave with a special flora and fauna. The can be that so deep that fresh and salty water are mixing in them. They can have long horizontal arms. When I'm right and one of them is ending here, we could sell diving trips into it. "
 slog-new-in-town	"You hold just [the list of the things carried by the player] in your hands. Do you think, you have any chance to survive here?"
 slog-deal-with	"'So we have to deal with you and You want me to tolerate your face, everytime you come along?'"
 slog-go-away	"'Nice one... so please leave. fast. very fast.'"
