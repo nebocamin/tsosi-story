@@ -42,7 +42,7 @@ use no scoring.
 
 The Story Genre is "unterschiedliches".  The release number is 1. The Story Headline is "the sun carries it to the daylight.". The Story description is "A story of someone going for his search."
 
-release along with a "OneColumn" website and an interpreter.
+[release along with a "OneColumn" website and an interpreter.]
 release along with a website, source text, library card and an interpreter.
 Release along with the "Quixe" interpreter.
 [Include Player Experience Upgrade by Aaron Reed.]
@@ -131,12 +131,12 @@ Rule for printing the banner text while turn count is 1: say "[paragraph break] 
 of Smiley Island  [paragraph break]  [paragraph break] ".
 
 when play begins:
-	say "Hi Sarah, please type 'transcript' inside the game after it starts. Lectrote is automatically doing savegames. And you will finde the 'cheat sheet' for common commands inside the menu of lectrote.";
-	pause the game;
+	[say "Hi Sarah, please type 'transcript' inside the game after it starts. Lectrote is automatically doing savegames. And you will finde the 'cheat sheet' for common commands inside the menu of lectrote.";
+	pause the game;]
 	say "Deep in the west indies. The island of boredom. Just coming from the boat
 	 without puking, but still in a bad feeling. Your holidays starting for you to reach the
-	 state of total boredomness. (version july2016)";
-	pause the game.
+	 state of total boredomness. (version august2016)".
+	[pause the game.]
 
 sustainable food is edible.
 sustainable food is in the rucksack. the description is "You don't want to eat it, until
@@ -501,6 +501,7 @@ instead of giving the pile of meat to tim:
 
 instead of dropping the pile of meat:
 	say "Its heavy but there is a better purpose as just dropping it.".
+
 
 manatee suit is a wearable thing. the description is "hrmpft. its an suit 
 made of meat in the form of a manatee.".
@@ -869,7 +870,7 @@ mouth, between your teeth. You even feel like you're breathing sand.
 And you try to take a look around. the [sun] is shining and burnt your 
 back. But hey, you're still wearing your [trousers]. You see lots of [footprints], like a very big group of people was here and leaving into the jungle to the north.[or]Hot light [sand] 
 all around.[stopping] In the middle of this beach is a lonely banana tree. 
-Making you think, it was escaping the jungle behind him to the north. Far away to the northwest leads a way up to a volcano. To the south is water, just water.".
+Making you think, it was escaping the jungle behind him to the north. You see lots of [footprints], like a very big group of people was here and leaving into the jungle. Far away to the northwest leads a way up to a volcano.".
 
 instead of going south in banana beach, say "You don't want to go into the water 'again'."
 
@@ -898,14 +899,11 @@ instead of pushing the banana tree the fifth time:
 	now the bananafruit is in banana beach.
 	
 before going north in banana beach:
-	say "slowly feeling your way forward..[paragraph break]".
+	say "langsam fortastend TODO[paragraph break]".
 
 chapter canyon edge
 
 canyon edge is a room. "You can look deep down a dried out canyon edge. Its dark down there. A trail leads back south to the banana tree and north[if dam is visited] to the dam[end if].".
-
-[a stake is in canyon edge. it is fixed in place.]
-
 the rope is a thing. the rope is in canyon edge.
 
 the rope can be hanging. the rope is hanging.
@@ -918,17 +916,23 @@ after taking the rope:
 instead of going down in canyon edge, say "No, you can't see any possiblity to get down there in a healthy state."
 
 canyon ground is a room. "Muddy and too hard to get up the high steep walls.".
-canyon ground is below canyon edge.
 
-steep walls are scenery in canyon ground. description is "Muddy, not possible to climb.".[todo, whether you'll need a rope or there are stairs. but nothing and it works is bad]
+canyon ground is below canyon edge.
 
 chapter volcano
 
-volcano is a room. "[if herman is visible]Herman pretends to sleep here.[otherwise]hermans 'flat'.[end if]".
-herman is a man in volcano. 
+volcano is a room. "[if herman is visible]Herman sleeps TODO here.[otherwise]hermans 'flat'.[end if]".
+herman is a man in volcano.
 
 the initial appearance of herman is "TODO.".
 The litany of herman is the Table of hermans Talk. the greeting of herman is herman-hello.
+
+herman can be deaf or not deaf. herman is deaf.
+instead of talking to herman:
+	if herman is deaf:
+		say "[one of]He does not seem to hear anything.[or] [stopping]";
+	otherwise:
+		continue the action.
 
 The giant q-tip is a thing. the description is "It looks like the ones you know for human ears, but this one is giant. Larger than your legs.".
 the giant q-tip is in volcano.
@@ -944,7 +948,7 @@ instead of taking the giant q-tip:
 		if stone is open:
 			say "No, you are quite satisfied with the monkeys mouth being open. You will let it in.";
 		otherwise:
-			say "It seems okay to take it".
+			say "TODO nimms halt".
 
 
 chapter jungle path
@@ -1293,16 +1297,16 @@ at the time when ron-back appears:
 		say "[ronguy] just arrives after he hid your treasure.".
 
 the bullwheel is an enterable scenery supporter in river mouth. the description is "Its a wooden bullwheel to lead a [long rope] around it. Its a bit rotten, but looks sturdy enough to be still trustworthy. Someone carved 'steps' into the mast to make it easy to climb on it.".
-understand "wheel", "mast", "steps", "carved" as the bullwheel.
+understand "wheel" as the bullwheel.
 
 A distant objects rule for the cableway basket when the player is on the bullwheel: rule succeeds.
 A distant objects rule for something enclosed by cableway basket when the player is on the palm tree: rule succeeds.
 
 instead of doing anything other than examining the bullwheel during all-new:
-	say "Yes, you are right. You could climb up this mast and get into that cableway. But there are not yet enough reasons for you to do so.".
+	say "noch geht nix.TODO".
 
 instead of doing anything other than examining the bullwheel during all-new2:
-	say "Yes, you are right. You could climb up this mast and get into that cableway. But there are not yet enough reasons for you to do so.".
+	say "noch geht nix.TODO".
 
 instead of climbing the bullwheel during smiley-island-escape:
 	try entering the bullwheel.
@@ -1536,7 +1540,7 @@ prompt	response	enabled
 "What about the Giant Q-Tip?"	exvoo-qtip	0
 "Do you have anything against earwax?"	exvoo-earwax	0
 "What about the apehead-entry?"	exvoo-apehead-entry	0
-"I am more into knowledge than believes, bye."	silence	1
+"I am more in knowledge than believes, bye."	silence	1
 
 table of vegibals talk
 prompt	response	enabled
@@ -1629,7 +1633,7 @@ these times. Except you can give me a good alternative, maybe a bit more sustain
 dave-secret	"We are diving for the secret you shouldn't know anything about."
 ron-secret	"Not really. But it seems, we discovered something important to find it during our investigation for our project."
 ron-people	"They are from yensid, the company that bought ours."
-tim-yensid	"They conquered, what was ours once and with their money. They support L.´s quest for the secret of ... But I better keep my mouth shut."
+tim-yensid	"They conquered, what was ours once and with their money they support L.´s quest for the secret of ... But I better keep my mouth shut."
 dave-yensid	"Not my problem, but I want to be part of the revenge. Hopefully getting rich afterwards."
 herman-hello	"It seems to be impossible for a shipwrecked castaway to die in the silence that he deserves."
 exvoo-hello	"pssst, I have to bash this bottle on this leather bound book."
@@ -1640,7 +1644,7 @@ vegibal-dance	"Keep our stuff on our side and we won't eat you."
 vegibal-secret	"Its forbidden to see, even for us."
 vegibal-totems	"It belongs to the secret. period."
 vegibal-rotida	"We call them the intruders. They come every time with a different strategy."
-vegibal-sacul	"All hands TODO of companies making holidays are disturbing us. They keep us extremely busy protecting our 'deities'."
+vegibal-sacul	"All hands of companies making holidays are disturbing us. They keep us extremely busy protecting our 'deities'."
 vegibal-yensids	"All hands of companies making holidays are disturbing us. They keep us extremely busy protecting our 'deities'."
 vegibal-qtip	"Where do you get that info? Its part of our deities secret. Get it for us, but don't ask questions or even expect answers from us."
 vegibal-earwax	"We put different things in our ears to get some rest from all this party noise of the tourists visiting this island. So would be a great idea to get enough earwax for all tomorrows parties."
@@ -1648,17 +1652,17 @@ vegibal-apehead-entry	"Its only allowed to us and even we will not do that."
 exvoo-secret	"I will always respect their deities."
 exvoo-totems	"I like them, because I can sell my medicine in them."
 exvoo-rotida	"They wanted to hide in my shop, but I can't give shelter to people with such a bad karma."
-exvoo-sacul	"Commercial entertainment like they do is the reason I quit living in first world. Anything would be more prefered."
+exvoo-sacul	"Commercial entertainment like is the reason I quit living in first world. Anything would be more prefered."
 exvoo-yensids	"I hope someday I have to chance to initiate them."
-exvoo-qtip	"You ask me for some university medicine? I have something better, which means homoeopathic, for you. I will rattle it 4 days, then you can come back to it strong enough to help."
+exvoo-qtip	"You don't need this stuff. I have something better, which means homoeopathic, for you. I will rattle it 4 days, then you can come back to it strong enough to help."
 exvoo-earwax	"You don't need this stuff. I have something better, which means homoeopathic, for you. I will rattle it 4 days, then you can come back to it strong enough to help."
 exvoo-apehead-entry	"I will never ever violate and or breach into this because I respect the natives and any believe system thats existing or will exist."
-herman-secret	"I wouldn't be interested, but inside... its the paradise."
+herman-secret	"I wouldn't be interested, but inside... its paradise."
 herman-totems	"Ah yes, those idiots with the flask-totems. If you ever wanted to see a real cargo cult this is one."
-herman-rotida	"They get on my nerves. They visit this island every summer and they are asking questions over and over about the secret of this island."
+herman-rotida	"They get on my nerves. They visit this island every summer and ask questions over and over."
 herman-sacul	"Planet Peace. I was often at the movies in my former life. Maybe I will again after my rescue. At the moment I only watch 'water world' over and over at the beach."
 herman-yensids	"Protect? The only supreme being is me and they don't protect me.TODO"
-herman-qtip	"Yes, true. I have stolen that damn thing again, because they broke my banana picker."
+herman-qtip	"Yes, true. I have stolen that damn thing again, because they broke my banana pflueckerTODO."
 herman-earwax	"Earwax? I have all sorts of waxes in any hole of my body."
 herman-apehead-entry	"[if q-tip is familiar]You will need the giant q-tip. [otherwise]You will not get into it if you don't have the right key.[end if]"
 silence	"Bye."
@@ -1797,7 +1801,7 @@ dam is north of canyon edge.
 
 monkey head is a room. "Between tropical trees is a big [stone]. 
 Maybe it is formed by human hands. Definitely a heck of a long time ago. 
-Now its overgrown with [plants] and [moss].[if stone is closed] Its [mouth] is tightly shut and you can see a row of [teeth][otherwise] Its mouth is open and a large tonge is stretched out like a red carpet.[end if]".
+Now its overgrown with [plants] and [moss].[if stone is closed] Its mouth is tightly shut and you can see a row of teeth[otherwise] Its mouth is open and a large tonge is stretched out like a red carpet.[end if]".
 
 the vegibal is a man in monkey head.
 
@@ -1810,12 +1814,6 @@ understand "head", "monkey", "monkey head", "monument" as the stone.
 the printed name of the stone is "monkey head".
 
 the stone can be open. the stone is not open.
-
-the monkey teeth are part of the stone.
-understand "tooth" as the monkey teeth.
-
-the monkey mouth is part of the stone.
-instead of examining the monkey mouth, try examining the stone.
 
 the monkey ear is part of the stone. the monkey ear is a container. the monkey ear is open.
 
@@ -1985,7 +1983,7 @@ at the time when opera-3 appears:
 
 at the time when opera-4 appears:
 	say "Suddenly you hear an explosion from behind. Immediatly you turn your head 
-	to the sea. And the black ship with eight sails appeared. A pillar of smoke arises 
+	to the sea. And the black ships with eight sails appeared. A pillar of smoke arises 
 	over a cannon. In that second, a next cannon is fired and you are able to follow the 
 	canon ball with your own eyes. You have to turn your head and half believing what 
 	you see, the cannonball goes down in the middle of the stage and breaks the wodden planks.[paragraph break]";
@@ -2308,10 +2306,18 @@ instead of going north in the pond, try going inside.
 
 instead of entering something in pond, try going inside.
 
-the description of pond is "There is a pond with water and in the middle is a swimming hut. You can enter the hut or leave this place to the west or east[if monkey head is visited] in direction of the monkey head[end if].".
+the description of pond is "There is a pond with water and in the middle is a swimming hut.".
 
 exvoo is a woman in the church of homoeopathy.
 The litany of exvoo is the Table of exvoos Talk. the greeting of exvoo is exvoo-hello. 
+
+
+an ouija board is in the church of homoeopathy. the description is "Its a wooden board with the letters of your alphabet on top. It has also 'yes' and 'no' on it."
+
+instead of giving the ouija board to herman:
+	say "Thankfully he takes the board from you. And very handy he uses his finger to form words so fast, its hard for you to follow it.";
+	now herman carries the ouija board;
+	now herman is not deaf.
 
 chapter stagger drunken dance
 
