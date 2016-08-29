@@ -876,7 +876,7 @@ instead of going south in banana beach, say "You don't want to go into the water
 
 banana tree is scenery in banana beach. the description is "Three times taller than you and at the top there are some [bananas].".
 the bananas are part of the banana tree. the description is "yellow, ready to be picked".
-understand "banana" as the bananas.
+understand "banana", "fruit" as the bananas. [todo weil bananafruit auch so heisst]
 instead of taking the bananas, say "This is not a low hanging fruit.".
 sand is scenery in banana beach. the description is "fine grained.".
 sun is scenery in banana beach.
@@ -2280,6 +2280,7 @@ be careful. Covering my track, leading them to the [cave].".
 
 church of homoeopathy is inside of pond. the description is "On it you can read a TODO durchgestrichen old letters Voodoo followed by a fresher homoeopathy".
 [war mal "house of mojo"]
+understand "coh" as the church of homoeopathy.
 
 voodoo-door is a door. it is locked.
 the printed name of voodoo-door is "the door to the backroom".
@@ -2324,6 +2325,52 @@ instead of giving the ouija board to herman:
 	say "Thankfully he takes the board from you. And very handy he uses his finger to form words so fast, its hard for you to follow it.";
 	now herman carries the ouija board;
 	now herman is not deaf.
+
+chapter banana-feint
+
+instead of giving the bananafruit to the exvoo:
+	say "Oh thanks. Very welcome my ur-tincture was already empty. Now I can start to make a new one.";
+	now exvoo-banana is one.
+
+distilled water is a bottle.
+
+exvoo-banana is a number that varies. exvoo-banana is zero.
+
+dissolving-banana is a scene.
+
+dissolving-banana begins when exvoo-banana is one.
+
+dissolving-banana ends when exvoo-banana is two.
+
+when dissolving-banana begins:
+	the dissolve-1 appears in 1 turns from now;
+	the dissolve-2 appears in 2 turns from now;
+	the dissolve-3 appears in 3 turns from now;
+	the dissolve-4 appears in 4 turns from now;
+	the dissolve-5 appears in 5 turns from now;
+
+at the time when dissolve-1 appears:
+	say "[if the player is in church of homoeopathy]You see her putting the whole banana into an [Erlenmeyer flask]. Directly afterwards poured it out and began filling water in it.[end if]".
+
+erlenmeyer flask is scenery in church of homoeopathy.
+
+at the time when dissolve-2 appears:
+	say "The 10th time she was pouring out the water from the flask and filling in fresh water again.".
+
+at the time when dissolve-3 appears:
+	say "For the 30th time he was pouring out the water from the flask and filling in fresh water again.".
+
+at the time when dissolve-4 appears:
+	say "For the [paragraph break] [italic type]no you stopped counting long ago[paragraph break][roman type]she was pouring out the water from the flask and filling in fresh water again.".
+
+at the time when dissolve-5 appears:
+	say "Voila, its done. The 'Musa Sapientum' is a strong medicine against a dried out feeling inside your mouth. I'll give you the first bottle of it.";
+	now exvoo-banana is two;
+	now the player carries the distilled water.
+
+instead of giving the distilled water to herman:
+	say "You f*cking idiot, if I say thirsty I mean I need ALCOHOL!!".
+
 
 chapter stagger drunken dance
 
