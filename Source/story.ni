@@ -135,7 +135,7 @@ when play begins:
 	pause the game;]
 	say "Deep in the west indies. The island of boredom. Just coming from the boat
 	 without puking, but still in a bad feeling. Your holidays starting for you to reach the
-	 state of total boredomness. (version august2016)".
+	 state of total boredomness. (version september2016)".
 	[pause the game.]
 
 sustainable food is edible.
@@ -2355,16 +2355,16 @@ at the time when dissolve-1 appears:
 erlenmeyer flask is scenery in church of homoeopathy.
 
 at the time when dissolve-2 appears:
-	say "The 10th time she was pouring out the water from the flask and filling in fresh water again.".
+	say "[if the player is in church of homoeopathy]The 10th time she was pouring out the water from the flask and filling in fresh water again.[end if]".
 
 at the time when dissolve-3 appears:
-	say "For the 30th time he was pouring out the water from the flask and filling in fresh water again.".
+	say "[if the player is in church of homoeopathy]For the 30th time s he was pouring out the water from the flask and filling in fresh water again.[end if]".
 
 at the time when dissolve-4 appears:
-	say "For the [paragraph break] [italic type]no you stopped counting long ago[paragraph break][roman type]she was pouring out the water from the flask and filling in fresh water again.".
+	say "[if the player is in church of homoeopathy]For the [paragraph break] [italic type]no you stopped counting long ago[paragraph break][roman type]she was pouring out the water from the flask and filling in fresh water again.[end if]".
 
 at the time when dissolve-5 appears:
-	say "Voila, its done. The 'Musa Sapientum' is a strong medicine against a dried out feeling inside your mouth. I'll give you the first bottle of it.";
+	say "[if the player is in church of homoeopathy]Voila, its done. The 'Musa Sapientum' is a strong medicine against a dried out feeling inside your mouth. I'll give you the first bottle of it.[end if]";
 	now exvoo-banana is two;
 	now the player carries the distilled water.
 
