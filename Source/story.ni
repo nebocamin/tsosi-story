@@ -135,7 +135,7 @@ when play begins:
 	pause the game;]
 	say "Deep in the west indies. The island of boredom. Just coming from the boat
 	 without puking, but still in a bad feeling. Your holidays starting for you to reach the
-	 state of total boredomness. (version november2016)".
+	 state of total boredomness. (version december2016)".
 	[pause the game.]
 
 sustainable food is edible.
