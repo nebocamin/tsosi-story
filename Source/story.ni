@@ -1309,7 +1309,9 @@ instead of doing anything other than examining the bullwheel during all-new2:
 	say "Yes, you are right. You could climb up this mast and get into that cableway. But there are not yet enough reasons for you to do so.".
 
 instead of climbing the bullwheel during smiley-island-escape:
-	try entering the bullwheel.
+	try entering the bullwheel;
+	say "You climbed up the bullwheel and then entered right into the cableway basket.";
+	try entering the cableway basket.
 
 instead of jumping while entering the bullwheel:
 	try entering the cableway basket.
