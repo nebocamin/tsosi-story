@@ -28,7 +28,7 @@
 [a scrum is in boring beach. "A scrum lies here.". the description is "its awful and loves
 meetings.". it is edible.]
 
-suppress GPL author instructions is true.
+suppress GPL author instructions is true. 
 
 
 
@@ -44,14 +44,14 @@ The Story Genre is "unterschiedliches".  The release number is 1. The Story Head
 
 [release along with a "OneColumn" website and an interpreter.]
 release along with a website, source text, library card and an interpreter.
-Release along with the "Quixe" interpreter.
+[Release along with the "Quixe" interpreter.]
 [Include Player Experience Upgrade by Aaron Reed.]
 
 Include Quip-Based Conversation by Michael Martin.
 Include Basic Screen Effects by Emily Short.
 Include epistemology by eric eve.
-Include Secret Doors by Andrew Owen.
-Include Far Away by Jon Ingold.
+[Include Secret Doors by Andrew Owen.]
+[Include Far Away by Jon Ingold.]
 Include Questions by Michael Callaghan.
 Include Rideable Vehicles by Graham Nelson.
 
@@ -102,8 +102,9 @@ the brass lantern is a device. "A brass lantern with a really fat battery."
 
 understand "lamp", "light" as the brass lantern.
 
+[TODO smell turned of for porting reasons]
 A thing has some text called scent. The scent of a thing is usually "nothing".
-The block smelling rule is not listed in the check smelling rulebook.
+[The block smelling rule is not listed in the check smelling rulebook.]
 Carry out smelling something: 
     say "From [the noun] you smell [scent of the noun]."
 
@@ -131,11 +132,13 @@ Rule for printing the banner text while turn count is 1: say "[paragraph break] 
 of Smiley Island  [paragraph break]  [paragraph break] ".
 
 when play begins:
-	[say "Hi Sarah, please type 'transcript' inside the game after it starts. Lectrote is automatically doing savegames. And you will finde the 'cheat sheet' for common commands inside the menu of lectrote.";
+	[say "Hi Sara, please type 'transcript' inside the game after it starts. Lectrote is automatically doing savegames. And you will find the 'cheat sheet' for common commands inside the menu of lectrote.";
+	pause the game;
+	say "Pen and paper for mapping your journey will help.";
 	pause the game;]
 	say "Deep in the west indies. The island of boredom. Just coming from the boat
 	 without puking, but still in a bad feeling. Your holidays starting for you to reach the
-	 state of total boredomness. (version december2016)".
+	 state of total boredomness. (ver march2017)".
 	[pause the game.]
 
 sustainable food is edible.
@@ -160,8 +163,8 @@ wrist is part of the player. the description is "On your wrist you can see
 [wristband-count in words] wristbands.".
 
 the description of the towel is "This is, what every adventurer needs. 
-[if the player carries the brass lantern][otherwise]Further needed: A brass lantern[end if]
-[if the player carries the rope][otherwise] and maybe a rope[end if]".
+[if the player carries the brass lantern]Additionally good to have a brass lantern.[otherwise]Further needed: A brass lantern.[end if]
+[if the player carries the rope]And always positive to carry a rope[otherwise] and maybe a rope[end if].".
 
 tsosi-hunch is an unfamiliar subject.
 yensid is an unfamiliar subject.
@@ -238,6 +241,8 @@ the description of boring beach is "[if pyrate-opera is happening]Now this is al
  north to a jungle spot and northeast to a jungle path. A narrow trail follows the fence to
  northwest.[stopping] To the south it opens right into the sea inviting to go south to
  take a bath.".
+
+the player is in boring beach.
 
 to say timguy:
 	if name plate is familiar:
@@ -320,6 +325,7 @@ instead of opening the gate:
 	otherwise:
 		say "It's really strong and you have no chance to open it somewhere. On it is written 'For three-wristbanded only'. You've got [wristband-count in words] of these silly wristbands. It seems you really need [three - wristband-count in words] more of them to get into the holiday resort.". 
 
+[TODO XXX
 instead of attacking the gate:
 	say "You swing your full weight against the gate. Your body reacts with pain, the gate with sniffy nothing.". 
 
@@ -330,7 +336,7 @@ instead of doing anything other than opening the gate:
 		try attacking the gate.
 
 instead of doing anything to the gate during pyrate-opera:
-	say "Enough of Gates. Windows are closed.".
+	say "Enough of Gates. Windows are closed.".]
 
 resort is scenery in boring beach. the description is "It's closed for you.".
 understand "holiday resort", "camp", "holiday camp" as the resort.
@@ -342,10 +348,10 @@ sewing machine is scenery device in boring beach. the description is "It's an or
 One of these original foot-driven ones. Not one of the current generation with there plastic crapability to ". 
 
 understand "singer" as the sewing machine.
-
+[TODO|XXX
 instead of doing anything other than examining the sewing machine, say "You don't want
 to do anything with that machine. These machines were introduced in your life as 
-extremely dangerous by your grandma."
+extremely dangerous by your grandma."]
 
 wooden infoboard is scenery in boring beach. 
 the description is "There is mostly manatee related stuff on this wooden 
@@ -506,8 +512,9 @@ instead of dropping the pile of meat:
 manatee suit is a wearable thing. the description is "hrmpft. its an suit 
 made of meat in the form of a manatee.".
 
+[TODO XXX
 instead of doing anything other than wearing the manatee suit:
-	say "Its heavy but there must be a better purpose for it".
+	say "Its heavy but there must be a better purpose for it".]
 
 instead of giving the manatee suit to dave, say "You better talk to him first."
 
@@ -616,7 +623,8 @@ after going to boring beach during getting-marooned:
 	increment wristband-count;
 	continue the action.
 	
-	[getting-marooned ends when the player carries the marooned wristband.]
+	[getting-marooned ends when the player carries the marooned wristband]
+getting-marooned is a scene.
 getting-marooned ends when the player wears the marooned wristband.
 
 
@@ -689,7 +697,7 @@ treasure-hidden is a truth state that varies. treasure-hidden is false.
 after closing a treasure-hideaway (called the versteck):
 	say "You close the hole with some dirt. You stamped hard on it. 
 	Nobody should find its location. Its even hard for yourself.";
-	if the treasure is in the treasure-hideaway:
+	if the treasure is in a treasure-hideaway:
 		now the versteck is off-stage;
 		now treasure-hidden is true;
 		say "Yes, you're sure that you achieved the goal because the treasure
@@ -731,6 +739,7 @@ before going to boring beach during treasure-hunt:
 		say "'Yes I know its hard to find a good place that fits for the treasure. Please try it again, if you really want to achieve that treasure hunt wristband.'";
 		continue the action.
 
+treasure-hunt is a scene.
 treasure-hunt ends when the player wears the treasure-wristband.
 
 chapter trail
@@ -875,7 +884,7 @@ Making you think, it was escaping the jungle behind him to the north. Far away t
 instead of going south in banana beach, say "You don't want to go into the water 'again'."
 
 banana tree is scenery in banana beach. the description is "Three times taller than you and at the top there are some [bananas].".
-the bananas are part of the banana tree. the description is "yellow, ready to be picked".
+the bananas are part of the banana tree. the description is "yellow, ready to be picked up".
 understand "banana", "fruit" as the bananas. [todo weil bananafruit auch so heisst]
 instead of taking the bananas, say "This is not a low hanging fruit.".
 sand is scenery in banana beach. the description is "fine grained.".
@@ -891,8 +900,12 @@ back and forth and... [or]...  and nothing happens.[or] Really, thats it.[or]
  editors note: you will not be able to get the bananas this way.[or] Ok, one was falling down and that seems to be enough.[stopping]".
 instead of pulling the tree, try pushing the tree.
 
-the bananafruit is a thing. it is edible.
+the bananafruit is futter. it is edible.
 the printed name of bananafruit is "banana". understand "banana" as bananafruit.
+
+after eating the bananafruit:
+	now bananafruit is eaten;
+	now bananafruit is in stomach.
 
 instead of pushing the banana tree the fifth time:
 	say "Oh, what a surprise. A single one was falling to the ground.";
@@ -905,6 +918,8 @@ chapter canyon edge
 
 canyon edge is a room. "You can look deep down a dried out canyon edge. Its dark down there. A trail leads back south to the banana tree and north[if dam is visited] to the dam[end if].".
 the rope is a thing. the rope is in canyon edge.
+
+[canyon and edge and 'canyon edge' description  TODO]
 
 the rope can be hanging. the rope is hanging.
 
@@ -1069,12 +1084,13 @@ instead of going northwest in jungle path:
 	water and swim against the stream. Don't forget you are here to get 
 	total boredomnes.".
 
+[TODO XXX
 instead of going somewhere in jungle path wearing the helmet:
 	if going down:
 		continue the action;
 	otherwise:
 		try silently dropping the helmet;
-		continue the action.
+		continue the action.]
 
 Dave is a person in jungle path. the description is "[if diving helmet is worn by dave] 
 You really can't see his face inside that full metal helmet.
@@ -1299,6 +1315,7 @@ at the time when ron-back appears:
 the bullwheel is an enterable scenery supporter in river mouth. the description is "Its a wooden bullwheel to lead a [long rope] around it. Its a bit rotten, but looks sturdy enough to be still trustworthy. Someone carved 'steps' into the mast to make it easy to climb on it.".
 understand "wheel", "mast", "steps", "carved" as the bullwheel.
 
+[TODO turned off far away
 A distant objects rule for the cableway basket when the player is on the bullwheel: rule succeeds.
 A distant objects rule for something enclosed by cableway basket when the player is on the palm tree: rule succeeds.
 
@@ -1320,12 +1337,12 @@ after entering the cableway basket during smiley-island-escape:
 	say "The basket begins to move. You're finally on your journey away from that dangerous unboring island in the hope to get into a better resort to get something fine on your tongue. 
 	[paragraph break] ***CRACK*** [paragraph break]  the rope is torn apart. The cableway basket fell down onto the ocean. Including you.";
 	now the long rope is torn;
-	now the cableway basket is in ocean2.
+	now the cableway basket is in ocean2.]
 
 ocean2 is a room. the description is "water, water, water TODO". the printed name of ocean2 is "somewhere on the ocean.".
 
 when ocean2-escape begins:
-	say "shit, ich will weg".
+	say "shit, ich will weg TODO".
 
 smiley-island-escape ends when the long rope is torn.
 
@@ -1333,8 +1350,10 @@ the long rope is scenery in river mouth. the description is "Its a big rope goin
 
 the long rope can be torn. the long rope is not torn.
 
-
-the cableway basket is a distant scenery open container in river mouth. the cableway basket is enterable.
+[porting TODO far away turned off
+the cableway basket is a distant scenery open container in river mouth. ]
+the cableway basket is a scenery open container in river mouth.
+the cableway basket is enterable.
 understand "cableway", "basket" as the cableway basket.
 
 
@@ -1415,8 +1434,9 @@ instead of going northeast in crossing, say "no.".
 instead of going west in crossing, say "no.".
 instead of going northeast in crossing, say "no.".
 
-
-the magpies nest is a distant scenery open container in crossing.
+[TODO porting without far away
+the magpies nest is a distant scenery open container in crossing.]
+the magpies nest is a scenery open container in crossing.
 instead of examining the magpies nest, say "You don't know exactly, but you strongly feels that this must be a magpies nest. In there is [the list of things in the magpies nest].".
 
 the magpie is in the magpies nest. the description of the magpie is "Black and white with a 
@@ -1432,8 +1452,9 @@ after taking the magpie:
 
 the palm tree is a enterable scenery supporter in crossing.
 
+[TODO far away turned off
 A distant objects rule for the magpies nest when the player is on the palm tree: rule succeeds.
-A distant objects rule for something enclosed by magpies nest when the player is on the palm tree: rule succeeds.
+A distant objects rule for something enclosed by magpies nest when the player is on the palm tree: rule succeeds.]
 
 after inserting the treasure into the magpies nest:
 	say "You smile to yourself, what a fine hideaway you found.";
@@ -1459,7 +1480,7 @@ bluehole is below ocean.
 the description of bluehole is "You're now inside a big round hole, leading up to the wide open oceans surface.".
 
 instead of going up in bluehole:
-	say "hui schlimme dinge, tube reisst ab, helm weg... blubb, strand";
+	say "hui schlimme dinge, tube reisst ab, helm weg... blubb, strand TODO";
 	now the player is in banana beach;
 	now the helmet is in bluehole.
 
@@ -1656,10 +1677,10 @@ exvoo-totems	"I like them, because I can sell my medicine in them."
 exvoo-rotida	"They wanted to hide in my shop, but I can't give shelter to people with such a bad karma."
 exvoo-sacul	"Commercial entertainment like they do is the reason I quit living in first world. Anything would be more prefered."
 exvoo-yensids	"I hope someday I have to chance to initiate them."
-exvoo-qtip	"You ask me for some university medicine? I have something better, which means homoeopathic, for you. I will rattle it 4 days, then you can come back to it strong enough to help."
+exvoo-qtip	"You ask me for some university medicine? I have something better, which means homoeopathic, for you. I will rattle it 4 days, then you can come back and its strong enough to help."
 exvoo-earwax	"You don't need this stuff. I have something better, which means homoeopathic, for you. I will rattle it 4 days, then you can come back to it strong enough to help."
 exvoo-apehead-entry	"I will never ever violate and or breach into this because I respect the natives and any believe system thats existing or will exist."
-herman-secret	"I wouldn't be interested, but inside... its the paradise."
+herman-secret	"I wouldn't be interested, but inside... its the paradise.TODO (hint giving)"
 herman-totems	"Ah yes, those idiots with the flask-totems. If you ever wanted to see a real cargo cult this is one."
 herman-rotida	"They get on my nerves. They visit this island every summer and they are asking questions over and over about the secret of this island."
 herman-sacul	"Planet Peace. I was often at the movies in my former life. Maybe I will again after my rescue. At the moment I only watch 'water world' over and over at the beach."
@@ -1761,7 +1782,7 @@ treasure-hunt begins when the current quip is slog-start-treasurehunt the first 
 getting-marooned begins when the current quip is slog-ask-marooned the first time.
 barbacueing begins when the current quip is slog-start-barbecue the first time.
 
-
+slog-new-in-town is a quip.
 
 Table of Quip Followups (continued)
 quip	option	result
@@ -2219,7 +2240,7 @@ cabin is inside of ocean.
 the four-poster bed is a enterable supporter in cabin. the description of four-poster bed is "Examining the bed you notice that a big water filled mattress is on the bed.".
 pot is a container in cabin. the description is "No pot inside this pot."
 
-on the four-poster bed is an water mattress. the description of the water mattress is "[plugstate] and it seems to be full of [mattresscontent]". the printed name of the water mattress is "inflated deflatable mattress". the water mattress can be airfull or waterfull or empty. the water mattress is waterfull. the plug is part of the water mattress.
+on the four-poster bed is an water mattress. the description of the water mattress is "[plugstate] and it seems to be full of [mattresscontent]". the printed name of the water mattress is "inflated deflatable mattress". the water mattress can be airfull or waterfull. the water mattress can be empty. the water mattress is waterfull. the plug is part of the water mattress.
 
 to say plugstate:
 	if the water mattress is waterfull:
@@ -2260,13 +2281,14 @@ instead of inflating the water mattress:
 	if the water mattress is empty:
 		say "You[if the player is in cabin] sit down,[end if] take a deep breath and you blow your breath into the mattress until its filled. As fast as possible, you put the plug back in so the mattress stays full.";
 		now the mattress is airfull;
+		now the mattress is not empty;
 		now the printed name of water mattress is "inflated deflatable mattress";
 	otherwise:
 		say "The mattress is not empty, so you are not able to inflate it.".
 		
-
+[TODO
 instead of inserting the plug into the empty water mattress:
-	say "You don't plug the plug back into the mattress, because it's not needed in an empty one.".
+	say "You don't plug the plug back into the mattress, because it's not needed in an empty one.".]
 
 [the old story gets connections to the present]
 
@@ -2334,7 +2356,7 @@ instead of giving the bananafruit to the exvoo:
 	say "Oh thanks. Very welcome my ur-tincture was already empty. Now I can start to make a new one.";
 	now exvoo-banana is one.
 
-distilled water is a bottle.
+distilled water is a bottle. the printed name of distilled water is "distilled water (homoeopathic medicine)".
 
 exvoo-banana is a number that varies. exvoo-banana is zero.
 
