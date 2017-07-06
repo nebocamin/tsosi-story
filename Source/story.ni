@@ -1,6 +1,6 @@
 "the secret of smiley island" by "stereo"
 
-[branch firstact]
+[branch port6]
 
 [Include GNU General Public License V3 by Free Software Foundation.
 
@@ -51,7 +51,7 @@ Include Quip-Based Conversation by Michael Martin.
 Include Basic Screen Effects by Emily Short.
 Include epistemology by eric eve.
 Include Secret Doors by Andrew Owen.
-Include Far Away by Jon Ingold.
+[Include Far Away by Jon Ingold.]
 Include Questions by Michael Callaghan.
 Include Rideable Vehicles by Graham Nelson.
 
@@ -103,7 +103,7 @@ the brass lantern is a device. "A brass lantern with a really fat battery."
 understand "lamp", "light" as the brass lantern.
 
 A thing has some text called scent. The scent of a thing is usually "nothing".
-The block smelling rule is not listed in the check smelling rulebook.
+The report smelling rule is not listed in the check smelling rulebook.
 Carry out smelling something: 
     say "From [the noun] you smell [scent of the noun]."
 
@@ -617,6 +617,7 @@ after going to boring beach during getting-marooned:
 	continue the action.
 	
 	[getting-marooned ends when the player carries the marooned wristband.]
+getting-marooned is a scene.
 getting-marooned ends when the player wears the marooned wristband.
 
 
@@ -689,7 +690,7 @@ treasure-hidden is a truth state that varies. treasure-hidden is false.
 after closing a treasure-hideaway (called the versteck):
 	say "You close the hole with some dirt. You stamped hard on it. 
 	Nobody should find its location. Its even hard for yourself.";
-	if the treasure is in the treasure-hideaway:
+	if the treasure is in a treasure-hideaway:
 		now the versteck is off-stage;
 		now treasure-hidden is true;
 		say "Yes, you're sure that you achieved the goal because the treasure
@@ -730,7 +731,7 @@ before going to boring beach during treasure-hunt:
 	otherwise:
 		say "'Yes I know its hard to find a good place that fits for the treasure. Please try it again, if you really want to achieve that treasure hunt wristband.'";
 		continue the action.
-
+treasure-hunt is a scene.
 treasure-hunt ends when the player wears the treasure-wristband.
 
 chapter trail
@@ -1069,12 +1070,13 @@ instead of going northwest in jungle path:
 	water and swim against the stream. Don't forget you are here to get 
 	total boredomnes.".
 
+[TODO porting
 instead of going somewhere in jungle path wearing the helmet:
 	if going down:
 		continue the action;
 	otherwise:
 		try silently dropping the helmet;
-		continue the action.
+		continue the action.]
 
 Dave is a person in jungle path. the description is "[if diving helmet is worn by dave] 
 You really can't see his face inside that full metal helmet.
@@ -1298,7 +1300,7 @@ at the time when ron-back appears:
 
 the bullwheel is an enterable scenery supporter in river mouth. the description is "Its a wooden bullwheel to lead a [long rope] around it. Its a bit rotten, but looks sturdy enough to be still trustworthy. Someone carved 'steps' into the mast to make it easy to climb on it.".
 understand "wheel", "mast", "steps", "carved" as the bullwheel.
-
+[TODO porting
 A distant objects rule for the cableway basket when the player is on the bullwheel: rule succeeds.
 A distant objects rule for something enclosed by cableway basket when the player is on the palm tree: rule succeeds.
 
@@ -1321,7 +1323,7 @@ after entering the cableway basket during smiley-island-escape:
 	[paragraph break] ***CRACK*** [paragraph break]  the rope is torn apart. The cableway basket fell down onto the ocean. Including you.";
 	now the long rope is torn;
 	now the cableway basket is in ocean2.
-
+]
 ocean2 is a room. the description is "water, water, water TODO". the printed name of ocean2 is "somewhere on the ocean.".
 
 when ocean2-escape begins:
@@ -1333,8 +1335,11 @@ the long rope is scenery in river mouth. the description is "Its a big rope goin
 
 the long rope can be torn. the long rope is not torn.
 
+[TODO port
+the cableway basket is a distant scenery open container in river mouth. ]
+the cableway basket is a scenery open container in river mouth. 
 
-the cableway basket is a distant scenery open container in river mouth. the cableway basket is enterable.
+the cableway basket is enterable.
 understand "cableway", "basket" as the cableway basket.
 
 
@@ -1415,8 +1420,9 @@ instead of going northeast in crossing, say "no.".
 instead of going west in crossing, say "no.".
 instead of going northeast in crossing, say "no.".
 
-
-the magpies nest is a distant scenery open container in crossing.
+[TODO porting
+the magpies nest is a distant scenery open container in crossing.]
+the magpies nest is a scenery open container in crossing.
 instead of examining the magpies nest, say "You don't know exactly, but you strongly feels that this must be a magpies nest. In there is [the list of things in the magpies nest].".
 
 the magpie is in the magpies nest. the description of the magpie is "Black and white with a 
@@ -1431,9 +1437,9 @@ after taking the magpie:
 	enable the tim-magpie quip for tim.
 
 the palm tree is a enterable scenery supporter in crossing.
-
+[
 A distant objects rule for the magpies nest when the player is on the palm tree: rule succeeds.
-A distant objects rule for something enclosed by magpies nest when the player is on the palm tree: rule succeeds.
+A distant objects rule for something enclosed by magpies nest when the player is on the palm tree: rule succeeds.]
 
 after inserting the treasure into the magpies nest:
 	say "You smile to yourself, what a fine hideaway you found.";
@@ -2219,7 +2225,7 @@ cabin is inside of ocean.
 the four-poster bed is a enterable supporter in cabin. the description of four-poster bed is "Examining the bed you notice that a big water filled mattress is on the bed.".
 pot is a container in cabin. the description is "No pot inside this pot."
 
-on the four-poster bed is an water mattress. the description of the water mattress is "[plugstate] and it seems to be full of [mattresscontent]". the printed name of the water mattress is "inflated deflatable mattress". the water mattress can be airfull or waterfull or empty. the water mattress is waterfull. the plug is part of the water mattress.
+on the four-poster bed is an water mattress. the description of the water mattress is "[plugstate] and it seems to be full of [mattresscontent]". the printed name of the water mattress is "inflated deflatable mattress". the water mattress can be airfull or waterfull. the water mattress can be empty. the water mattress is empty. the water mattress is waterfull. the plug is part of the water mattress.
 
 to say plugstate:
 	if the water mattress is waterfull:
@@ -2265,8 +2271,9 @@ instead of inflating the water mattress:
 		say "The mattress is not empty, so you are not able to inflate it.".
 		
 
-instead of inserting the plug into the empty water mattress:
-	say "You don't plug the plug back into the mattress, because it's not needed in an empty one.".
+instead of inserting the plug into the water mattress:
+	if water mattress is empty:
+		say "You don't plug the plug back into the mattress, because it's not needed in an empty one.".
 
 [the old story gets connections to the present]
 

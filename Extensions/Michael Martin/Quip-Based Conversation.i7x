@@ -264,7 +264,7 @@ Example: *** Joe Schmoe Revisited - A reimplementation of David Glasser's PHTALK
 	"Say nothing"				say-nothing	1
 
 	Table of Quip Followups (continued)
-	quip	option	result
+	quip		option			result
 	yay-monkeys	"What about apes?"	ehn-apes
 	yay-monkeys	"What about lemurs?"	ehn-lemurs
 
@@ -306,4 +306,3 @@ Example: *** Joe Schmoe Revisited - A reimplementation of David Glasser's PHTALK
 
 	test me with "talk to me / x joe / talk to joe / 1 / x me / 1 / repeat / 3 / x me / 1 / 1".
 	test xyzzy with "xyzzy / 1".
-	

@@ -1,4 +1,4 @@
-Secret Doors by Andrew Owen begins here.
+Version 5 of Secret Doors by Andrew Owen begins here.
 
 "Doors and switches that cannot be acted upon until they are
 discovered."
@@ -15,10 +15,10 @@ A secret switch is unrevealed.
 A secret switch is scenery.
 
 To print the you can't go message:
-	(- L__M(##Go, 2, 0); -).
+	say "you can't go(secret doors ext)".
 
 To print the you can't see message:
-	(- L__M(##Miscellany, 30, 0); -).
+	say "you can't see(secret doors ext)".
 
 Before going through a secret door which is unrevealed:
 	print the you can't go message instead.

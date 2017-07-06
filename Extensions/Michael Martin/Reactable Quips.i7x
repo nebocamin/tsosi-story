@@ -140,16 +140,16 @@ quip_null	"[generic ask quip]"
 quip_dtell	"[generic tell quip]"
 
 Table of Quip Followups
-quip	option(a text)	result
+quip(a quip)	option(text)	result(a quip)
 --	--	--
 
 Table of Ask Results
-NPC		topic(a text)		result
-a person		a text		a quip
+NPC(a person)	topic(a topic)	result(a quip)
+--	--	--
 
 Table of Tell Results
-NPC		topic(a text)		result
-a person		a text		a quip
+NPC(a person)	topic(a topic)	result(a quip)
+--	--	--
 
 Section 4 - Straightening out the parser
 
@@ -352,4 +352,3 @@ Example: ** When Injokes Collide - Mixing conversation with reactions, and match
 	test winning with "ask horace about people / 3 / 1".
 
 	test me with "tell horace about myself / ask horace about how awesome monkeys are / ask horace about humans / go east / repeat / 2 / ask horace about gibbons / ask horace about all his base".
-	

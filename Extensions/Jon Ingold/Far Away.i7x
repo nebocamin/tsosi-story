@@ -22,8 +22,7 @@ Access-flag is 0.
 
 A before rule:
        if the action requires a touchable noun, now access-flag is 1;
-       if the action requires a touchable second noun, now access-flag
-is 1;
+       if the action requires a touchable second noun, now access-flag is 1;
 
 A turn sequence rule: now access-flag is 0.
 
@@ -58,11 +57,11 @@ The far-flung-thing is a thing that varies.
 
 To decide if we can't get at (n - a thing):
 [ This runs the rulebook. Means we can consider noun and second noun neatly in the accessibility rule above. ]
-	change the far-flung-thing to n;
+	now the far-flung-thing is n;
 	consider the distant objects rules for the far-flung-thing;
 	if rule failed:
 		decide yes;
-		change access-flag to 0;
+		now access-flag is 0;
 	decide no.
 
 The last distant objects rule for a thing (called the item) when the person asked is not the player (this is the fail other people rule): 
@@ -221,4 +220,3 @@ This rule provides a custom message for trying to reach the stars while flying:
 		say "'Thanks. That's better without the refraction.' Alf proceeds to swig half the bottle, and blur his vision of the stars that way instead.";
 
 	Test me with "x dome / enter stars / press button / x alf / alf, give me liquor / x bottle / drink bottle / press button / enter stars / give bottle to alf".
-	
