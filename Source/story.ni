@@ -28,7 +28,7 @@
 [a scrum is in boring beach. "A scrum lies here.". the description is "its awful and loves
 meetings.". it is edible.]
 
-suppress GPL author instructions is true.
+suppress GPL author instructions is true. 
 
 
 
@@ -131,11 +131,13 @@ Rule for printing the banner text while turn count is 1: say "[paragraph break] 
 of Smiley Island  [paragraph break]  [paragraph break] ".
 
 when play begins:
-	[say "Hi Sarah, please type 'transcript' inside the game after it starts. Lectrote is automatically doing savegames. And you will finde the 'cheat sheet' for common commands inside the menu of lectrote.";
+	[say "Hi Sara, please type 'transcript' inside the game after it starts. Lectrote is automatically doing savegames. And you will find the 'cheat sheet' for common commands inside the menu of lectrote.";
+	pause the game;
+	say "Pen and paper for mapping your journey will help.";
 	pause the game;]
 	say "Deep in the west indies. The island of boredom. Just coming from the boat
 	 without puking, but still in a bad feeling. Your holidays starting for you to reach the
-	 state of total boredomness. (version december2016)".
+	 state of total boredomness. (ver july2017)".
 	[pause the game.]
 
 sustainable food is edible.
@@ -160,8 +162,8 @@ wrist is part of the player. the description is "On your wrist you can see
 [wristband-count in words] wristbands.".
 
 the description of the towel is "This is, what every adventurer needs. 
-[if the player carries the brass lantern][otherwise]Further needed: A brass lantern[end if]
-[if the player carries the rope][otherwise] and maybe a rope[end if]".
+[if the player carries the brass lantern]Additionally good to have a brass lantern.[otherwise]Further needed: A brass lantern.[end if]
+[if the player carries the rope]And always positive to carry a rope[otherwise] and maybe a rope[end if].".
 
 tsosi-hunch is an unfamiliar subject.
 yensid is an unfamiliar subject.
@@ -616,7 +618,8 @@ after going to boring beach during getting-marooned:
 	increment wristband-count;
 	continue the action.
 	
-	[getting-marooned ends when the player carries the marooned wristband.]
+	[getting-marooned ends when the player carries the marooned wristband]
+getting-marooned is a scene.
 getting-marooned ends when the player wears the marooned wristband.
 
 
@@ -731,6 +734,7 @@ before going to boring beach during treasure-hunt:
 		say "'Yes I know its hard to find a good place that fits for the treasure. Please try it again, if you really want to achieve that treasure hunt wristband.'";
 		continue the action.
 
+treasure-hunt is a scene.
 treasure-hunt ends when the player wears the treasure-wristband.
 
 chapter trail
@@ -875,7 +879,7 @@ Making you think, it was escaping the jungle behind him to the north. Far away t
 instead of going south in banana beach, say "You don't want to go into the water 'again'."
 
 banana tree is scenery in banana beach. the description is "Three times taller than you and at the top there are some [bananas].".
-the bananas are part of the banana tree. the description is "yellow, ready to be picked".
+the bananas are part of the banana tree. the description is "yellow, ready to be picked up".
 understand "banana", "fruit" as the bananas. [todo weil bananafruit auch so heisst]
 instead of taking the bananas, say "This is not a low hanging fruit.".
 sand is scenery in banana beach. the description is "fine grained.".
@@ -891,8 +895,12 @@ back and forth and... [or]...  and nothing happens.[or] Really, thats it.[or]
  editors note: you will not be able to get the bananas this way.[or] Ok, one was falling down and that seems to be enough.[stopping]".
 instead of pulling the tree, try pushing the tree.
 
-the bananafruit is a thing. it is edible.
+the bananafruit is futter. it is edible.
 the printed name of bananafruit is "banana". understand "banana" as bananafruit.
+
+after eating the bananafruit:
+	now bananafruit is eaten;
+	now bananafruit is in stomach.
 
 instead of pushing the banana tree the fifth time:
 	say "Oh, what a surprise. A single one was falling to the ground.";
@@ -905,6 +913,8 @@ chapter canyon edge
 
 canyon edge is a room. "You can look deep down a dried out canyon edge. Its dark down there. A trail leads back south to the banana tree and north[if dam is visited] to the dam[end if].".
 the rope is a thing. the rope is in canyon edge.
+
+[canyon and edge and 'canyon edge' description  TODO]
 
 the rope can be hanging. the rope is hanging.
 
@@ -934,11 +944,20 @@ instead of talking to herman:
 	otherwise:
 		continue the action.
 
-The giant q-tip is a thing. the description is "It looks like the ones you know for human ears, but this one is giant. Larger than your legs.".
+The giant q-tip is a thing. the description is "It looks like the ones you know for human ears, but this one is giant. Larger than your legs. [if giant q-tip is cottonless]But you notice the cotton tip is long gone on this one, so its basically a really large and heavy stick.[otherwise]Now again with a fine 'cottoned' tip.[end if]".
+the giant q-tip can be cottoned or cottonless. it is cottonless.
 the giant q-tip is in volcano.
 understand "qtip", "tip" as the giant q-tip.
 
 keeping-qtip is a truth state that varies. keeping-qtip is true.
+
+[TODO other possibillities to get the q-tip? like asking to watch his ghost-machine? or the banana picker version]
+
+
+instead of giving the totem to herman:
+	say "He seems to be quite happy with it and gives you the giant q-tip as payment.";
+	now the totem is off-stage;
+	now the player carries the giant q-tip.
 
 instead of taking the giant q-tip:
 	now q-tip is familiar;
@@ -1325,7 +1344,7 @@ after entering the cableway basket during smiley-island-escape:
 ocean2 is a room. the description is "water, water, water TODO". the printed name of ocean2 is "somewhere on the ocean.".
 
 when ocean2-escape begins:
-	say "shit, ich will weg".
+	say "shit, ich will weg TODO description of abreisse".
 
 smiley-island-escape ends when the long rope is torn.
 
@@ -1417,7 +1436,7 @@ instead of going northeast in crossing, say "no.".
 
 
 the magpies nest is a distant scenery open container in crossing.
-instead of examining the magpies nest, say "You don't know exactly, but you strongly feels that this must be a magpies nest. In there is [the list of things in the magpies nest].".
+instead of examining the magpies nest, say "You don't know exactly, but you strongly feel that this must be a magpies nest. In there is [the list of things in the magpies nest].".
 
 the magpie is in the magpies nest. the description of the magpie is "Black and white with a 
 blue glance over the black. Reminds you of a crow, but a bit more beautiful. After you were 
@@ -1459,7 +1478,7 @@ bluehole is below ocean.
 the description of bluehole is "You're now inside a big round hole, leading up to the wide open oceans surface.".
 
 instead of going up in bluehole:
-	say "hui schlimme dinge, tube reisst ab, helm weg... blubb, strand";
+	say "hui schlimme dinge, tube reisst ab, helm weg... blubb, strand TODO";
 	now the player is in banana beach;
 	now the helmet is in bluehole.
 
@@ -1656,10 +1675,10 @@ exvoo-totems	"I like them, because I can sell my medicine in them."
 exvoo-rotida	"They wanted to hide in my shop, but I can't give shelter to people with such a bad karma."
 exvoo-sacul	"Commercial entertainment like they do is the reason I quit living in first world. Anything would be more prefered."
 exvoo-yensids	"I hope someday I have to chance to initiate them."
-exvoo-qtip	"You ask me for some university medicine? I have something better, which means homoeopathic, for you. I will rattle it 4 days, then you can come back to it strong enough to help."
+exvoo-qtip	"You ask me for some university medicine? I have something better, which means homoeopathic, for you. I will rattle it 4 days, then you can come back and its strong enough to help."
 exvoo-earwax	"You don't need this stuff. I have something better, which means homoeopathic, for you. I will rattle it 4 days, then you can come back to it strong enough to help."
 exvoo-apehead-entry	"I will never ever violate and or breach into this because I respect the natives and any believe system thats existing or will exist."
-herman-secret	"I wouldn't be interested, but inside... its the paradise."
+herman-secret	"I wouldn't be interested, but inside... its the paradise.TODO (hint giving)"
 herman-totems	"Ah yes, those idiots with the flask-totems. If you ever wanted to see a real cargo cult this is one."
 herman-rotida	"They get on my nerves. They visit this island every summer and they are asking questions over and over about the secret of this island."
 herman-sacul	"Planet Peace. I was often at the movies in my former life. Maybe I will again after my rescue. At the moment I only watch 'water world' over and over at the beach."
@@ -1811,7 +1830,7 @@ the litany of vegibal is table of vegibals talk.
 
 The stone is scenery in monkey head. the description is "It is the most giant monkey head you've ever seen. Only comparable to the Karl Marx Monument in Chemnitz. It has such a big ear in front of you, you can easily look inside.[if stone is closed] Its mouth is tightly shut and you can see a row of teeth[otherwise] Its mouth is open and a large tonge is stretched out like a red carpet.[end if]"
 
-understand "head", "monkey", "monkey head", "monument" as the stone.
+understand "head", "monkey", "monkey head", "monument", "entrance" as the stone.
 
 the printed name of the stone is "monkey head".
 
@@ -1826,7 +1845,7 @@ instead of examining the monkey mouth, try examining the stone.
 the monkey ear is part of the stone. the monkey ear is a container. the monkey ear is open.
 
 after examining the stone:
-	say "You get the feeling that there could be a hidden mechanism inside this head.";
+	say "[if stone is closed]You get the feeling that there could be a hidden mechanism inside this head.[otherwise]You had the feeling that there could be a hidden mechanism inside this head. Now you know.[end if]";
 	enable the exvoo-apehead-entry quip for exvoo;
 	enable the herman-apehead-entry quip for herman;
 	enable the vegibal-apehead-entry quip for vegibal;
@@ -1835,13 +1854,16 @@ after examining the monkey ear:
 	enable the exvoo-earwax quip for exvoo;
 	enable the exvoo-qtip quip for exvoo.
 
-instead of inserting the giant q-tip into monkey ear:
+instead of inserting the cottoned giant q-tip into monkey ear:
 	if earwax is inside monkey ear:
 		say "W.T.F. As you put the giant q-tip into this ear, you hear an ancient mechanism working. You feel the ground vibrating and see how the monkey's mouth is going to open wide. Wide enough to go into this entrance.";
 		now the stone is open;
 		continue the action;
 	otherwise:
 		say "You pushed the q-tip hard into that ear, but it doesn't fit perfectly. Like something missing that nestles into that ear.".
+
+instead of inserting the cottonless giant q-tip into monkey ear:
+	say "You pushed the q-tip hard into that ear, but it doesn't fit perfectly. Like something missing that nestles into that ear.".
 
 instead of going inside in monkey head:
 	if stone is open:
@@ -1868,6 +1890,19 @@ after taking the shiny totem:
 	enable the vegibal-totems quip for vegibal.
 
 totem-flask is an unfamiliar subject.
+
+furry skeleton are in monkey head. "Hanging on an ancient mechanism are the furry remains of an animal.". the description is "In your eyes it looks like it could be an ape in his former so called 'live'.".
+understand "remains" as furry skeleton.
+
+after taking the furry skeleton:
+	if the player is carrying the giant q-tip:
+		say "You decide not to touch it directly, but took it by inserting the cottonless q-tip in it. Making it a working giant q-tip again.";
+		now the giant q-tip is cottoned;
+		now the furry skeleton is off-stage;
+	otherwise:
+		say "You can't decide between finding it ugly or useful.";
+	continue the action.
+
 
 monk island is a region.
 
@@ -2334,7 +2369,7 @@ instead of giving the bananafruit to the exvoo:
 	say "Oh thanks. Very welcome my ur-tincture was already empty. Now I can start to make a new one.";
 	now exvoo-banana is one.
 
-distilled water is a bottle.
+distilled water is a bottle. the printed name of distilled water is "distilled water (homoeopathic medicine)".
 
 exvoo-banana is a number that varies. exvoo-banana is zero.
 
@@ -2395,3 +2430,11 @@ the description of dam is "You see a stream flowing through its streambed to the
 
 the exdam is scenery in dam. the description is "These are the remains of a violent attack with explosives against this dam.".
 the printed name of exdam is "the dam". understand "dam", "the dam" as the exdam.
+
+chapter plateau
+
+the plateau is a room. "You have a great view in every direction of this little island. In the north you can see a small village made of straw huts. Looking really na(t)ive."
+
+a broken device is in plateau.
+
+the plateau is above dam.
