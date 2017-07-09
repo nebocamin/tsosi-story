@@ -1,0 +1,2 @@
+GNU General Public License v3_ralf.i7x by Free Software Foundation - an extension stored in the correct author's folder, but with the wrong filename (the extension says it is 'Gnu General Public License V3 by Free Software Foundation')<br>
+GNU General Public License v3.i7x by Free Software Foundation - an extension stored in the correct author's folder, but with the wrong filename (the extension says it is 'Gnu General Public License V3orig by Free Software Foundation')<br>
