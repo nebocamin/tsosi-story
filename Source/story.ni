@@ -131,14 +131,14 @@ Rule for printing the banner text while turn count is 1: say "[paragraph break] 
 of Smiley Island  [paragraph break]  [paragraph break] ".
 
 when play begins:
-	[say "Hi Sara, please type 'transcript' inside the game after it starts. Lectrote is automatically doing savegames. And you will find the 'cheat sheet' for common commands inside the menu of lectrote.";
-	pause the game;
+	[say "Dear Interactor, please type 'transcript' inside the game after it starts. Lectrote is automatically doing savegames. And you will find the 'cheat sheet' for common commands inside the menu of lectrote.";
+	wait for any key;
 	say "Pen and paper for mapping your journey will help.";
-	pause the game;]
+	wait for any key;]
 	say "Deep in the west indies. The island of boredom. Just coming from the boat
 	 without puking, but still in a bad feeling. Your holidays starting for you to reach the
 	 state of total boredomness. (ver july2017)".
-	[pause the game.]
+	[wait for any key.]
 
 sustainable food is edible.
 sustainable food is in the rucksack. the description is "You don't want to eat it, until
@@ -1891,7 +1891,7 @@ after taking the shiny totem:
 
 totem-flask is an unfamiliar subject.
 
-furry skeleton are in monkey head. "Hanging on an ancient mechanism are the furry remains of an animal.". the description is "In your eyes it looks like it could be an ape in his former so called 'live'.".
+furry skeleton are in monkey head. "Hanging on an ancient mechanism are the furry remains of an animal.". the description is "In your eyes it looks like it could be an ape in his former so called 'life'.".
 understand "remains" as furry skeleton.
 
 after taking the furry skeleton:
