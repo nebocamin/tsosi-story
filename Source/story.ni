@@ -937,12 +937,14 @@ herman is a man in volcano.
 the initial appearance of herman is "TODO.".
 The litany of herman is the Table of hermans Talk. the greeting of herman is herman-hello.
 
+[
 herman can be deaf or not deaf. herman is deaf.
 instead of talking to herman:
 	if herman is deaf:
 		say "[one of]He does not seem to hear anything.[or] [stopping]";
 	otherwise:
 		continue the action.
+]
 
 The giant q-tip is a thing. the description is "It looks like the ones you know for human ears, but this one is giant. Larger than your legs. [if giant q-tip is cottonless]But you notice the cotton tip is long gone on this one, so its basically a really large and heavy stick.[otherwise]Now again with a fine 'cottoned' tip.[end if]".
 the giant q-tip can be cottoned or cottonless. it is cottonless.
@@ -2355,14 +2357,14 @@ the description of pond is "There is a pond with water and in the middle is a sw
 exvoo is a woman in the church of homoeopathy.
 The litany of exvoo is the Table of exvoos Talk. the greeting of exvoo is exvoo-hello. 
 
-
+[
 an ouija board is in the church of homoeopathy. the description is "Its a wooden board with the letters of your alphabet on top. It has also 'yes' and 'no' on it."
 
 instead of giving the ouija board to herman:
 	say "Thankfully he takes the board from you. And very handy he uses his finger to form words so fast, its hard for you to follow it.";
 	now herman carries the ouija board;
 	now herman is not deaf.
-
+]
 chapter banana-feint
 
 instead of giving the bananafruit to the exvoo:
