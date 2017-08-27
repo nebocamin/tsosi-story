@@ -951,7 +951,7 @@ the giant q-tip can be cottoned or cottonless. it is cottonless.
 the giant q-tip is in volcano.
 understand "qtip", "tip" as the giant q-tip.
 
-keeping-qtip is a truth state that varies. keeping-qtip is true.
+keeping-qtip is a truth state that varies. keeping-qtip is false.
 
 [TODO other possibillities to get the q-tip? like asking to watch his ghost-machine? or the banana picker version]
 
@@ -969,7 +969,8 @@ instead of taking the giant q-tip:
 		if stone is open:
 			say "No, you are quite satisfied with the monkeys mouth being open. You will let it in.";
 		otherwise:
-			say "It seems okay to take it".
+			say "It seems okay to take it";
+			continue the action.
 
 
 chapter jungle path
@@ -1540,7 +1541,7 @@ prompt	response	enabled
 Table of hermans talk
 prompt	response	enabled
 "ahoj"	herman-hello	1
-"What about this staggering, drunken dance?"	herman-dance	1
+"What about this staggering, drunken dance?"	herman-dance	0
 "What's the secret of this island?"	herman-secret	1
 "What about these totems?"	herman-totems	0
 "What about this Ron, Tim and Dave?"	herman-rotida	1
@@ -1684,7 +1685,7 @@ herman-secret	"I wouldn't be interested, but inside... its the paradise.TODO (hi
 herman-totems	"Ah yes, those idiots with the flask-totems. If you ever wanted to see a real cargo cult this is one."
 herman-rotida	"They get on my nerves. They visit this island every summer and they are asking questions over and over about the secret of this island."
 herman-sacul	"Planet Peace. I was often at the movies in my former life. Maybe I will again after my rescue. At the moment I only watch 'water world' over and over at the beach."
-herman-yensids	"Protect? The only supreme being is me and they don't protect me.TODO"
+herman-yensids	"Protect? The only supreme being here is me and they don't protect me.TODO"
 herman-qtip	"Yes, true. I have stolen that damn thing again, because they broke my banana picker."
 herman-earwax	"Earwax? I have all sorts of waxes in any hole of my body."
 herman-apehead-entry	"[if q-tip is familiar]You will need the giant q-tip. [otherwise]You will not get into it if you don't have the right key.[end if]"
@@ -1884,7 +1885,7 @@ a shiny totem is in monkey head. the description is "There is a totem, looking l
 the shiny totem is an openable container. it is closed.
 understand "flask" as the shiny totem.
 
-after taking the shiny totem:
+after taking the shiny totem for the first time:
 	say "You took this shiny totem and it really seems to be a smaller modell of a flask.";
 	now totem-flask is familiar;
 	enable the herman-totems quip for herman;
