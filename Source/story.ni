@@ -1554,8 +1554,8 @@ prompt	response	enabled
 
 Table of exvoos talk
 prompt	response	enabled
-"uhu voodoo TODO"	exvoo-hello	1
-"What about this staggering, drunken dance?"	exvoo-dance	1
+"uhu voodoo TODO. (hae voodoo war hier doch und wo is die frau, die alles weiss?)"	exvoo-hello	1
+"What about this staggering, drunken dance?"	exvoo-dance	0
 "What's the secret of this island?"	exvoo-secret	1
 "What about these totems?"	exvoo-totems	0
 "What about this Ron, Tim and Dave?"	exvoo-rotida	1
@@ -1569,7 +1569,7 @@ prompt	response	enabled
 table of vegibals talk
 prompt	response	enabled
 "bored?TODO"	vegibal-hello	1
-"What about this staggering, drunken dance?"	vegibal-dance	1
+"What about this staggering, drunken dance?"	vegibal-dance	0
 "What's the secret of this island?"	vegibal-secret	1
 "What about these totems?"	vegibal-totems	0
 "What about this Ron, Tim and Dave?"	vegibal-rotida	1
@@ -1678,10 +1678,10 @@ exvoo-totems	"I like them, because I can sell my medicine in them."
 exvoo-rotida	"They wanted to hide in my shop, but I can't give shelter to people with such a bad karma."
 exvoo-sacul	"Commercial entertainment like they do is the reason I quit living in first world. Anything would be more prefered."
 exvoo-yensids	"I hope someday I have to chance to initiate them."
-exvoo-qtip	"You ask me for some university medicine? I have something better, which means homoeopathic, for you. I will rattle it 4 days, then you can come back and its strong enough to help."
-exvoo-earwax	"You don't need this stuff. I have something better, which means homoeopathic, for you. I will rattle it 4 days, then you can come back to it strong enough to help."
+exvoo-qtip	"TODO (doppelt zu earwax)You ask me for some university medicine? I have something better, which means homoeopathic, for you. I will rattle it 4 days, then you can come back and its strong enough to help."
+exvoo-earwax	"TODO (doppelt zu qtipYou don't need this stuff. I have something better, which means homoeopathic, for you. I will rattle it 4 days, then you can come back to it strong enough to help."
 exvoo-apehead-entry	"I will never ever violate and or breach into this because I respect the natives and any believe system thats existing or will exist."
-herman-secret	"I wouldn't be interested, but inside... its the paradise.TODO (hint giving)"
+herman-secret	"I will tell you, after you bring me back the banana picker from the vegibals in the north of this island. I am getting old and its not easy for me to get them down. XXX TODO (hint giving)"
 herman-totems	"Ah yes, those idiots with the flask-totems. If you ever wanted to see a real cargo cult this is one."
 herman-rotida	"They get on my nerves. They visit this island every summer and they are asking questions over and over about the secret of this island."
 herman-sacul	"Planet Peace. I was often at the movies in my former life. Maybe I will again after my rescue. At the moment I only watch 'water world' over and over at the beach."
