@@ -137,7 +137,7 @@ when play begins:
 	wait for any key;]
 	say "Deep in the west indies. The island of boredom. Just coming from the boat
 	 without puking, but still in a bad feeling. Your holidays starting for you to reach the
-	 state of total boredomness. (ver july2017)".
+	 state of total boredomness. (ver september2017)".
 	[wait for any key.]
 
 sustainable food is edible.
@@ -949,7 +949,7 @@ instead of talking to herman:
 The giant q-tip is a thing. the description is "It looks like the ones you know for human ears, but this one is giant. Larger than your legs. [if giant q-tip is cottonless]But you notice the cotton tip is long gone on this one, so its basically a really large and heavy stick.[otherwise]Now again with a fine 'cottoned' tip.[end if]".
 the giant q-tip can be cottoned or cottonless. it is cottonless.
 the giant q-tip is in volcano.
-understand "qtip", "tip" as the giant q-tip.
+understand "qtip", "tip", "stick" as the giant q-tip.
 
 keeping-qtip is a truth state that varies. keeping-qtip is false.
 
@@ -957,7 +957,7 @@ keeping-qtip is a truth state that varies. keeping-qtip is false.
 
 
 instead of giving the totem to herman:
-	say "He seems to be quite happy with it and gives you the giant q-tip as payment.";
+	say "He seems to be quite happy with it and gives you the giant q-tip as payment.TODO only if you don't have the qtip yet.";
 	now the totem is off-stage;
 	now the player carries the giant q-tip.
 
@@ -1140,13 +1140,16 @@ instead of giving the durian to dave:
 		say "that awful smellung fruit is the right thing to eat right now.";
 		now the durian is off-stage.
 
-village center is a room. "[one of]After one month of travelling you step on earth again. 
+[
+villagecenter is a room. "[one of]After one month of travelling you step on earth again. 
 It feels stable. Your interest is growing. How will it be? On your own island. Forever 
 escaped from the industrialized world. To the east is the so called [town hall], where 
 you're supposed to get more information about the island and how to get there.
 [or]This is what wthe natives call 'village center'. You don't know which of these two 
 words is the more stupid one for a place like this. There is the so called [town hall] to
  the east, a small market to the west.[stopping]"
+
+]
 
 ocean is a room. "Its still far away to the coast line to the north. Directly behind your back is the sloop or ketch you just used to call them boats. To the other directions is just open sea and you don't want to explore that any further."
 
@@ -1681,7 +1684,7 @@ exvoo-yensids	"I hope someday I have to chance to initiate them."
 exvoo-qtip	"TODO (doppelt zu earwax)You ask me for some university medicine? I have something better, which means homoeopathic, for you. I will rattle it 4 days, then you can come back and its strong enough to help."
 exvoo-earwax	"TODO (doppelt zu qtipYou don't need this stuff. I have something better, which means homoeopathic, for you. I will rattle it 4 days, then you can come back to it strong enough to help."
 exvoo-apehead-entry	"I will never ever violate and or breach into this because I respect the natives and any believe system thats existing or will exist."
-herman-secret	"I will tell you, after you bring me back the banana picker from the vegibals in the north of this island. I am getting old and its not easy for me to get them down. XXX TODO (hint giving)"
+herman-secret	"I will tell you something about the secret, after you bring me back the banana picker from the vegibals in the north of this island. I am getting old and its not easy for me to get them down. XXX TODO (hint giving)"
 herman-totems	"Ah yes, those idiots with the flask-totems. If you ever wanted to see a real cargo cult this is one."
 herman-rotida	"They get on my nerves. They visit this island every summer and they are asking questions over and over about the secret of this island."
 herman-sacul	"Planet Peace. I was often at the movies in my former life. Maybe I will again after my rescue. At the moment I only watch 'water world' over and over at the beach."
@@ -1895,7 +1898,7 @@ after taking the shiny totem for the first time:
 totem-flask is an unfamiliar subject.
 
 furry skeleton are in monkey head. "Hanging on an ancient mechanism are the furry remains of an animal.". the description is "In your eyes it looks like it could be an ape in his former so called 'life'.".
-understand "remains" as furry skeleton.
+understand "remains", "animal" as furry skeleton.
 
 after taking the furry skeleton:
 	if the player is carrying the giant q-tip:
@@ -1909,7 +1912,7 @@ after taking the furry skeleton:
 
 monk island is a region.
 
-volcano, canyon edge, canyon ground, pond, dam, fuzzy beach, banana beach, monkey head, stream bed are in monk island.
+volcano, canyon edge, canyon ground, pond, dam, fuzzy beach, banana beach, monkey head, stream bed, way up, plateau are in monk island.
 
 [at the time when the player visits volcano:
 	now volcano is northwest of banana beach.]
@@ -1919,13 +1922,13 @@ monkey head is east of fuzzy beach.
 
 chapter furu island connections
 
-furu island is a region. deep jungle, small market, town hall and village center are in furu island.
+furu island is a region. deep jungle, small market, town hall and villagecenter are in furu island.
 
 deep jungle is south of village center.
 small market is west of village center.
 town hall is east of village center.
 
-ocean is north of village center.
+ocean is north of villagecenter.
 ocean is south of banana beach.
 ocean is west of pfandomat.
 
@@ -2346,7 +2349,7 @@ instead of taking the earwax:
 
 the hut is scenery in pond. the printed name is "swimming hut".
 understand "swimming", "swimming hut" as the hut.
-the description of the hut is "TODO".
+the description of the hut is "h".
 
 instead of going south in the church of homoeopathy , try going outside.
 instead of going north in the pond, try going inside.
@@ -2436,8 +2439,24 @@ the printed name of exdam is "the dam". understand "dam", "the dam" as the exdam
 
 chapter plateau
 
-the plateau is a room. "You have a great view in every direction of this little island. In the north you can see a small village made of straw huts. Looking really na(t)ive."
+the plateau is a room. "You have a great view in every direction of this little island. In the north you can see a small village made of straw huts. Looking really na(t)ive. Beneath your feet you can see the strange device directly, so you could throw stuff on it.".
 
-a broken device is in plateau.
+the broken device is in way up.
 
-the plateau is above dam.
+
+instead of switching on the broken device, say "Its broken, and not operating with electricity. Its somekind of TODO grosse schleuder and big chunks of stone need to be thrown on it."
+
+the plateau is above way up.
+way up is above dam.
+
+chapter village
+
+vegivillage is north of stream bed. "There are straw huts all around. It looks like a museum showing the former life of natives, but they seem to be used still."
+
+chapter the end
+
+storeroom is west of cave. the description is "This storeroom is full of whisky barrels.".
+
+after going to the storeroom:
+	end the game saying "As you put your feet into that room. A strong smell of very old comes to your nose. Its full of ancient whisky barrels and some bottles. They must be the casks from the Captain Every's Fancy. Hidden here for later use by the crew. Long forgotten and now found. Before you think about making a business out of this treasure, you open yourself one bottle, took a sip, you landed directly in a flavour paradies. Some bottles later in the deepest sleep.".
+
