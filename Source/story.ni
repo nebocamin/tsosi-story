@@ -137,7 +137,7 @@ when play begins:
 	wait for any key;]
 	say "Deep in the west indies. The island of boredom. Just coming from the boat
 	 without puking, but still in a bad feeling. Your holidays starting for you to reach the
-	 state of total boredomness. (ver september2017)".
+	 state of total boredomness. (ver june2018)".
 	[wait for any key.]
 
 sustainable food is edible.
@@ -453,7 +453,7 @@ instead of fishing the fake manatee in the presence of ron:
 		now the player wears the manatee wristband;
 		increment wristband-count;
 		now the fake manatee is off-stage;
-		now the player carries the manatee suit;
+		[now the player carries the manatee suit;]
 		now dave is in jungle path;
 		now dave-diving is false;
 		now the scent of dave is "meat, bloody meat";
@@ -590,6 +590,8 @@ instead of going north in bambus fields for the first time:
 the cliff is scenery in view around. "[if treasure-hunt is happening]har har... [end if]Down below there, you can see 
 lots of [if treasure-hunt is happening]those should-be-hidden [end if][plastic treasures]. [if treasure-cliff is true]You can see additionally 
 the treasure you had to hide.[end if]".
+
+understand "tip" as the cliff.
 
 instead of examining down in view around, try examining the cliff.
 
@@ -931,8 +933,8 @@ canyon ground is below canyon edge.
 
 chapter volcano
 
-volcano is a room. "[if herman is visible]Herman pretends to sleep here.[otherwise]hermans 'flat'.[end if]".
-herman is a man in volcano. 
+volcano is a room. "[if herman is visible]Herman pretends to sleep here.[otherwise]hermans 'flat'.[end if] Two paths lead out of here. One to the east and one to southeast.".
+herman is a man in volcano.
 
 the initial appearance of herman is "TODO.".
 The litany of herman is the Table of hermans Talk. the greeting of herman is herman-hello.
@@ -1396,7 +1398,7 @@ after eating the chocolate coins:
 	now the chocolate coins are in stomach.
 
 instead of eating something eaten:
-	say "Its always your habbit to not eat anything twice.".
+	say "Its always your habit to not eat anything twice.".
 
 understand "coin", "chocolate coin" as the chocolate coins.
 
@@ -1495,7 +1497,7 @@ part quips
 
 Table of tims Talk
 prompt	response	enabled
-"I am Buyshrug Wristthirst and you?"	slog-are-you	1
+"I am Buyshrug Bridgeman and you?"	slog-are-you	1
 "I want to go into the holiday resort to 
 find my way to total boredomness"	slog-real-adventurer	1
 "I know you like stitching manatees. My question is, are you also able to
@@ -1557,7 +1559,7 @@ prompt	response	enabled
 
 Table of exvoos talk
 prompt	response	enabled
-"uhu voodoo TODO. (hae voodoo war hier doch und wo is die frau, die alles weiss?)"	exvoo-hello	1
+"Hi, why is it about homoepathy now, I thought this place is about voodoo."	exvoo-voodoo	1
 "What about this staggering, drunken dance?"	exvoo-dance	0
 "What's the secret of this island?"	exvoo-secret	1
 "What about these totems?"	exvoo-totems	0
@@ -1638,7 +1640,7 @@ dave-manatee	"Do you think i'm completely dull? But... hmm. No, not without a ca
 dave-durian	"That sounds like a fair deal. So give me the suit."
 dave-nobait	"grmpft."
 dave-waiting	"Sure. I'm planning my next dive. There is a horizontal passage down there. I assume it leads into a 'Blue Hole'."
-dave-bluehole	"It is very deep vertical cave with a special flora and fauna. The can be that so deep that fresh and salty water are mixing in them. They can have long horizontal arms. When I'm right and one of them is ending here, we could sell diving trips into it. "
+dave-bluehole	"It is very deep vertical cave with a special flora and fauna. They can be that deep so that fresh and salty water are mixing in them. They can have long horizontal arms. When I'm right and one of them is ending here, we could sell diving trips into it. "
 slog-new-in-town	"You hold just [the list of the things carried by the player] in your hands. Do you think, you have any chance to survive here?"
 slog-deal-with	"'So we have to deal with you and You want me to tolerate your face, everytime you come along?'"
 slog-go-away	"'Nice one... so please leave. fast. very fast.'"
@@ -1663,7 +1665,8 @@ ron-people	"They are from yensid, the company that bought ours."
 tim-yensid	"They conquered, what was ours once and with their money. They support L.´s quest for the secret of ... But I better keep my mouth shut."
 dave-yensid	"Not my problem, but I want to be part of the revenge. Hopefully getting rich afterwards."
 herman-hello	"It seems to be impossible for a shipwrecked castaway to die in the silence that he deserves."
-exvoo-hello	"pssst, I have to bash this bottle on this leather bound book."
+exvoo-hello	"You look so deluted, can I be of any help?"
+exvoo-voodoo	"Voodoo is some esoteric non-working nonsene, I needed to help and establish something proven. Sorry,  I have to complete bashing this bottle on this leather bound book."
 vegibal-hello	"I smell meat-eaters."
 herman-dance	"Oh, thats stupid and they are loud. Disturbing me, so I can't sleep during the day or night."
 exvoo-dance	"Oh its so wonderful how these brilliant natives are keeping there traditions alive. So unreflected, so 'clear'."
@@ -1830,7 +1833,19 @@ monkey head is a room. "Between tropical trees is a big [stone].
 Maybe it is formed by human hands. Definitely a heck of a long time ago. 
 Now its overgrown with [plants] and [moss].[if stone is closed] Its [mouth] is tightly shut and you can see a row of [teeth][otherwise] Its mouth is open and a large tonge is stretched out like a red carpet.[end if]".
 
-the vegibal is a man in monkey head.
+the vegibal is a man in monkey head. the description is "He reminds you talking to that silly guy at the tiki bar that looked like a tiki bar."
+
+vegibal-qqtip is a truth state that varies. vegibal-qqtip is false.
+
+vegibal-furry is a truth state that varies. vegibal-furry is false.
+
+vegibal-wax is a truth state that varies. vegibal-wax is false.
+
+instead of giving the q-tip to vegibal:
+	say "Very good, this way we can secure the secret of this island in the future. If you have something [if vegibal-furry is false] furry to make it  [end if] [if vegibal-wax is false] and something that molds into that ear, so it fits into the mechanism again?[end if]";
+	now vegibal-qqtip is true.
+
+
 
 the litany of vegibal is table of vegibals talk.
 
@@ -2321,7 +2336,7 @@ be careful. Covering my track, leading them to the [cave].".
 
 [after examining the old diary, now the cave is familiar.]
 
-church of homoeopathy is inside of pond. the description is "On it you can read a TODO durchgestrichen old letters Voodoo followed by a fresher homoeopathy".
+church of homoeopathy is inside of pond. the description is "Still looking like a house of mojo....but now focusing on homoeo-something.".
 [war mal "house of mojo"]
 understand "coh" as the church of homoeopathy.
 
@@ -2329,7 +2344,9 @@ voodoo-door is a door. it is locked.
 the printed name of voodoo-door is "the door to the backroom".
 understand "door", "backroom" , "door to the backroom", "backroom door" as the voodoo-door.
 
-the description of voodoo-door is "It seems to be locked from the inside and you are able to hear someone alive behind the door the sound reminds you of shaking a cocktail. And its a really big one."
+the description of voodoo-door is "It seems to be locked.".
+
+instead of opening the voodoo-door, say "You dont want try to unlock that door during the presence of the homoeopathic lady.".
 
 backroom is north of voodoo-door.
 voodoo-door is north of church of homoeopathy.
@@ -2348,15 +2365,16 @@ instead of taking the earwax:
 
 
 the hut is scenery in pond. the printed name is "swimming hut".
+
 understand "swimming", "swimming hut" as the hut.
-the description of the hut is "h".
+the description of the hut is "TODO".
 
 instead of going south in the church of homoeopathy , try going outside.
 instead of going north in the pond, try going inside.
 
 instead of entering something in pond, try going inside.
 
-the description of pond is "There is a pond with water and in the middle is a swimming hut. You can enter the hut or leave this place to the west or east[if monkey head is visited] in direction of the monkey head[end if].".
+the description of pond is "There is a pond with water and in the middle is a swimming hut. You can enter the hut or leave this place to the west or east[if monkey head is visited] in direction of the monkey head[end if]. A sign on top of the huts entrance says 'homoeopathy' it hangs on top of an older one saying 'voodoo'".
 
 exvoo is a woman in the church of homoeopathy.
 The litany of exvoo is the Table of exvoos Talk. the greeting of exvoo is exvoo-hello. 
@@ -2417,7 +2435,10 @@ at the time when dissolve-5 appears:
 		now the distilled water is in church of homoeopathy.
 
 instead of giving the distilled water to herman:
-	say "You f*cking idiot, if I say thirsty I mean I need ALCOHOL!!".
+	say "You f*cking idiot, if I say thirsty I meant I need ALCOHOL!!".
+
+instead of drinking the distilled water:
+	say "You took only a small sip of it, and yes its water."
 
 
 chapter stagger drunken dance
@@ -2452,6 +2473,8 @@ way up is above dam.
 chapter village
 
 vegivillage is north of stream bed. "There are straw huts all around. It looks like a museum showing the former life of natives, but they seem to be used still."
+
+the printed name of vegivillage is "the village of the vegibals".
 
 chapter the end
 
