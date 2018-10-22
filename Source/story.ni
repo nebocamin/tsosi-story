@@ -131,13 +131,13 @@ Rule for printing the banner text while turn count is 1: say "[paragraph break] 
 of Smiley Island  [paragraph break]  [paragraph break] ".
 
 when play begins:
-	[say "Dear Interactor, please type 'transcript' inside the game after it starts. Lectrote is automatically doing savegames. And you will find the 'cheat sheet' for common commands inside the menu of lectrote.";
+	[say "Dear Interactor, please type 'transcript' inside the game after it starts. It will then create a logfile, which I would like to receive afterwards. Lectrote is automatically doing savegames. And you will find the 'cheat sheet' for common commands inside the help-menu of lectrote.";
 	wait for any key;
 	say "Pen and paper for mapping your journey will help.";
 	wait for any key;]
 	say "Deep in the west indies. The island of boredom. Just coming from the boat
 	 without puking, but still in a bad feeling. Your holidays starting for you to reach the
-	 state of total boredomness. (ver june2018)".
+	 state of total boredomness. (ver oct2018)".
 	[wait for any key.]
 
 sustainable food is edible.
@@ -341,7 +341,7 @@ the lounger is a enterable supporter in boring beach. the initial appearance is 
 the lounger can be kaputt. the lounger is not kaputt.
 
 sewing machine is scenery device in boring beach. the description is "It's an original singer. 
-One of these original foot-driven ones. Not one of the current generation with there plastic crapability to ". 
+One of these original foot-driven ones. Not one of the current generation with the plastic crapability for a shorter device life.". 
 
 understand "singer" as the sewing machine.
 
@@ -881,6 +881,7 @@ Making you think, it was escaping the jungle behind him to the north. Far away t
 instead of going south in banana beach, say "You don't want to go into the water 'again'."
 
 banana tree is scenery in banana beach. the description is "Three times taller than you and at the top there are some [bananas].".
+does the player mean taking the banana tree: it is very unlikely. 
 the bananas are part of the banana tree. the description is "yellow, ready to be picked up".
 understand "banana", "fruit" as the bananas. [todo weil bananafruit auch so heisst]
 instead of taking the bananas, say "This is not a low hanging fruit.".
@@ -954,6 +955,18 @@ the giant q-tip is in volcano.
 understand "qtip", "tip", "stick" as the giant q-tip.
 
 keeping-qtip is a truth state that varies. keeping-qtip is false.
+
+instead of inserting the giant q-tip into furry skeleton:
+	say "You cottoned the giant q-tip again.";
+	now the giant q-tip is cottoned;
+	now the furry skeleton is off-stage.
+
+instead of inserting the furry skeleton into the giant q-tip:
+	say "You cottoned the giant q-tip again.";
+	now the giant q-tip is cottoned;
+	now the furry skeleton is off-stage.
+
+
 
 [TODO other possibillities to get the q-tip? like asking to watch his ghost-machine? or the banana picker version]
 
@@ -1664,7 +1677,7 @@ ron-secret	"Not really. But it seems, we discovered something important to find 
 ron-people	"They are from yensid, the company that bought ours."
 tim-yensid	"They conquered, what was ours once and with their money. They support L.´s quest for the secret of ... But I better keep my mouth shut."
 dave-yensid	"Not my problem, but I want to be part of the revenge. Hopefully getting rich afterwards."
-herman-hello	"It seems to be impossible for a shipwrecked castaway to die in the silence that he deserves."
+herman-hello	"It seems to be impossible for a shipwrecked castaway to die in the silence that he deserves. Do you carry anything drinkable?"
 exvoo-hello	"You look so deluted, can I be of any help?"
 exvoo-voodoo	"Voodoo is some esoteric non-working nonsene, I needed to help and establish something proven. Sorry,  I have to complete bashing this bottle on this leather bound book."
 vegibal-hello	"I smell meat-eaters."
@@ -1842,9 +1855,13 @@ vegibal-furry is a truth state that varies. vegibal-furry is false.
 vegibal-wax is a truth state that varies. vegibal-wax is false.
 
 instead of giving the q-tip to vegibal:
-	say "Very good, this way we can secure the secret of this island in the future. If you have something [if vegibal-furry is false] furry to make it  [end if] [if vegibal-wax is false] and something that molds into that ear, so it fits into the mechanism again?[end if]";
+	say "Very good, this way we can secure the secret of this island in the future. If you have something [if vegibal-furry is false] furry to make it becoming a q-tip again[end if] [if vegibal-wax is false] and something that molds into that ear, so it fits into the mechanism again?[end if]";
 	now vegibal-qqtip is true.
 
+instead of giving the earwax to vegibal:
+	say "great, it would fix the apes ear again to open it.";
+	now the earwax is off-stage;
+	now the stone is open.
 
 
 the litany of vegibal is table of vegibals talk.
@@ -1929,6 +1946,25 @@ monk island is a region.
 
 volcano, canyon edge, canyon ground, pond, dam, fuzzy beach, banana beach, monkey head, stream bed, way up, plateau are in monk island.
 
+a pig is a kind of animal.
+
+pink pig is a pig. the description is "Its really pink.".
+fat pig is a pig. the description is "Its really fat.".
+skinny pig is a pig. the description is "Its really skinny.".
+huge pig is a pig. the description is "Its really huge.".
+tiny pig is a pig. the description is "Its really tiny.".
+
+fat pig, skinny pig, huge pig, tiny pig  are in pond.
+pink pig  is in pond.
+
+every turn:
+	if a random pig  is in a room (called the current space):
+		let next space be a random room which is adjacent to the current space;
+		[if the random pig is visible, say "the [random pig] is leaving to the [next space].";]
+		move the a random pig to the next space.
+		[if the random pig is visible, say "say the [random pig] is arriving from the [current space].".]
+		
+
 [at the time when the player visits volcano:
 	now volcano is northwest of banana beach.]
 
@@ -1949,7 +1985,7 @@ ocean is west of pfandomat.
 
 
 cave is a room. "Seems to be a living room. Someone lives here. In one corner is a 
-heavy chest[if chest is open] full of leather jackets.[otherwise].[end if]". 
+heavy chest[if chest is open] full of leather jackets.[otherwise].[end if] To the west is a very large storage room.". 
 cave is inside from monkey head.
 
 A chest is scenery in cave. "Maybe the guy who lives here is selling these fine leather jackets."
