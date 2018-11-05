@@ -313,7 +313,10 @@ the description of the gate is "The gate is right within a strong fence. At the 
 understand "fence" , "door" as the gate.
 
 instead of examining the gate:
-	say "It's really strong and you have no chance to open it somewhere. On it is written 'For three-wristbanded only'. You've got [wristband-count in words] of these silly wristbands. It seems you really need [three - wristband-count in words] more of them to get into the holiday resort.".
+	if all-new2 is happening:
+		say "You've got [wristband-count in words] of the silly wristbands, nobody is watching and yes, you can just walk in.";
+	otherwise:
+		say "It's really strong and you have no chance to open it somewhere. On it is written 'For three-wristbanded only'. You've got [wristband-count in words] of these silly wristbands. It seems you really need [three - wristband-count in words] more of them to get into the holiday resort.".
 
 instead of opening the gate:
 	if all-new2 is happening:
@@ -457,7 +460,7 @@ instead of fishing the fake manatee in the presence of ron:
 		now dave is in jungle path;
 		now dave-diving is false;
 		now the scent of dave is "meat, bloody meat";
-		now diving helmet is in cave; [todo wieso landet der denn dorten?]
+		now diving helmet is in cave; [wieso landet der denn dorten?]
 		now diving apparatus is switched on;
 	otherwise:
 		say "You'll need a fishing rod to do that.".
@@ -974,9 +977,12 @@ instead of inserting the furry skeleton into the giant q-tip:
 
 
 instead of giving the totem to herman:
-	say "He seems to be quite happy with it and gives you the giant q-tip as payment.TODO only if you don't have the qtip yet.";
-	now the totem is off-stage;
-	now the player carries the giant q-tip.
+	if the player is not carrying the giant q-tip:
+		say "He seems to be quite happy with it and gives you the giant q-tip as a payment.";
+		now the totem is off-stage;
+		now the player carries the giant q-tip;
+	otherwise:
+		say "He seems to be quite happy with it and tells you that you can keep the giant q-tip that you already took from him.".
 
 instead of taking the giant q-tip:
 	now q-tip is familiar;
@@ -1014,8 +1020,6 @@ tube is undescribed in jungle path. the description is "[if diving helmet is con
  to provide oxygen.[end if][if dave-diving is true] The tube is vanishing into the
 water, [daveguy] seems to dive deep in the water. You can't see him.[otherwise]The tube is vanishing into the water.[end if]".
 understand "flexible tubes", "tubes", "flexible", "tube", "flexible tube" as the tube.
-
-[TODO tubes during allnew2: they verschwinden im wasser, helm is och weg.... maybe dran ziehen?]
 
 instead of taking the tube:
 	if diving helmet is connected:
@@ -1364,16 +1368,20 @@ after entering the cableway basket during smiley-island-escape:
 	now the long rope is torn;
 	now the cableway basket is in ocean2.
 
-ocean2 is a room. the description is "water, water, water TODO". the printed name of ocean2 is "somewhere on the ocean.".
+ocean2 is a room. the description is "water, water, water, THIRSTY THROAT". the printed name of ocean2 is "somewhere on the ocean.".
 
 when ocean2-escape begins:
-	say "shit, ich will weg TODO description of abreise".
+	say "You found yourself in the basket of the cable car. Securly far away of the pirate attack, but in the near of all other dangers of this oceanic wilderness.".
+
+instead of going outside in ocean2:
+	say "No, there are other ways to die left."
 
 smiley-island-escape ends when the long rope is torn.
 
 the long rope is scenery in river mouth. the description is "Its a big rope going around the bullwheel."
 
 the long rope can be torn. the long rope is not torn.
+
 
 
 the cableway basket is a distant scenery open container in river mouth. the cableway basket is enterable.
@@ -2412,7 +2420,7 @@ instead of taking the earwax:
 the hut is scenery in pond. the printed name is "swimming hut".
 
 understand "swimming", "swimming hut" as the hut.
-the description of the hut is "How cool is that. A swimming hut. Nailed together out of floatsam wood, definitely work of art.".
+the description of the hut is "How cool is that. A swimming hut. Nailed together out of floatsam wood, definitely work of art. So still looking like a house of mojo....but now focusing on homoeo-something.".
 
 instead of going south in the church of homoeopathy , try going outside.
 instead of going north in the pond, try going inside.
