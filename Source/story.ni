@@ -137,7 +137,7 @@ when play begins:
 	wait for any key;]
 	say "Deep in the west indies. The island of boredom. Just coming from the boat
 	 without puking, but still in a bad feeling. Your holidays starting for you to reach the
-	 state of total boredomness. (ver endofoct2018)".
+	 state of total boredomness. (ver nov2018)".
 	[wait for any key.]
 
 sustainable food is edible.
@@ -252,14 +252,14 @@ to say ronguy:
 	if ron-name is familiar:
 		say "Ron";
 	otherwise:
-		say "this guy".
+		say "This guy".
 
 dave-name is an unfamiliar subject.
 to say daveguy:
 	if dave-name is familiar:
 		say "Dave";
 	otherwise:
-		say "that guy".
+		say "That guy".
 
 instead of going inside in boring beach, try going west.
 
@@ -1477,7 +1477,7 @@ looking at the magpie she was looking back at you knowingly.".
 	say "etwas".]
 
 after taking the magpie:
-	say "Like your grandma always said, a real adventure needs an animal in her pocket.";
+	say "Like your grandma always said, a real adventure needs an animal in your pocket.";
 	enable the tim-magpie quip for tim.
 
 the palm tree is a enterable scenery supporter in crossing.
@@ -1928,6 +1928,8 @@ instead of going inside in monkey head:
 
 plants are scenery in monkey head. "Green, like the moss.".
 moss is scenery in monkey head. the description is "Green. Very green. Like the plants.".
+tonge is scenery in monkey head. the description is "Stretched out like a red carpet. [if stone is open]It leads the way into the giant monkey head.[otherwise]It would lead into the giant monkey head. [end if]".
+understand "carpet", "tongue", "large tongue", "large" as the tonge.
 
 totems are scenery in monkey head.
 
@@ -2527,7 +2529,7 @@ way up is above dam.
 
 chapter village
 
-vegivillage is north of stream bed. "There are straw huts all around. It looks like a museum showing the former life of natives, but they seem to be used still."
+vegivillage is north of stream bed. "There are straw huts all around. It looks like a museum showing the former life of natives, but they still seem to be used."
 
 the printed name of vegivillage is "the village of the vegibals".
 
