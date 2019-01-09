@@ -137,7 +137,7 @@ when play begins:
 	wait for any key;]
 	say "Deep in the west indies. The island of boredom. Just coming from the boat
 	 without puking, but still in a bad feeling. Your holidays starting for you to reach the
-	 state of total boredomness. (ver jan2019)".
+	 state of total boredomness. (ver jan2019smashing)".
 	[wait for any key.]
 
 sustainable food is edible.
@@ -956,7 +956,7 @@ instead of talking to herman:
 
 The giant q-tip is a thing. the description is "It looks like the ones you know for human ears, but this one is giant. Larger than your legs. [if giant q-tip is cottonless]But you notice the cotton tip is long gone on this one, so its basically a really large and heavy stick.[otherwise]Now again with a fine 'cottoned' tip.[end if]".
 the giant q-tip can be cottoned or cottonless. it is cottonless.
-the giant q-tip is in volcano.
+the giant q-tip is inside straw hut. [moved there to wait until the straw hut is smashed by a pig]
 understand "qtip", "tip", "stick" as the giant q-tip.
 
 keeping-qtip is a truth state that varies. keeping-qtip is false.
@@ -1961,7 +1961,7 @@ after taking the furry skeleton:
 
 monk island is a region.
 
-volcano, canyon edge, canyon ground, pond, dam, fuzzy beach, banana beach, monkey head, stream bed, way up, plateau are in monk island.
+volcano, canyon edge, canyon ground, pond, dam, fuzzy beach, banana beach, monkey head, stream bed, way up, plateau, vegivillage are in monk island.
 
 a pig is a kind of animal.
 
@@ -1984,13 +1984,12 @@ instead of taking a pig (called pocketpig):
 every turn:
 	let verypig be a random pig;
 	if verypig is not carried by the player:
-		say "das schwein der runde ist [verypig].";
 		if verypig is in a room (called the current space):
-			say "movepig is [verypig].";
 	[if verypig is in a room (called the current space):]
 			let next space be a random room which is adjacent to the current space;
+			if the next space is not ocean:
 		[if the random pig is visible, say "the [random pig] is leaving to the [next space].";]
-			move verypig to the next space.
+				move verypig to the next space.
 		[if the random pig is visible, say "say the [random pig] is arriving from the [current space].".]
 
 
@@ -2428,10 +2427,10 @@ instead of taking the earwax:
 		continue the action.
 
 
-the hut is scenery in pond. the printed name is "swimming hut".
+the voohut is scenery in pond. the printed name is "swimming hut".
 
-understand "swimming", "swimming hut" as the hut.
-the description of the hut is "How cool is that. A swimming hut. Nailed together out of floatsam wood, definitely work of art. So still looking like a house of mojo....but now focusing on homoeo-something.".
+understand "swimming", "swimming hut" as the voohut.
+the description of the voohut is "How cool is that. A swimming hut. Nailed together out of floatsam wood, definitely work of art. So still looking like a house of mojo....but now focusing on homoeo-something.".
 
 instead of going south in the church of homoeopathy , try going outside.
 instead of going north in the pond, try going inside.
@@ -2536,14 +2535,32 @@ understand "strange", "device", "strange device", "catapult", "maybe", "maybe ca
 
 instead of switching on the maybe catapult, say "Its broken, and not operating with electricity. Its somekind of catapult and big chunks of stone can be thrown with it."
 
+instead of dropping a pig (called throwpig) in plateau:
+	say "you drop the pig directly onto the catapult...[paragraph break] ... you can now see a flying pig into the north of the island. Even to your ear came a very loud and smashing sound afterwards.";
+	now the straw hut is broken;
+	now the giant q-tip is in vegivillage;
+	now throwpig is off-stage;
+	now the straw hut is off-stage.
+	[TODO if familiar then vegivillage]
+
+
 the plateau is above way up.
 way up is above dam.
 
 chapter village
 
-vegivillage is north of stream bed. "There are straw huts all around. It looks like a museum showing the former life of natives, but they still seem to be used."
+vegivillage is north of stream bed. "[if the straw hut is broken]Yes, you smashed the vegibals hut into pieces, using a living pig![otherwise]In the middle stands a very fine and comfy looking straw hut. It looks like a museum showing the former life of natives, but it still seems to be used.[end if]"
 
 the printed name of vegivillage is "the village of the vegibals".
+
+straw hut is a container in vegivillage. the description is "[if the straw hut is broken]a bunch of straw and wooden pieces, you killed that hut with a once living pig.[otherwise]Inside that little hut you can see something like a veeery big q-tip".
+the straw hut is closed.
+the straw hut can be broken.
+
+
+understand "huts" as the straw hut.
+
+
 
 chapter the end
 
