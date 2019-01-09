@@ -137,7 +137,7 @@ when play begins:
 	wait for any key;]
 	say "Deep in the west indies. The island of boredom. Just coming from the boat
 	 without puking, but still in a bad feeling. Your holidays starting for you to reach the
-	 state of total boredomness. (ver nov2018)".
+	 state of total boredomness. (ver jan2019)".
 	[wait for any key.]
 
 sustainable food is edible.
@@ -1977,11 +1977,20 @@ pink pig  is in pond.
 instead of talking to a pig:
 	say "Even if you think you are getting crazy, you are not _that_ lunatic."
 
+instead of taking a pig (called pocketpig):
+	say "yippieh.";
+	now the player carries the pocketpig.
+
 every turn:
-	if a random pig  is in a room (called the current space):
-		let next space be a random room which is adjacent to the current space;
+	let verypig be a random pig;
+	if verypig is not carried by the player:
+		say "das schwein der runde ist [verypig].";
+		if verypig is in a room (called the current space):
+			say "movepig is [verypig].";
+	[if verypig is in a room (called the current space):]
+			let next space be a random room which is adjacent to the current space;
 		[if the random pig is visible, say "the [random pig] is leaving to the [next space].";]
-		move the a random pig to the next space.
+			move verypig to the next space.
 		[if the random pig is visible, say "say the [random pig] is arriving from the [current space].".]
 
 
@@ -2519,10 +2528,13 @@ chapter plateau
 
 the plateau is a room. "You have a great view in every direction of this little island. In the north you can see a small village made of straw huts. Looking really na(t)ive. Beneath your feet you can see the strange device directly, so you could throw stuff on it.".
 
-the broken device is in way up.
+the maybe catapult is in way up. the description is "Its not operating with electricity. Its somekind of catapult and big chunks of stone can be thrown with it."
+
+the catapult-below is scenery in the plateau. the description is "You can see the catapult below and you directly drop things on it to throw them somewhere over this island.".
+understand "strange", "device", "strange device", "catapult", "maybe", "maybe catapult" as the catapult-below.
 
 
-instead of switching on the broken device, say "Its broken, and not operating with electricity. Its somekind of catapult and big chunks of stone can be thrown with it."
+instead of switching on the maybe catapult, say "Its broken, and not operating with electricity. Its somekind of catapult and big chunks of stone can be thrown with it."
 
 the plateau is above way up.
 way up is above dam.
