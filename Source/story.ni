@@ -35,8 +35,6 @@ suppress GPL author instructions is true.
 story creation year is 2013.
 the copyright holder is "stereo".]
 
-
-
 use full-length room descriptions.
 use no scoring.
 
@@ -131,13 +129,13 @@ Rule for printing the banner text while turn count is 1: say "[paragraph break] 
 of Smiley Island  [paragraph break]  [paragraph break] ".
 
 when play begins:
-	[say "Dear Interactor, please type 'transcript' inside the game after it starts. It will then create a logfile, which I would like to receive afterwards. Lectrote is automatically doing savegames. And you will find the 'cheat sheet' for common commands inside the help-menu of lectrote.";
+	[say "Dear Interactor, please type 'transcript' inside the game after it starts. It will then create a logfile, which I would like to receive afterwards. Lectrote is automatically doing savegames. And you will find the 'cheat sheet' for common commands inside the help-menu.[paragraph break]";
 	wait for any key;
-	say "Pen and paper for mapping your journey will help.";
+	say "Pen and paper for mapping your journey will help.[paragraph break]";
 	wait for any key;]
 	say "Deep in the west indies. The island of boredom. Just coming from the boat
 	 without puking, but still in a bad feeling. Your holidays starting for you to reach the
-	 state of total boredomness. (ver jan2019smashing)".
+	 state of total boredomness. (ver feb2019postfosdem)".
 	[wait for any key.]
 
 sustainable food is edible.
@@ -892,6 +890,12 @@ sand is scenery in banana beach. the description is "fine grained.".
 sun is scenery in banana beach.
 footprints are scenery in banana beach. the description is "They lead to the north.".
 
+after doing anything to the banana tree:
+	enable the herman-bananapicker quip for herman.
+
+after doing anything to the bananas:
+	enable the herman-bananapicker quip for herman.
+
 an uhuru is an animal in banana beach.
 the description is "Sure, it's a black uhuru and it has a fleety foot.".
 instead of talking to the uhuru, say "He talks. No joke. he talks and
@@ -1575,7 +1579,8 @@ prompt	response	enabled
 "What about this Ron, Tim and Dave?"	herman-rotida	1
 "What about Sacul Film?"	herman-sacul	1
 "What about the Yensids?"	herman-yensids	1
-"What about the Giant Q-Tip?"	herman-qtip	1
+"What about the Giant Q-Tip?"	herman-qtip	0
+"Do you have a banana picker?"	herman-bananapicker	0
 "Ahem, is this stuff all earwax that is coming out of your head?"	herman-earwax	1
 "What about the apehead-entry?"	herman-apehead-entry	0
 "I better go."	silence	1
@@ -1597,6 +1602,8 @@ prompt	response	enabled
 table of vegibals talk
 prompt	response	enabled
 "bored?TODO"	vegibal-hello	1
+"Have your heard that smashing sound some time ago?"	vegibal-smashed	0
+"Can I be of any help to find the murderer of both, hut and pig?"	vegibal-help	0
 "What about this staggering, drunken dance?"	vegibal-dance	0
 "What's the secret of this island?"	vegibal-secret	1
 "What about these totems?"	vegibal-totems	0
@@ -1694,6 +1701,8 @@ vegibal-hello	"I smell meat-eaters."
 herman-dance	"Oh, thats stupid and they are loud. Disturbing me, so I can't sleep during the day or night."
 exvoo-dance	"Oh its so wonderful how these brilliant natives are keeping there traditions alive. So unreflected, so 'clear'."
 vegibal-dance	"Keep our stuff on our side and we won't eat you."
+vegibal-smashed	"Imagine, an awful person killed our main hut by smashing a pig!"
+vegibal-help	"I doubt that a person with such a mostly-harmless look will be of any help to us."
 vegibal-secret	"Its forbidden to see, even for us."
 vegibal-totems	"It belongs to the secret. period."
 vegibal-rotida	"We call them the intruders. They come every time with a different strategy."
@@ -1715,7 +1724,8 @@ herman-totems	"Ah yes, those idiots with the flask-totems. If you ever wanted to
 herman-rotida	"They get on my nerves. They visit this island every summer and they are asking questions over and over about the secret of this island."
 herman-sacul	"Planet Peace. I was often at the movies in my former life. Maybe I will again after my rescue. At the moment I only watch 'water world' over and over at the beach."
 herman-yensids	"Protect? The only supreme being here is me and they don't protect me.TODO"
-herman-qtip	"Yes, true. I have stolen that damn thing again, because they broke my banana picker."
+herman-qtip	"Yes, true. I had stolen that damn thing again, because they broke my banana picker."
+herman-bananapicker	"No, its broken. The Vegibals broke my famous banana picker."
 herman-earwax	"Earwax? I have all sorts of waxes in any hole of my body."
 herman-apehead-entry	"[if q-tip is familiar]You will need the giant q-tip. [otherwise]You will not get into it if you don't have the right key.[end if]"
 silence	"Bye."
@@ -1807,6 +1817,8 @@ after quipping when the current quip is exvoo-qtip:
 	disable the exvoo-earwax quip for exvoo;
 	say "She went into the backroom and gets a big glass full of earwax!?[paragraph break]";
 	now the earwax is in church of homoeopathy.
+after quipping when the current quip is vegibal-smashed:
+	enable the vegibal-help quip for vegibal.
 
 treasure-hunt begins when the current quip is slog-start-treasurehunt the first time.
 getting-marooned begins when the current quip is slog-ask-marooned the first time.
@@ -1978,7 +1990,7 @@ instead of talking to a pig:
 	say "Even if you think you are getting crazy, you are not _that_ lunatic."
 
 instead of taking a pig (called pocketpig):
-	say "yippieh.";
+	say "Sometimes you surprise yourself, you just managed to pick up a pig.";
 	now the player carries the pocketpig.
 
 every turn:
@@ -1990,6 +2002,7 @@ every turn:
 			if the next space is not ocean:
 		[if the random pig is visible, say "the [random pig] is leaving to the [next space].";]
 				move verypig to the next space.
+				[say "[if verypig is visible][verypig] goes to [next space][end if]".]
 		[if the random pig is visible, say "say the [random pig] is arriving from the [current space].".]
 
 
@@ -2535,12 +2548,17 @@ understand "strange", "device", "strange device", "catapult", "maybe", "maybe ca
 
 instead of switching on the maybe catapult, say "Its broken, and not operating with electricity. Its somekind of catapult and big chunks of stone can be thrown with it."
 
+instead of dropping a pig (called throwpig) in way up:
+	say "You dropped the pig on the catapult, but it was not enough momentum. The pig walked from the catapult and stares at you.";
+	now the throwpig is in way up.
+
 instead of dropping a pig (called throwpig) in plateau:
 	say "you drop the pig directly onto the catapult...[paragraph break] ... you can now see a flying pig into the north of the island. Even to your ear came a very loud and smashing sound afterwards.";
 	now the straw hut is broken;
 	now the giant q-tip is in vegivillage;
 	now throwpig is off-stage;
-	now the straw hut is off-stage.
+	now the straw hut is off-stage;
+	enable the vegibal-smashed quip for vegibal.
 	[TODO if familiar then vegivillage]
 
 
