@@ -135,7 +135,7 @@ when play begins:
 	wait for any key;]
 	say "Deep in the west indies. The island of boredom. Just coming from the boat
 	 without puking, but still in a bad feeling. Your holidays starting for you to reach the
-	 state of total boredomness. (ver feb2019postfosdem)".
+	 state of total boredomness. (ver feb2019valentina)".
 	[wait for any key.]
 
 sustainable food is edible.
@@ -1513,7 +1513,7 @@ bluehole is below ocean.
 the description of bluehole is "You're now inside a big round hole, leading up to the wide open oceans surface.".
 
 instead of going up in bluehole:
-	say "hui schlimme dinge, tube reisst ab, helm weg... blubb, strand TODO";
+	say "As you swim further away from the island, the tube gets stretched to its maximum length. You give full power, because you can already see light to another exit from this blue hole. [paragraph break] The tube tears apart, you get rid of the helmet and swim as fast as possible towards the surface...";
 	now the player is in banana beach;
 	now the helmet is in bluehole.
 
@@ -1990,7 +1990,7 @@ instead of talking to a pig:
 	say "Even if you think you are getting crazy, you are not _that_ lunatic."
 
 instead of taking a pig (called pocketpig):
-	say "Sometimes you surprise yourself, you just managed to pick up a pig.";
+	say "Sometimes you surprise yourself. You just managed to pick up a pig.";
 	now the player carries the pocketpig.
 
 every turn:
@@ -2531,14 +2531,20 @@ yensids-gone is a truth state that varies. yensids-gone is false.
 
 chapter damn
 
-the description of dam is "You see a stream flowing through its streambed to the north and also to the east. There are the remains of a dam that stopped the flow to the east before. One way to the west[if volcano is visited] to hermans fort[end if] and a way to the east[if pond is visited] to the pond[end if]. To the south leads the way back into the direction of the banana tree beach.".
+the description of dam is "You are standing in front of a [big rock] see a stream flowing through its streambed to the north and also to the east. There are the remains of a dam that stopped the flow to the east before. One way to the west[if volcano is visited] to hermans fort[end if] and a way to the east[if pond is visited] to the pond[end if]. To the south leads the way back into the direction of the banana tree beach or you just climb up this [big rock] to get an view over this island.".
 
 the exdam is scenery in dam. the description is "These are the remains of a violent attack with explosives against this dam.".
 the printed name of exdam is "the dam". understand "dam", "the dam" as the exdam.
 
+big rock is scenery in dam. the description is "It looks like you are able to climb up this rock using a worn out carved in ladder.".
+
+instead of climbing the big rock, try going up.
+
 chapter plateau
 
-the plateau is a room. "You have a great view in every direction of this little island. In the north you can see a small village made of straw huts. Looking really na(t)ive. Beneath your feet you can see the strange device directly, so you could throw stuff on it.".
+way up is a room. "You are halfway up this rock. You can go further up to the top or down to the dam."
+
+the plateau is a room. "You have a great view in every direction of this little island. In the north you can see a small village made of straw huts. Looking really na(t)ive. Beneath your feet you can see the strange device directly, so you could throw stuff on it. You can only go down from here.".
 
 the maybe catapult is in way up. the description is "Its not operating with electricity. Its somekind of catapult and big chunks of stone can be thrown with it."
 
