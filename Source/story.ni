@@ -875,20 +875,23 @@ chapter banana beach
 banana beach is a room. "[One of]... [Sand] in your ears, [sand] in your
 mouth, between your teeth. You even feel like you're breathing sand.
 And you try to take a look around. the [sun] is shining and burnt your
-back. But hey, you're still wearing your [trousers]. You see lots of [footprints], like a very big group of people was here and leaving into the jungle to the north.[or]Hot light [sand]
+back. But hey, you're still wearing your [trousers]. You see lots of [footprints], like a very big group of people was here and leaving into the jungle to the north where you can see a big rock high above the tallest trees.[or]Hot light [sand]
 all around.[stopping] In the middle of this beach is a lonely banana tree.
-Making you think, it was escaping the jungle behind him to the north. Far away to the northwest leads a way up to a volcano. To the south is water, just water.".
+Making you think, it was escaping the jungle behind him to the north. Far away to the northwest leads a halfway up to a volcano. To the south is water, just water.".
 
 instead of going south in banana beach, say "You don't want to go into the water 'again'."
 
 banana tree is scenery in banana beach. the description is "Three times taller than you and at the top there are some [bananas].".
+
+instead of climbing the banana tree, say "After surving the sea, there is no need to die by the tree.".
+
 does the player mean taking the banana tree: it is very unlikely.
 the bananas are part of the banana tree. the description is "yellow, ready to be picked up".
 understand "banana", "fruit" as the bananas.
 instead of taking the bananas, say "This is not a low hanging fruit.".
 sand is scenery in banana beach. the description is "fine grained.".
 sun is scenery in banana beach.
-footprints are scenery in banana beach. the description is "They lead to the north.".
+footprints are scenery in banana beach. the description is "The footprints lead to the north.".
 
 after doing anything to the banana tree:
 	enable the herman-bananapicker quip for herman.
@@ -921,7 +924,7 @@ before going north in banana beach:
 
 chapter canyon edge
 
-canyon edge is a room. "You can look deep down a dried out canyon edge. Its dark down there. A trail leads back south to the banana tree and north[if dam is visited] to the dam[end if].".
+canyon edge is a room. "You can look deep down a dried out canyon edge. Its dark down there. A trail leads back south to the banana tree and north[if dam is visited] to the dam[end if] into the direction of the big rock.".
 the rope is a thing. the rope is in canyon edge.
 
 canyonedge is in canyon edge. the description is "Its a very steep slope. The word 'dangerous' comes to your mind.".
@@ -1973,7 +1976,7 @@ after taking the furry skeleton:
 
 monk island is a region.
 
-volcano, canyon edge, canyon ground, pond, dam, fuzzy beach, banana beach, monkey head, stream bed, way up, plateau, vegivillage are in monk island.
+volcano, canyon edge, canyon ground, pond, dam, fuzzy beach, banana beach, monkey head, stream bed, halfway up, plateau, vegivillage are in monk island.
 
 a pig is a kind of animal.
 
@@ -2542,11 +2545,11 @@ instead of climbing the big rock, try going up.
 
 chapter plateau
 
-way up is a room. "You are halfway up this rock. You can go further up to the top or down to the dam."
+halfway up is a room. "You are halfway up this rock. You can go further up to the top or down to the dam."
 
 the plateau is a room. "You have a great view in every direction of this little island. In the north you can see a small village made of straw huts. Looking really na(t)ive. Beneath your feet you can see the strange device directly, so you could throw stuff on it. You can only go down from here.".
 
-the maybe catapult is in way up. the description is "Its not operating with electricity. Its somekind of catapult and big chunks of stone can be thrown with it."
+the maybe catapult is in halfway up. the description is "Its not operating with electricity. Its somekind of catapult and big chunks of stone can be thrown with it."
 
 the catapult-below is scenery in the plateau. the description is "You can see the catapult below and you directly drop things on it to throw them somewhere over this island.".
 understand "strange", "device", "strange device", "catapult", "maybe", "maybe catapult" as the catapult-below.
@@ -2554,9 +2557,9 @@ understand "strange", "device", "strange device", "catapult", "maybe", "maybe ca
 
 instead of switching on the maybe catapult, say "Its broken, and not operating with electricity. Its somekind of catapult and big chunks of stone can be thrown with it."
 
-instead of dropping a pig (called throwpig) in way up:
-	say "You dropped the pig on the catapult, but it was not enough momentum. The pig walked from the catapult and stares at you.";
-	now the throwpig is in way up.
+instead of dropping a pig (called throwpig) in halfway up:
+	say "You dropped the pig on the catapult, but it was not enough momentum. The pig walked away from the catapult and stares at you.";
+	now the throwpig is in halfway up.
 
 instead of dropping a pig (called throwpig) in plateau:
 	say "you drop the pig directly onto the catapult...[paragraph break] ... you can now see a flying pig into the north of the island. Even to your ear came a very loud and smashing sound afterwards.";
@@ -2568,8 +2571,8 @@ instead of dropping a pig (called throwpig) in plateau:
 	[TODO if familiar then vegivillage]
 
 
-the plateau is above way up.
-way up is above dam.
+the plateau is above halfway up.
+halfway up is above dam.
 
 chapter village
 
