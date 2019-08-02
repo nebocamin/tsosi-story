@@ -135,7 +135,7 @@ when play begins:
 	wait for any key;]
 	say "Deep in the west indies. The island of boredom. Just coming from the boat
 	 without puking, but still in a bad feeling. Your holidays starting for you to reach the
-	 state of total boredomness. (ver mar2019)".
+	 state of total boredomness. (ver july2019)".
 	[wait for any key.]
 
 sustainable food is edible.
@@ -177,7 +177,7 @@ instead of examining a bottle (called the drinkthing):
 	if the drinkthing is full:
 		say "The [drinkthing] is still filled up ";
 	otherwise:
-		say "The [drinkthing] is empty, but you feel a need of more.".
+		say "The [drinkthing] is empty, but you feel a need for more.".
 
 a person is either sober or drunk. a person is usually sober.
 a person is either bekifft or unbekifft. a person is usually unbekifft.
@@ -1171,7 +1171,7 @@ instead of giving the durian to dave during barbacueing, say "You'll give him th
 
 instead of giving the durian to dave:
 	if barbacueing has happened:
-		say "that awful smellung fruit is the right thing to eat right now.";
+		say "that awful smelling fruit is the right thing to eat right now.";
 		now the durian is off-stage.
 
 [
@@ -1957,9 +1957,9 @@ understand "carpet", "tongue", "large tongue", "large" as the tonge.
 
 totems are scenery in monkey head.
 
-a shiny totem is in monkey head. the description is "There is a totem, looking like a flask.".
+a shiny totem is in monkey head. the description is "There is a totem, looking like a whisky bottle.".
 the shiny totem is an openable container. it is closed.
-understand "flask" as the shiny totem.
+understand "flask", "whisky", "bottle", "whisky bottle" as the shiny totem.
 
 after taking the shiny totem for the first time:
 	say "You took this shiny totem and it really seems to be a smaller modell of a flask.";
@@ -2013,7 +2013,8 @@ every turn:
 			let next space be a random room which is adjacent to the current space;
 			if the next space is not ocean:
 		[if the random pig is visible, say "the [random pig] is leaving to the [next space].";]
-				move verypig to the next space.
+				if the player is not in the current space:
+					move verypig to the next space.
 				[say "[if verypig is visible][verypig] goes to [next space][end if]".]
 		[if the random pig is visible, say "say the [random pig] is arriving from the [current space].".]
 
@@ -2320,7 +2321,7 @@ instead of exiting in cabin, try entering the porthole.
 instead of going north from cabin, try entering the porthole.
 
 instead of entering the porthole:
-	if empty water mattress is carried by the player:
+	if allempty water mattress is carried by the player:
 		say "(together with the empty mattress)";
 		continue the action;
 	otherwise:
@@ -2338,7 +2339,7 @@ instead of entering the porthole:
 				too much ocean between the island and you. ".
 
 instead of going north in ocean during mattress-escape:
-	if empty water mattress is carried by the player:
+	if allempty water mattress is carried by the player:
 		say "You are still not convinced that muscular power is enough and you picked
 		up that inflatable mattress for a reason.";
 	otherwise:
@@ -2363,7 +2364,7 @@ cabin is inside of ocean.
 the four-poster bed is a enterable supporter in cabin. the description of four-poster bed is "Examining the bed you notice that a big water filled mattress is on the bed.".
 pot is a container in cabin. the description is "No pot inside this pot."
 
-on the four-poster bed is an water mattress. the description of the water mattress is "[plugstate] and it seems to be full of [mattresscontent]". the printed name of the water mattress is "inflated deflatable mattress". the water mattress can be airfull or waterfull or empty. the water mattress is waterfull. the plug is part of the water mattress.
+on the four-poster bed is an water mattress. the description of the water mattress is "[plugstate] and it seems to be full of [mattresscontent]". the printed name of the water mattress is "inflated deflatable mattress". the water mattress can be airfull or waterfull or allempty. the water mattress is waterfull. the plug is part of the water mattress.
 
 to say plugstate:
 	if the water mattress is waterfull:
@@ -2393,15 +2394,15 @@ instead of pulling the plug:
 		now cabin is wet;
 		now cabin door is wet;
 		now the printed name of water mattress is "deflated inflatable mattress";
-		now the water mattress is empty;
+		now the water mattress is allempty;
 	otherwise:
 		if the water mattress is airfull:
 			say "pffffft, air gone";
 			now the printed name of water mattress is "deflated inflatable mattress";
-			now the water mattress is empty;
+			now the water mattress is allempty;
 
 instead of inflating the water mattress:
-	if the water mattress is empty:
+	if the water mattress is allempty:
 		say "You[if the player is in cabin] sit down,[end if] take a deep breath and you blow your breath into the mattress until its filled. As fast as possible, you put the plug back in so the mattress stays full.";
 		now the mattress is airfull;
 		now the printed name of water mattress is "inflated deflatable mattress";
@@ -2409,7 +2410,7 @@ instead of inflating the water mattress:
 		say "The mattress is not empty, so you are not able to inflate it.".
 
 
-instead of inserting the plug into the empty water mattress:
+instead of inserting the plug into the allempty water mattress:
 	say "You don't plug the plug back into the mattress, because it's not needed in an empty one.".
 
 [the old story gets connections to the present]
