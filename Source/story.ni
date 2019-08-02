@@ -135,7 +135,7 @@ when play begins:
 	wait for any key;]
 	say "Deep in the west indies. The island of boredom. Just coming from the boat
 	 without puking, but still in a bad feeling. Your holidays starting for you to reach the
-	 state of total boredomness. (ver feb2019valentina)".
+	 state of total boredomness. (ver mar2019)".
 	[wait for any key.]
 
 sustainable food is edible.
@@ -900,13 +900,19 @@ after doing anything to the bananas:
 	enable the herman-bananapicker quip for herman.
 
 an uhuru is an animal in banana beach.
-the description is "Sure, it's a black uhuru and it has a fleety foot.".
+the description is "Impressive, that very rare parrot is a black uhuru and it has a fleety foot.".
 instead of talking to the uhuru, say "He talks. No joke. he talks and
 its:'push the tree, quuoak, push the tree.'".
 instead of pushing the tree, say "[one of]You pull and push the tree
 back and forth and... [or]...  and nothing happens.[or] Really, thats it.[or]
  editors note: you will not be able to get the bananas this way.[or] Ok, one was falling down and that seems to be enough.[stopping]".
 instead of pulling the tree, try pushing the tree.
+
+instead of kissing the uhuru:
+	say "Outch, it bit your upper lip.".
+
+instead of kissing the banana tree:
+	say "What a pleasant feeling from that bark.".
 
 the bananafruit is futter. it is edible.
 the printed name of bananafruit is "banana". understand "banana" as bananafruit.
@@ -1933,9 +1939,12 @@ instead of inserting the cottoned giant q-tip into monkey ear:
 instead of inserting the cottonless giant q-tip into monkey ear:
 	say "You pushed the q-tip hard into that ear, but it doesn't fit perfectly. Like something missing that nestles into that ear.".
 
+instead of going down in monkey head, try going inside.
+instead of going up in cave, try going outside.
+
 instead of going inside in monkey head:
 	if stone is open:
-		say "You are going in...TODO";
+		say "You are going into the open mouth of this ape head monument. Inside of it you use neck vertebrates as stairs to go deeper into a cave.";
 		continue the action;
 	otherwise:
 		say "You can't see any kind of entrance.".
