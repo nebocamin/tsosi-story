@@ -75,7 +75,11 @@ test thgmb with "test th / test gm / test b"
 
 test basket with "test thgmb / nw / sw / w / z / z / z / z / 2 / s / s / ne / se / climb bullwheel / go into basket"
 
-test all with "test th / test gm / test b / nw / sw /w/z/z/z/z/1/open mattress/get mattress/n/inflate mattress/n"
+test banana with "test th / test gm / test b / nw / sw /w/z/z/z/z/1/open mattress/get mattress/n/inflate mattress/n"
+
+test vegibals with "nw / talk / 6 /9 / e / e / w / w / e / purloin pink pig / n / s / u  / u / throw pink pig / d / d / n /n/ get q-tip / s / s/e/e/e/get animal/ w/w/in/talk to lady/ 1/6/5/get wax/out/e/e/insert wax into ear/ insert q-tip into ear/ in/ w"
+
+test all with "test banana / test vegibals"
 
 part losgehts
 
@@ -135,7 +139,7 @@ when play begins:
 	wait for any key;]
 	say "Deep in the west indies. The island of boredom. Just coming from the boat
 	 without puking, but still in a bad feeling. Your holidays starting for you to reach the
-	 state of total boredomness. (ver july2019)".
+	 state of total boredomness. (ver august2019)".
 	[wait for any key.]
 
 sustainable food is edible.
@@ -856,6 +860,10 @@ smiley-island-escape begins when pyrate-opera ends.
 smiley-island-escape ends when mattress-escape begins.
 smiley-island-escape ends when monkey-opening begins.
 
+ship-anchored is a scene.
+ship-anchored begins when smiley-island-escape begins.
+ship-anchored ends when the player is in dam for the first time.
+
 mattress-escape is a scene.
 mattress-escape begins when the player is in cabin.
 mattress-escape ends, when monkey-opening begins.
@@ -872,12 +880,12 @@ part monk island
 
 chapter banana beach
 
-banana beach is a room. "[One of]... [Sand] in your ears, [sand] in your
+banana beach is a room. "[if ship-anchored is happening][otherwise][one of][paragraph break]The Ship is gone !![paragraph break][or][stopping][end if][One of]... [Sand] in your ears, [sand] in your
 mouth, between your teeth. You even feel like you're breathing sand.
 And you try to take a look around. the [sun] is shining and burnt your
 back. But hey, you're still wearing your [trousers]. You see lots of [footprints], like a very big group of people was here and leaving into the jungle to the north where you can see a big rock high above the tallest trees.[or]Hot light [sand]
 all around.[stopping] In the middle of this beach is a lonely banana tree.
-Making you think, it was escaping the jungle behind him to the north. Far away to the northwest leads a halfway up to a volcano. To the south is water, just water.".
+Making you think, it was escaping the jungle behind him to the north. Far away to the northwest leads a halfway up to a volcano. [paragraph break]To the south is water, just water[if ship-anchored is happening] and the ship, the black freighter, you remember from the pirate opera on the other island[otherwise][one of][or] and still not a trace of the black freighter[stopping][end if].".
 
 instead of going south in banana beach, say "You don't want to go into the water 'again'."
 
@@ -901,8 +909,10 @@ after doing anything to the bananas:
 
 an uhuru is an animal in banana beach.
 the description is "Impressive, that very rare parrot is a black uhuru and it has a fleety foot.".
+understand "parrot" as the uhuru.
+
 instead of talking to the uhuru, say "He talks. No joke. he talks and
-its:'push the tree, quuoak, push the tree.'".
+its: 'push the tree, quuoak, push the tree.'".
 instead of pushing the tree, say "[one of]You pull and push the tree
 back and forth and... [or]...  and nothing happens.[or] Really, thats it.[or]
  editors note: you will not be able to get the bananas this way.[or] Ok, one was falling down and that seems to be enough.[stopping]".
@@ -1585,9 +1595,9 @@ prompt	response	enabled
 "What about this staggering, drunken dance?"	herman-dance	0
 "What's the secret of this island?"	herman-secret	1
 "What about these totems?"	herman-totems	0
-"What about this Ron, Tim and Dave?"	herman-rotida	1
-"What about Sacul Film?"	herman-sacul	1
-"What about the Yensids?"	herman-yensids	1
+"What about this Ron, Tim and Dave?"	herman-rotida	0
+"What about Sacul Film?"	herman-sacul	0
+"What about the Yensids?"	herman-yensids	0
 "What about the Giant Q-Tip?"	herman-qtip	0
 "Do you have a banana picker?"	herman-bananapicker	0
 "Ahem, is this stuff all earwax that is coming out of your head?"	herman-earwax	1
@@ -1600,9 +1610,9 @@ prompt	response	enabled
 "What about this staggering, drunken dance?"	exvoo-dance	0
 "What's the secret of this island?"	exvoo-secret	1
 "What about these totems?"	exvoo-totems	0
-"What about this Ron, Tim and Dave?"	exvoo-rotida	1
-"What about Sacul Film?"	exvoo-sacul	1
-"What about the Yensids?"	exvoo-yensids	1
+"What about this Ron, Tim and Dave?"	exvoo-rotida	0
+"What about Sacul Film?"	exvoo-sacul	0
+"What about the Yensids?"	exvoo-yensids	0
 "What about the Giant Q-Tip?"	exvoo-qtip	0
 "Do you have anything against earwax?"	exvoo-earwax	0
 "What about the apehead-entry?"	exvoo-apehead-entry	0
@@ -1616,9 +1626,9 @@ prompt	response	enabled
 "What about this staggering, drunken dance?"	vegibal-dance	0
 "What's the secret of this island?"	vegibal-secret	1
 "What about these totems?"	vegibal-totems	0
-"What about this Ron, Tim and Dave?"	vegibal-rotida	1
-"What about Sacul Film?"	vegibal-sacul	1
-"What about the Yensids?"	vegibal-yensids	1
+"What about this Ron, Tim and Dave?"	vegibal-rotida	0
+"What about Sacul Film?"	vegibal-sacul	0
+"What about the Yensids?"	vegibal-yensids	0
 "What about the Giant Q-Tip?"	vegibal-qtip	1
 "What about the earwax?"	vegibal-earwax	1
 "Do you think there is a way to open this ape's head?"	vegibal-apehead-entry	0
@@ -1720,15 +1730,15 @@ vegibal-yensids	"All hands of companies making holidays are disturbing us. They 
 vegibal-qtip	"[if vegibal-qqtip is true]We are so grateful for your commitment. Our culture is thankful for at least 11 minutes.[otherwise]Where do you get that info? Its part of our deities secret. Get it for us, but don't ask questions or even expect answers from us."
 vegibal-earwax	"We put different things in our ears to get some rest from all this party noise of the tourists visiting this island. So would be a great idea to get enough earwax for all tomorrows parties."
 vegibal-apehead-entry	"Its only allowed to us and even we will not do that."
-exvoo-secret	"I will always respect their deities."
+exvoo-secret	"I will always respect their deities.TODO"
 exvoo-totems	"I like them, because I can sell my medicine in them."
 exvoo-rotida	"They wanted to hide in my shop, but I can't give shelter to people with such a bad karma."
 exvoo-sacul	"Commercial entertainment like they do is the reason I quit living in first world. Anything would be more prefered."
 exvoo-yensids	"I hope someday I have to chance to initiate them."
-exvoo-qtip	"TODO (doppelt zu earwax)You ask me for some university medicine? I have something better, which means homoeopathic, for you. I will rattle it 4 days, then you can come back and its strong enough to help."
-exvoo-earwax	"TODO (doppelt zu qtipYou don't need this stuff. I have something better, which means homoeopathic, for you. I will rattle it 4 days, then you can come back to it strong enough to help."
+exvoo-qtip	"TODO (doppelt zu earwax)You ask me for some university medicine? I have something better, which means homoepathic, for you. I will rattle it 4 days, then you can come back and its strong enough to help."
+exvoo-earwax	"TODO (doppelt zu qtipYou don't need this stuff. I have something better, which means homoepathic, for you. I will rattle it 4 days, then you can come back to it strong enough to help."
 exvoo-apehead-entry	"I will never ever violate and or breach into this because I respect the natives and any believe system thats existing or will exist."
-herman-secret	"I will tell you something about the secret, after you bring me back the banana picker from the vegibals in the north of this island. I am getting old and its not easy for me to get them down. XXX TODO (hint giving)"
+herman-secret	"I will tell you something about the secret, after you bring me back the banana picker from the vegibals in the north of this island. I am getting old and its not easy for me to get those fruits down. XXX TODO (hint giving)"
 herman-totems	"Ah yes, those idiots with the flask-totems. If you ever wanted to see a real cargo cult this is one."
 herman-rotida	"They get on my nerves. They visit this island every summer and they are asking questions over and over about the secret of this island."
 herman-sacul	"Planet Peace. I was often at the movies in my former life. Maybe I will again after my rescue. At the moment I only watch 'water world' over and over at the beach."
@@ -1821,11 +1831,11 @@ after quipping when the current quip is herman-qtip:
 after quipping when the current quip is exvoo-earwax:
 	disable the exvoo-qtip quip for exvoo;
 	say "She went into the backroom and gets a big glass full of earwax!?[paragraph break]";
-	now the earwax is in church of homoeopathy.
+	now the earwax is in church of homoepathy.
 after quipping when the current quip is exvoo-qtip:
 	disable the exvoo-earwax quip for exvoo;
 	say "She went into the backroom and gets a big glass full of earwax!?[paragraph break]";
-	now the earwax is in church of homoeopathy.
+	now the earwax is in church of homoepathy.
 after quipping when the current quip is vegibal-smashed:
 	enable the vegibal-help quip for vegibal.
 
@@ -2425,9 +2435,9 @@ be careful. Covering my track, leading them to the [cave].".
 
 [after examining the old diary, now the cave is familiar.]
 
-church of homoeopathy is inside of pond. the description is "Still looking like a house of mojo....but now focusing on homoeo-something.".
+church of homoepathy is inside of pond. the description is "Still looking like a house of mojo....but now focusing on homoe-something.".
 [war mal "house of mojo"]
-understand "coh" as the church of homoeopathy.
+understand "coh" as the church of homoepathy.
 
 voodoo-door is a door. it is locked.
 the printed name of voodoo-door is "the door to the backroom".
@@ -2435,10 +2445,10 @@ understand "door", "backroom" , "door to the backroom", "backroom door" as the v
 
 the description of voodoo-door is "It seems to be locked.".
 
-instead of opening the voodoo-door, say "You dont want try to unlock that door during the presence of the homoeopathic lady.".
+instead of opening the voodoo-door, say "You dont want try to unlock that door during the presence of the homoepathic lady.".
 
 backroom is north of voodoo-door.
-voodoo-door is north of church of homoeopathy.
+voodoo-door is north of church of homoepathy.
 
 
 the printed name of exvoo is "ex-voodoo lady". understand "ex", "ex-voodoo", "voodoo", "lady" as the exvoo.
@@ -2456,22 +2466,22 @@ instead of taking the earwax:
 the voohut is scenery in pond. the printed name is "swimming hut".
 
 understand "swimming", "swimming hut" as the voohut.
-the description of the voohut is "How cool is that. A swimming hut. Nailed together out of floatsam wood, definitely work of art. So still looking like a house of mojo....but now focusing on homoeo-something.".
+the description of the voohut is "How cool is that. A swimming hut. Nailed together out of floatsam wood, definitely work of art. So still looking like a house of mojo....but now focusing on homoe-something.".
 
-instead of going south in the church of homoeopathy , try going outside.
+instead of going south in the church of homoepathy , try going outside.
 instead of going north in the pond, try going inside.
 
 instead of entering something in pond, try going inside.
 
-the description of pond is "There is a pond with water and in the middle is a swimming hut. You can enter the hut or leave this place to the west or east[if monkey head is visited] in direction of the monkey head[end if]. A [sign] on top of the huts entrance says 'homoeopathy' it hangs on top of an older one saying 'voodoo'".
+the description of pond is "There is a pond with water and in the middle is a swimming hut. You can enter the hut or leave this place to the west or east[if monkey head is visited] in direction of the monkey head[end if]. A [sign] on top of the huts entrance says 'homoepathy' it hangs on top of an older one saying 'voodoo'".
 
-a sign is scenery in pond. the description is "A [sign] on top of the huts entrance says 'homoeopathy' it hangs on top of an older one saying 'voodoo'.".
+a sign is scenery in pond. the description is "A [sign] on top of the huts entrance says 'homoepathy' it hangs on top of an older one saying 'voodoo'.".
 
-exvoo is a woman in the church of homoeopathy. the description is "Grey hair, red glasses. With this look to be some steps above you. Even if there are no stairs.".
+exvoo is a woman in the church of homoepathy. the description is "Grey hair, red glasses. With this look to be some steps above you. Even if there are no stairs.".
 The litany of exvoo is the Table of exvoos Talk. the greeting of exvoo is exvoo-hello.
 
 [
-an ouija board is in the church of homoeopathy. the description is "Its a wooden board with the letters of your alphabet on top. It has also 'yes' and 'no' on it."
+an ouija board is in the church of homoepathy. the description is "Its a wooden board with the letters of your alphabet on top. It has also 'yes' and 'no' on it."
 
 instead of giving the ouija board to herman:
 	say "Thankfully he takes the board from you. And very handy he uses his finger to form words so fast, its hard for you to follow it.";
@@ -2484,7 +2494,7 @@ instead of giving the bananafruit to the exvoo:
 	say "Oh thanks. Very welcome my ur-tincture was already empty. Now I can start to make a new one.";
 	now exvoo-banana is one.
 
-distilled water is a bottle. the printed name of distilled water is "distilled water (homoeopathic medicine)".
+distilled water is a bottle. the printed name of distilled water is "distilled water (homoepathic medicine)".
 
 exvoo-banana is a number that varies. exvoo-banana is zero.
 
@@ -2502,28 +2512,28 @@ when dissolving-banana begins:
 	the dissolve-5 appears in 5 turns from now;
 
 at the time when dissolve-1 appears:
-	say "[if the player is in church of homoeopathy]You see her putting the whole banana into an [Erlenmeyer flask]. Directly afterwards poured it out and began filling water in it.[end if]".
+	say "[if the player is in church of homoepathy]You see her putting the whole banana into an [Erlenmeyer flask]. Directly afterwards poured it out and began filling water in it.[end if]".
 
-erlenmeyer flask is scenery in church of homoeopathy.
+erlenmeyer flask is scenery in church of homoepathy.
 
 at the time when dissolve-2 appears:
-	say "[if the player is in church of homoeopathy]The 10th time she was pouring out the water from the flask and filling in fresh water again.".
+	say "[if the player is in church of homoepathy]The 10th time she was pouring out the water from the flask and filling in fresh water again.".
 
 at the time when dissolve-3 appears:
-	say "[if the player is in church of homoeopathy]For the 30th time he was pouring out the water from the flask and filling in fresh water again.".
+	say "[if the player is in church of homoepathy]For the 30th time he was pouring out the water from the flask and filling in fresh water again.".
 
 at the time when dissolve-4 appears:
-	say "[if the player is in church of homoeopathy]For the [paragraph break] [italic type]no you stopped counting long ago[paragraph break][roman type]she was pouring out the water from the flask and filling in fresh water again.".
+	say "[if the player is in church of homoepathy]For the [paragraph break] [italic type]no you stopped counting long ago[paragraph break][roman type]she was pouring out the water from the flask and filling in fresh water again.".
 
 at the time when dissolve-5 appears:
-	if the player is in church of homoeopathy:
-		say "[if the player is in church of homoeopathy]Voila, its done. The 'Musa Sapientum' is a strong medicine against a dried out feeling inside your mouth. I'll give you the first bottle of it.";
+	if the player is in church of homoepathy:
+		say "[if the player is in church of homoepathy]Voila, its done. The 'Musa Sapientum' is a strong medicine against a dried out feeling inside your mouth. I'll give you the first bottle of it.";
 		now exvoo-banana is two;
 		now the player carries the distilled water;
 	otherwise:
 		say "You have the feeling she is ready creating the medicine.";
 		now exvoo-banana is two;
-		now the distilled water is in church of homoeopathy.
+		now the distilled water is in church of homoepathy.
 
 instead of giving the distilled water to herman:
 	say "You f*cking idiot, if I say thirsty I meant I need ALCOHOL!!".
@@ -2576,7 +2586,7 @@ instead of dropping a pig (called throwpig) in plateau:
 	now the straw hut is broken;
 	now the giant q-tip is in vegivillage;
 	now throwpig is off-stage;
-	now the straw hut is off-stage;
+	[now the straw hut is off-stage;]
 	enable the vegibal-smashed quip for vegibal.
 	[TODO if familiar then vegivillage]
 
@@ -2606,4 +2616,9 @@ storeroom is west of cave. the description is "This storeroom is full of whisky 
 after going to the storeroom:
 	end the game saying "As you put your feet into that room. A strong smell of very old comes to your nose. Its full of ancient whisky barrels and some bottles. They must be the casks from the Captain Every's Fancy. Hidden here for later use by the crew. Long forgotten and now found. Before you think about making a business out of this treasure, you open yourself one bottle, took a sip, you landed directly in a flavour paradies. Some bottles later in the deepest sleep.".
 
+cave-exists is an unfamiliar subject.
+map-exists is an unfamiliar subject.
+jacket-is-map is an unfamiliar subject.
+avery is an unfamiliar subject.
+avery-diamonds is an unfamiliar subject.
 
