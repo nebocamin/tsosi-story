@@ -77,7 +77,7 @@ test basket with "test thgmb / nw / sw / w / z / z / z / z / 2 / s / s / ne / se
 
 test banana with "test th / test gm / test b / nw / sw /w/z/z/z/z/1/open mattress/get mattress/n/inflate mattress/n"
 
-test vegibals with "nw / talk / 6 /9 / e / e / w / w / e / purloin pink pig / n / s / u  / u / throw pink pig / d / d / n /n/ get q-tip / s / s/e/e/e/get animal/ w/w/in/talk to lady/ 1/6/5/get wax/out/e/e/insert wax into ear/ insert q-tip into ear/ in/ w"
+test vegibals with "nw / talk to herman/ 3 /3 / e / e / w / w / e / purloin pink pig / n / s / u  / u / throw pink pig / d / d / n /n/ get q-tip / s / s/e/e/e/get animal/ w/w/in/talk to lady/ 1/3/4/get wax/out/e/e/insert wax into ear/ insert q-tip into ear/ in/ w"
 
 test all with "test banana / test vegibals"
 
