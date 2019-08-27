@@ -81,6 +81,8 @@ test vegibals with "nw / talk to herman/ 3 /3 / e / e / w / w / e / purloin pink
 
 test all with "test banana / test vegibals"
 
+test z with "z/z/z/z/z/z/z/z/z/z/z/z/z/z/z/z/z/z/z/z/z/z/z/z/z/z/z/z/z/z/z/z/z/z/z/z/z/z/z/z/z/z/z/z/z/z/z/z/z/z/z/z/z/z/z/z/z/z/z/z/z/z/z/z/z/z/z/z/z/z/z/z/z/z/z/z/z/z/z/z/z/z/z/z/z/z/z/z/z/z/z/z/z/z/z/z/z/z/z/z/z/z/z/z/z/z/z/z/z/z/z/z/z/z/z/z/z/z/z/z/z/z/z/z/z/z/z/z/z/z/z/z/z/z/z/z/z/z/z/z/z/z/z/z/z/z/z/z/z/z/z/z/z/"
+
 part losgehts
 
 chapter preparation
@@ -129,8 +131,7 @@ ubuntu cds with free shipping.".
 
 [rucksack fuer 5 runden nass sein lassen. bzw. ersten akt dafuer verwenden.]
 
-Rule for printing the banner text while turn count is 1: say "[paragraph break] The Secret
-of Smiley Island  [paragraph break]  [paragraph break] ".
+Rule for printing the banner text while turn count is 1: say "[paragraph break] [bold type]The Secret of Vegibal Island[paragraph break][roman type]First Act - 'Forced to Adventure'[paragraph break] [paragraph break]  [paragraph break] ".
 
 when play begins:
 	[say "Dear Interactor, please type 'transcript' inside the game after it starts. It will then create a logfile, which I would like to receive afterwards. Lectrote is automatically doing savegames. And you will find the 'cheat sheet' for common commands inside the help-menu.[paragraph break]";
@@ -490,7 +491,7 @@ the initial appearance of tim is "[if name plate is familiar]Tim is sitting here
 The litany of tim is the Table of tims Talk. the greeting of tim is slog-hello. tim is a man.
 
 cloth is scenery in boring beach. the description is "Its an unnameable patchwork
- at the moment, but you guess it will become a manatee.".
+ at the moment, but you guess it will become a manatee or gorilla or whatsoever.".
 understand "manatee" as the cloth.
 
 instead of smelling in town hall:
@@ -875,17 +876,41 @@ ocean2-escape ends, when monkey-opening begins.
 monkey-opening is a scene.
 monkey-opening begins when the player is in banana beach for the first time.
 
+3headed-appear is a scene.
+3headed-appear begins when canyon edge is visited.
+3headed-appear ends when 3headed-monkey is seen.
 
 part monk island
 
+chapter scenes
+
+cave-search is a scene.
+cave-search begins when cave-exists is familiar.
+cave-search ends when the cave is visited.
+
+
 chapter banana beach
+
+[before going to banana beach:
+	if ship-anchored is not happening:
+		say "ljafdlijfa the ship".]
 
 banana beach is a room. "[if ship-anchored is happening][otherwise][one of][paragraph break]The Ship is gone !![paragraph break][or][stopping][end if][One of]... [Sand] in your ears, [sand] in your
 mouth, between your teeth. You even feel like you're breathing sand.
 And you try to take a look around. the [sun] is shining and burnt your
-back. But hey, you're still wearing your [trousers]. You see lots of [footprints], like a very big group of people was here and leaving into the jungle to the north where you can see a big rock high above the tallest trees.[or]Hot light [sand]
+back. [if player is wearing trousers]But hey, you're still wearing your [trousers]. [end if]You see lots of [footprints], like a very big group of people was here and leaving into the jungle to the north where you can see a big rock high above the tallest trees.[or]Hot light [sand]
 all around.[stopping] In the middle of this beach is a lonely banana tree.
 Making you think, it was escaping the jungle behind him to the north. Far away to the northwest leads a halfway up to a volcano. [paragraph break]To the south is water, just water[if ship-anchored is happening] and the ship, the black freighter, you remember from the pirate opera on the other island[otherwise][one of][or] and still not a trace of the black freighter[stopping][end if].".
+
+the ship-monk is scenery in banana beach. 
+
+the description of ship-monk is "[if ship-anchored is happening]Strange it looks like escaped from a pirates movie film set. It seems to be black, including the sails.[otherwise]The ship vanished somewhere. You wonder who commanded it.[end if]".
+
+understand "black freighter", "freighter", "sails", "sail", "ship" and "black ship" as the ship-monk.
+
+volcano-view is scenery in banana beach. the description is "The Volcano rises very steeply to the northwest from here. It seems not to be active anymore.". 
+
+understand "volcano" as the volcano-view.
 
 instead of going south in banana beach, say "You don't want to go into the water 'again'."
 
@@ -910,6 +935,7 @@ after doing anything to the bananas:
 an uhuru is an animal in banana beach.
 the description is "Impressive, that very rare parrot is a black uhuru and it has a fleety foot.".
 understand "parrot" as the uhuru.
+fleety foot is part of uhuru. the description is "Yep, as expected.".
 
 instead of talking to the uhuru, say "He talks. No joke. he talks and
 its: 'push the tree, quuoak, push the tree.'".
@@ -929,7 +955,8 @@ the printed name of bananafruit is "banana". understand "banana" as bananafruit.
 
 after eating the bananafruit:
 	now bananafruit is eaten;
-	now bananafruit is in stomach.
+	now bananafruit is in stomach;
+	say "You wonder why east germany made a revolution to get access to this fruit.".
 
 instead of pushing the banana tree the fifth time:
 	say "Oh, what a surprise. A single one was falling to the ground.";
@@ -940,10 +967,17 @@ before going north in banana beach:
 
 chapter canyon edge
 
-canyon edge is a room. "You can look deep down a dried out canyon edge. Its dark down there. A trail leads back south to the banana tree and north[if dam is visited] to the dam[end if] into the direction of the big rock.".
+before going to canyon edge for the first time:
+	say "'Beware the three-headed monkey!!!' says a nicely painted sign.".
+
+canyon edge is a room. "You can look deep down a dried out canyon edge. Its dark down there. A trail leads back south to the banana tree and north[if dam is visited] to the dam[end if] into the direction of the big rock. The sign about the three-headed monkey makes you wonder.".
 the rope is a thing. the rope is in canyon edge.
 
-canyonedge is in canyon edge. the description is "Its a very steep slope. The word 'dangerous' comes to your mind.".
+3headed-sign is scenery in canyon edge. the description is "It says: 'Beware the three-headed monkey!!!' and underneath that you could ask the three-headed monkey about the secret of this island, if you dare.".
+the printed name of 3headed-sign is "nicely painted sign".
+understand "sign" as the 3headed-sign.
+
+canyonedge is scenery in canyon edge. the description is "Its a very steep slope. The word 'dangerous' comes to your mind.".
 understand "canyon" and "edge" and "canyon edge" as canyonedge.
 
 
@@ -962,20 +996,32 @@ canyon ground is below canyon edge.
 
 chapter volcano
 
-volcano is a room. "[if herman is visible]Herman pretends to sleep here.[otherwise]hermans 'flat'.[end if] Two paths lead out of here. One to the east and one to southeast.".
+volcano is a room. "On a banner is written 'Hermans Lounge'. [if herman is visible][One of]There is an old man sleeping here. You guessed thats Herman. [or]This Human shaped floatsam is still alive and pretends to sleep here. [or]Herman pretends to sleep here. [stopping][end if]Two paths lead out of here. One to the east and one to southeast.".
 herman is a man in volcano.
 
-the initial appearance of herman is "This guys is _old_. Human shaped floatsam and still alive.".
+
 The litany of herman is the Table of hermans Talk. the greeting of herman is herman-hello.
 
 [
-herman can be deaf or not deaf. herman is deaf.
-instead of talking to herman:
-	if herman is deaf:
-		say "[one of]He does not seem to hear anything.[or] [stopping]";
-	otherwise:
-		continue the action.
+a pigsty is north of shabby door. the description is "Thats what I call dirty. Dirty in scent, look and mind.".
+
+shabby door is a door. it is north of volcano. it is open.
 ]
+
+[the pigsty is north of volcano. ]
+
+the pigsty is an enterable container. the description is "It looks as dirty as it smells. on the door is a small carving saying 'fridge'.".
+the pigsty is openable. 
+the pigsty is closed. 
+understand "fridge" as the pigsty.
+
+the pigsty is in volcano.
+
+instead of opening the pigsty:
+	say "fuuuuck, there is [list of pigs enclosed by pigsty] running out of it.";
+	now all pigs enclosed by pigsty are in the location of the player;
+	continue the action.
+
 
 The giant q-tip is a thing. the description is "It looks like the ones you know for human ears, but this one is giant. Larger than your legs. [if giant q-tip is cottonless]But you notice the cotton tip is long gone on this one, so its basically a really large and heavy stick.[otherwise]Now again with a fine 'cottoned' tip.[end if]".
 the giant q-tip can be cottoned or cottonless. it is cottonless.
@@ -1482,11 +1528,11 @@ after dropping the treasure:
 		otherwise:
 			say "You dropped the treasure, but it's not hidden. The treasure is placed right before your feet."
 
-the description of crossing is "a [palm tree] in which is a [magpies nest]. Here you can go to  nw, s, e.".
+the description of crossing is "a [palm tree] in which is a [magpies nest]. Here you can go to  the south and east.".
 
 instead of going northeast in crossing, say "no.".
 instead of going west in crossing, say "no.".
-instead of going northeast in crossing, say "no.".
+instead of going northwest in crossing, say "no.".
 
 
 the magpies nest is a distant scenery open container in crossing.
@@ -1738,15 +1784,16 @@ exvoo-yensids	"I hope someday I have to chance to initiate them."
 exvoo-qtip	"TODO (doppelt zu earwax)You ask me for some university medicine? I have something better, which means homoepathic, for you. I will rattle it 4 days, then you can come back and its strong enough to help."
 exvoo-earwax	"TODO (doppelt zu qtipYou don't need this stuff. I have something better, which means homoepathic, for you. I will rattle it 4 days, then you can come back to it strong enough to help."
 exvoo-apehead-entry	"I will never ever violate and or breach into this because I respect the natives and any believe system thats existing or will exist."
-herman-secret	"I will tell you something about the secret, after you bring me back the banana picker from the vegibals in the north of this island. I am getting old and its not easy for me to get those fruits down. XXX TODO (hint giving)"
+herman-secret	"Sure, I know it very well. Its in a cave beneath that island. I can't go there anymore. So i will be pleased if you bring me some of it."
 herman-totems	"Ah yes, those idiots with the flask-totems. If you ever wanted to see a real cargo cult this is one."
 herman-rotida	"They get on my nerves. They visit this island every summer and they are asking questions over and over about the secret of this island."
 herman-sacul	"Planet Peace. I was often at the movies in my former life. Maybe I will again after my rescue. At the moment I only watch 'water world' over and over at the beach."
 herman-yensids	"Protect? The only supreme being here is me and they don't protect me.TODO"
 herman-qtip	"Yes, true. I had stolen that damn thing again, because they broke my banana picker."
 herman-bananapicker	"No, its broken. The Vegibals broke my famous banana picker."
-herman-earwax	"Earwax? I have all sorts of waxes in any hole of my body."
+herman-earwax	"Earwax? I have all sorts of scumm in any hole of my body."
 herman-apehead-entry	"[if q-tip is familiar]You will need the giant q-tip. [otherwise]You will not get into it if you don't have the right key.[end if]"
+herman-entrance	"I don't want to kill the tension right away. You should find your own way."
 silence	"Bye."
 
 after quipping when the current quip is ron-people:
@@ -1838,6 +1885,8 @@ after quipping when the current quip is exvoo-qtip:
 	now the earwax is in church of homoepathy.
 after quipping when the current quip is vegibal-smashed:
 	enable the vegibal-help quip for vegibal.
+after quipping when the current quip is herman-secret:
+	now cave-exists is familiar.
 
 treasure-hunt begins when the current quip is slog-start-treasurehunt the first time.
 getting-marooned begins when the current quip is slog-ask-marooned the first time.
@@ -1866,6 +1915,7 @@ ron-new-in-town	"What happened?"	ron-boss
 ron-boss	"Who was your boss?"	ron-plan
 ron-boss	"Which plan, do you know it?"	ron-plan
 ron-plan	"Do you know what this secret is?"	ron-secret
+herman-secret	"And where is the entrance of that cave?"	herman-entrance
 
 
 part initial connections
@@ -1879,6 +1929,8 @@ volcano is northwest of jungle.]
 canyon edge is north of banana beach.
 volcano is northwest of banana beach.
 volcano is west of dam.
+
+pond is northeast of canyon edge.
 
 dam is west of pond.
 dam is north of canyon edge.
@@ -1959,6 +2011,15 @@ instead of going inside in monkey head:
 	otherwise:
 		say "You can't see any kind of entrance.".
 
+instead of going up in cave, try going outside.
+
+instead of going outside in cave:
+	if stone is open:
+		say "TODO You are going out of the open mouth of this ape head monument. Inside of it you used neck vertebrates as stairs to go higher out of the cave.";
+		continue the action;
+	otherwise:
+		say "You can't see any kind of exit.".
+
 
 plants are scenery in monkey head. "Green, like the moss.".
 moss is scenery in monkey head. the description is "Green. Very green. Like the plants.".
@@ -1997,13 +2058,19 @@ monk island is a region.
 
 volcano, canyon edge, canyon ground, pond, dam, fuzzy beach, banana beach, monkey head, stream bed, halfway up, plateau, vegivillage are in monk island.
 
+bush-monk is a backdrop in monk island. the description is "The jungle is green, dense and dangerous. As always also on this very island.".
+
+understand "jungle", "bush" as the bush-monk.
+
 a pig is a kind of animal.
+understand "pigs" as the plural of pig.
 
 pink pig is a pig. the description is "Its really pink.".
 fat pig is a pig. the description is "Its really fat.".
 skinny pig is a pig. the description is "Its really skinny.".
 huge pig is a pig. the description is "Its really huge.".
 tiny pig is a pig. the description is "Its really tiny.".
+
 
 fat pig, skinny pig, huge pig, tiny pig  are in pond.
 pink pig  is in pond.
@@ -2019,14 +2086,11 @@ every turn:
 	let verypig be a random pig;
 	if verypig is not carried by the player:
 		if verypig is in a room (called the current space):
-	[if verypig is in a room (called the current space):]
 			let next space be a random room which is adjacent to the current space;
 			if the next space is not ocean:
-		[if the random pig is visible, say "the [random pig] is leaving to the [next space].";]
-				if the player is not in the current space:
+				[say "##############the next space is [next space]";]
+				if the pig-magnet is not in the current space:
 					move verypig to the next space.
-				[say "[if verypig is visible][verypig] goes to [next space][end if]".]
-		[if the random pig is visible, say "say the [random pig] is arriving from the [current space].".]
 
 
 [at the time when the player visits volcano:
@@ -2073,7 +2137,9 @@ when getting-marooned begins:
 
 the player wears the rucksack. the rucksack is closed.
 the player wears trousers. the description of the trousers is "worn out, but extremly comfortable.
-Your holiday trousers."
+Your holiday trousers.".
+
+understand "pants" as the trousers.
 
 instead of inserting something into the rucksack:
 	if the rucksack is closed:
@@ -2353,7 +2419,7 @@ instead of going north in ocean during mattress-escape:
 		say "You are still not convinced that muscular power is enough and you picked
 		up that inflatable mattress for a reason.";
 	otherwise:
-		say "With the support of your air filled mattress you reached nearly that island. But near enough to achieve it by swimming, the mattress itself decided to sink into the deeper parts of the ocean as you where riding it. Together with a curious feeling to explore that new place you reached it after noticing it was more far away than you thought and your body was not really easy in managing swimming to the island.[paragraph break]...but...[paragraph break] [paragraph break] *** THE END (for now) *** [paragraph break] [paragraph break] But you can continue on your own risk in this development stage. otherwise see https://github.com/nebocamin/tsosi-story for a chance to participate[paragraph break]";
+		say "With the support of your air filled mattress you reached nearly that island. But near enough to achieve it by swimming, the mattress itself decided to sink into the deeper parts of the ocean as you where riding it. Together with a curious feeling to explore that new place you reached it after noticing it was more far away than you thought and your body was not really easy in managing swimming to the island.[paragraph break]...but...[paragraph break] [paragraph break] *** THE END (for now) *** [paragraph break] [paragraph break] ### NEXT ACT - 'Discovering the Secret of Monkey Island' ###  [paragraph break] [paragraph break]But you can continue on your own risk in this development stage. otherwise see https://github.com/nebocamin/tsosi-story for a chance to participate[paragraph break]";
 		now the mattress is off-stage;
 		continue the action.
 		[10nov2013release end]
@@ -2473,7 +2539,7 @@ instead of going north in the pond, try going inside.
 
 instead of entering something in pond, try going inside.
 
-the description of pond is "There is a pond with water and in the middle is a swimming hut. You can enter the hut or leave this place to the west or east[if monkey head is visited] in direction of the monkey head[end if]. A [sign] on top of the huts entrance says 'homoepathy' it hangs on top of an older one saying 'voodoo'".
+the description of pond is "[if exdam-closed is false]There is a pond with water and in the middle is a swimming hut.[otherwise]FUUUCK, the water is all gone...[paragraph break][end if] You can enter the hut or leave this place to the west or east[if monkey head is visited] in direction of the monkey head[end if]. A [sign] on top of the huts entrance says 'homoepathy' it hangs on top of an older one saying 'voodoo'".
 
 a sign is scenery in pond. the description is "A [sign] on top of the huts entrance says 'homoepathy' it hangs on top of an older one saying 'voodoo'.".
 
@@ -2554,10 +2620,22 @@ yensids-gone is a truth state that varies. yensids-gone is false.
 
 chapter damn
 
-the description of dam is "You are standing in front of a [big rock] see a stream flowing through its streambed to the north and also to the east. There are the remains of a dam that stopped the flow to the east before. One way to the west[if volcano is visited] to hermans fort[end if] and a way to the east[if pond is visited] to the pond[end if]. To the south leads the way back into the direction of the banana tree beach or you just climb up this [big rock] to get an view over this island.".
+the description of dam is "You are standing in front of a [big rock] see a stream flowing through its streambed to the north[if exdam-closed is true] and not anymore to the east[otherwise] and to the east[end if]. There are the remains of a dam that stopped the flow to the east before. [if exdam-closed is true]These pigs are so concentrated licking this pig magnet, the dam works again[end if] One way to the west[if volcano is visited] to hermans fort[end if] and a way to the east[if pond is visited] to the pond[end if]. To the south leads the way back into the direction of the banana tree beach or you just climb up this [big rock] to get an view over this island. [pigs-clogging]".
 
-the exdam is scenery in dam. the description is "These are the remains of a violent attack with explosives against this dam.".
-the printed name of exdam is "the dam". understand "dam", "the dam" as the exdam.
+pigdam-count is a number that varies. pigdam-count is zero.
+
+the exdam is scenery in dam. the description is "These are the remains of a violent attack with explosives against this dam. [if pigdam-count is greater than one][pigs-clogging][otherwise]Nothing clogs it up.[end if]".
+the printed name of exdam is "the dam". understand "dam", "the dam", "remains", "remains of a dam" as the exdam.
+
+to say pigs-clogging:
+	if pigdam-count is not zero:
+		if pigdam-count is one:
+			say "There is [pigdam-count in words] pig trying to cloggin it up again and restoring a working dam.";
+		otherwise:
+			if pigdam-count is less than five:
+				say "There are [pigdam-count in words] pigs trying to cloggin it up again and restoring a working dam.";
+			otherwise:
+				say "There is a good damn of  [pigdam-count in words] pigs clogging it up, so it now works as a dam again.".
 
 big rock is scenery in dam. the description is "It looks like you are able to climb up this rock using a worn out carved in ladder.".
 
@@ -2596,13 +2674,18 @@ halfway up is above dam.
 
 chapter village
 
-vegivillage is north of stream bed. "[if the straw hut is broken]Yes, you smashed the vegibals hut into pieces, using a living pig![otherwise]In the middle stands a very fine and comfy looking straw hut. It looks like a museum showing the former life of natives, but it still seems to be used.[end if]"
+vegivillage is north of stream bed. "[if the straw hut is broken]Yes, you smashed the vegibals hut into pieces, using a living pig! A bunch of straw and wooden pieces are the only remains of this kind of native architecture.[otherwise]In the middle stands a very fine and [one of]comfy looking [or]with massive straw built [stopping]straw hut. It looks like a museum showing the former life of natives, but it still seems to be used.[end if]"
 
 the printed name of vegivillage is "the village of the vegibals".
 
-straw hut is a container in vegivillage. the description is "[if the straw hut is broken]a bunch of straw and wooden pieces, you killed that hut with a once living pig.[otherwise]Inside that little hut you can see something like a veeery big q-tip".
+straw hut is scenery in vegivillage. the description is "[if the straw hut is broken]a bunch of straw and wooden pieces, you killed that hut with a once living pig.[otherwise]Inside that little hut you can see something like a veeery big q-tip".
 the straw hut is closed.
 the straw hut can be broken.
+understand "wooden" , "pieces" as the straw hut.
+
+	
+
+instead of opening the straw hut, say "Interesting, you see no way to open that in any normal way.".
 
 
 understand "huts" as the straw hut.
@@ -2612,6 +2695,10 @@ understand "huts" as the straw hut.
 chapter the end
 
 storeroom is west of cave. the description is "This storeroom is full of whisky barrels.".
+the storeroom can be blocked. it is blocked.
+
+after going to the blocked storeroom:
+	say "W.T.F., instead of seeing anything meaningful, you approach a room full of tiny, brown sugar globules. Tons of homoepathic sugar globules seperate you from this islands secret.".
 
 after going to the storeroom:
 	end the game saying "As you put your feet into that room. A strong smell of very old comes to your nose. Its full of ancient whisky barrels and some bottles. They must be the casks from the Captain Every's Fancy. Hidden here for later use by the crew. Long forgotten and now found. Before you think about making a business out of this treasure, you open yourself one bottle, took a sip, you landed directly in a flavour paradies. Some bottles later in the deepest sleep.".
@@ -2621,4 +2708,104 @@ map-exists is an unfamiliar subject.
 jacket-is-map is an unfamiliar subject.
 avery is an unfamiliar subject.
 avery-diamonds is an unfamiliar subject.
+
+chapter flooding globulis
+
+pond is above inside-pond.
+inside-pond is above big-stopper. big-stopper is a door. it is closed. 
+
+instead of opening the big-stopper:
+	if exdam-closed is false:
+		say "Its too hard to do so, as there is such a lot of water pressing against that stopper from above.";
+	otherwise:
+		continue the action.
+
+big-stopper is above storeroom.
+the printed name of the big-stopper is "big stopper".
+understand "big" and "stopper" as the big-stopper.
+
+instead of going down in pond:
+	if exdam-closed is false:
+		say "You jump right inside the dark water depths of the pond.";
+		if the player is not wearing the diving helmet:
+			breathless-me appears in 2 turns from now;
+			continue the action;
+		otherwise:
+			continue the action;
+	otherwise:
+		say "You jump right into the waterless the depths of the dried out pond.";
+		continue the action.
+
+at the time when breathless-me appears:
+	say "You can't hold your breath for 10 minutes like others do, so you get up and out of the water immediatly. [paragraph break]";
+	move the player to pond.
+
+pig number one is a pig. it is in pigsty.
+pig number two is a pig. it is in pigsty.
+pig number three is a pig. it is in pigsty.
+pig number four is a pig. it is in pigsty.
+pig number five is a pig. it is in pigsty.
+pig number six is a pig. it is in pigsty.
+pig number seven is a pig. it is in pigsty.
+pig number eight is a pig. it is in pigsty.
+pig number nine is a pig. it is in pigsty.
+pig number ten is a pig. it is in pigsty.
+
+the pig-magnet is in pigsty. the description is "Its a big gooey bunch of unnameable foods bound together to let all those pigs 'stick' to it.".
+the printed name of pig-magnet is "pig magnet". 
+understand "pig", "magnet", "pig magnet" as the pig-magnet.
+
+before taking the pig-magnet:
+	say "Yes, disgusting but you managed to take it.".
+
+hatch is a secret door.
+volcano is above hatch..
+after taking the pig-magnet:
+	now the hatch is revealed.
+hatch is above quay.
+
+
+pig-dam-count is a number that varies. pig-dam-count is zero.
+exdam-closed is a truth state that varies. exdam-closed is false.
+
+every turn:
+	now the pigdam-count is the number of pigs in dam;
+	[say "########## offtopic #####   am damm befinden sich [number of pigs in dam] schweine. ";]
+	if number of pigs in dam is greater than 4:
+		[say "genug schweine";]
+		now exdam-closed is true;
+	otherwise:
+		[say "noch nicht genug schweine.";]
+		now exdam-closed is false.
+
+chapter 3-headed monkey
+
+the 3headed-monkey is a person.
+face-1 is part of 3headed-monkey. the description is "It looks like Tim.".
+understand "face" as face-1.
+face-2 is part of 3headed-monkey. the description is "It looks like Ron.".
+understand "face" as face-2.
+face-3 is part of 3headed-monkey. the description is "It looks like Dave.".
+
+the 3headed-monkey is in cave.
+
+when 3headed-appear begins:
+	the 3headed-1 appears in 2 turns from now;
+	the 3headed-2 appears in 5 turns from now;
+	the 3headed-3 appears in 8 turns from now;
+	the 3headed-4 appears in 15 turns from now;
+	the 3headed-5 appears in 20 turns from now.
+
+at the time when 3headed-1 appears:
+	say "[if 3headed-appear is happening]You noticed a large animal vanishing into the bush. Had it really three heads??[end if]".
+at the time when 3headed-2 appears:
+	say "[if 3headed-appear is happening]Is this three headed gorilla sized monkey following you?[end if]".
+at the time when 3headed-3 appears:
+	say "[if 3headed-appear is happening]Far away, you could bet you have seen a three headed gorilla.[end if]".
+at the time when 3headed-4 appears:
+	say "[if 3headed-appear is happening]No sign of any ape.[end if]".
+at the time when 3headed-5 appears:
+	say "[if 3headed-appear is happening]Still no sign of any ape. Where could it be?[end if]".
+
+
 
