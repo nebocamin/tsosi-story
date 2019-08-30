@@ -83,6 +83,9 @@ test all with "test banana / test vegibals"
 
 test z with "z/z/z/z/z/z/z/z/z/z/z/z/z/z/z/z/z/z/z/z/z/z/z/z/z/z/z/z/z/z/z/z/z/z/z/z/z/z/z/z/z/z/z/z/z/z/z/z/z/z/z/z/z/z/z/z/z/z/z/z/z/z/z/z/z/z/z/z/z/z/z/z/z/z/z/z/z/z/z/z/z/z/z/z/z/z/z/z/z/z/z/z/z/z/z/z/z/z/z/z/z/z/z/z/z/z/z/z/z/z/z/z/z/z/z/z/z/z/z/z/z/z/z/z/z/z/z/z/z/z/z/z/z/z/z/z/z/z/z/z/z/z/z/z/z/z/z/z/z/z/z/z/z/"
 
+der-ralf is a person. der-ralf is in storeroom.
+The litany of der-ralf is the Table of der-ralfs Talk. the greeting of der-ralf is ralf-hello. der-ralf is a man.
+
 part losgehts
 
 chapter preparation
@@ -140,7 +143,7 @@ when play begins:
 	wait for any key;]
 	say "Deep in the west indies. The island of boredom. Just coming from the boat
 	 without puking, but still in a bad feeling. Your holidays starting for you to reach the
-	 state of total boredomness. (ver august2019)".
+	 state of total boredomness. (ver august2019 beta)".
 	[wait for any key.]
 
 sustainable food is edible.
@@ -1339,7 +1342,7 @@ instead of taking the rod:
 		continue the action.
 
 [instead of dropping the durian in river mouth:
-	say "you just began to wait for the bait to get a bite from a pyrate. TODO hae?"]
+	say "You just began to wait for the bait to get a bite from a pyrate. TODO hae?"]
 
 pile of meat is in river mouth. the description is "[if pile of meat carried by the player]Its
  heavy and red juice is dripping down from it.[otherwise]Not appetizing, but its really a
@@ -1587,6 +1590,11 @@ part monk island
 
 part quips
 
+table of der-ralfs talk
+prompt	response	enabled
+"Krasse Scheisse, was machstn Du hier???"	ralf-machhier	1
+	
+
 Table of tims Talk
 prompt	response	enabled
 "I am Buyshrug Bridgeman and you?"	slog-are-you	1
@@ -1678,7 +1686,7 @@ prompt	response	enabled
 "What about the Giant Q-Tip?"	vegibal-qtip	1
 "What about the earwax?"	vegibal-earwax	1
 "Do you think there is a way to open this ape's head?"	vegibal-apehead-entry	0
-"I go, looking for the three headed monkey."	silence	1
+"I go, looking for the three-headed monkey."	silence	1
 
 Before going: terminate the conversation.
 
@@ -1720,6 +1728,8 @@ dave-kopi	"[if rtd-know-kopi is true]Now time counts, we have to get earlier to 
 ron-kopi	"[if rtd-know-kopi is true]I'm watching the coast line carefully.[otherwise]Outch, thanks. I have to inform Tim and Dave about it.[end if]"
 ron-sacul	"He was the boss of Sacul Film. The famous maker of the 'Planet Peace' movies"
 ron-plan	"It was all about an old pirate secret that's still unrevealed. L. the boss of Sacul Film. The famous maker of 'Planet Peace' does anything to get it."
+ralf-machhier	"Na, fuer den Fall hier, da wollte ich Dir persoenlich gratulieren und die alten Whisky Flaschen von Bord der 'Fancy' exen.  Also denn.... 'prost'."
+ralf-hello	"Wow, da bin ich aber seeeehr beeindruckt, dass Du es bis hierhin geschafft hast."
 
 
 
@@ -1887,6 +1897,9 @@ after quipping when the current quip is vegibal-smashed:
 	enable the vegibal-help quip for vegibal.
 after quipping when the current quip is herman-secret:
 	now cave-exists is familiar.
+after quipping when the current quip is ralf-machhier:
+	say "und sie luden all die anderen leute ein, sogar die ex voodoo tante und betranken sich bis alle in einen wunderbaren schlaf fielen. und noch bevor wir aufwachen und merken, dass es nach kotze riecht, ist hier:";
+	end the story.
 
 treasure-hunt begins when the current quip is slog-start-treasurehunt the first time.
 getting-marooned begins when the current quip is slog-ask-marooned the first time.
@@ -2537,9 +2550,23 @@ the description of the voohut is "How cool is that. A swimming hut. Nailed toget
 instead of going south in the church of homoepathy , try going outside.
 instead of going north in the pond, try going inside.
 
+pond-water is scenery in pond. pond-water can be full and flowing.
+the printed name of pond-water is "the water of the pond".
+
+understand "pond", "water", "lake" as the pond-water.
+
 instead of entering something in pond, try going inside.
 
-the description of pond is "[if exdam-closed is false]There is a pond with water and in the middle is a swimming hut.[otherwise]FUUUCK, the water is all gone...[paragraph break][end if] You can enter the hut or leave this place to the west or east[if monkey head is visited] in direction of the monkey head[end if]. A [sign] on top of the huts entrance says 'homoepathy' it hangs on top of an older one saying 'voodoo'".
+the description of pond is "[waterinpond] you can enter the hut or leave this place to the west or east[if monkey head is visited] in direction of the monkey head[end if]. A [sign] on top of the huts entrance says 'homoepathy' it hangs on top of an older one saying 'voodoo'".
+
+to say waterinpond:
+	if exdam-closed is true:
+		say "FUUUCK, the water is all gone...[paragraph break]";
+	otherwise:
+		if big-stopper is closed:
+			say "There is a pond with water and in the middle is a swimming hut.";
+		otherwise:
+			say "The water is flowing from the direction of the dam and is vanishing throough the open stopper.".
 
 a sign is scenery in pond. the description is "A [sign] on top of the huts entrance says 'homoepathy' it hangs on top of an older one saying 'voodoo'.".
 
@@ -2620,7 +2647,7 @@ yensids-gone is a truth state that varies. yensids-gone is false.
 
 chapter damn
 
-the description of dam is "You are standing in front of a [big rock] see a stream flowing through its streambed to the north[if exdam-closed is true] and not anymore to the east[otherwise] and to the east[end if]. There are the remains of a dam that stopped the flow to the east before. [if exdam-closed is true]These pigs are so concentrated licking this pig magnet, the dam works again[end if] One way to the west[if volcano is visited] to hermans fort[end if] and a way to the east[if pond is visited] to the pond[end if]. To the south leads the way back into the direction of the banana tree beach or you just climb up this [big rock] to get an view over this island. [pigs-clogging]".
+the description of dam is "You are standing in front of a [big rock] see a stream flowing through its streambed to the north[if exdam-closed is true] and not anymore to the east[otherwise] and to the east[end if]. There are the remains of a dam that stopped the flow to the east before. [if exdam-closed is true]These pigs are so concentrated licking this pig magnet, the dam works again[end if] One way to the west[if volcano is visited] to hermans fort[end if] and a way to the east[if pond is visited] to the pond[end if]. To the south leads the way back into the direction of the banana tree beach or you just climb up this [big rock] to get an view over this island. [paragraph break][pigs-clogging]".
 
 pigdam-count is a number that varies. pigdam-count is zero.
 
@@ -2630,12 +2657,12 @@ the printed name of exdam is "the dam". understand "dam", "the dam", "remains", 
 to say pigs-clogging:
 	if pigdam-count is not zero:
 		if pigdam-count is one:
-			say "There is [pigdam-count in words] pig trying to cloggin it up again and restoring a working dam.";
+			say "There is [pigdam-count in words] pig trying to cloggin it up again and restoring a working dam. The water is flowing.";
 		otherwise:
 			if pigdam-count is less than five:
-				say "There are [pigdam-count in words] pigs trying to cloggin it up again and restoring a working dam.";
+				say "There are [pigdam-count in words] pigs trying to cloggin it up again and restoring a working dam. The water is flowing.";
 			otherwise:
-				say "There is a good damn of  [pigdam-count in words] pigs clogging it up, so it now works as a dam again.".
+				say "There is a good damn of  [pigdam-count in words] pigs clogging it up, so it now works as a dam again. The flow of water is stopped.".
 
 big rock is scenery in dam. the description is "It looks like you are able to climb up this rock using a worn out carved in ladder.".
 
@@ -2660,7 +2687,7 @@ instead of dropping a pig (called throwpig) in halfway up:
 	now the throwpig is in halfway up.
 
 instead of dropping a pig (called throwpig) in plateau:
-	say "you drop the pig directly onto the catapult...[paragraph break] ... you can now see a flying pig into the north of the island. Even to your ear came a very loud and smashing sound afterwards.";
+	say "You drop the pig directly onto the catapult...[paragraph break] ... You can now see a flying pig into the north of the island. Even to your ear came a very loud and smashing sound afterwards.";
 	now the straw hut is broken;
 	now the giant q-tip is in vegivillage;
 	now throwpig is off-stage;
@@ -2697,11 +2724,14 @@ chapter the end
 storeroom is west of cave. the description is "This storeroom is full of whisky barrels.".
 the storeroom can be blocked. it is blocked.
 
-after going to the blocked storeroom:
+instead of going to the blocked storeroom:
 	say "W.T.F., instead of seeing anything meaningful, you approach a room full of tiny, brown sugar globules. Tons of homoepathic sugar globules seperate you from this islands secret.".
 
+[tmp off4nik
 after going to the storeroom:
-	end the game saying "As you put your feet into that room. A strong smell of very old comes to your nose. Its full of ancient whisky barrels and some bottles. They must be the casks from the Captain Every's Fancy. Hidden here for later use by the crew. Long forgotten and now found. Before you think about making a business out of this treasure, you open yourself one bottle, took a sip, you landed directly in a flavour paradies. Some bottles later in the deepest sleep.".
+	end the game saying "As you put your feet into that room. A strong smell of very old comes to your nose. Its full of ancient whisky barrels and some bottles. They must be the casks from the Captain Every's Fancy. Hidden here for later use by the crew. Long forgotten and now found. Before you think about making a business out of this treasure, you open yourself one bottle, took a sip, you landed directly in a flavour paradies. Some bottles later in the deepest sleep.".]
+
+
 
 cave-exists is an unfamiliar subject.
 map-exists is an unfamiliar subject.
@@ -2725,7 +2755,7 @@ the printed name of the big-stopper is "big stopper".
 understand "big" and "stopper" as the big-stopper.
 
 instead of going down in pond:
-	if exdam-closed is false:
+	if exdam-closed is false and big-stopper is closed:
 		say "You jump right inside the dark water depths of the pond.";
 		if the player is not wearing the diving helmet:
 			breathless-me appears in 2 turns from now;
@@ -2776,7 +2806,9 @@ every turn:
 		now exdam-closed is true;
 	otherwise:
 		[say "noch nicht genug schweine.";]
-		now exdam-closed is false.
+		now exdam-closed is false;
+		if big-stopper is open:
+			now storeroom is not blocked.
 
 chapter 3-headed monkey
 
@@ -2799,9 +2831,9 @@ when 3headed-appear begins:
 at the time when 3headed-1 appears:
 	say "[if 3headed-appear is happening]You noticed a large animal vanishing into the bush. Had it really three heads??[end if]".
 at the time when 3headed-2 appears:
-	say "[if 3headed-appear is happening]Is this three headed gorilla sized monkey following you?[end if]".
+	say "[if 3headed-appear is happening]Is this three-headed gorilla sized monkey following you?[end if]".
 at the time when 3headed-3 appears:
-	say "[if 3headed-appear is happening]Far away, you could bet you have seen a three headed gorilla.[end if]".
+	say "[if 3headed-appear is happening]Far away, you could bet you have seen a three-headed gorilla.[end if]".
 at the time when 3headed-4 appears:
 	say "[if 3headed-appear is happening]No sign of any ape.[end if]".
 at the time when 3headed-5 appears:
