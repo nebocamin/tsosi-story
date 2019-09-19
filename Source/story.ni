@@ -134,16 +134,16 @@ ubuntu cds with free shipping.".
 
 [rucksack fuer 5 runden nass sein lassen. bzw. ersten akt dafuer verwenden.]
 
-Rule for printing the banner text while turn count is 1: say "[paragraph break] [bold type]The Secret of Vegibal Island[paragraph break][roman type]First Act - 'Forced to Adventure'[paragraph break] [paragraph break]  [paragraph break] ".
+Rule for printing the banner text while turn count is 1: say "[paragraph break] [bold type]The Secret of Vegibal Island[paragraph break][roman type]First Act - 'Slipped into Adventure'[paragraph break] [paragraph break]  [paragraph break] ".
 
 when play begins:
-	[say "Dear Interactor, please type 'transcript' inside the game after it starts. It will then create a logfile, which I would like to receive afterwards. Lectrote is automatically doing savegames. And you will find the 'cheat sheet' for common commands inside the help-menu.[paragraph break]";
-	wait for any key;
+	say "Dear Interactor, please type 'transcript' inside the game after it starts. It will then create a logfile, which I would like to receive afterwards. Lectrote is automatically doing savegames. And you will find the 'cheat sheet' for common commands inside the help-menu.[paragraph break]";
+	[wait for any key;]
 	say "Pen and paper for mapping your journey will help.[paragraph break]";
-	wait for any key;]
+	[wait for any key;]
 	say "Deep in the west indies. The island of boredom. Just coming from the boat
 	 without puking, but still in a bad feeling. Your holidays starting for you to reach the
-	 state of total boredomness. (ver august2019 beta)".
+	 state of total boredomness. (ver sept2019 beta)".
 	[wait for any key.]
 
 sustainable food is edible.
@@ -153,6 +153,8 @@ instead of eating the sustainable food, say "No, you know for sure that there wi
  who is more in a necessity than you are.".
 
 the player carries the towel. the towel is a wearable thing.
+
+after throwing the towel at something, say "It's not the time to give up.". 
 
 every turn:
 	if the towel is worn for the second turn:
@@ -938,7 +940,7 @@ after doing anything to the bananas:
 an uhuru is an animal in banana beach.
 the description is "Impressive, that very rare parrot is a black uhuru and it has a fleety foot.".
 understand "parrot" as the uhuru.
-fleety foot is part of uhuru. the description is "Yep, as expected.".
+fleety foot is part of uhuru. the description is "Yep, the foot of an uhuru. As expected.".
 
 instead of talking to the uhuru, say "He talks. No joke. he talks and
 its: 'push the tree, quuoak, push the tree.'".
@@ -1001,6 +1003,13 @@ chapter volcano
 
 volcano is a room. "On a banner is written 'Hermans Lounge'. [if herman is visible][One of]There is an old man sleeping here. You guessed thats Herman. [or]This Human shaped floatsam is still alive and pretends to sleep here. [or]Herman pretends to sleep here. [stopping][end if]Two paths lead out of here. One to the east and one to southeast.".
 herman is a man in volcano.
+
+instead of giving  a bottle (called hermbottle) to herman:
+	if bottle is not full:
+		say "He seems not to be interested in empty bottles.";
+	otherwise:
+		say "[one of]'Thank you, thats a welcoming gesture.'[or]'Finally, you got one thing right.'[or]'Thanks, it can't be enough on that island'[stopping]";
+		now hermbottle is empty.
 
 
 The litany of herman is the Table of hermans Talk. the greeting of herman is herman-hello.
@@ -1692,119 +1701,118 @@ Before going: terminate the conversation.
 
 Table of Quip Texts (continued)
 quip	quiptext
-ron-hello	"[if the player wears the manatee suit]Ahhh, help! Oh its you. You frightened me wearing that manatee suit.[otherwise] Ahoj.[end if]"
-slog-hello	"[if the player wears the manatee suit]Ahhh, help! Oh its you. You frightened me wearing that manatee suit.[otherwise]Ahoj, what do ya want here?[end if]"
-slog-pirate-action	"The pirate actions are prepared by us, you have to take one or more
+ron-hello	"[italic type][if the player wears the manatee suit]Ahhh, help! Oh its you. You frightened me wearing that manatee suit.[otherwise] Ahoj.[end if][roman type]"
+slog-hello	"[italic type][if the player wears the manatee suit]Ahhh, help! Oh its you. You frightened me wearing that manatee suit.[otherwise]Ahoj, what do ya want here?[end if][roman type]"
+slog-pirate-action	"[italic type]The pirate actions are prepared by us, you have to take one or more
  and afterwards come back and I will give you the appropriate wristband for achieving the
- actions goal. So you have to do all three of them. For now choose which pirate-action do you want to start. This week we have
- 'Being marooned.', 'treasure hunt' or 'barbacue.''"
-slog-start-treasurehunt	"[if treasure-hunt has ended]Its enough, yours was my last
+ actions goal. So you have to do all three of them. For now choose which pirate-action do you want to start. This week we have 'treasure hunt', 'getting marooned.' and  'barbacue.' [roman type]"
+slog-start-treasurehunt	"[italic type][if treasure-hunt has ended]Its enough, yours was my last
  treasure of its kind. [otherwise]Arrrgh. classic. So let me tell you. We make the real life version of it, which means burrowing a treasure instead of looking for it. Thats the reason that your task is to hide this treasure I will give you. Its just
-about the chest, the content is yours if you want."
-slog-start-marooned	"Are you sure that you want to be put alone on another island
- right now?"
-slog-ask-marooned	"[if getting-marooned has ended]No please. Not again. Just stay
- here and get bored like you wanted earlier.[otherwise]Well played junior adventurer."
-slog-marooned-no	"Okay. But you have to stay here and you aren't getting a wristband."
-slog-start-barbecue	"[if barbacueing has ended]Thanks for taking aktion, but please
+about the chest, the content is yours if you want.[roman type]"
+slog-start-marooned	"[italic type]Are you sure that you want to be put alone on another island
+ right now?[roman type]"
+slog-ask-marooned	"[italic type][if getting-marooned has ended]No please. Not again. Just stay
+ here and get bored like you wanted earlier.[otherwise]Well played junior adventurer.[roman type]"
+slog-marooned-no	"[italic type]Okay. But you have to stay here and you aren't getting a wristband.[roman type]"
+slog-start-barbecue	"[italic type][if barbacueing has ended]Thanks for taking aktion, but please
 don't do that again. ever.[otherwise]Listen. It's all about manatees in this task. You will
 get the manatee-wristband, if you catch one with a fishing rod and appropriate bait. You
-can get your tools from Ron in the small market as you see to the east at the river mouth."
-slog-real-adventurer	"Arrgh. Show me the three wristbands."
-slog-ask-wristbands	"Every _real_ adventurer and or tourist has to get the three
+can get your tools from Ron in the small market as you see to the east at the river mouth.[roman type]"
+slog-real-adventurer	"[italic type]Arrgh. Show me the three wristbands.[roman type]"
+slog-ask-wristbands	"[italic type]Every _real_ adventurer and or tourist has to get the three
 wristbands first, before going into the resort. We offer them here for achieving pirate actions.
 This island was a pirates nest before. So we support traditional pirate actions. You can
-always see your achievements if you examine your wrist."
-tim-manatee	"Ah, the manatees. Such nice and friendly animals. But rarely seen on
- this island nowadays. My self-stitched ones seem to be the only manatees left on this island."
-tim-magpie	"These clever birds are helping us."
-slog-ask-meat	"Sure it seems to be big enough to make a suit out of it. [paragraph break]
+always see your achievements if you examine your wrist.[roman type]"
+tim-manatee	"[italic type]Ah, the manatees. Such nice and friendly animals. But rarely seen on
+ this island nowadays. My self-stitched ones seem to be the only manatees left on this island.[roman type]"
+tim-magpie	"[italic type]These clever birds are helping us.[roman type]"
+slog-ask-meat	"[italic type]Sure it seems to be big enough to make a suit out of it. [paragraph break]
 and he takes it, stitches and stitches...[paragraph break]..and hours later...
-[paragraph break]... it is a manatee suit."
-slog-are-you	"I'm Tim and thats all you must know at the moment."
-dave-meat	"I'm not sure whether I want to know that."
-tim-kopi	"[if rtd-know-kopi is true]If you want an advise, stay away from the resort.[otherwise]Outch, thanks. I have to inform Dave and Ron about it.[end if]"
-dave-kopi	"[if rtd-know-kopi is true]Now time counts, we have to get earlier to the secret.[otherwise]Outch, thanks. I have to inform Tim and Ron about it.[end if]"
-ron-kopi	"[if rtd-know-kopi is true]I'm watching the coast line carefully.[otherwise]Outch, thanks. I have to inform Tim and Dave about it.[end if]"
-ron-sacul	"He was the boss of Sacul Film. The famous maker of the 'Planet Peace' movies"
-ron-plan	"It was all about an old pirate secret that's still unrevealed. L. the boss of Sacul Film. The famous maker of 'Planet Peace' does anything to get it."
-ralf-machhier	"Na, fuer den Fall hier, da wollte ich Dir persoenlich gratulieren und die alten Whisky Flaschen von Bord der 'Fancy' exen.  Also denn.... 'prost'."
-ralf-hello	"Wow, da bin ich aber seeeehr beeindruckt, dass Du es bis hierhin geschafft hast."
+[paragraph break]... it is a manatee suit.[roman type]"
+slog-are-you	"[italic type]I'm Tim and thats all you must know at the moment.[roman type]"
+dave-meat	"[italic type]I'm not sure whether I want to know that.[roman type]"
+tim-kopi	"[italic type][if rtd-know-kopi is true]If you want an advise, stay away from the resort.[otherwise]Outch, thanks. I have to inform Dave and Ron about it.[end if][roman type]"
+dave-kopi	"[italic type][if rtd-know-kopi is true]Now time counts, we have to get earlier to the secret.[otherwise]Outch, thanks. I have to inform Tim and Ron about it.[end if][roman type]"
+ron-kopi	"[italic type][if rtd-know-kopi is true]I'm watching the coast line carefully.[otherwise]Outch, thanks. I have to inform Tim and Dave about it.[end if][roman type]"
+ron-sacul	"[italic type]He was the boss of Sacul Film. The famous maker of the 'Planet Peace' movies[roman type]"
+ron-plan	"[italic type]It was all about an old pirate secret that's still unrevealed. L. the boss of Sacul Film. The famous maker of 'Planet Peace' does anything to get it.[roman type]"
+ralf-machhier	"[italic type]Na, fuer den Fall hier, da wollte ich Dir persoenlich gratulieren und die alten Whisky Flaschen von Bord der 'Fancy' exen.  Also denn.... 'prost'.[roman type]"
+ralf-hello	"[italic type]Wow, da bin ich aber seeeehr beeindruckt, dass Du es bis hierhin geschafft hast.[roman type]"
 
 
 
 Table of quip texts (continued)
 quip	quiptext
-dave-hello	"[if dave is wearing the diving helmet][daveguy] opens the visor of his [diving helmet], so he is able to communicate with you. [end if][if the player wears the manatee suit]Ahhh, help! Oh its you. You frightened me wearing that manatee suit.[otherwise]'Whats up?'[end if]"
-dave-brass	"Can you please go, I have some serious work going on. And yes, I'm not an interested member of the steampunk society."
-dave-start-barbecue	"Manatis are protected today, so we have fake ones to get."
-dave-are-you	"Yes thats me."
-dave-ask-wristbands	"Really? Would be great to talk to a guy with many wristbands. Show me yours."
-dave-keep-wristbands	"No, this isn't me. I'm unemployed now. It's a bad job situation here on these islands. So I live from the fruits in the jungle and I'm still trying to find my way out of the complete boredomness."
-dave-manatee	"Do you think i'm completely dull? But... hmm. No, not without a cause."
-dave-durian	"That sounds like a fair deal. So give me the suit."
-dave-nobait	"grmpft."
-dave-waiting	"Sure. I'm planning my next dive. There is a horizontal passage down there. I assume it leads into a 'Blue Hole'."
-dave-bluehole	"It is very deep vertical cave with a special flora and fauna. They can be that deep so that fresh and salty water are mixing in them. They can have long horizontal arms. When I'm right and one of them is ending here, we could sell diving trips into it. "
-slog-new-in-town	"You hold just [the list of the things carried by the player] in your hands. Do you think, you have any chance to survive here?"
-slog-deal-with	"'So we have to deal with you and You want me to tolerate your face, everytime you come along?'"
-slog-go-away	"'Nice one... so please leave. fast. very fast.'"
-slog-bought-island	"Which one? And btw. we hate these privateers, bying our islands. closing them for the public."
-slog-smiley	"Oh, that one. Brave. Nobody wants it or will even step on it. Good luck, silly stranger."
-slog-cant-remember	"The more we love your island, the more we will hate you for bying it."
-slog-how	"In the best case not at all. But if you insist, you will need a boat, map and a
-compass. Come back, when you are prepared."
-ron-new-in-town	"I am an electronic story teller. Or better: I was."
-ron-boss	"Our big boss was following his own plan."
-ron-fruit	"Sure, take a bite."
-ron-gives-rod	"Sure.[if barbacueing is happening] I heard you are on the manatee
+dave-hello	"[if dave is wearing the diving helmet][daveguy] opens the visor of his [diving helmet], so he is able to communicate with you. [end if][if the player wears the manatee suit]Ahhh, help! Oh its you. You frightened me wearing that manatee suit.[otherwise]'Whats up?'[end if][roman type]"
+dave-brass	"[italic type]Can you please go, I have some serious work going on. And yes, I'm not an interested member of the steampunk society.[roman type]"
+dave-start-barbecue	"[italic type]Manatis are protected today, so we have fake ones to get.[roman type]"
+dave-are-you	"[italic type]Yes thats me.[roman type]"
+dave-ask-wristbands	"[italic type]Really? Would be great to talk to a guy with many wristbands. Show me yours.[roman type]"
+dave-keep-wristbands	"[italic type]No, this isn't me. I'm unemployed now. It's a bad job situation here on these islands. So I live from the fruits in the jungle and I'm still trying to find my way out of the complete boredomness.[roman type]"
+dave-manatee	"[italic type]Do you think i'm completely dull? But... hmm. No, not without a cause.[roman type]"
+dave-durian	"[italic type]That sounds like a fair deal. So give me the suit.[roman type]"
+dave-nobait	"[italic type]grmpft.[roman type]"
+dave-waiting	"[italic type]Sure. I'm planning my next dive. There is a horizontal passage down there. I assume it leads into a 'Blue Hole'.[roman type]"
+dave-bluehole	"[italic type]It is very deep vertical cave with a special flora and fauna. They can be that deep so that fresh and salty water are mixing in them. They can have long horizontal arms. When I'm right and one of them is ending here, we could sell diving trips into it. [roman type]"
+slog-new-in-town	"[italic type]You hold just [the list of the things carried by the player] in your hands. Do you think, you have any chance to survive here?[roman type]"
+slog-deal-with	"'[italic type]So we have to deal with you and You want me to tolerate your face, everytime you come along?'[roman type]"
+slog-go-away	"'[italic type]Nice one... so please leave. fast. very fast.'[roman type]"
+slog-bought-island	"[italic type]Which one? And btw. we hate these privateers, bying our islands. closing them for the public.[roman type]"
+slog-smiley	"[italic type]Oh, that one. Brave. Nobody wants it or will even step on it. Good luck, silly stranger.[roman type]"
+slog-cant-remember	"[italic type]The more we love your island, the more we will hate you for bying it.[roman type]"
+slog-how	"[italic type]In the best case not at all. But if you insist, you will need a boat, map and a
+compass. Come back, when you are prepared.[roman type]"
+ron-new-in-town	"[italic type]I am an electronic story teller. Or better: I was.[roman type]"
+ron-boss	"[italic type]Our big boss was following his own plan.[roman type]"
+ron-fruit	"[italic type]Sure, take a bite.[roman type]"
+ron-gives-rod	"[italic type]Sure.[if barbacueing is happening] I heard you are on the manatee
 hunt.[end if] Good luck. And yes, you can have this fishing rod. Someone forgot it here or
 maybe its just floatsam.[paragraph break] He hands over the fishing rod and you add it to
-your inventory."
-ron-meat	"[if keeping-meat is true]Get your fingers off it! Good meals are rare in
+your inventory.[roman type]"
+ron-meat	"[italic type][if keeping-meat is true]Get your fingers off it! Good meals are rare in
 these times. Except you can give me a good alternative, maybe a bit more sustaining?
-[otherwise] Go on, just take the meat. I loved your food.[end if]"
-dave-secret	"We are diving for the secret you shouldn't know anything about."
-ron-secret	"Not really. But it seems, we discovered something important to find it during our investigation for our project."
-ron-people	"They are from yensid, the company that bought ours."
-tim-yensid	"They conquered, what was ours once and with their money. They support L.´s quest for the secret of ... But I better keep my mouth shut."
-dave-yensid	"Not my problem, but I want to be part of the revenge. Hopefully getting rich afterwards."
-herman-hello	"It seems to be impossible for a shipwrecked castaway to die in the silence that he deserves. Do you carry anything drinkable?"
-exvoo-hello	"You look so deluted, can I be of any help?"
-exvoo-voodoo	"Voodoo is some esoteric non-working nonsene, I needed to help and establish something proven. Sorry,  I have to complete bashing this bottle on this leather bound book."
-vegibal-hello	"I smell meat-eaters."
-herman-dance	"Oh, thats stupid and they are loud. Disturbing me, so I can't sleep during the day or night."
-exvoo-dance	"Oh its so wonderful how these brilliant natives are keeping there traditions alive. So unreflected, so 'clear'."
-vegibal-dance	"Keep our stuff on our side and we won't eat you."
-vegibal-smashed	"Imagine, an awful person killed our main hut by smashing a pig!"
-vegibal-help	"I doubt that a person with such a mostly-harmless look will be of any help to us."
-vegibal-secret	"Its forbidden to see, even for us."
-vegibal-totems	"It belongs to the secret. period."
-vegibal-rotida	"We call them the intruders. They come every time with a different strategy."
-vegibal-sacul	"All hands TODO of companies making holidays are disturbing us. They keep us extremely busy protecting our 'deities'."
-vegibal-yensids	"All hands of companies making holidays are disturbing us. They keep us extremely busy protecting our 'deities'."
-vegibal-qtip	"[if vegibal-qqtip is true]We are so grateful for your commitment. Our culture is thankful for at least 11 minutes.[otherwise]Where do you get that info? Its part of our deities secret. Get it for us, but don't ask questions or even expect answers from us."
-vegibal-earwax	"We put different things in our ears to get some rest from all this party noise of the tourists visiting this island. So would be a great idea to get enough earwax for all tomorrows parties."
-vegibal-apehead-entry	"Its only allowed to us and even we will not do that."
-exvoo-secret	"I will always respect their deities.TODO"
-exvoo-totems	"I like them, because I can sell my medicine in them."
-exvoo-rotida	"They wanted to hide in my shop, but I can't give shelter to people with such a bad karma."
-exvoo-sacul	"Commercial entertainment like they do is the reason I quit living in first world. Anything would be more prefered."
-exvoo-yensids	"I hope someday I have to chance to initiate them."
-exvoo-qtip	"TODO (doppelt zu earwax)You ask me for some university medicine? I have something better, which means homoepathic, for you. I will rattle it 4 days, then you can come back and its strong enough to help."
-exvoo-earwax	"TODO (doppelt zu qtipYou don't need this stuff. I have something better, which means homoepathic, for you. I will rattle it 4 days, then you can come back to it strong enough to help."
-exvoo-apehead-entry	"I will never ever violate and or breach into this because I respect the natives and any believe system thats existing or will exist."
-herman-secret	"Sure, I know it very well. Its in a cave beneath that island. I can't go there anymore. So i will be pleased if you bring me some of it."
-herman-totems	"Ah yes, those idiots with the flask-totems. If you ever wanted to see a real cargo cult this is one."
-herman-rotida	"They get on my nerves. They visit this island every summer and they are asking questions over and over about the secret of this island."
-herman-sacul	"Planet Peace. I was often at the movies in my former life. Maybe I will again after my rescue. At the moment I only watch 'water world' over and over at the beach."
-herman-yensids	"Protect? The only supreme being here is me and they don't protect me.TODO"
-herman-qtip	"Yes, true. I had stolen that damn thing again, because they broke my banana picker."
-herman-bananapicker	"No, its broken. The Vegibals broke my famous banana picker."
-herman-earwax	"Earwax? I have all sorts of scumm in any hole of my body."
-herman-apehead-entry	"[if q-tip is familiar]You will need the giant q-tip. [otherwise]You will not get into it if you don't have the right key.[end if]"
-herman-entrance	"I don't want to kill the tension right away. You should find your own way."
-silence	"Bye."
+[otherwise] Go on, just take the meat. I loved your food.[end if][roman type]"
+dave-secret	"[italic type]We are diving for the secret you shouldn't know anything about.[roman type]"
+ron-secret	"[italic type]Not really. But it seems, we discovered something important to find it during our investigation for our project.[roman type]"
+ron-people	"[italic type]They are from yensid, the company that bought ours.[roman type]"
+tim-yensid	"[italic type]They conquered, what was ours once and with their money. They support L.´s quest for the secret of ... But I better keep my mouth shut.[roman type]"
+dave-yensid	"[italic type]Not my problem, but I want to be part of the revenge. Hopefully getting rich afterwards.[roman type]"
+herman-hello	"[italic type]It seems to be impossible for a shipwrecked castaway to die in the silence that he deserves. Do you carry anything drinkable?[roman type]"
+exvoo-hello	"[italic type]You look so deluted, can I be of any help?[roman type]"
+exvoo-voodoo	"[italic type]Voodoo is some esoteric non-working nonsene, I needed to help and establish something proven. Sorry,  I have to complete bashing this bottle on this leather bound book.[roman type]"
+vegibal-hello	"[italic type]I smell meat-eaters.[roman type]"
+herman-dance	"[italic type]Oh, thats stupid and they are loud. Disturbing me, so I can't sleep during the day or night.[roman type]"
+exvoo-dance	"[italic type]Oh its so wonderful how these brilliant natives are keeping there traditions alive. So unreflected, so 'clear'.[roman type]"
+vegibal-dance	"[italic type]Keep our stuff on our side and we won't eat you.[roman type]"
+vegibal-smashed	"[italic type]Imagine, an awful person killed our main hut by smashing a pig![roman type]"
+vegibal-help	"[italic type]I doubt that a person with such a mostly-harmless look will be of any help to us.[roman type]"
+vegibal-secret	"[italic type]Its forbidden to see, even for us.[roman type]"
+vegibal-totems	"[italic type]It belongs to the secret. period.[roman type]"
+vegibal-rotida	"[italic type]We call them the intruders. They come every time with a different strategy.[roman type]"
+vegibal-sacul	"[italic type]All hands TODO of companies making holidays are disturbing us. They keep us extremely busy protecting our 'deities'.[roman type]"
+vegibal-yensids	"[italic type]All hands of companies making holidays are disturbing us. They keep us extremely busy protecting our 'deities'.[roman type]"
+vegibal-qtip	"[italic type][if vegibal-qqtip is true]We are so grateful for your commitment. Our culture is thankful for at least 11 minutes.[otherwise]Where do you get that info? Its part of our deities secret. Get it for us, but don't ask questions or even expect answers from us.[roman type]"
+vegibal-earwax	"[italic type]We put different things in our ears to get some rest from all this party noise of the tourists visiting this island. So would be a great idea to get enough earwax for all tomorrows parties.[roman type]"
+vegibal-apehead-entry	"[italic type]Its only allowed to us and even we will not do that.[roman type]"
+exvoo-secret	"[italic type]I will always respect their deities.TODO[roman type]"
+exvoo-totems	"[italic type]I like them, because I can sell my medicine in them.[roman type]"
+exvoo-rotida	"[italic type]They wanted to hide in my shop, but I can't give shelter to people with such a bad karma.[roman type]"
+exvoo-sacul	"[italic type]Commercial entertainment like they do is the reason I quit living in first world. Anything would be more prefered.[roman type]"
+exvoo-yensids	"[italic type]I hope someday I have to chance to initiate them.[roman type]"
+exvoo-qtip	"[italic type]TODO (doppelt zu earwax)You ask me for some university medicine? I have something better, which means homoepathic, for you. I will rattle it 4 days, then you can come back and its strong enough to help.[roman type]"
+exvoo-earwax	"[italic type]TODO (doppelt zu qtipYou don't need this stuff. I have something better, which means homoepathic, for you. I will rattle it 4 days, then you can come back to it strong enough to help.[roman type]"
+exvoo-apehead-entry	"[italic type]I will never ever violate and or breach into this because I respect the natives and any believe system thats existing or will exist.[roman type]"
+herman-secret	"[italic type]Sure, I know it very well. Its in a cave beneath that island. I can't go there anymore. So i will be pleased if you bring me some of it.[roman type]"
+herman-totems	"[italic type]Ah yes, those idiots with the flask-totems. If you ever wanted to see a real cargo cult this is one.[roman type]"
+herman-rotida	"[italic type]They get on my nerves. They visit this island every summer and they are asking questions over and over about the secret of this island.[roman type]"
+herman-sacul	"[italic type]Planet Peace. I was often at the movies in my former life. Maybe I will again after my rescue. At the moment I only watch 'water world' over and over at the beach.[roman type]"
+herman-yensids	"[italic type]Protect? The only supreme being here is me and they don't protect me.TODO[roman type]"
+herman-qtip	"[italic type]Yes, true. I had stolen that damn thing again, because they broke my banana picker.[roman type]"
+herman-bananapicker	"[italic type]No, its broken. The Vegibals broke my famous banana picker.[roman type]"
+herman-earwax	"[italic type]Earwax? I have all sorts of scumm in any hole of my body.[roman type]"
+herman-apehead-entry	"[italic type][if q-tip is familiar]You will need the giant q-tip. [otherwise]You will not get into it if you don't have the right key.[end if][roman type]"
+herman-entrance	"[italic type]I don't want to kill the tension right away. You should find your own way.[roman type]"
+silence	"[italic type]Bye.[roman type]"
 
 after quipping when the current quip is ron-people:
 	now yensid is familiar;
@@ -1910,9 +1918,9 @@ barbacueing begins when the current quip is slog-start-barbecue the first time.
 Table of Quip Followups (continued)
 quip	option	result
 slog-new-in-town	"Sure, i'm not only a tourist, I'm a real adventurer."	slog-real-adventurer
-slog-pirate-action	"treasure hunt."	slog-start-treasurehunt
-slog-pirate-action	"Gettin marooned."	slog-start-marooned
-slog-pirate-action	"barbecue."	slog-start-barbecue
+slog-pirate-action	"Treasure hunt."	slog-start-treasurehunt
+slog-pirate-action	"Getting marooned."	slog-start-marooned
+slog-pirate-action	"Barbecue."	slog-start-barbecue
 slog-new-in-town	"No. I will stay. End of discussion."	slog-deal-with
 slog-bought-island	"Smiley Island. I bought Smiley Island."	slog-smiley
 slog-bought-island	"I can't remember it's name."	slog-cant-remember
@@ -2397,9 +2405,10 @@ way onto the sea. A single [cabin door] is to the south."
 cabin can be wet. cabin is not wet.
 
 the porthole is south of ocean.
+understand "window", "hole" as the porthole.
 
 the porthole is a scenery door. it is north of cabin. it is closed.
-the description of the porthole is "Looking through the porthole, you see a beautiful island spread at the horizon. To far to swim without any support, but close enough to reach it by your own muscular strength.".
+the description of the porthole is "Looking through the porthole, you see a beautiful island spread at the horizon. To far to swim without any support, but close enough to reach it by your own muscular strength. In its frame its written 'Carlos II' but someone scratched over it and now you can read 'Fancy' instead.".
 the cabin door is a scenery door. it is south of cabin. it is closed and locked.
 the cabin door can be wet. the cabin door is not wet.
 the description of the cabin door is "This door is shut and seems to be too strong to even think about opening it[if the cabin door is wet] and now the door is also wet because you flooded the cabin[end if].".
@@ -2432,7 +2441,7 @@ instead of going north in ocean during mattress-escape:
 		say "You are still not convinced that muscular power is enough and you picked
 		up that inflatable mattress for a reason.";
 	otherwise:
-		say "With the support of your air filled mattress you reached nearly that island. But near enough to achieve it by swimming, the mattress itself decided to sink into the deeper parts of the ocean as you where riding it. Together with a curious feeling to explore that new place you reached it after noticing it was more far away than you thought and your body was not really easy in managing swimming to the island.[paragraph break]...but...[paragraph break] [paragraph break] *** THE END (for now) *** [paragraph break] [paragraph break] ### NEXT ACT - 'Discovering the Secret of Monkey Island' ###  [paragraph break] [paragraph break]But you can continue on your own risk in this development stage. otherwise see https://github.com/nebocamin/tsosi-story for a chance to participate[paragraph break]";
+		say "With the support of your air filled mattress you reached nearly that island. But near enough to achieve it by swimming, the mattress itself decided to sink into the deeper parts of the ocean as you where riding it. Together with a curious feeling to explore that new place you reached it after noticing it was more far away than you thought and your body was not really easy in managing swimming to the island.[paragraph break]...but...[paragraph break] [paragraph break] *** THE END (of this act) *** [paragraph break] [paragraph break] ### NEXT ACT - 'Discovering the Secret of Monkey Island' ###  [paragraph break] [paragraph break]But you can continue on your own risk in this development stage. otherwise see https://github.com/nebocamin/tsosi-story for a chance to participate[paragraph break]";
 		now the mattress is off-stage;
 		continue the action.
 		[10nov2013release end]
@@ -2544,15 +2553,15 @@ instead of taking the earwax:
 
 the voohut is scenery in pond. the printed name is "swimming hut".
 
-understand "swimming", "swimming hut" as the voohut.
-the description of the voohut is "How cool is that. A swimming hut. Nailed together out of floatsam wood, definitely work of art. So still looking like a house of mojo....but now focusing on homoe-something.".
+understand "swimming", "swimming hut", "hut" as the voohut.
+the description of the voohut is "How cool is that. A swimming hut. Nailed together out of floatsam wood, definitely a work of art. So still looking like a house of mojo....but now focusing on homoe-something.".
 
 instead of going south in the church of homoepathy , try going outside.
 instead of going north in the pond, try going inside.
 
 pond-water is scenery in pond. pond-water can be full and flowing.
 the printed name of pond-water is "the water of the pond".
-
+the description of pond-water is "transparent and deep inside you seep something like a [big-stopper]. You ponder what would happen if...".
 understand "pond", "water", "lake" as the pond-water.
 
 instead of entering something in pond, try going inside.
@@ -2674,11 +2683,15 @@ halfway up is a room. "You are halfway up this rock. You can go further up to th
 
 the plateau is a room. "You have a great view in every direction of this little island. In the north you can see a small village made of straw huts. Looking really na(t)ive. Beneath your feet you can see the strange device directly, so you could throw stuff on it. You can only go down from here.".
 
-the maybe catapult is in halfway up. the description is "Its not operating with electricity. Its somekind of catapult and big chunks of stone can be thrown with it."
+remote-huts are scenery in plateau. the description is "In the north you can see a small village made of straw huts. Looking really na(t)ive. You can't see it clearly, so you better go vor ort TODO".
+understand "hut", "huts", "straw","village" as the remote-huts.
+
+the maybe catapult is in halfway up. the description is "Its not operating with electricity. Its somekind of catapult and big chunks of stone can be thrown with it.". it is fixed in place.
 
 the catapult-below is scenery in the plateau. the description is "You can see the catapult below and you directly drop things on it to throw them somewhere over this island.".
 understand "strange", "device", "strange device", "catapult", "maybe", "maybe catapult" as the catapult-below.
 
+instead of putting something on the maybe catapult, say "You think to better drop it from above.".
 
 instead of switching on the maybe catapult, say "Its broken, and not operating with electricity. Its somekind of catapult and big chunks of stone can be thrown with it."
 
@@ -2694,6 +2707,19 @@ instead of dropping a pig (called throwpig) in plateau:
 	[now the straw hut is off-stage;]
 	enable the vegibal-smashed quip for vegibal.
 	[TODO if familiar then vegivillage]
+
+before throwing something (called the throwthing) at catapult-below in plateau:
+	try dropping throwthing instead.
+
+instead of dropping something (called the dropthing) in plateau:
+	say "You dropped the [dropthing] directly onto the catapult, but it didnt work out. You see how the [dropthing] just dropped half way up.";
+	now the dropthing is in halfway up.
+
+before throwing something (called throwthing) at catapult-below:
+	if the player is in plateau:
+		say "catatest?TODO";
+	otherwise:
+		say "Hopeless, not enough Schwung TODO".
 
 
 the plateau is above halfway up.
