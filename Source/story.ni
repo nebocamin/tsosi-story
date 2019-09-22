@@ -499,9 +499,6 @@ cloth is scenery in boring beach. the description is "Its an unnameable patchwor
  at the moment, but you guess it will become a manatee or gorilla or whatsoever.".
 understand "manatee" as the cloth.
 
-instead of smelling in town hall:
-	say "Awkward smell, like someone xy"
-
 instead of giving the pile of meat to tim:
 	say "[timguy] understood your wish and began to stitch and sew the
 	meat together to a manatee meat suit. You don't want to wear such
@@ -905,7 +902,7 @@ mouth, between your teeth. You even feel like you're breathing sand.
 And you try to take a look around. the [sun] is shining and burnt your
 back. [if player is wearing trousers]But hey, you're still wearing your [trousers]. [end if]You see lots of [footprints], like a very big group of people was here and leaving into the jungle to the north where you can see a big rock high above the tallest trees.[or]Hot light [sand]
 all around.[stopping] In the middle of this beach is a lonely banana tree.
-Making you think, it was escaping the jungle behind him to the north. Far away to the northwest leads a halfway up to a volcano. [paragraph break]To the south is water, just water[if ship-anchored is happening] and the ship, the black freighter, you remember from the pirate opera on the other island[otherwise][one of][or] and still not a trace of the black freighter[stopping][end if].".
+Making you think, it was escaping the jungle behind him to the north. Far away to the northwest it leads halfway up to a volcano. [paragraph break]To the south is water, just water[if ship-anchored is happening] and the ship, the black freighter, you remember from the pirate opera on the other island[otherwise][one of][or] and still not a trace of the black freighter[stopping][end if].".
 
 the ship-monk is scenery in banana beach. 
 
@@ -1242,28 +1239,9 @@ instead of giving the durian to dave:
 		say "that awful smelling fruit is the right thing to eat right now.";
 		now the durian is off-stage.
 
-[
-villagecenter is a room. "[one of]After one month of travelling you step on earth again.
-It feels stable. Your interest is growing. How will it be? On your own island. Forever
-escaped from the industrialized world. To the east is the so called [town hall], where
-you're supposed to get more information about the island and how to get there.
-[or]This is what wthe natives call 'village center'. You don't know which of these two
-words is the more stupid one for a place like this. There is the so called [town hall] to
- the east, a small market to the west.[stopping]"
-
-]
-
 ocean is a room. "Its still far away to the coast line to the north. Directly behind your back is the sloop or ketch you just used to call them boats. To the other directions is just open sea and you don't want to explore that any further."
 
 instead of going down in ocean, say "No way. You can already smell the stable ground to the north."
-
-[one turn after visiting ocean,then player is in banana beach.]
-
-
-chapter small market
-
-small market is a room. "There is just a [fruit table] with fruits on it."
-
 
 chapter river mouth
 
@@ -1427,7 +1405,8 @@ the bullwheel is an enterable scenery supporter in river mouth. the description 
 understand "wheel", "mast", "steps", "carved" as the bullwheel.
 
 A distant objects rule for the cableway basket when the player is on the bullwheel: rule succeeds.
-A distant objects rule for something enclosed by cableway basket when the player is on the palm tree: rule succeeds.
+A distant objects rule for something enclosed by cableway basket when the player is on the bullwheel: rule succeeds.
+A distant objects rule for something enclosed by cableway basket when the player is in the basket: rule succeeds.
 
 instead of doing anything other than examining the bullwheel during all-new:
 	say "Yes, you are right. You could climb up this mast and get into that cableway. But there are not yet enough reasons for you to do so.".
@@ -1468,22 +1447,6 @@ the long rope can be torn. the long rope is not torn.
 the cableway basket is a distant scenery open container in river mouth. the cableway basket is enterable.
 understand "cableway", "basket" as the cableway basket.
 
-
-instead of attacking a man:
-	say "Violently you byte in his throat like a vampire. His lifeless body falls down.
-	Blood running on the floor. You killed [the noun].";
-	now the noun is off-stage.
-
-instead of attacking a woman:
-	say "You don't want to kill her. Maybe you kiss her first."
-
-brennessel is a thing in small market.
-
-instead of taking the brennessel:
-	say "[the list of the things carried by the player]"
-
-after taking brennessel, say "autsch".
-
 chapter treasure hunt
 
 the treasure is a closed and openable container. the description is "Its made out of plastic and has a really cheap look and feel.". the scent of it is "plastic odour".  understand "chest", "treasure chest" as the treasure.
@@ -1500,6 +1463,8 @@ after eating the chocolate coins:
  to chop them small enough to swallow them.";
 	now the chocolate coins are eaten;
 	now the chocolate coins are in stomach.
+
+the chocolate coins are plural-named.
 
 instead of eating something eaten:
 	say "Its always your habit to not eat anything twice.".
@@ -1767,13 +1732,13 @@ ron-boss	"[italic type]Our big boss was following his own plan.[roman type]"
 ron-fruit	"[italic type]Sure, take a bite.[roman type]"
 ron-gives-rod	"[italic type]Sure.[if barbacueing is happening] I heard you are on the manatee
 hunt.[end if] Good luck. And yes, you can have this fishing rod. Someone forgot it here or
-maybe its just floatsam.[paragraph break] He hands over the fishing rod and you add it to
+maybe its just floatsam.[paragraph break] [roman type]He hands over the fishing rod and you add it to
 your inventory.[roman type]"
 ron-meat	"[italic type][if keeping-meat is true]Get your fingers off it! Good meals are rare in
 these times. Except you can give me a good alternative, maybe a bit more sustaining?
 [otherwise] Go on, just take the meat. I loved your food.[end if][roman type]"
 dave-secret	"[italic type]We are diving for the secret you shouldn't know anything about.[roman type]"
-ron-secret	"[italic type]Not really. But it seems, we discovered something important to find it during our investigation for our project.[roman type]"
+ron-secret	"[italic type]Not really. But it seems, we discovered important hints to reveal it during research for our project.[roman type]"
 ron-people	"[italic type]They are from yensid, the company that bought ours.[roman type]"
 tim-yensid	"[italic type]They conquered, what was ours once and with their money. They support L.´s quest for the secret of ... But I better keep my mouth shut.[roman type]"
 dave-yensid	"[italic type]Not my problem, but I want to be part of the revenge. Hopefully getting rich afterwards.[roman type]"
@@ -1823,10 +1788,6 @@ After quipping when the current quip is silence:
 	terminate the conversation;
 	try looking.
 After quipping when the current quip is slog-cant-remember: enable the slog-bought-island quip.
-After quipping when the current quip is slog-smiley:
-	enable the slog-how quip;
-	say "ron comes near you.";
-	move ron to town hall.
 after quipping when the current quip is ron-sacul for the first time:
 	enable the ron-plan quip for ron.
 after quipping when the current quip is slog-ask-wristbands:
@@ -2120,15 +2081,6 @@ every turn:
 fuzzy beach is east of pond.
 monkey head is east of fuzzy beach.
 
-chapter furu island connections
-
-furu island is a region. deep jungle, small market, town hall and villagecenter are in furu island.
-
-deep jungle is south of village center.
-small market is west of village center.
-town hall is east of village center.
-
-ocean is north of villagecenter.
 ocean is south of banana beach.
 ocean is west of pfandomat.
 
@@ -2441,7 +2393,7 @@ instead of going north in ocean during mattress-escape:
 		say "You are still not convinced that muscular power is enough and you picked
 		up that inflatable mattress for a reason.";
 	otherwise:
-		say "With the support of your air filled mattress you reached nearly that island. But near enough to achieve it by swimming, the mattress itself decided to sink into the deeper parts of the ocean as you where riding it. Together with a curious feeling to explore that new place you reached it after noticing it was more far away than you thought and your body was not really easy in managing swimming to the island.[paragraph break]...but...[paragraph break] [paragraph break] *** THE END (of this act) *** [paragraph break] [paragraph break] ### NEXT ACT - 'Discovering the Secret of Monkey Island' ###  [paragraph break] [paragraph break]But you can continue on your own risk in this development stage. otherwise see https://github.com/nebocamin/tsosi-story for a chance to participate[paragraph break]";
+		say "With the support of your air filled mattress you reached nearly that island. But near enough to achieve it by swimming, the mattress itself decided to sink into the deeper parts of the ocean as you where riding it. Together with a curious feeling to explore that new place you reached it after noticing it was more far away than you thought and your body was not really easy in managing swimming to the island.[paragraph break]...but...[paragraph break] [paragraph break] *** THE END (of this act) *** [paragraph break] [paragraph break] ### NEXT ACT - 'Discovering the Secret of Monkey Island' ###  [paragraph break] [paragraph break][paragraph break]";
 		now the mattress is off-stage;
 		continue the action.
 		[10nov2013release end]
