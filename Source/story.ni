@@ -942,6 +942,7 @@ an uhuru is an animal in banana beach.
 the description is "Impressive, that very rare parrot is a black uhuru and it has a fleety foot.".
 understand "parrot" as the uhuru.
 fleety foot is part of uhuru. the description is "Yep, the foot of an uhuru. As expected.".
+understand "feet" as fleety foot.
 
 instead of talking to the uhuru, say "He talks. No joke. he talks and
 its: 'push the tree, quuoak, push the tree.'".
@@ -976,7 +977,7 @@ chapter canyon edge
 before going to canyon edge for the first time:
 	say "'Beware the three-headed monkey!!!' says a nicely painted sign.".
 
-canyon edge is a room. "You can look deep down a dried out canyon edge. Its dark down there. A trail leads back south to the banana tree and north[if dam is visited] to the dam[end if] into the direction of the big rock. The sign about the three-headed monkey makes you wonder.".
+canyon edge is a room. "You can look deep down a dried out canyon edge. Its dark down there. A trail leads back south to the banana tree and north[if dam is visited] to the dam[end if] into the direction of the big rock. You can also go northeast [if pond is visited]to the pond[end if]. The sign about the three-headed monkey makes you wonder.".
 the rope is a thing. the rope is in canyon edge.
 
 3headed-sign is scenery in canyon edge. the description is "It says: 'Beware the three-headed monkey!!!' and underneath that you could ask the three-headed monkey about the secret of this island, if you dare.".
@@ -2049,7 +2050,7 @@ after taking the furry skeleton:
 
 monk island is a region.
 
-volcano, canyon edge, canyon ground, pond, dam, fuzzy beach, banana beach, monkey head, stream bed, halfway up, plateau, vegivillage are in monk island.
+volcano, canyon edge, canyon ground, pond, dam, empty beach, banana beach, monkey head, stream bed, halfway up, plateau, vegivillage are in monk island.
 
 bush-monk is a backdrop in monk island. the description is "The jungle is green, dense and dangerous. As always also on this very island.".
 
@@ -2089,8 +2090,8 @@ every turn:
 [at the time when the player visits volcano:
 	now volcano is northwest of banana beach.]
 
-fuzzy beach is east of pond.
-monkey head is east of fuzzy beach.
+empty beach is east of pond.
+monkey head is east of empty beach.
 
 ocean is south of banana beach.
 ocean is west of pfandomat.
@@ -2529,7 +2530,7 @@ understand "pond", "water", "lake" as the pond-water.
 
 instead of entering something in pond, try going inside.
 
-the description of pond is "[waterinpond] You can enter the hut or leave this place to the west or east[if monkey head is visited] in direction of the monkey head[end if]. A [sign] on top of the huts entrance says 'homoepathy' it hangs on top of an older one saying 'voodoo'".
+the description of pond is "[waterinpond] You can enter the hut or leave this place to the west or east[if monkey head is visited] in direction of the monkey head[end if] or southwest[if canyon edge is visited] to the canyon edge[end if]. A [sign] on top of the huts entrance says 'homoepathy' it hangs on top of an older one saying 'voodoo'. Or you can go down right into the water, where you see something that looks like a big stopper.".
 
 to say waterinpond:
 	if exdam-closed is true:
@@ -2742,6 +2743,9 @@ avery-diamonds is an unfamiliar subject.
 chapter flooding globulis
 
 pond is above inside-pond.
+
+the description of inside-pond is "[if exdam-closed is true]You are in a wet and empty pond. The water is vanishing somewhere. You can exit going up.[otherwise]You are under water (again) and you try your best to see things in that murky water. You can exit swimming up[end if].".
+
 inside-pond is above big-stopper. big-stopper is a door. it is closed. 
 
 instead of opening the big-stopper:
@@ -2771,6 +2775,9 @@ instead of going down in pond:
 	otherwise:
 		say "You jump right into the waterless the depths of the dried out pond.";
 		continue the action.
+
+after going down from inside-pond:
+	say "It is so sticky do go down there caused by all this sugar."
 
 at the time when breathless-me appears:
 	say "You can't hold your breath for 10 minutes like others do, so you get up and out of the water immediatly. [paragraph break]";
