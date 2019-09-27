@@ -137,7 +137,7 @@ ubuntu cds with free shipping.".
 Rule for printing the banner text while turn count is 1: say "[paragraph break] [bold type]The Secret of Vegibal Island[paragraph break][roman type]First Act - 'Slipped into Adventure'[paragraph break] [paragraph break]  [paragraph break] ".
 
 when play begins:
-	say "Dear Interactor, please type 'transcript' inside the game after it starts. It will then create a logfile, which I would like to receive afterwards. Lectrote is automatically doing savegames. And you will find the 'cheat sheet' for common commands inside the help-menu.[paragraph break]";
+	say "Dear Interactor, please type 'transcript' inside the game after it starts. It will then create a logfile, which I would like to receive afterwards. Lectrote is automatically doing savegames. And you will find the 'cheat sheet' for common commands inside the help-menu .[paragraph break]";
 	[wait for any key;]
 	say "Pen and paper for mapping your journey will help.[paragraph break]";
 	[wait for any key;]
@@ -513,8 +513,12 @@ instead of dropping the pile of meat:
 	say "Its heavy but there is a better purpose as just dropping it.".
 
 
-manatee suit is a wearable thing. the description is "hrmpft. its an suit
+the manatee suit is a wearable thing. the description is "hrmpft. its an suit
 made of meat in the form of a manatee.".
+
+before talking to a person:
+	if the player wears the manatee suit:
+		say "[italic type][one of] Ahhh, oh fuck...a talking manatee. Is that you?[or]Hey Mr. Fake Manatee, why are you doing that to me?[or][stopping][roman type]".
 
 instead of doing anything other than wearing the manatee suit:
 	say "Its heavy but there must be a better purpose for it".
@@ -999,7 +1003,11 @@ canyon ground is below canyon edge.
 chapter volcano
 
 volcano is a room. "On a banner is written 'Hermans Lounge'. [if herman is visible][One of]There is an old man sleeping here. You guessed thats Herman. [or]This Human shaped floatsam is still alive and pretends to sleep here. [or]Herman pretends to sleep here. [stopping][end if]Two paths lead out of here. One to the east and one to southeast.".
-herman is a man in volcano.
+herman is a man in volcano. the description is "He really looks like a perfect castaway and you remember endless hours sitting in front of your computer, watching the screen saver with the same name. [if herman wears trousers][one of]And yes, he wears your trousers.[or]You begin to miss your trousers as they look so comfy even on this old guy.[stopping][otherwise]And yes, he wears no trousers. Not even pants.[end if]".
+
+instead of giving the trousers to herman:
+	say "Thank you, I was waiting for a new pair. Now I'm ready to be rescued. (again)";
+	now herman wears trousers.
 
 instead of giving  a bottle (called hermbottle) to herman:
 	if bottle is not full:
@@ -1019,7 +1027,7 @@ shabby door is a door. it is north of volcano. it is open.
 
 [the pigsty is north of volcano. ]
 
-the pigsty is an enterable container. the description is "It looks as dirty as it smells. on the door is a small carving saying 'fridge'.".
+the pigsty is an enterable container. the description is "It looks as dirty as it smells. on the door is a small carving saying 'fridge' and a sticker telling you 'numbered pigs inside'.".
 the pigsty is openable. 
 the pigsty is closed. 
 understand "fridge" as the pigsty.
@@ -1027,7 +1035,7 @@ understand "fridge" as the pigsty.
 the pigsty is in volcano.
 
 instead of opening the pigsty:
-	say "fuuuuck, there is [list of pigs enclosed by pigsty] running out of it.";
+	say "Fuuuuck, there is [list of pigs enclosed by pigsty] running out of it.";
 	now all pigs enclosed by pigsty are in the location of the player;
 	continue the action.
 
@@ -1110,10 +1118,13 @@ instead of pulling the tube:
 		say "No, he needs them right now and they are connected to his helmet.";
 	otherwise:
 		say "As you pull the tube out of the water on the far away end there was still this helmet. Now the whole tube is before you with the helmet connected to its very end.";
-		now the helmet is in jungle path;
-		now the helmet is connected.
+		now the diving helmet is in jungle path;
+		now the diving helmet is connected.
+		
+instead of taking the diving helmet during all-new:
+	say "Nope. You are more interested to see yourself how to fish this fake manatee.".
 
-instead of taking the helmet during all-new2:
+instead of taking the diving helmet during all-new2:
 	say "As you unlocked the achievement to get all three wristbands, you really want to go into the holiday resort first. You leave the helmet on its place for later, maybe."
 
 after taking the diving helmet:
@@ -1713,7 +1724,7 @@ dave-brass	"[italic type]Can you please go, I have some serious work going on. A
 dave-start-barbecue	"[italic type]Manatis are protected today, so we have fake ones to get.[roman type]"
 dave-are-you	"[italic type]Yes thats me.[roman type]"
 dave-ask-wristbands	"[italic type]Really? Would be great to talk to a guy with many wristbands. Show me yours.[roman type]"
-dave-keep-wristbands	"[italic type]No, this isn't me. I'm unemployed now. It's a bad job situation here on these islands. So I live from the fruits in the jungle and I'm still trying to find my way out of the complete boredomness.[roman type]"
+dave-keep-wristbands	"[italic type]No, this isn't me. I live from the fruits in the jungle and I'm still trying to find my way out of the complete boredomness. So my hope is to either find the secret of that island or to start a business in blue hole diving.[roman type]"
 dave-manatee	"[italic type]Do you think i'm completely dull? But... hmm. No, not without a cause.[roman type]"
 dave-durian	"[italic type]That sounds like a fair deal. So give me the suit.[roman type]"
 dave-nobait	"[italic type]grmpft.[roman type]"
@@ -1774,7 +1785,7 @@ herman-sacul	"[italic type]Planet Peace. I was often at the movies in my former 
 herman-yensids	"[italic type]Protect? The only supreme being here is me and they don't protect me.TODO[roman type]"
 herman-qtip	"[italic type]Yes, true. I had stolen that damn thing again, because they broke my banana picker.[roman type]"
 herman-bananapicker	"[italic type]No, its broken. The Vegibals broke my famous banana picker.[roman type]"
-herman-earwax	"[italic type]Earwax? I have all sorts of scumm in any hole of my body.[roman type]"
+herman-earwax	"[italic type]Earwax? I have all sorts of scumm(tm) in any hole of my body.[roman type]"
 herman-apehead-entry	"[italic type][if q-tip is familiar]You will need the giant q-tip. [otherwise]You will not get into it if you don't have the right key.[end if][roman type]"
 herman-entrance	"[italic type]I don't want to kill the tension right away. You should find your own way.[roman type]"
 silence	"[italic type]Bye.[roman type]"
@@ -2513,16 +2524,16 @@ instead of going north in the pond, try going inside.
 
 pond-water is scenery in pond. pond-water can be full and flowing.
 the printed name of pond-water is "the water of the pond".
-the description of pond-water is "transparent and deep inside you seep something like a [big-stopper]. You ponder what would happen if...".
+the description of pond-water is "Transparent and deep inside you seep something like a [big-stopper]. You ponder what would happen if...".
 understand "pond", "water", "lake" as the pond-water.
 
 instead of entering something in pond, try going inside.
 
-the description of pond is "[waterinpond] you can enter the hut or leave this place to the west or east[if monkey head is visited] in direction of the monkey head[end if]. A [sign] on top of the huts entrance says 'homoepathy' it hangs on top of an older one saying 'voodoo'".
+the description of pond is "[waterinpond] You can enter the hut or leave this place to the west or east[if monkey head is visited] in direction of the monkey head[end if]. A [sign] on top of the huts entrance says 'homoepathy' it hangs on top of an older one saying 'voodoo'".
 
 to say waterinpond:
 	if exdam-closed is true:
-		say "FUUUCK, the water is all gone...[paragraph break]";
+		say "FUUUCK, the water flowing into the pond is all gone... so it's empty now.[paragraph break]";
 	otherwise:
 		if big-stopper is closed:
 			say "There is a pond with water and in the middle is a swimming hut.";
@@ -2608,12 +2619,22 @@ yensids-gone is a truth state that varies. yensids-gone is false.
 
 chapter damn
 
-the description of dam is "You are standing in front of a [big rock] see a stream flowing through its streambed to the north[if exdam-closed is true] and not anymore to the east[otherwise] and to the east[end if]. There are the remains of a dam that stopped the flow to the east before. [if exdam-closed is true]These pigs are so concentrated licking this pig magnet, the dam works again[end if] One way to the west[if volcano is visited] to hermans fort[end if] and a way to the east[if pond is visited] to the pond[end if]. To the south leads the way back into the direction of the banana tree beach or you just climb up this [big rock] to get an view over this island. [paragraph break][pigs-clogging]".
+the description of dam is "You are standing in front of a [big rock]. You see a [stream] flowing through its streambed to the north[if exdam-closed is true] and not anymore to the east[otherwise] and to the east[end if]. There are the remains of a dam that stopped the flow to the east before. [if exdam-closed is true]These pigs are so concentrated licking this pig magnet, the dam works again[end if] One way to the west[if volcano is visited] to hermans fort[end if] and a way to the east[if pond is visited] to the pond[end if]. To the south leads the way back into the direction of the banana tree beach or you just climb up this [big rock] to get an view over this island. [paragraph break][pigs-clogging]".
+
+
+after dropping the pig-magnet in dam:
+	say "You dropped the pig magnet in the once exploded part of the dam. Now it lures in hungry pigs.".
+
+instead of inserting the pig-magnet into exdam:
+	try dropping the pig-magnet.
+
+instead of putting the pig-magnet on exdam:
+	try dropping the pig-magnet.
 
 pigdam-count is a number that varies. pigdam-count is zero.
 
-the exdam is scenery in dam. the description is "These are the remains of a violent attack with explosives against this dam. [if pigdam-count is greater than one][pigs-clogging][otherwise]Nothing clogs it up.[end if]".
-the printed name of exdam is "the dam". understand "dam", "the dam", "remains", "remains of a dam" as the exdam.
+the exdam is scenery in dam. the description is "Water is flowing through these remains of a violent attack with explosives against this dam. [if pigdam-count is greater than one][pigs-clogging][otherwise]Nothing clogs it up.[end if]".
+the printed name of exdam is "the dam". understand "dam", "the dam", "remains", "remains of a dam", "stream", "creek",  "stream bed" , "streambed", "water" as the exdam.
 
 to say pigs-clogging:
 	if pigdam-count is not zero:
@@ -2702,8 +2723,9 @@ chapter the end
 storeroom is west of cave. the description is "This storeroom is full of whisky barrels.".
 the storeroom can be blocked. it is blocked.
 
-instead of going to the blocked storeroom:
-	say "W.T.F., instead of seeing anything meaningful, you approach a room full of tiny, brown sugar globules. Tons of homoepathic sugar globules seperate you from this islands secret.".
+after going to the blocked storeroom:
+	say "W.T.F., instead of seeing anything meaningful, you approach a room full of tiny, brown sugar globules. Tons of homoepathic sugar globules seperate you from this islands secret. You can't get into this room. You think about approaching that problem in a more dillute manner.";
+	now the player is in inside-pond.
 
 [tmp off4nik
 after going to the storeroom:
@@ -2728,8 +2750,14 @@ instead of opening the big-stopper:
 	otherwise:
 		continue the action.
 
-big-stopper is above storeroom.
-the printed name of the big-stopper is "big stopper".
+instead of closing the big-stopper:
+	if big-stopper is open:
+		say "No, it was so hard to open it. You never want to close that stopper again.";
+	otherwise:
+		continue the action.
+
+the big-stopper is above storeroom.
+the printed name of the big-stopper is "the big stopper".
 understand "big" and "stopper" as the big-stopper.
 
 instead of going down in pond:
@@ -2748,16 +2776,16 @@ at the time when breathless-me appears:
 	say "You can't hold your breath for 10 minutes like others do, so you get up and out of the water immediatly. [paragraph break]";
 	move the player to pond.
 
-pig number one is a pig. it is in pigsty.
-pig number two is a pig. it is in pigsty.
-pig number three is a pig. it is in pigsty.
-pig number four is a pig. it is in pigsty.
-pig number five is a pig. it is in pigsty.
-pig number six is a pig. it is in pigsty.
-pig number seven is a pig. it is in pigsty.
-pig number eight is a pig. it is in pigsty.
-pig number nine is a pig. it is in pigsty.
-pig number ten is a pig. it is in pigsty.
+pig number one is a pig. it is in pigsty. the description is "A 'one' is painted on it.".
+pig number two is a pig. it is in pigsty. the description is "A 'two' is painted on it.".
+pig number three is a pig. it is in pigsty. the description is "A 'three' is painted on it.".
+pig number four is a pig. it is in pigsty. the description is "A 'four' is painted on it.".
+pig number five is a pig. it is in pigsty. the description is "A 'five' is painted on it.".
+pig number six is a pig. it is in pigsty. the description is "A 'six' is painted on it.".
+pig number seven is a pig. it is in pigsty. the description is "A 'seven' is painted on it.".
+pig number eight is a pig. it is in pigsty. the description is "A 'eight' is painted on it.".
+pig number nine is a pig. it is in pigsty. the description is "A 'nine' is painted on it.".
+pig number ten is a pig. it is in pigsty. the description is "A 'ten' is painted on it.".
 
 the pig-magnet is in pigsty. the description is "Its a big gooey bunch of unnameable foods bound together to let all those pigs 'stick' to it.".
 the printed name of pig-magnet is "pig magnet". 
