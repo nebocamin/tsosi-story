@@ -81,10 +81,12 @@ test vegibals with "nw / talk to herman/ 3 /3 / e / e / w / w / e / purloin pink
 
 test all with "test banana / test vegibals"
 
+test pond with "nw / open pigsty / take magnet / e / drop magnet / test z / e / d / open stopper /u / w / get magnet / e/e/drop magnet / test z / w / d / d"
+
 test z with "z/z/z/z/z/z/z/z/z/z/z/z/z/z/z/z/z/z/z/z/z/z/z/z/z/z/z/z/z/z/z/z/z/z/z/z/z/z/z/z/z/z/z/z/z/z/z/z/z/z/z/z/z/z/z/z/z/z/z/z/z/z/z/z/z/z/z/z/z/z/z/z/z/z/z/z/z/z/z/z/z/z/z/z/z/z/z/z/z/z/z/z/z/z/z/z/z/z/z/z/z/z/z/z/z/z/z/z/z/z/z/z/z/z/z/z/z/z/z/z/z/z/z/z/z/z/z/z/z/z/z/z/z/z/z/z/z/z/z/z/z/z/z/z/z/z/z/z/z/z/z/z/z/"
 
-der-ralf is a person. der-ralf is in storeroom.
-The litany of der-ralf is the Table of der-ralfs Talk. the greeting of der-ralf is ralf-hello. der-ralf is a man.
+
+The litany of 3headed-monkey is the Table of 3headed-monkeys Talk. the greeting of 3headed-monkey is 3h-hello.
 
 part losgehts
 
@@ -881,6 +883,7 @@ ocean2-escape ends, when monkey-opening begins.
 
 monkey-opening is a scene.
 monkey-opening begins when the player is in banana beach for the first time.
+monkey-opening ends when the stone is open.
 
 3headed-appear is a scene.
 3headed-appear begins when canyon edge is visited.
@@ -1028,7 +1031,7 @@ shabby door is a door. it is north of volcano. it is open.
 
 [the pigsty is north of volcano. ]
 
-the pigsty is an enterable container. the description is "It looks as dirty as it smells. on the door is a small carving saying 'fridge' and a sticker telling you 'numbered pigs inside'.".
+the pigsty is an enterable container. the description is "It looks as dirty as it smells. On the door is a small carving saying 'fridge' and a sticker telling you 'numbered pigs inside'.".
 the pigsty is openable. 
 the pigsty is closed. 
 understand "fridge" as the pigsty.
@@ -1576,9 +1579,9 @@ part monk island
 
 part quips
 
-table of der-ralfs talk
+table of 3headed-monkeys talk
 prompt	response	enabled
-"Krasse Scheisse, was machstn Du hier???"	ralf-machhier	1
+"Are you really 3 guys inside of one single gorilla costume?"	3h-costume	1
 	
 
 Table of tims Talk
@@ -1713,8 +1716,8 @@ dave-kopi	"[italic type][if rtd-know-kopi is true]Now time counts, we have to ge
 ron-kopi	"[italic type][if rtd-know-kopi is true]I'm watching the coast line carefully.[otherwise]Outch, thanks. I have to inform Tim and Dave about it.[end if][roman type]"
 ron-sacul	"[italic type]He was the boss of Sacul Film. The famous maker of the 'Planet Peace' movies[roman type]"
 ron-plan	"[italic type]It was all about an old pirate secret that's still unrevealed. L. the boss of Sacul Film. The famous maker of 'Planet Peace' does anything to get it.[roman type]"
-ralf-machhier	"[italic type]Na, fuer den Fall hier, da wollte ich Dir persoenlich gratulieren und die alten Whisky Flaschen von Bord der 'Fancy' exen.  Also denn.... 'prost'.[roman type]"
-ralf-hello	"[italic type]Wow, da bin ich aber seeeehr beeindruckt, dass Du es bis hierhin geschafft hast.[roman type]"
+3h-costume	"[italic type]Yes.[roman type]"
+3h-hello	"[italic type]Wow, achievement unlocked. Joining the party?[roman type]"
 
 
 
@@ -1878,9 +1881,6 @@ after quipping when the current quip is vegibal-smashed:
 	enable the vegibal-help quip for vegibal.
 after quipping when the current quip is herman-secret:
 	now cave-exists is familiar.
-after quipping when the current quip is ralf-machhier:
-	say "und sie luden all die anderen leute ein, sogar die ex voodoo tante und betranken sich bis alle in einen wunderbaren schlaf fielen. und noch bevor wir aufwachen und merken, dass es nach kotze riecht, ist hier:";
-	end the story.
 
 treasure-hunt begins when the current quip is slog-start-treasurehunt the first time.
 getting-marooned begins when the current quip is slog-ask-marooned the first time.
@@ -1931,7 +1931,7 @@ dam is north of canyon edge.
 
 monkey head is a room. "Between tropical trees is a big [stone].
 Maybe it is formed by human hands. Definitely a heck of a long time ago.
-Now its overgrown with [plants] and [moss].[if stone is closed] Its [mouth] is tightly shut and you can see a row of [teeth][otherwise] Its mouth is open and a large tonge is stretched out like a red carpet.[end if]".
+Now its overgrown with [plants] and [moss].[if stone is closed] Its [mouth] is tightly shut and you can see a row of [teeth].[otherwise] Its mouth is open and a large tonge is stretched out like a red carpet.[end if]".
 
 the vegibal is a man in monkey head. the description is "He reminds you talking to that silly guy at the tiki bar that looked like a tiki bar. The vegibal carries [the list of things carried by vegibal]."
 
@@ -2724,9 +2724,9 @@ chapter the end
 storeroom is west of cave. the description is "This storeroom is full of whisky barrels.".
 the storeroom can be blocked. it is blocked.
 
-after going to the blocked storeroom:
+[after going to the blocked storeroom :
 	say "W.T.F., instead of seeing anything meaningful, you approach a room full of tiny, brown sugar globules. Tons of homoepathic sugar globules seperate you from this islands secret. You can't get into this room. You think about approaching that problem in a more dillute manner.";
-	now the player is in inside-pond.
+	now the player is in inside-pond.  TODO] 
 
 [tmp off4nik
 after going to the storeroom:
@@ -2744,7 +2744,7 @@ chapter flooding globulis
 
 pond is above inside-pond.
 
-the description of inside-pond is "[if exdam-closed is true]You are in a wet and empty pond. The water is vanishing somewhere. You can exit going up.[otherwise]You are under water (again) and you try your best to see things in that murky water. You can exit swimming up[end if].".
+the description of inside-pond is "[if big-stopper is open]You are in a wet and empty pond. The water is vanishing somewhere. You can exit going up.[otherwise]You are under water (again) and you try your best to see things in that murky water. You can exit swimming up[end if].".
 
 inside-pond is above big-stopper. big-stopper is a door. it is closed. 
 
@@ -2776,8 +2776,9 @@ instead of going down in pond:
 		say "You jump right into the waterless the depths of the dried out pond.";
 		continue the action.
 
-after going down from inside-pond:
-	say "It is so sticky do go down there caused by all this sugar."
+[after going down from inside-pond:
+	say "It is so sticky do go down there caused by all this sugar.";
+	continue the action.]
 
 at the time when breathless-me appears:
 	say "You can't hold your breath for 10 minutes like others do, so you get up and out of the water immediatly. [paragraph break]";
@@ -2832,7 +2833,9 @@ face-2 is part of 3headed-monkey. the description is "It looks like Ron.".
 understand "face" as face-2.
 face-3 is part of 3headed-monkey. the description is "It looks like Dave.".
 
-the 3headed-monkey is in cave.
+understand "monkey" as the 3headed-monkey.
+
+the 3headed-monkey is in storeroom.
 
 when 3headed-appear begins:
 	the 3headed-1 appears in 2 turns from now;
@@ -2853,4 +2856,28 @@ at the time when 3headed-5 appears:
 	say "[if 3headed-appear is happening]Still no sign of any ape. Where could it be?[end if]".
 
 
+instead of going down from inside-pond:
+	if storeroom is blocked:
+		say "Its full of brown sugar cane globules for homoepathic use. You can't go down as long as those sweeteners are blocking your way.";
+		stop the action;
+	otherwise:
+		say "Its really sticky down there, but the amount of water was enough to made the sugar to dissolve.";
+		say "[thisistheend]";
+		end the story.
 
+
+after going west from cave, say "[thisistheend]".
+
+to say thisistheend:
+	say "As you enter finally this room you meet there a three headed gorilla. Or better, one gorilla costume. Inside of it seem to be three people. Each one having his face in one of the three heads of this costume. 
+	[paragraph break]
+	[italic type]'Oh, you guys again?' [paragraph break]
+	'Yes, here we are and we were first.'[paragraph break]
+	[roman type] You look around and see yourself between lots of whisky barrels. And they look very old. 
+	So you ask [italic type]'Whats so special about those barrels?' [paragraph break] 
+	'Fancy, fancy barrels. These barrels are coming from a ship called fancy. We were treasure hunting for a long time after this. The arch pirate himself was hiding them here. Cpt. Henry Avery. We just arrived here, so we need to drink a lot. You can join us, if you want.
+	";
+	[wait for any key;]
+	[wait for any key;]
+	[wait for any key;]
+	end the story.
