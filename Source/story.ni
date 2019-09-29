@@ -107,6 +107,8 @@ say "A wonderful warm ray of light covers the land before you.";
 Carry out switching off the brass lantern:
     now the brass lantern is dark.
 
+instead of burning the brass lantern, try switching on the brass lantern.
+
 the brass lantern is a device. "A brass lantern with a really fat battery."
 
 understand "lamp", "light" as the brass lantern.
@@ -139,14 +141,14 @@ ubuntu cds with free shipping.".
 Rule for printing the banner text while turn count is 1: say "[paragraph break] [bold type]The Secret of Vegibal Island[paragraph break][roman type]First Act - 'Slipped into Adventure'[paragraph break] [paragraph break]  [paragraph break] ".
 
 when play begins:
-	say "Dear Interactor, please type 'transcript' inside the game after it starts. It will then create a logfile, which I would like to receive afterwards. Lectrote is automatically doing savegames. And you will find the 'cheat sheet' for common commands inside the help-menu .[paragraph break]";
-	[wait for any key;]
-	say "Pen and paper for mapping your journey will help.[paragraph break]";
-	[wait for any key;]
+	say "Dear Interactor, please type 'transcript' inside the game after it starts. It will then create a logfile, which I would like to receive afterwards. Lectrote is automatically doing savegames. And you will find the 'cheat sheet' for common commands inside the help-menu (only available in the electron version, otherwise go to https://pr-if.org/doc/play-if-card/play-if-card.pdf.[paragraph break]";
+	wait for any key;
+	say "Pen and paper for mapping your journey will help. (start in the lower left)[paragraph break]";
+	wait for any key;
 	say "Deep in the west indies. The island of boredom. Just coming from the boat
 	 without puking, but still in a bad feeling. Your holidays starting for you to reach the
-	 state of total boredomness. (ver sept2019 beta)".
-	[wait for any key.]
+	 state of total boredomness. (ver sept2019 ifcomp)";
+	wait for any key.
 
 sustainable food is edible.
 sustainable food is in the rucksack. the description is "You don't want to eat it, until
@@ -1062,10 +1064,6 @@ instead of inserting the furry skeleton into the giant q-tip:
 	now the furry skeleton is off-stage.
 
 
-
-[TODO other possibillities to get the q-tip? like asking to watch his ghost-machine? or the banana picker version]
-
-
 instead of giving the totem to herman:
 	if the player is not carrying the giant q-tip:
 		say "He seems to be quite happy with it and gives you the giant q-tip as a payment.";
@@ -1268,29 +1266,9 @@ the description is "He seems to have problems to come out of the water without
 help. What a pitty that you have lots of other things to do. Maybe he has to wait until you will fish this fake manatee.".
 understand "dave" as the fake manatee.
 
-[todo fishing only with rod+durian]
 
 the description of river mouth is "The [fresh water] delutes itself into the salty sea.
 The way back follows upstream to northwest. There is also a cableway leading from a [bullwheel] here to somewhere over the sea."
-
-[Wooden planks are forming a [boardwalk]
-reaching some feet into the sea."]
-
-[the fireplace is in river mouth. the description is "Above of the old, black, burnt
-pieces stands a pyramid of wood. Ready to be lit. Because of its size you think
-that this could be well used as a signal fire.".
-understand "pieces", "wood", "fire", "pyramid" as the fireplace.
-
-the fireplace can be lit or unlit.
-the fireplace is fixed in place.
-
-[instead if switching the fireplace on , say "You will wait for the night."]
-
-the boardwalk is scenery in river mouth.
-
-instead of doing anything to the boardwalk, say "It looks stable enough, but for now you have no reason to do anything to the boardwalk.".
-
-the description is "stable.TODO"]
 
 instead of going up in river mouth, try going northwest.
 
@@ -1343,8 +1321,6 @@ instead of taking the rod:
 	otherwise:
 		continue the action.
 
-[instead of dropping the durian in river mouth:
-	say "You just began to wait for the bait to get a bite from a pyrate. TODO hae?"]
 
 pile of meat is in river mouth. the description is "[if pile of meat carried by the player]Its
  heavy and red juice is dripping down from it.[otherwise]Not appetizing, but its really a
@@ -1663,7 +1639,7 @@ prompt	response	enabled
 
 table of vegibals talk
 prompt	response	enabled
-"bored?TODO"	vegibal-hello	1
+"bored?"	vegibal-hello	1
 "Have your heard that smashing sound some time ago?"	vegibal-smashed	0
 "Can I be of any help to find the murderer of both, hut and pig?"	vegibal-help	0
 "What about this staggering, drunken dance?"	vegibal-dance	0
@@ -1769,24 +1745,24 @@ vegibal-help	"[italic type]I doubt that a person with such a mostly-harmless loo
 vegibal-secret	"[italic type]Its forbidden to see, even for us.[roman type]"
 vegibal-totems	"[italic type]It belongs to the secret. period.[roman type]"
 vegibal-rotida	"[italic type]We call them the intruders. They come every time with a different strategy.[roman type]"
-vegibal-sacul	"[italic type]All hands TODO of companies making holidays are disturbing us. They keep us extremely busy protecting our 'deities'.[roman type]"
+vegibal-sacul	"[italic type]All hands of companies making holidays are disturbing us. They keep us extremely busy protecting our 'deities'.[roman type]"
 vegibal-yensids	"[italic type]All hands of companies making holidays are disturbing us. They keep us extremely busy protecting our 'deities'.[roman type]"
 vegibal-qtip	"[italic type][if vegibal-qqtip is true]We are so grateful for your commitment. Our culture is thankful for at least 11 minutes.[otherwise]Where do you get that info? Its part of our deities secret. Get it for us, but don't ask questions or even expect answers from us.[roman type]"
 vegibal-earwax	"[italic type]We put different things in our ears to get some rest from all this party noise of the tourists visiting this island. So would be a great idea to get enough earwax for all tomorrows parties.[roman type]"
 vegibal-apehead-entry	"[italic type]Its only allowed to us and even we will not do that.[roman type]"
-exvoo-secret	"[italic type]I will always respect their deities.TODO[roman type]"
+exvoo-secret	"[italic type]I will always respect their deities.[roman type]"
 exvoo-totems	"[italic type]I like them, because I can sell my medicine in them.[roman type]"
 exvoo-rotida	"[italic type]They wanted to hide in my shop, but I can't give shelter to people with such a bad karma.[roman type]"
 exvoo-sacul	"[italic type]Commercial entertainment like they do is the reason I quit living in first world. Anything would be more prefered.[roman type]"
 exvoo-yensids	"[italic type]I hope someday I have to chance to initiate them.[roman type]"
-exvoo-qtip	"[italic type]TODO (doppelt zu earwax)You ask me for some university medicine? I have something better, which means homoepathic, for you. I will rattle it 4 days, then you can come back and its strong enough to help.[roman type]"
-exvoo-earwax	"[italic type]TODO (doppelt zu qtipYou don't need this stuff. I have something better, which means homoepathic, for you. I will rattle it 4 days, then you can come back to it strong enough to help.[roman type]"
+exvoo-qtip	"[italic type]You ask me for some university medicine? I have something better, which means homoepathic, for you. I will rattle it 4 days, then you can come back and its strong enough to help.[roman type]"
+exvoo-earwax	"[italic type]You don't need this stuff. I have something better, which means homoepathic, for you. I will rattle it 4 days, then you can come back to it strong enough to help.[roman type]"
 exvoo-apehead-entry	"[italic type]I will never ever violate and or breach into this because I respect the natives and any believe system thats existing or will exist.[roman type]"
 herman-secret	"[italic type]Sure, I know it very well. Its in a cave beneath that island. I can't go there anymore. So i will be pleased if you bring me some of it.[roman type]"
 herman-totems	"[italic type]Ah yes, those idiots with the flask-totems. If you ever wanted to see a real cargo cult this is one.[roman type]"
 herman-rotida	"[italic type]They get on my nerves. They visit this island every summer and they are asking questions over and over about the secret of this island.[roman type]"
 herman-sacul	"[italic type]Planet Peace. I was often at the movies in my former life. Maybe I will again after my rescue. At the moment I only watch 'water world' over and over at the beach.[roman type]"
-herman-yensids	"[italic type]Protect? The only supreme being here is me and they don't protect me.TODO[roman type]"
+herman-yensids	"[italic type]Protect? The only supreme being here is me and they don't protect me.[roman type]"
 herman-qtip	"[italic type]Yes, true. I had stolen that damn thing again, because they broke my banana picker.[roman type]"
 herman-bananapicker	"[italic type]No, its broken. The Vegibals broke my famous banana picker.[roman type]"
 herman-earwax	"[italic type]Earwax? I have all sorts of scumm(tm) in any hole of my body.[roman type]"
@@ -1813,7 +1789,6 @@ after quipping when the current quip is ron-fruit: now the player carries the du
 after quipping when the current quip is ron-gives-rod: now the player carries the fishing rod.
 after quipping when the current quip is slog-start-barbecue the first time:
 		enable the ron-gives-rod quip for ron.
-[todo wenn ich die angel schon hab, brauchsch ja ne fragen]
 
 after quipping when the current quip is ron-meat: enable the ron-meat quip.
 after quipping when the current quip is dave-durian:
@@ -2009,7 +1984,7 @@ instead of going up in cave, try going outside.
 
 instead of going outside in cave:
 	if stone is open:
-		say "TODO You are going out of the open mouth of this ape head monument. Inside of it you used neck vertebrates as stairs to go higher out of the cave.";
+		say "You are going out of the open mouth of this ape head monument. Inside of it you used neck vertebrates as stairs to go higher out of the cave.";
 		continue the action;
 	otherwise:
 		say "You can't see any kind of exit.".
@@ -2657,7 +2632,7 @@ halfway up is a room. "You are halfway up this rock. You can go further up to th
 
 the plateau is a room. "You have a great view in every direction of this little island. In the north you can see a small village made of straw huts. Looking really na(t)ive. Beneath your feet you can see the strange device directly, so you could throw stuff on it. You can only go down from here.".
 
-remote-huts are scenery in plateau. the description is "In the north you can see a small village made of straw huts. Looking really na(t)ive. You can't see it clearly, so you better go vor ort TODO".
+remote-huts are scenery in plateau. the description is "In the north you can see a small village made of straw huts. Looking really na(t)ive. You can't see it clearly, so you better go there.".
 understand "hut", "huts", "straw","village" as the remote-huts.
 
 the maybe catapult is in halfway up. the description is "Its not operating with electricity. Its somekind of catapult and big chunks of stone can be thrown with it.". it is fixed in place.
@@ -2680,7 +2655,6 @@ instead of dropping a pig (called throwpig) in plateau:
 	now throwpig is off-stage;
 	[now the straw hut is off-stage;]
 	enable the vegibal-smashed quip for vegibal.
-	[TODO if familiar then vegivillage]
 
 before throwing something (called the throwthing) at catapult-below in plateau:
 	try dropping throwthing instead.
@@ -2691,9 +2665,9 @@ instead of dropping something (called the dropthing) in plateau:
 
 before throwing something (called throwthing) at catapult-below:
 	if the player is in plateau:
-		say "catatest?TODO";
+		say "I dont want to do that.";
 	otherwise:
-		say "Hopeless, not enough Schwung TODO".
+		say "Hopeless, not enough momentum.".
 
 
 the plateau is above halfway up.
@@ -2723,15 +2697,6 @@ chapter the end
 
 storeroom is west of cave. the description is "This storeroom is full of whisky barrels.".
 the storeroom can be blocked. it is blocked.
-
-[after going to the blocked storeroom :
-	say "W.T.F., instead of seeing anything meaningful, you approach a room full of tiny, brown sugar globules. Tons of homoepathic sugar globules seperate you from this islands secret. You can't get into this room. You think about approaching that problem in a more dillute manner.";
-	now the player is in inside-pond.  TODO] 
-
-[tmp off4nik
-after going to the storeroom:
-	end the game saying "As you put your feet into that room. A strong smell of very old comes to your nose. Its full of ancient whisky barrels and some bottles. They must be the casks from the Captain Every's Fancy. Hidden here for later use by the crew. Long forgotten and now found. Before you think about making a business out of this treasure, you open yourself one bottle, took a sip, you landed directly in a flavour paradies. Some bottles later in the deepest sleep.".]
-
 
 
 cave-exists is an unfamiliar subject.
@@ -2875,9 +2840,25 @@ to say thisistheend:
 	'Yes, here we are and we were first.'[paragraph break]
 	[roman type] You look around and see yourself between lots of whisky barrels. And they look very old. 
 	So you ask [italic type]'Whats so special about those barrels?' [paragraph break] 
-	'Fancy, fancy barrels. These barrels are coming from a ship called fancy. We were treasure hunting for a long time after this. The arch pirate himself was hiding them here. Cpt. Henry Avery. We just arrived here, so we need to drink a lot. You can join us, if you want.
+	'Fancy, fancy barrels. These barrels are coming from a ship called fancy. We were treasure hunting for a long time after this. The arch pirate himself was hiding them here. Cpt. Henry Avery. We just arrived here, so we need to drink a lot. You can join us, if you want. [roman type][paragraph break]
+	[if the player carries the bath robe]You make yourself comfy wearing that bath robe.[end if] You look for a place where you can stay for a long time, drinking rare whisky from 1690. Not listening what the other guys are talking you reach the state of total boredomness.
 	";
-	[wait for any key;]
-	[wait for any key;]
-	[wait for any key;]
+	wait for any key;
+	say " [paragraph break] *** THE END ***";
+	wait for any key;
+	say " [paragraph break]  [paragraph break] No animals where harmed during writing of that game";
+	wait for any key;
+	say " [paragraph break] You can now turn off your interactive fiction device";
+	wait for any key;
+	say " [paragraph break] the author can still not believe someone finished this story";
+	wait for any key;
+	say " [paragraph break] You have requests and bug reports?";
+	wait for any key;
+	say " [paragraph break] So please go to https://github.com/nebocamin/tsosi-story and you are free to fork and create pull requests.";
+	say " [paragraph break] Special thanks to Nikola, Thomas and Oliver for Testing this story.";
+	wait for any key;
+	say " [paragraph break] I will leave you now alone...";
+	wait for any key;
+	say " [paragraph break] [italic type]'Free Software, Free Society!!";
+	wait for any key;
 	end the story.
