@@ -1,4 +1,4 @@
-"the secret of smiley island" by "stereo"
+ "the secret of smiley island" by "stereo"
 
 [branch firstact lateoct]
 
@@ -114,7 +114,7 @@ the brass lantern is a device. "A brass lantern with a really fat battery."
 understand "lamp", "light" as the brass lantern.
 
 A thing has some text called scent. The scent of a thing is usually "nothing".
-The block smelling rule is not listed in the check smelling rulebook.
+[The block smelling rule is not listed in the check smelling rulebook. ]
 Carry out smelling something:
     say "From [the noun] you smell [scent of the noun]."
 
@@ -142,13 +142,13 @@ Rule for printing the banner text while turn count is 1: say "[paragraph break] 
 
 when play begins:
 	say "Dear Interactor, please type 'transcript' inside the game after it starts. It will then create a logfile, which I would like to receive afterwards. Lectrote is automatically doing savegames. And you will find the 'cheat sheet' for common commands inside the help-menu (only available in the electron version, otherwise go to https://pr-if.org/doc/play-if-card/play-if-card.pdf.[paragraph break]";
-	wait for any key;
+	[wait for any key;]
 	say "Pen and paper for mapping your journey will help. (start in the lower left)[paragraph break]";
-	wait for any key;
+	[wait for any key;]
 	say "Deep in the west indies. The island of boredom. Just coming from the boat
 	 without puking, but still in a bad feeling. Your holidays starting for you to reach the
-	 state of total boredomness. (ver sept2019 ifcomp)";
-	wait for any key.
+	 state of total boredomness. (ver sept2019 ifcomp)".
+	[wait for any key.]
 
 sustainable food is edible.
 sustainable food is in the rucksack. the description is "You don't want to eat it, until
@@ -253,6 +253,8 @@ the description of boring beach is "[if pyrate-opera is happening]Now this is al
  northwest.[stopping] To the south it opens right into the sea inviting to go south to
  take a bath.".
 
+the player is in boring beach.
+
 to say timguy:
 	if name plate is familiar:
 		say "Tim";
@@ -340,7 +342,7 @@ instead of opening the gate:
 instead of attacking the gate:
 	say "You swing your full weight against the gate. Your body reacts with pain, the gate with sniffy nothing.".
 
-instead of doing anything other than opening the gate:
+instead of doing anything other than opening to the gate:
 	if all-new2 is happening:
 		try opening the gate;
 	otherwise:
@@ -360,7 +362,7 @@ One of these original foot-driven ones. Not one of the current generation with t
 
 understand "singer" as the sewing machine.
 
-instead of doing anything other than examining the sewing machine, say "You don't want
+instead of doing anything other than examining to the sewing machine, say "You don't want
 to do anything with that machine. These machines were introduced in your life as
 extremely dangerous by your grandma."
 
@@ -524,7 +526,7 @@ before talking to a person:
 	if the player wears the manatee suit:
 		say "[italic type][one of] Ahhh, oh fuck...a talking manatee. Is that you?[or]Hey Mr. Fake Manatee, why are you doing that to me?[or][stopping][roman type]".
 
-instead of doing anything other than wearing the manatee suit:
+instead of doing anything other than wearing to the manatee suit:
 	say "Its heavy but there must be a better purpose for it".
 
 instead of giving the manatee suit to dave, say "You better talk to him first."
@@ -710,7 +712,7 @@ treasure-hidden is a truth state that varies. treasure-hidden is false.
 after closing a treasure-hideaway (called the versteck):
 	say "You close the hole with some dirt. You stamped hard on it.
 	Nobody should find its location. Its even hard for yourself.";
-	if the treasure is in the treasure-hideaway:
+	if the treasure is inside the versteck:
 		now the versteck is off-stage;
 		now treasure-hidden is true;
 		say "Yes, you're sure that you achieved the goal because the treasure
@@ -1203,11 +1205,15 @@ instead of going northwest in jungle path:
 	water and swim against the stream. Don't forget you are here to get
 	total boredomnes.".
 
-instead of going somewhere in jungle path wearing the helmet:
-	if going down:
-		continue the action;
+[TODO carrying the helmet?]
+instead of going somewhere in jungle path:
+	if the player is wearing the helmet:
+		if going down:
+			continue the action;
+		otherwise:
+			try silently dropping the helmet;
+			continue the action;
 	otherwise:
-		try silently dropping the helmet;
 		continue the action.
 
 Dave is a person in jungle path. the description is "[if diving helmet is worn by dave]
@@ -1395,14 +1401,15 @@ at the time when ron-back appears:
 the bullwheel is an enterable scenery supporter in river mouth. the description is "Its a wooden bullwheel to lead a [long rope] around it. Its a bit rotten, but looks sturdy enough to be still trustworthy. Someone carved 'steps' into the mast to make it easy to climb on it.".
 understand "wheel", "mast", "steps", "carved" as the bullwheel.
 
-A distant objects rule for the cableway basket when the player is on the bullwheel: rule succeeds.
-A distant objects rule for something enclosed by cableway basket when the player is on the bullwheel: rule succeeds.
-A distant objects rule for something enclosed by cableway basket when the player is in the basket: rule succeeds.
+A distant stuff rule for the cableway basket when the player is on the bullwheel: rule succeeds.
+A distant stuff rule for something enclosed by cableway basket when the player is on the bullwheel: rule succeeds.
+A distant stuff rule for something enclosed by cableway basket when the player is in the basket: rule succeeds.
 
-instead of doing anything other than examining the bullwheel during all-new:
+
+instead of doing anything other than examining to the bullwheel during all-new:
 	say "Yes, you are right. You could climb up this mast and get into that cableway. But there are not yet enough reasons for you to do so.".
 
-instead of doing anything other than examining the bullwheel during all-new2:
+instead of doing anything other than examining to the bullwheel during all-new2:
 	say "Yes, you are right. You could climb up this mast and get into that cableway. But there are not yet enough reasons for you to do so.".
 
 instead of climbing the bullwheel during smiley-island-escape:
@@ -1519,8 +1526,8 @@ after taking the magpie:
 
 the palm tree is a enterable scenery supporter in crossing.
 
-A distant objects rule for the magpies nest when the player is on the palm tree: rule succeeds.
-A distant objects rule for something enclosed by magpies nest when the player is on the palm tree: rule succeeds.
+A distant stuff rule for the magpies nest when the player is on the palm tree: rule succeeds.
+A distant stuff rule for something enclosed by magpies nest when the player is on the palm tree: rule succeeds.
 
 after inserting the treasure into the magpies nest:
 	say "You smile to yourself, what a fine hideaway you found.";

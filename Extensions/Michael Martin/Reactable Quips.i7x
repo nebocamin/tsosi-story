@@ -140,16 +140,16 @@ quip_null	"[generic ask quip]"
 quip_dtell	"[generic tell quip]"
 
 Table of Quip Followups
-quip	option(a text)	result
---	--	--
+quip (a quip)		option (text)		result (a quip)
+with 1 blank row
 
 Table of Ask Results
-NPC		topic(a text)		result
-a person		a text		a quip
+NPC (a person)		topic (a topic)		result (a quip)
+with 1 blank row
 
 Table of Tell Results
-NPC		topic(a text)		result
-a person		a text		a quip
+NPC (a person)		topic (a topic)		result (a quip)
+with 1 blank row
 
 Section 4 - Straightening out the parser
 

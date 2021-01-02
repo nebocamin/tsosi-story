@@ -1,11 +1,11 @@
-Version 5 of Far away by Jon Ingold begins here.
+Version 5/160517 of Far away by Jon Ingold begins here.
 
-"Creates an adjective for far-off objects which cannot be touched."
+"Creates an adjective for far-off items which cannot be touched."
+
+[ Updated to work with the Inform 6M62 port of Counterfeit Monkey. Removed deprecated features - Petter Sjölund ]
 
 Use far away extension translates as (- Constant FARAWAY; -).  
 Use far away extension.
-
-Include Plurality by Emily Short.
 
 Section - The basic definition
 
@@ -33,10 +33,10 @@ Section - Accessibility rule
 
 The check distance rule is listed before the access through barriers rule in the accessibility rulebook.
 
-Accessibility rule (this is the check distance rule):
-	if the action requires a touchable noun:
+Accessibility rule (this is the check distance rule): 
+	if the action requires a touchable noun: 
 		if the noun is far-off and we can't get at the noun, rule fails;
-	if the action requires a touchable second noun:
+	if the action requires a touchable second noun: 
 		if the second noun is far-off and we can't get at the second noun, rule fails.
 
 Section - Reporting Errors
@@ -50,31 +50,31 @@ Since the rules will get called for all visibility checks, we make sure we only 
 
 To decide if reporting errors: if the person asked is the player and access-flag is 1, yes; no.
 
-Section - Distant Objects rulebook
+Section - distant stuff rulebook
 
-The distant objects rules are a thing based rulebook. 
+distant stuff is an object-based rulebook. 
 
-The far-flung-thing is a thing that varies.
+The far-off item is a thing that varies.
 
 To decide if we can't get at (n - a thing):
 [ This runs the rulebook. Means we can consider noun and second noun neatly in the accessibility rule above. ]
-	change the far-flung-thing to n;
-	consider the distant objects rules for the far-flung-thing;
+	now the far-off item is n;
+	follow the distant stuff rules for the far-off item;
 	if rule failed:
 		decide yes;
-		change access-flag to 0;
+		now access-flag is 0;
 	decide no.
 
-The last distant objects rule for a thing (called the item) when the person asked is not the player (this is the fail other people rule): 
+The last distant stuff rule for a thing (called the item) when the person asked is not the player (this is the fail other people rule): 
 	rule fails.
 
-The last distant objects rule when reporting errors (this is the can't touch rule):
+The last distant stuff rule when reporting errors (this is the can't touch rule):
 	say far-off message, paragraph break;
 	rule fails.
 
 Section - Messages
 
-The far-off message is a text that varies. The far-off message is "[The far-flung-thing] [is-are] out of reach."
+The far-off message is a text that varies. The far-off message is "[The far-off item] [are] out of reach."
 
 
 
@@ -82,15 +82,15 @@ Far away ends here.
 
 ---- DOCUMENTATION ----
 
-A simple extension providing for things out of reach. A check is performed between the Before and Instead phases of the action (more specifically, between "visibility" and "touchability" are performed). The extension provides an adjective, "distant", for inaccessible objects (with antonym "near"). A distant object will be too far away to touch, as will anything it encloses (contents or parts). The appropriate error is printed by the Distant Objects rulebook, which can also allow distant objects to be interacted with, if it wants to, by including new rules. 
+A simple extension providing for things out of reach. A check is performed between the Before and Instead phases of the action (more specifically, between "visibility" and "touchability" are performed). The extension provides an adjective, "distant", for inaccessible objects (with antonym "near"). A distant object will be too far away to touch, as will anything it encloses (contents or parts). The appropriate error is printed by the distant stuff rulebook, which can also allow distant stuff to be interacted with, if it wants to, by including new rules. 
 
 A circus game might need the following, for example:
 
-	A distant objects rule when the player is wearing stilts: rule succeeds.
+	A distant stuff rule when the player is wearing stilts: rule succeeds.
 
-	A distant objects rule for the safety net when the player is wearing stilts: say "You bought the best stilts you could afford but you're lower than the safety net."; rule fails.
+	A distant stuff rule for the safety net when the player is wearing stilts: say "You bought the best stilts you could afford but you're lower than the safety net."; rule fails.
 
-	A distant objects rule for the trapeze wire when the player is wearing stilts: say "You bought the best stilts you could afford but you're lower than the safety net, let alone the high wire."; rule fails.
+	A distant stuff rule for the trapeze wire when the player is wearing stilts: say "You bought the best stilts you could afford but you're lower than the safety net, let alone the high wire."; rule fails.
 
 The rulebook is called "for" objects (it's an object-based-rulebook) which have been deemed to be too far away, either by being distant themselves or by being enclosed by something distant. "Rule succeeds" indicates the object should not be considered out of reach. "Rule fails" will stop the action in its tracks.
 	
@@ -98,9 +98,9 @@ Other characters are bound by the same basic rules as the player: if attempting 
 
 	Before asking Will to jump over the moon, say "'I'm that happy I could jump over the sun!' Will exclaims rather stupidly."
 
-or by Distant Objects rules:
+or by distant stuff rules:
 
-	A distant objects rule for something enclosed by the top shelf when the person asked is Will:
+	A distant stuff rule for something enclosed by the top shelf when the person asked is Will:
 		say "(Will is six-foot-nine and high-up things are no problem for him.)[line break]";
 		rule succeeds.
 
@@ -108,9 +108,8 @@ Note, however, that the Instead entrypoint is too late and the distant check wil
 
 A rule can decide if it should be saying something when failing by testing "if reporting errors" - this is safer than just printing, as the accessibility rules are also called during visibility checks.
 
-Finally, the game provides the condition "far off" for objects which are considered out of reach - remember, these may be distant, or they may be parts/contents of distant objects.
+Finally, the game provides the condition "far off" for objects which are considered out of reach - remember, these may be distant, or they may be parts/contents of distant stuff.
 
-Note this extension relies on, and includes, "Plurality" by Emily Short.
 
 Example: ** Christmas Morning - A simple example of distance, and how to overcome it.
 
@@ -118,9 +117,9 @@ Example: ** Christmas Morning - A simple example of distance, and how to overcom
 
 	Include Far Away by Jon Ingold.
 
-The living room contains a tree, and some decorations. Only the very top of the tree is distant.
+[The living room contains a tree, and some decorations. Only the very top of the tree is distant.]
 
-	*: The Living Room is a room. "The room is dominated by the top half of a Norwegian spruce. One side is almost bare as a result of Dad dragging it home along the snowless pavement."
+	The Living Room is a room. The description is "The room is dominated by the top half of a Norwegian spruce. One side is almost bare as a result of Dad dragging it home along the snowless pavement."
 
 	The christmas tree is a supporter in the Living Room. "The tree is still only half-decorated.".  Understand "bauble", "baubles" as the christmas tree. Instead of examining or searching the tree, say "The tree is decorated in a smattering of baubles, [list of things on the tree]. [if the star is on the top of the tree]A star takes pride of place at the top.[end if][if the star is on the tree]The star looks a bit out of place though.[end if]" 
 
@@ -134,18 +133,18 @@ The living room contains a tree, and some decorations. Only the very top of the 
 
 	Instead of taking a decoration when the noun is on the tree and the noun is not the star, say "If you start being picky about it you'll never get it done."
 
-	Every turn: if all the decorations are enclosed by the tree and the star is on the top of tree, end the game saying "The festivities may commence!".
+	Every turn: if all the decorations are enclosed by the tree and the star is on the top of tree, end the game saying "The festivites may commence!".
 
-At present, the player cannot hope to complete his task. So we give him a stepladder, and a rule to make is overcome the distant objects problem.
+[At present, the player cannot hope to complete his task. So we give him a stepladder, and a rule to make is overcome the distant stuff problem.]
 
-	*: The wonky stepladder is in the Living Room. It is an enterable supporter. Instead of climbing the stepladder, try entering the stepladder. Report entering the stepladder: say "You clamber up the wonky stepladder." instead. Understand "ladder" as the stepladder.
+	The wonky stepladder is in the Living Room. It is an enterable supporter. Instead of climbing the stepladder, try entering the stepladder. Report entering the stepladder: say "You clamber up the wonky stepladder." instead. Understand "ladder" as the stepladder.
 
-	A distant objects rule for the top of the tree when the player is on the stepladder: rule succeeds.
-	A distant objects rule for something enclosed by the top of the tree when the player is on the stepladder: rule succeeds.
+	A distant stuff rule for the top of the tree when the player is on the stepladder: rule succeeds.
+	A distant stuff rule for something enclosed by the top of the tree when the player is on the stepladder: rule succeeds.
 
-Finally, we should stop the player putting the wrong decoration at the top. This needs to be an Instead rule rather than a Before, however, so that it the distance check happens first. 
+[Finally, we should stop the player putting the wrong decoration at the top. This needs to be an Instead rule rather than a Before, however, so that it the distance check happens first.]
 
-	*: Instead of putting a decoration on the top of the tree when the noun is not the star, say "That'd look all wrong."
+	Instead of putting a decoration on the top of the tree when the noun is not the star, say "That'd look all wrong."
 	
 	Test me with "put tinsel on tree / x top of tree / put star on top of tree / climb stepladder / put star on top of tree / get off / take star / put snowman on tree".
 
@@ -158,7 +157,7 @@ Example: *** Starfield Dome - a more complicated example, with an NPC, and vario
 
 	The Starfield Dome is a room. "A wide dome, offering a view of the heavens above. The stars are out in all their glory, beautiful and clear[if the glass dome is open]. The open dome gives you an unfiltered view, but with the wind you are shivering[end if][if the player is flying] and close enough to touch[otherwise] - down here on earth, everything's a bit too dark for comfort[end if]."
 
-	The glass dome is a distant thing in the Dome.  The glass dome is scenery. It has description "[if open]The glass of the dome has peeled back, to let in the wind and the light[otherwise]The dome is made of geodesic sections, and beyond it are the stars[end if]. A series of pylons form the supports of the dome, and in the apex of these is a small release button."	The glass dome can be open or closed.
+	The glass dome is a distant transparent container in the Dome.  The glass dome is scenery. It has description "[if open]The glass of the dome has peeled back, to let in the wind and the light[otherwise]The dome is made of geodesic sections, and beyond it are the stars[end if]. A series of pylons form the supports of the dome, and in the apex of these is a small release button."	The glass dome can be open or closed.
 
 The following details are part of the dome. They don't need to be separately declared 'distant' - they adopt this from the glass dome. 
 
@@ -210,7 +209,7 @@ This rule prevents "Alf, enter stars" not to end up in the rather bland "Alf is 
 
 This is the rule that allows a flying player to touch the sky:
 
-	*: Distant objects rule for something (called the item) when the player is flying: if the item is not the heavens, rule succeeds.
+	*: distant stuff rule for something (called the item) when the player is flying: if the item is not the heavens, rule succeeds.
 
 This rule provides a custom message for trying to reach the stars while flying:
 
@@ -221,4 +220,3 @@ This rule provides a custom message for trying to reach the stars while flying:
 		say "'Thanks. That's better without the refraction.' Alf proceeds to swig half the bottle, and blur his vision of the stars that way instead.";
 
 	Test me with "x dome / enter stars / press button / x alf / alf, give me liquor / x bottle / drink bottle / press button / enter stars / give bottle to alf".
-	

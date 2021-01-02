@@ -92,9 +92,9 @@ Carry out QBC responding with (this is the perform talking rule):
 
 Section 5 - Recaps
 
-QBC recap is an action out of world applying to nothing.  Understand "repeat" or "recap" as QBC recap when QBC is active.
+QBC recapping is an action out of world applying to nothing.  Understand "repeat" or "recap" as QBC recapping when QBC is active.
 
-Carry out QBC recap (this is the perform QBC recap rule):
+Carry out QBC recapping (this is the perform QBC recapping rule):
 	let qbc_index be 0;
 	repeat through qbc_litany:
 		if the enabled entry is 1:
@@ -264,7 +264,7 @@ Example: *** Joe Schmoe Revisited - A reimplementation of David Glasser's PHTALK
 	"Say nothing"				say-nothing	1
 
 	Table of Quip Followups (continued)
-	quip	option	result
+	quip		option			result
 	yay-monkeys	"What about apes?"	ehn-apes
 	yay-monkeys	"What about lemurs?"	ehn-lemurs
 
